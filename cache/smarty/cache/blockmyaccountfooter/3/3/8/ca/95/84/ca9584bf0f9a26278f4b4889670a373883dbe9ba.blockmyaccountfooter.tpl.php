@@ -5,17 +5,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ca9584bf0f9a26278f4b4889670a373883dbe9ba' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockmyaccountfooter/blockmyaccountfooter.tpl',
-      1 => 1487172978,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '115801181558d6a0f688c9c9-06201716',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6ae046482e8_19055006',
-  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8a082ceec2_14303960',
+  'variables' => 
+  array (
+    'link' => 0,
+    'returnAllowed' => 0,
+    'voucherAllowed' => 0,
+    'HOOK_BLOCK_MY_ACCOUNT' => 0,
+    'is_logged' => 0,
+  ),
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58d6ae046482e8_19055006')) {function content_58d6ae046482e8_19055006($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_58da8a082ceec2_14303960')) {function content_58da8a082ceec2_14303960($_smarty_tpl) {?>
 <!-- Block myaccount module -->
 <section class="footer-block col-xs-12 col-sm-4">
 	<h4><a href="http://localhost/prestashop/mon-compte" title="Gérer mon compte client" rel="nofollow">Mon compte</a></h4>

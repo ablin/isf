@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-03-25 17:55:09
+<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:11:24
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:104982998858d6a0eda9bef5-06896623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8b375bcd130eae27f41e1c6f152f260592e453e1' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl',
-      1 => 1490460105,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58d6a0edaa4f68_08783451',
   'variables' => 
   array (
     'blockCategTree' => 0,
@@ -23,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'child' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6a0edaa4f68_08783451',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58d6a0edaa4f68_08783451')) {function content_58d6a0edaa4f68_08783451($_smarty_tpl) {?>
 <?php if ($_smarty_tpl->tpl_vars['blockCategTree']->value&&count($_smarty_tpl->tpl_vars['blockCategTree']->value['children'])) {?>

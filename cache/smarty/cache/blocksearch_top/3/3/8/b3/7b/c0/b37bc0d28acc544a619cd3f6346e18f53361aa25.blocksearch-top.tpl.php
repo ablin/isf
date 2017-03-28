@@ -5,17 +5,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b37bc0d28acc544a619cd3f6346e18f53361aa25' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blocksearch/blocksearch-top.tpl',
-      1 => 1465999274,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '181326999158d6a0ed6cd3d1-19233244',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6ae0b3aacd8_71704672',
-  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8a0806e4e0_26334075',
+  'variables' => 
+  array (
+    'link' => 0,
+    'search_query' => 0,
+  ),
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58d6ae0b3aacd8_71704672')) {function content_58d6ae0b3aacd8_71704672($_smarty_tpl) {?><!-- Block search module TOP -->
+<?php if ($_valid && !is_callable('content_58da8a0806e4e0_26334075')) {function content_58da8a0806e4e0_26334075($_smarty_tpl) {?><!-- Block search module TOP -->
 <div id="search_block_top" class="col-sm-4 clearfix">
 	<form id="searchbox" method="get" action="//localhost/prestashop/recherche" >
 		<input type="hidden" name="controller" value="search" />

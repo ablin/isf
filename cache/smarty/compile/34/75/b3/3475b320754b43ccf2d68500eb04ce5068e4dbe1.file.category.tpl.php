@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-03-25 18:04:30
+<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:11:25
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/category.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:153114478458d6a0f6946f87-02327224%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3475b320754b43ccf2d68500eb04ce5068e4dbe1' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/category.tpl',
-      1 => 1490461459,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),

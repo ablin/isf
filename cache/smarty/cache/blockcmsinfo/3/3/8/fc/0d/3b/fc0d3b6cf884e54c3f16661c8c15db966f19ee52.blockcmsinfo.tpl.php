@@ -5,17 +5,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fc0d3b6cf884e54c3f16661c8c15db966f19ee52' => 
     array (
       0 => '/var/www/html/prestashop/modules/blockcmsinfo/blockcmsinfo.tpl',
-      1 => 1472811736,
+      1 => 1490717103,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '140563286358d6a354d72634-52473355',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6ae0eda4bd8_93172016',
-  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8a08272634_50502328',
+  'variables' => 
+  array (
+    'infos' => 0,
+    'info' => 0,
+  ),
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58d6ae0eda4bd8_93172016')) {function content_58d6ae0eda4bd8_93172016($_smarty_tpl) {?><!-- MODULE Block cmsinfo -->
+<?php if ($_valid && !is_callable('content_58da8a08272634_50502328')) {function content_58da8a08272634_50502328($_smarty_tpl) {?><!-- MODULE Block cmsinfo -->
 <div id="cmsinfo_block">
 					<div class="col-xs-6"><ul>
 <li><em class="icon-truck" id="icon-truck"></em>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-03-25 17:55:18
+<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:06:32
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/modules/blockcontactinfos/blockcontactinfos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:193858369058d6a0f68eb5b2-23683588%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a28195398a02e73b27f8f54cb5e8f72747f5d4ea' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockcontactinfos/blockcontactinfos.tpl',
-      1 => 1465999274,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58d6a0f691e814_64760131',
   'variables' => 
   array (
     'blockcontactinfos_company' => 0,
@@ -23,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'blockcontactinfos_email' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6a0f691e814_64760131',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58d6a0f691e814_64760131')) {function content_58d6a0f691e814_64760131($_smarty_tpl) {?><?php if (!is_callable('smarty_function_mailto')) include '/var/www/html/prestashop/tools/smarty/plugins/function.mailto.php';
 ?>

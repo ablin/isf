@@ -5,17 +5,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a28195398a02e73b27f8f54cb5e8f72747f5d4ea' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockcontactinfos/blockcontactinfos.tpl',
-      1 => 1465999274,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '193858369058d6a0f68eb5b2-23683588',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6ae0468fde0_74586932',
-  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8a082de121_92798174',
+  'variables' => 
+  array (
+    'blockcontactinfos_company' => 0,
+    'blockcontactinfos_address' => 0,
+    'blockcontactinfos_phone' => 0,
+    'blockcontactinfos_email' => 0,
+  ),
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58d6ae0468fde0_74586932')) {function content_58d6ae0468fde0_74586932($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_58da8a082de121_92798174')) {function content_58da8a082de121_92798174($_smarty_tpl) {?>
 <!-- MODULE Block contact infos -->
 <section id="block_contact_infos" class="footer-block col-xs-12 col-sm-4">
 	<div>

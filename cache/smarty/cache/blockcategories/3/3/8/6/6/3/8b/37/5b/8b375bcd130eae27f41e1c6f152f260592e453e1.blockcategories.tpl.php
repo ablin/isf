@@ -5,30 +5,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8b375bcd130eae27f41e1c6f152f260592e453e1' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl',
-      1 => 1490460105,
+      1 => 1490717104,
       2 => 'file',
     ),
     'e4823cb9c8400d55c4721aef9c8b23bfdfea179c' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/modules/blockcategories/category-tree-branch.tpl',
-      1 => 1490460179,
+      1 => 1490717104,
       2 => 'file',
     ),
   ),
   'nocache_hash' => '104982998858d6a0eda9bef5-06896623',
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58da814824f7e8_28910813',
-  'has_nocache_code' => false,
   'cache_lifetime' => 31536000,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8b2cde44b7_05841390',
+  'variables' => 
+  array (
+    'blockCategTree' => 0,
+    'currentCategory' => 0,
+    'isDhtml' => 0,
+    'child' => 0,
+  ),
+  'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58da814824f7e8_28910813')) {function content_58da814824f7e8_28910813($_smarty_tpl) {?><!-- Block categories module -->
+<?php if ($_valid && !is_callable('content_58da8b2cde44b7_05841390')) {function content_58da8b2cde44b7_05841390($_smarty_tpl) {?><!-- Block categories module -->
 <div id="categories_block_left" class="block">
 	<h2 class="title_block">
 					Systèmes Air Comprimé (V.MOTEUR)
 			</h2>
 	<div class="block_content">
 		<ul class="tree dhtml">
-												
+												<br />
+<b>Warning</b>:  touch(): Utime failed: Permission denied in <b>/var/www/html/prestashop/tools/smarty/sysplugins/smarty_internal_template.php</b> on line <b>192</b><br />
+
 <li >
 	<a 
 	href="http://localhost/prestashop/72-aircompmantigel" title="Pompes Antigel">
