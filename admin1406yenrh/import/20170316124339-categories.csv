@@ -1,0 +1,220 @@
+Nom;Description;Parent
+ACTFREIN;Actionneurs de frein;
+ACTSERVI;Actionneurs de servitudes;
+AIRCOMPC;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;
+AIRCOMPM;Systèmes Air Comprimé (V.MOTEUR);
+AIRCOMPR;Systèmes Air Comprimé (REMORQUE);
+DIAGNOST;Diagnostic;
+DIVERS;Divers;
+ELEC;SYSTEMES ELECTRONIQUES;
+ELECABSM;Systèmes ABS (V.MOTEUR);
+ELECABSR;Systèmes ABS (REMORQUE);
+ELECABSV;Systèmes ABS (VOITURE);
+ELECATCB;Systèmes ATC Climatisation (BUS);
+ELECEBSM;Systèmes EBS (V.MOTEUR);
+ELECEBSR;Systèmes EBS (REMORQUE);
+ELECECAC;Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;
+ELECECAM;Systèmes ECAS/ESAC (V.MOTEUR);
+ELECECAR;Systèmes ECAS/ELM (REMORQUE);
+ELECECAV;Systèmes ECAS (VOITURE);
+ELECEDSM;Systèmes EDS Boîtes de vitesses;
+ELECELMR;Systèmes ELM (REMORQUE);
+ELECESCM;Systèmes ESC Contrôle de la trajectoire;
+ELECIVTC;Systèmes IVTM Contrôle pneus (V.MOTEUR+R;
+ELECIVTM;Systèmes IVTM Contrôle pneus (V.MOTEUR);
+ELECIVTR;Systèmes IVTM Contrôle pneus (REMORQUE);
+ELECLIMM;Systèmes Limiteur de vitesse;
+ELECMTSB;Systèmes MTS Contrôle Porte (BUS);
+ELECTCER;Systèmes TCE (REMORQUE);
+ELECTELR;Systèmes Telematique (REMORQUE);
+ELECZBRM;Systèmes ZBR Electronique Centrale (V.MO;
+FRICTION;Friction;
+LEVIEREG;Leviers Régleurs;
+MESURE;Equipement de mesure;
+PEDALIER;Systèmes de pédaliers;
+SUSPENSB;Suspension (BUS);
+SUSPENSC;Suspension (V.MOTEUR+REMORQUE);
+SUSPENSM;Suspension (V.MOTEUR);
+SUSPENSR;Suspension (REMORQUE);
+ACTFREINCAPISTON;Cylindres de frein (à piston);ACTFREIN
+ACTFREINCARCOIN;Cylindres de frein à ressort (frein à co;ACTFREIN
+ACTFREINCARDISQ;Cylindres de frein à ressort (frein à di;ACTFREIN
+ACTFREINCARTAMB;Cylindres de frein à ressort (frein à ta;ACTFREIN
+ACTFREINCOLEOPNE;Cylindres oléopneumatiques;ACTFREIN
+ACTFREINVADCOIN;Vases à diaphragme (frein à coin);ACTFREIN
+ACTFREINVADDISQ;Vases à diaphragme (frein à disque);ACTFREIN
+ACTFREINVADTAMB;Vases à diaphragme (frein à tambour);ACTFREIN
+ACTFREINVDRDISQ;Vases doubles à ressort (frein à disque);ACTFREIN
+ACTFREINVDRTAMB;Vases doubles à ressort (frein à tambour;ACTFREIN
+ACTSERVIDIVERS;Divers;ACTSERVI
+ACTSERVIEDS;Levier de boîte de vitesses;ACTSERVI
+ACTSERVIMTS;Commande de porte;ACTSERVI
+AIRCOMPCAGELGRAI;Graisse/Produit Antigel;AIRCOMPC
+AIRCOMPCDETENDEU;Détendeurs;AIRCOMPC
+AIRCOMPCDISTRIBU;Distributeurs;AIRCOMPC
+AIRCOMPCELECTROV;Electrovalves;AIRCOMPC
+AIRCOMPCG3;GROUPE 3;AIRCOMPC
+AIRCOMPCLEVELAST;Leviers élastiques;AIRCOMPC
+AIRCOMPCMANOCONT;Manocontacts;AIRCOMPC
+AIRCOMPCRACCORDS;Raccords;AIRCOMPC
+AIRCOMPCRESERVOI;Réservoirs;AIRCOMPC
+AIRCOMPCSILENCIE;Silencieux;AIRCOMPC
+AIRCOMPCSOUPAPE;Soupapes de sûreté;AIRCOMPC
+AIRCOMPCTIREPREM;Kits anti-crevaison Tire Premium Seal;AIRCOMPC
+AIRCOMPCVALVBARR;Valves de Barrage;AIRCOMPC
+AIRCOMPCVALVCLAP;Clapets Anti-Retour;AIRCOMPC
+AIRCOMPCVDN;Valves de Nivellement;AIRCOMPC
+AIRCOMPCVDNHLIM;Valves de Nivellement à hauteur limitée;AIRCOMPC
+AIRCOMPCVPURGE;Valves de Purge;AIRCOMPC
+AIRCOMPCVRELSIMP;Valves Relais Simples;AIRCOMPC
+AIRCOMPCVSELECTI;Valves de Sélection de circuit;AIRCOMPC
+AIRCOMPMANTIGEL;Pompes Antigel;AIRCOMPM
+AIRCOMPMCAPPRESS;Capteurs de pression (pour valve de prot;AIRCOMPM
+AIRCOMPMCARTOUCH;Cartouches Dessiccateur;AIRCOMPM
+AIRCOMPMCOMPBYCI;Compresseurs Bicylindres;AIRCOMPM
+AIRCOMPMCOMPMONO;Compresseurs Monocylindres;AIRCOMPM
+AIRCOMPMCORRHYDR;Correcteurs Hydrauliques;AIRCOMPM
+AIRCOMPMCORRMECA;Correcteurs à cde mécanique;AIRCOMPM
+AIRCOMPMCORRPNEU;Correcteurs à cde pneumatique;AIRCOMPM
+AIRCOMPMDESSBIPO;Dessiccateurs Bipot;AIRCOMPM
+AIRCOMPMDESSELEC;Dessiccateurs Monopot à cde électronique;AIRCOMPM
+AIRCOMPMDESSMONO;Dessiccateurs Monopot;AIRCOMPM
+AIRCOMPMG2;GROUPE 2;AIRCOMPM
+AIRCOMPMG3;GROUPE 3;AIRCOMPM
+AIRCOMPMGROUPOLE;Groupes oléopneumatiques;AIRCOMPM
+AIRCOMPMREGULATE;Régulateurs;AIRCOMPM
+AIRCOMPMREGULGOV;Régulateurs Governor;AIRCOMPM
+AIRCOMPMROBFMAIN;Robinets de Frein à main;AIRCOMPM
+AIRCOMPMROBFPIED;Robinets de Frein à pied;AIRCOMPM
+AIRCOMPMSERVODEB;Servodébrayages;AIRCOMPM
+AIRCOMPMUNITAIRE;Unités de Traitement d'Air (dessiccateur;AIRCOMPM
+AIRCOMPMUNITAIRS;Unités de Traitement d'Air Electroniques;AIRCOMPM
+AIRCOMPMVALVADAP;Valves d'adaptation;AIRCOMPM
+AIRCOMPMVALVDESS;Valves de Desserrage rapide;AIRCOMPM
+AIRCOMPMVCR;Valves de cde de Remorque;AIRCOMPM
+AIRCOMPMVCRHYDR;Valves de cde de Remorque hydraulique/pn;AIRCOMPM
+AIRCOMPMVDP;Valves de Protection;AIRCOMPM
+AIRCOMPMVPROPASR;Valves Proportionnelles ASR;AIRCOMPM
+AIRCOMPRCORRMECA;Correcteurs à cde mécanique;AIRCOMPR
+AIRCOMPRCORRPNEU;Correcteurs à cde pneumatique;AIRCOMPR
+AIRCOMPRDESSMONO;Dessiccateurs Monopot;AIRCOMPR
+AIRCOMPRDIVERS;Divers;AIRCOMPR
+AIRCOMPRFILTCOND;Filtres sur conduite;AIRCOMPR
+AIRCOMPRFLEXIBLE;Flexibles pneumatiques;AIRCOMPR
+AIRCOMPRROBARRET;Robinets d'arrêt;AIRCOMPR
+AIRCOMPRROBDSSDO;Robinets de desserrage doubles;AIRCOMPR
+AIRCOMPRROBDSSDU;Robinets de desserrage doubles avec fonc;AIRCOMPR
+AIRCOMPRROBDSSSI;Robinets de desserrage simples;AIRCOMPR
+AIRCOMPRROBMBSTD;Robinets monte et baisse;AIRCOMPR
+AIRCOMPRROBMBTAS;Robinets monte et baisse TASC (avec RTR;AIRCOMPR
+AIRCOMPRTETACCAF;Têtes d'accouplement (avec filtre intégr;AIRCOMPR
+AIRCOMPRTETACCDU;Têtes d'accouplement (duomatic);AIRCOMPR
+AIRCOMPRTETACCSF;Têtes d'accouplement (standard);AIRCOMPR
+AIRCOMPRVALVDESS;Valves de Desserrage rapide;AIRCOMPR
+AIRCOMPRVRELEVAG;Valves de relevage d'essieu(x);AIRCOMPR
+AIRCOMPRVRU;Valves Relais d'Urgence;AIRCOMPR
+AIRCOMPRVRUARDES;Valves Relais d'Urgence (avec robinet de;AIRCOMPR
+DIAGNOSTCOMMUN;Equipement de diagnostic communs à tous;DIAGNOST
+DIAGNOSTOUTEXPDI;Equipement pour l'outil Expert Diagnosti;DIAGNOST
+DIAGNOSTREMORQUE;Equipement de diagnostic REMORQUE;DIAGNOST
+DIAGNOSTVMOTEUR;Equipement de diagnostic V.MOTEUR;DIAGNOST
+DIVERSPSEMISTD;Pièces diverses semi-standard;DIVERS
+DIVERSPSTANDAR;Pièces diverses standard;DIVERS
+ELECCABLCONN;Câbles & Connecteurs;ELEC
+ELECG1;GROUPE 1;ELEC
+ELECG2;GROUPE 2;ELEC
+ELECG3;GROUPE 3;ELEC
+ELECROUEABS;Couronnes dentées ABS/EBS;ELEC
+ELECABSMACCESSOI;Accessoires;ELECABSM
+ELECABSMCABLCONN;Câbles & Connecteurs;ELECABSM
+ELECABSMCAPVITES;Capteurs de vitesse ABS/EBS;ELECABSM
+ELECABSMROUEABS;Couronnes dentées ABS/EBS;ELECABSM
+ELECABSMUCE;Unités de Contrôle Electroniques;ELECABSM
+ELECABSMVALVEMOD;Valves Modulatrices;ELECABSM
+ELECABSRACCESSOI;Accessoires;ELECABSR
+ELECABSRCABLCONN;Câbles & Connecteurs;ELECABSR
+ELECABSRCAPVITES;Capteurs de vitesse ABS/EBS;ELECABSR
+ELECABSRROUEABS;Couronnes dentées ABS/EBS;ELECABSR
+ELECABSRSYSCOMPL;Equipement complet;ELECABSR
+ELECABSRUCE;Unités de Contrôle Electroniques;ELECABSR
+ELECABSRVALREMOD;Valves Relais Modulatrices;ELECABSR
+ELECABSVACCUMHYD;Accumulateurs hydrauliques;ELECABSV
+ELECABSVCAPVITES;Capteurs de vitesse ABS/EBS;ELECABSV
+ELECABSVMODULHYD;Modulateurs hydrauliques;ELECABSV
+ELECABSVUCE;Unités de Contrôle Electroniques;ELECABSV
+ELECATCBCAPTEMPE;Capteur de Température;ELECATCB
+ELECATCBELECTROV;Electrovalves;ELECATCB
+ELECATCBUCE;Unités de Contrôle Electroniques;ELECATCB
+ELECEBSMMODULATE;Modulateurs;ELECEBSM
+ELECEBSMMODULRAP;Modulateurs (intégrés dans robinet de fr;ELECEBSM
+ELECEBSMROBFPIED;Robinets de Frein à pied;ELECEBSM
+ELECEBSMUCE;Unités de Contrôle Electroniques;ELECEBSM
+ELECEBSMVALREMOD;Valves Relais Modulatrices;ELECEBSM
+ELECEBSMVALREPRO;Valves Relais Proportionnelles;ELECEBSM
+ELECEBSMVCR;Valves de cde de Remorque;ELECEBSM
+ELECEBSRACCESSOI;Accessoires;ELECEBSR
+ELECEBSRCABLCONN;Câbles & Connecteurs;ELECEBSR
+ELECEBSRCAPULTRA;Capteurs de distance (à ultrasons);ELECEBSR
+ELECEBSRINFOAFFI;Modules Afficheurs;ELECEBSR
+ELECEBSRMODULATE;Modulateurs;ELECEBSR
+ELECEBSRMODULPEM;Modules d'extension pneumatiques TEBS E;ELECEBSR
+ELECEBSRVALREMOD;Valves Relais Modulatrices;ELECEBSR
+ELECEBSRVRU;Valves Relais d'Urgence;ELECEBSR
+ELECECACCAPNIVEA;Capteurs de niveau;ELECECAC
+ELECECACCAPPRESS;Capteurs de pression (pour valve de prot;ELECECAC
+ELECECACELECTROV;Electrovalves;ELECECAC
+ELECECACTELECOMM;Télécommandes;ELECECAC
+ELECECAMCABLCONN;Câbles & Connecteurs;ELECECAM
+ELECECAMUCE;Unités de Contrôle Electroniques;ELECECAM
+ELECECARCABLCONN;Câbles & Connecteurs;ELECECAR
+ELECECARUCE;Unités de Contrôle Electroniques;ELECECAR
+ELECECAVCAPNIVEA;Capteurs de niveau;ELECECAV
+ELECECAVCOMPRESS;Compresseurs Electriques;ELECECAV
+ELECECAVELECTROV;Electrovalves;ELECECAV
+ELECECAVUCE;Unités de Contrôle Electroniques;ELECECAV
+ELECEDSMCAPDISTA;Capteurs de distance (boîte de vitesses;ELECEDSM
+ELECEDSMEDS;Levier de boîte de vitesses;ELECEDSM
+ELECEDSMELECTROV;Electrovalves;ELECEDSM
+ELECEDSMUCE;Unités de Contrôle Electroniques;ELECEDSM
+ELECELMRMODULE;Modules;ELECELMR
+ELECESCMCAPSTABI;Capteurs de stabilité;ELECESCM
+ELECESCMUCE;Unités de Contrôle Electroniques;ELECESCM
+ELECIVTCMODULROU;Modules de roue;ELECIVTC
+ELECIVTMINFOAFFI;Modules Afficheurs;ELECIVTM
+ELECIVTMUCE;Unités de Contrôle Electroniques;ELECIVTM
+ELECIVTRCABLCONN;Câbles & Connecteurs;ELECIVTR
+ELECIVTRUCE;Unités de Contrôle Electroniques;ELECIVTR
+ELECLIMMUCE;Unités de Contrôle Electroniques;ELECLIMM
+ELECMTSBCAPINVER;Contacteurs d'inversion;ELECMTSB
+ELECMTSBCAPPORTE;Capteurs de porte;ELECMTSB
+ELECMTSBELECTROV;Electrovalves;ELECMTSB
+ELECMTSBROBOUVER;Robinet d'ouverture d'urgence;ELECMTSB
+ELECMTSBUCE;Unités de Contrôle Electroniques;ELECMTSB
+ELECTCERCABLCONN;Câbles & Connecteurs;ELECTCER
+ELECTCERUCE;Unités de Contrôle Electroniques;ELECTCER
+ELECTELRCABLCONN;Câbles & Connecteurs;ELECTELR
+ELECTELRUCE;Unités de Contrôle Electroniques;ELECTELR
+ELECZBRMUCE;Unités de Contrôle Electroniques;ELECZBRM
+FRICTIONDISQUE;Disques de frein;FRICTION
+FRICTIONFADHYDRA;Freins à disque hydrauliques;FRICTION
+FRICTIONFADPNEUM;Freins à disque pneumatiques;FRICTION
+FRICTIONFAT;Freins à tambour;FRICTION
+FRICTIONTAMBOUR;Tambours de frein;FRICTION
+FRICTIONTEMUSURE;Témoins d'usure de frein;FRICTION
+LEVIEREGREGAUTO;Automatiques;LEVIEREG
+LEVIEREGREGMANU;Manuels;LEVIEREG
+MESUREMANOMETR;Manomètres;MESURE
+PEDALIERACCELERA;Accélérateurs;PEDALIER
+PEDALIERFREINEMB;Pédaliers (frein et embrayage);PEDALIER
+PEDALIERFREMBACC;Pédaliers (frein, embrayage et accélérat;PEDALIER
+SUSPENSBAMORTISS;Amortisseurs;SUSPENSB
+SUSPENSBCOUSSIN;Coussins;SUSPENSB
+SUSPENSCAMORTCAB;Amortisseurs de cabine;SUSPENSC
+SUSPENSCAMORTISS;Amortisseurs;SUSPENSC
+SUSPENSCCOUSSIN;Coussins;SUSPENSC
+SUSPENSMAMORTCAB;Amortisseurs de cabine;SUSPENSM
+SUSPENSMAMORTISS;Amortisseurs;SUSPENSM
+SUSPENSMCOUSSIN;Coussins;SUSPENSM
+SUSPENSMMODUCALM;Modules intégrés de suspension de cabine;SUSPENSM
+SUSPENSRAMORTISS;Amortisseurs;SUSPENSR
+SUSPENSRCOUSSIN;Coussins;SUSPENSR

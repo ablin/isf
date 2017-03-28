@@ -1,0 +1,23 @@
+
+[{shop_url}] 
+
+Bonjour {firstname} {lastname},
+
+Merci pour votre commande portant la référence {order_name} sur
+{shop_name} 
+
+Vous avez {nbproducts} produit(s) à télécharger.
+
+{virtualproducts} 		 
+
+Vous pouvez consulter le détail de votre commande via le lien
+"Historique de mes commandes" [{history_url}] dans la
+rubrique "Mon Compte" [{my_account_url}] sur notre
+site. 
+
+Si vous avez un compte invité vous pouvez suivre votre commande
+via ce lien [{guest_tracking_url}]. 
+
+{shop_name} [{shop_url}] propulsé par
+PrestaShop(tm) [http://www.prestashop.com/] 
+

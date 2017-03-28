@@ -1,0 +1,220 @@
+Nom;Catégorie parente;Description
+Actionneurs de frein;;ACTFREIN
+Actionneurs de servitudes;;ACTSERVI
+Systèmes Air Comprimé (V.MOTEUR+REMORQUE;;AIRCOMPC
+Systèmes Air Comprimé (V.MOTEUR);;AIRCOMPM
+Systèmes Air Comprimé (REMORQUE);;AIRCOMPR
+Diagnostic;;DIAGNOST
+Divers;;DIVERS
+SYSTEMES ELECTRONIQUES;;ELEC
+Systèmes ABS (V.MOTEUR);;ELECABSM
+Systèmes ABS (REMORQUE);;ELECABSR
+Systèmes ABS (VOITURE);;ELECABSV
+Systèmes ATC Climatisation (BUS);;ELECATCB
+Systèmes EBS (V.MOTEUR);;ELECEBSM
+Systèmes EBS (REMORQUE);;ELECEBSR
+Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;;ELECECAC
+Systèmes ECAS/ESAC (V.MOTEUR);;ELECECAM
+Systèmes ECAS/ELM (REMORQUE);;ELECECAR
+Systèmes ECAS (VOITURE);;ELECECAV
+Systèmes EDS Boîtes de vitesses;;ELECEDSM
+Systèmes ELM (REMORQUE);;ELECELMR
+Systèmes ESC Contrôle de la trajectoire;;ELECESCM
+Systèmes IVTM Contrôle pneus (V.MOTEUR+R;;ELECIVTC
+Systèmes IVTM Contrôle pneus (V.MOTEUR);;ELECIVTM
+Systèmes IVTM Contrôle pneus (REMORQUE);;ELECIVTR
+Systèmes Limiteur de vitesse;;ELECLIMM
+Systèmes MTS Contrôle Porte (BUS);;ELECMTSB
+Systèmes TCE (REMORQUE);;ELECTCER
+Systèmes Telematique (REMORQUE);;ELECTELR
+Systèmes ZBR Electronique Centrale (V.MO;;ELECZBRM
+Friction;;FRICTION
+Leviers Régleurs;;LEVIEREG
+Equipement de mesure;;MESURE
+Systèmes de pédaliers;;PEDALIER
+Suspension (BUS);;SUSPENSB
+Suspension (V.MOTEUR+REMORQUE);;SUSPENSC
+Suspension (V.MOTEUR);;SUSPENSM
+Suspension (REMORQUE);;SUSPENSR
+Cylindres de frein (à piston);Actionneurs de frein;CAPISTON
+Cylindres de frein à ressort (frein à co;Actionneurs de frein;CARCOIN
+Cylindres de frein à ressort (frein à di;Actionneurs de frein;CARDISQ
+Cylindres de frein à ressort (frein à ta;Actionneurs de frein;CARTAMB
+Cylindres oléopneumatiques;Actionneurs de frein;COLEOPNE
+Vases à diaphragme (frein à coin);Actionneurs de frein;VADCOIN
+Vases à diaphragme (frein à disque);Actionneurs de frein;VADDISQ
+Vases à diaphragme (frein à tambour);Actionneurs de frein;VADTAMB
+Vases doubles à ressort (frein à disque);Actionneurs de frein;VDRDISQ
+Vases doubles à ressort (frein à tambour;Actionneurs de frein;VDRTAMB
+Divers;Actionneurs de servitudes;DIVERS
+Levier de boîte de vitesses;Actionneurs de servitudes;EDS
+Commande de porte;Actionneurs de servitudes;MTS
+Graisse/Produit Antigel;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;AGELGRAI
+Détendeurs;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;DETENDEU
+Distributeurs;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;DISTRIBU
+Electrovalves;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;ELECTROV
+GROUPE 3;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;G3
+Leviers élastiques;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;LEVELAST
+Manocontacts;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;MANOCONT
+Raccords;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;RACCORDS
+Réservoirs;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;RESERVOI
+Silencieux;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;SILENCIE
+Soupapes de sûreté;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;SOUPAPE
+Kits anti-crevaison Tire Premium Seal;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;TIREPREM
+Valves de Barrage;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VALVBARR
+Clapets Anti-Retour;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VALVCLAP
+Valves de Nivellement;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VDN
+Valves de Nivellement à hauteur limitée;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VDNHLIM
+Valves de Purge;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VPURGE
+Valves Relais Simples;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VRELSIMP
+Valves de Sélection de circuit;Systèmes Air Comprimé (V.MOTEUR+REMORQUE;VSELECTI
+Pompes Antigel;Systèmes Air Comprimé (V.MOTEUR);ANTIGEL
+Capteurs de pression (pour valve de prot;Systèmes Air Comprimé (V.MOTEUR);CAPPRESS
+Cartouches Dessiccateur;Systèmes Air Comprimé (V.MOTEUR);CARTOUCH
+Compresseurs Bicylindres;Systèmes Air Comprimé (V.MOTEUR);COMPBYCI
+Compresseurs Monocylindres;Systèmes Air Comprimé (V.MOTEUR);COMPMONO
+Correcteurs Hydrauliques;Systèmes Air Comprimé (V.MOTEUR);CORRHYDR
+Correcteurs à cde mécanique;Systèmes Air Comprimé (V.MOTEUR);CORRMECA
+Correcteurs à cde pneumatique;Systèmes Air Comprimé (V.MOTEUR);CORRPNEU
+Dessiccateurs Bipot;Systèmes Air Comprimé (V.MOTEUR);DESSBIPO
+Dessiccateurs Monopot à cde électronique;Systèmes Air Comprimé (V.MOTEUR);DESSELEC
+Dessiccateurs Monopot;Systèmes Air Comprimé (V.MOTEUR);DESSMONO
+GROUPE 2;Systèmes Air Comprimé (V.MOTEUR);G2
+GROUPE 3;Systèmes Air Comprimé (V.MOTEUR);G3
+Groupes oléopneumatiques;Systèmes Air Comprimé (V.MOTEUR);GROUPOLE
+Régulateurs;Systèmes Air Comprimé (V.MOTEUR);REGULATE
+Régulateurs Governor;Systèmes Air Comprimé (V.MOTEUR);REGULGOV
+Robinets de Frein à main;Systèmes Air Comprimé (V.MOTEUR);ROBFMAIN
+Robinets de Frein à pied;Systèmes Air Comprimé (V.MOTEUR);ROBFPIED
+Servodébrayages;Systèmes Air Comprimé (V.MOTEUR);SERVODEB
+Unités de Traitement d'Air (dessiccateur;Systèmes Air Comprimé (V.MOTEUR);UNITAIRE
+Unités de Traitement d'Air Electroniques;Systèmes Air Comprimé (V.MOTEUR);UNITAIRS
+Valves d'adaptation;Systèmes Air Comprimé (V.MOTEUR);VALVADAP
+Valves de Desserrage rapide;Systèmes Air Comprimé (V.MOTEUR);VALVDESS
+Valves de cde de Remorque;Systèmes Air Comprimé (V.MOTEUR);VCR
+Valves de cde de Remorque hydraulique/pn;Systèmes Air Comprimé (V.MOTEUR);VCRHYDR
+Valves de Protection;Systèmes Air Comprimé (V.MOTEUR);VDP
+Valves Proportionnelles ASR;Systèmes Air Comprimé (V.MOTEUR);VPROPASR
+Correcteurs à cde mécanique;Systèmes Air Comprimé (REMORQUE);CORRMECA
+Correcteurs à cde pneumatique;Systèmes Air Comprimé (REMORQUE);CORRPNEU
+Dessiccateurs Monopot;Systèmes Air Comprimé (REMORQUE);DESSMONO
+Divers;Systèmes Air Comprimé (REMORQUE);DIVERS
+Filtres sur conduite;Systèmes Air Comprimé (REMORQUE);FILTCOND
+Flexibles pneumatiques;Systèmes Air Comprimé (REMORQUE);FLEXIBLE
+Robinets d'arrêt;Systèmes Air Comprimé (REMORQUE);ROBARRET
+Robinets de desserrage doubles;Systèmes Air Comprimé (REMORQUE);ROBDSSDO
+Robinets de desserrage doubles avec fonc;Systèmes Air Comprimé (REMORQUE);ROBDSSDU
+Robinets de desserrage simples;Systèmes Air Comprimé (REMORQUE);ROBDSSSI
+Robinets monte et baisse;Systèmes Air Comprimé (REMORQUE);ROBMBSTD
+Robinets monte et baisse TASC (avec RTR;Systèmes Air Comprimé (REMORQUE);ROBMBTAS
+Têtes d'accouplement (avec filtre intégr;Systèmes Air Comprimé (REMORQUE);TETACCAF
+Têtes d'accouplement (duomatic);Systèmes Air Comprimé (REMORQUE);TETACCDU
+Têtes d'accouplement (standard);Systèmes Air Comprimé (REMORQUE);TETACCSF
+Valves de Desserrage rapide;Systèmes Air Comprimé (REMORQUE);VALVDESS
+Valves de relevage d'essieu(x);Systèmes Air Comprimé (REMORQUE);VRELEVAG
+Valves Relais d'Urgence;Systèmes Air Comprimé (REMORQUE);VRU
+Valves Relais d'Urgence (avec robinet de;Systèmes Air Comprimé (REMORQUE);VRUARDES
+Equipement de diagnostic communs à tous;Diagnostic;COMMUN
+Equipement pour l'outil Expert Diagnosti;Diagnostic;OUTEXPDI
+Equipement de diagnostic REMORQUE;Diagnostic;REMORQUE
+Equipement de diagnostic V.MOTEUR;Diagnostic;VMOTEUR
+Pièces diverses semi-standard;Divers;PSEMISTD
+Pièces diverses standard;Divers;PSTANDAR
+Câbles & Connecteurs;SYSTEMES ELECTRONIQUES;CABLCONN
+GROUPE 1;SYSTEMES ELECTRONIQUES;G1
+GROUPE 2;SYSTEMES ELECTRONIQUES;G2
+GROUPE 3;SYSTEMES ELECTRONIQUES;G3
+Couronnes dentées ABS/EBS;SYSTEMES ELECTRONIQUES;ROUEABS
+Accessoires;Systèmes ABS (V.MOTEUR);ACCESSOI
+Câbles & Connecteurs;Systèmes ABS (V.MOTEUR);CABLCONN
+Capteurs de vitesse ABS/EBS;Systèmes ABS (V.MOTEUR);CAPVITES
+Couronnes dentées ABS/EBS;Systèmes ABS (V.MOTEUR);ROUEABS
+Unités de Contrôle Electroniques;Systèmes ABS (V.MOTEUR);UCE
+Valves Modulatrices;Systèmes ABS (V.MOTEUR);VALVEMOD
+Accessoires;Systèmes ABS (REMORQUE);ACCESSOI
+Câbles & Connecteurs;Systèmes ABS (REMORQUE);CABLCONN
+Capteurs de vitesse ABS/EBS;Systèmes ABS (REMORQUE);CAPVITES
+Couronnes dentées ABS/EBS;Systèmes ABS (REMORQUE);ROUEABS
+Equipement complet;Systèmes ABS (REMORQUE);SYSCOMPL
+Unités de Contrôle Electroniques;Systèmes ABS (REMORQUE);UCE
+Valves Relais Modulatrices;Systèmes ABS (REMORQUE);VALREMOD
+Accumulateurs hydrauliques;Systèmes ABS (VOITURE);ACCUMHYD
+Capteurs de vitesse ABS/EBS;Systèmes ABS (VOITURE);CAPVITES
+Modulateurs hydrauliques;Systèmes ABS (VOITURE);MODULHYD
+Unités de Contrôle Electroniques;Systèmes ABS (VOITURE);UCE
+Capteur de Température;Systèmes ATC Climatisation (BUS);CAPTEMPE
+Electrovalves;Systèmes ATC Climatisation (BUS);ELECTROV
+Unités de Contrôle Electroniques;Systèmes ATC Climatisation (BUS);UCE
+Modulateurs;Systèmes EBS (V.MOTEUR);MODULATE
+Modulateurs (intégrés dans robinet de fr;Systèmes EBS (V.MOTEUR);MODULRAP
+Robinets de Frein à pied;Systèmes EBS (V.MOTEUR);ROBFPIED
+Unités de Contrôle Electroniques;Systèmes EBS (V.MOTEUR);UCE
+Valves Relais Modulatrices;Systèmes EBS (V.MOTEUR);VALREMOD
+Valves Relais Proportionnelles;Systèmes EBS (V.MOTEUR);VALREPRO
+Valves de cde de Remorque;Systèmes EBS (V.MOTEUR);VCR
+Accessoires;Systèmes EBS (REMORQUE);ACCESSOI
+Câbles & Connecteurs;Systèmes EBS (REMORQUE);CABLCONN
+Capteurs de distance (à ultrasons);Systèmes EBS (REMORQUE);CAPULTRA
+Modules Afficheurs;Systèmes EBS (REMORQUE);INFOAFFI
+Modulateurs;Systèmes EBS (REMORQUE);MODULATE
+Modules d'extension pneumatiques TEBS E;Systèmes EBS (REMORQUE);MODULPEM
+Valves Relais Modulatrices;Systèmes EBS (REMORQUE);VALREMOD
+Valves Relais d'Urgence;Systèmes EBS (REMORQUE);VRU
+Capteurs de niveau;Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;CAPNIVEA
+Capteurs de pression (pour valve de prot;Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;CAPPRESS
+Electrovalves;Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;ELECTROV
+Télécommandes;Systèmes ECAS/ELM/ESAC (V.MOTEUR+REMORQU;TELECOMM
+Câbles & Connecteurs;Systèmes ECAS/ESAC (V.MOTEUR);CABLCONN
+Unités de Contrôle Electroniques;Systèmes ECAS/ESAC (V.MOTEUR);UCE
+Câbles & Connecteurs;Systèmes ECAS/ELM (REMORQUE);CABLCONN
+Unités de Contrôle Electroniques;Systèmes ECAS/ELM (REMORQUE);UCE
+Capteurs de niveau;Systèmes ECAS (VOITURE);CAPNIVEA
+Compresseurs Electriques;Systèmes ECAS (VOITURE);COMPRESS
+Electrovalves;Systèmes ECAS (VOITURE);ELECTROV
+Unités de Contrôle Electroniques;Systèmes ECAS (VOITURE);UCE
+Capteurs de distance (boîte de vitesses;Systèmes EDS Boîtes de vitesses;CAPDISTA
+Levier de boîte de vitesses;Systèmes EDS Boîtes de vitesses;EDS
+Electrovalves;Systèmes EDS Boîtes de vitesses;ELECTROV
+Unités de Contrôle Electroniques;Systèmes EDS Boîtes de vitesses;UCE
+Modules;Systèmes ELM (REMORQUE);MODULE
+Capteurs de stabilité;Systèmes ESC Contrôle de la trajectoire;CAPSTABI
+Unités de Contrôle Electroniques;Systèmes ESC Contrôle de la trajectoire;UCE
+Modules de roue;Systèmes IVTM Contrôle pneus (V.MOTEUR+R;MODULROU
+Modules Afficheurs;Systèmes IVTM Contrôle pneus (V.MOTEUR);INFOAFFI
+Unités de Contrôle Electroniques;Systèmes IVTM Contrôle pneus (V.MOTEUR);UCE
+Câbles & Connecteurs;Systèmes IVTM Contrôle pneus (REMORQUE);CABLCONN
+Unités de Contrôle Electroniques;Systèmes IVTM Contrôle pneus (REMORQUE);UCE
+Unités de Contrôle Electroniques;Systèmes Limiteur de vitesse;UCE
+Contacteurs d'inversion;Systèmes MTS Contrôle Porte (BUS);CAPINVER
+Capteurs de porte;Systèmes MTS Contrôle Porte (BUS);CAPPORTE
+Electrovalves;Systèmes MTS Contrôle Porte (BUS);ELECTROV
+Robinet d'ouverture d'urgence;Systèmes MTS Contrôle Porte (BUS);ROBOUVER
+Unités de Contrôle Electroniques;Systèmes MTS Contrôle Porte (BUS);UCE
+Câbles & Connecteurs;Systèmes TCE (REMORQUE);CABLCONN
+Unités de Contrôle Electroniques;Systèmes TCE (REMORQUE);UCE
+Câbles & Connecteurs;Systèmes Telematique (REMORQUE);CABLCONN
+Unités de Contrôle Electroniques;Systèmes Telematique (REMORQUE);UCE
+Unités de Contrôle Electroniques;Systèmes ZBR Electronique Centrale (V.MO;UCE
+Disques de frein;Friction;DISQUE
+Freins à disque hydrauliques;Friction;FADHYDRA
+Freins à disque pneumatiques;Friction;FADPNEUM
+Freins à tambour;Friction;FAT
+Tambours de frein;Friction;TAMBOUR
+Témoins d'usure de frein;Friction;TEMUSURE
+Automatiques;Leviers Régleurs;REGAUTO
+Manuels;Leviers Régleurs;REGMANU
+Manomètres;Equipement de mesure;MANOMETR
+Accélérateurs;Systèmes de pédaliers;ACCELERA
+Pédaliers (frein et embrayage);Systèmes de pédaliers;FREINEMB
+Pédaliers (frein, embrayage et accélérat;Systèmes de pédaliers;FREMBACC
+Amortisseurs;Suspension (BUS);AMORTISS
+Coussins;Suspension (BUS);COUSSIN
+Amortisseurs de cabine;Suspension (V.MOTEUR+REMORQUE);AMORTCAB
+Amortisseurs;Suspension (V.MOTEUR+REMORQUE);AMORTISS
+Coussins;Suspension (V.MOTEUR+REMORQUE);COUSSIN
+Amortisseurs de cabine;Suspension (V.MOTEUR);AMORTCAB
+Amortisseurs;Suspension (V.MOTEUR);AMORTISS
+Coussins;Suspension (V.MOTEUR);COUSSIN
+Modules intégrés de suspension de cabine;Suspension (V.MOTEUR);MODUCALM
+Amortisseurs;Suspension (REMORQUE);AMORTISS
+Coussins;Suspension (REMORQUE);COUSSIN

@@ -1,0 +1,2 @@
+*DEBUG* 	2017/03/17 - 15:39:10: Action : <ACTION>IDENTIFICATION / Params : <DOS>1<LOGIN>C0226020<WEBPASS>interface
+*DEBUG* 	2017/03/17 - 15:39:10: Retour :{"dos":1,"login":"C0226020","webpass":"interface","contact_trouve":1,"identification":1,"DUREE":141,"tiers":"C0226020","nom":"Vandewattyne","prenom":"Franck","email":"fv@interservicefreins.com"}

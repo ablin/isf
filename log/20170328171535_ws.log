@@ -1,0 +1,2 @@
+*DEBUG* 	2017/03/28 - 17:15:35: Action : <ACTION>TARIF_ART / Params : <DOS>1<TIERS>C0226020<REF>3057007700
+*DEBUG* 	2017/03/28 - 17:15:35: Retour :{"dos":1,"tiers":"C0226020","DUREE":297,"references":[{"ref":"3057007700","trouve":1,"qteStock":5,"tarifs":[ {"qte":1,"pub":163.904,"remise":0,"pun":163.904},{"qte":6,"pub":161.762,"remise":0,"pun":161.762},{"qte":30,"pub":157.477,"remise":0,"pun":157.477},{"qte":50,"pub":152.963,"remise":0,"pun":152.963}]}]}
