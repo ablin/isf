@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:126041220758d6a0f6b90a06-90674985%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:65734889858da8bf2e8d8e3-64231969%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -9,10 +9,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '126041220758d6a0f6b90a06-90674985',
-  'cache_lifetime' => 31536000,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58da8a0842d524_30957691',
+  'nocache_hash' => '65734889858da8bf2e8d8e3-64231969',
   'variables' => 
   array (
     'is_logged' => 0,
@@ -20,8 +17,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'telnumber' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8bf2e98467_30326849',
+  'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58da8a0842d524_30957691')) {function content_58da8a0842d524_30957691($_smarty_tpl) {?><div id="contact-link"  class="is_logged">
+<?php if ($_valid && !is_callable('content_58da8bf2e98467_30326849')) {function content_58da8bf2e98467_30326849($_smarty_tpl) {?><div id="contact-link"  class="is_logged">
 	<a href="http://localhost/prestashop/nous-contacter" title="Contactez-nous">Contactez-nous</a>
 </div>
 	<span class="shop-phone is_logged">

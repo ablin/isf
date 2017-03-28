@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:104982998858d6a0eda9bef5-06896623%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:39003655858da8bf19081b4-87368027%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -15,10 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '104982998858d6a0eda9bef5-06896623',
-  'cache_lifetime' => 31536000,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58da8b2cde44b7_05841390',
+  'nocache_hash' => '39003655858da8bf19081b4-87368027',
   'variables' => 
   array (
     'blockCategTree' => 0,
@@ -27,17 +24,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'child' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8bf19262b1_15023111',
+  'cache_lifetime' => 31536000,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58da8b2cde44b7_05841390')) {function content_58da8b2cde44b7_05841390($_smarty_tpl) {?><!-- Block categories module -->
+<?php if ($_valid && !is_callable('content_58da8bf19262b1_15023111')) {function content_58da8bf19262b1_15023111($_smarty_tpl) {?><!-- Block categories module -->
 <div id="categories_block_left" class="block">
 	<h2 class="title_block">
 					Systèmes Air Comprimé (V.MOTEUR)
 			</h2>
 	<div class="block_content">
 		<ul class="tree dhtml">
-												<br />
-<b>Warning</b>:  touch(): Utime failed: Permission denied in <b>/var/www/html/prestashop/tools/smarty/sysplugins/smarty_internal_template.php</b> on line <b>192</b><br />
-
+												
 <li >
 	<a 
 	href="http://localhost/prestashop/72-aircompmantigel" title="Pompes Antigel">

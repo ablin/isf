@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:11:25
+<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:14:42
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/product-compare.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:126260006758d6a0f69e5c77-68591150%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:164264866958da8bf2c21b20-82319871%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,12 +11,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '126260006758d6a0f69e5c77-68591150',
+  'nocache_hash' => '164264866958da8bf2c21b20-82319871',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58d6a0f69f3424_48093374',
   'variables' => 
   array (
     'comparator_max_item' => 0,
@@ -25,8 +23,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'compared_products' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_58da8bf2c2ba28_44257878',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58d6a0f69f3424_48093374')) {function content_58d6a0f69f3424_48093374($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_58da8bf2c2ba28_44257878')) {function content_58da8bf2c2ba28_44257878($_smarty_tpl) {?>
 <?php if ($_smarty_tpl->tpl_vars['comparator_max_item']->value) {?>
 	<form method="post" action="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link']->value->getPageLink('products-comparison'), ENT_QUOTES, 'UTF-8', true);?>
 " class="compare-form">
