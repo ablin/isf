@@ -1,2 +1,0 @@
-*DEBUG* 	2017/03/16 - 23:18:04: Action : <ACTION>TARIF_ART / Params : <DOS>1<TIERS>C0226020<REF>SP612
-*DEBUG* 	2017/03/16 - 23:18:04: Retour :{"dos":1,"tiers":"C0226020","DUREE":203,"references":[{"ref":"SP612","trouve":1,"qteStock":2,"tarifs":[ {"qte":1,"pub":0.364,"remise":0,"pun":0.364}]}]}

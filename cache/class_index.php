@@ -1543,7 +1543,7 @@
   ),
   'Cart' => 
   array (
-    'path' => '',
+    'path' => 'override/classes/Cart.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -1795,7 +1795,7 @@
   ),
   'Cookie' => 
   array (
-    'path' => '',
+    'path' => 'override/classes/Cookie.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -1957,7 +1957,7 @@
   ),
   'Customer' => 
   array (
-    'path' => '',
+    'path' => 'override/classes/Customer.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -2497,13 +2497,19 @@
   ),
   'HistoryController' => 
   array (
-    'path' => '',
+    'path' => 'override/controllers/front/HistoryController.php',
     'type' => 'class',
     'override' => false,
   ),
   'HistoryControllerCore' => 
   array (
     'path' => 'controllers/front/HistoryController.php',
+    'type' => 'class',
+    'override' => false,
+  ),
+  'HistoryDetailController' => 
+  array (
+    'path' => 'override/controllers/front/HistoryDetailController.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -2911,7 +2917,7 @@
   ),
   'OrderController' => 
   array (
-    'path' => '',
+    'path' => 'override/controllers/front/OrderController.php',
     'type' => 'class',
     'override' => false,
   ),
@@ -3169,7 +3175,7 @@
   ),
   'ParentOrderController' => 
   array (
-    'path' => '',
+    'path' => 'override/controllers/front/ParentOrderController.php',
     'type' => 'class',
     'override' => false,
   ),

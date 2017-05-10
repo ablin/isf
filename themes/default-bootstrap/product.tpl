@@ -183,7 +183,7 @@
 					<div class="box-cart-bottom">
 						<div>
 							<p id="add_to_cart" class="buttons_bottom_block no-print">
-								<button type="submit" name="Submit" class="exclusive" {if $tarif|@count == 0 || $tarif[0]->pun == 0|| $PS_CATALOG_MODE} disabled{/if}>
+								<button type="submit" name="Submit" class="exclusive" {if $PS_CATALOG_MODE} disabled{/if}>
 									<span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>
 								</button>
 							</p>

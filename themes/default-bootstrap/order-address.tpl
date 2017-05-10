@@ -86,7 +86,7 @@
 			</ul>
 		</div>
 	</div> <!-- end row -->
-	<p class="address_add submit">
+	<!-- TODO Adresse<p class="address_add submit">
 		<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="button button-small btn btn-default">
 			<span>{l s='Add a new address'}<i class="icon-chevron-right right"></i></span>
 		</a>
@@ -96,7 +96,7 @@
 			<label>{l s='If you would like to add a comment about your order, please write it in the field below.'}</label>
 			<textarea class="form-control" cols="60" rows="6" name="message">{if isset($oldMessage)}{$oldMessage}{/if}</textarea>
 		</div>
-	{/if}
+	{/if}-->
 </div> <!-- end addresses -->
 {if !$opc}
 			<p class="cart_navigation clearfix">

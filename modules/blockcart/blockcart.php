@@ -80,6 +80,7 @@ class BlockCart extends Module
 		$shipping_cost_float = Tools::convertPrice($base_shipping, $currency);
 		$wrappingCost = (float)($params['cart']->getOrderTotal($useTax, Cart::ONLY_WRAPPING));
 		$totalToPay = $params['cart']->getOrderTotal($useTax);
+        $totalToPay = $this->context->cookie->montant_total;
 
 		if ($useTax && Configuration::get('PS_TAX_DISPLAY') == 1)
 		{
@@ -145,7 +146,7 @@ class BlockCart extends Module
 			'nb_total_products' => (int)($nbTotalProducts),
 			'shipping_cost' => $shipping_cost,
 			'shipping_cost_float' => $shipping_cost_float,
-			'show_wrapping' => $wrappingCost > 0 ? true : false,
+			'show_wrapping' => false,
 			'show_tax' => (int)(Configuration::get('PS_TAX_DISPLAY') == 1 && (int)Configuration::get('PS_TAX')),
 			'wrapping_cost' => Tools::displayPrice($wrappingCost, $currency),
 			'product_total' => Tools::displayPrice($params['cart']->getOrderTotal($useTax, Cart::BOTH_WITHOUT_SHIPPING), $currency),

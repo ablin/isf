@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-03-28 18:14:42
+<?php /* Smarty version Smarty-3.1.19, created on 2017-05-09 12:11:24
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/product-list.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:72955212958da8bf2c9d8d0-36221182%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:117488837959119110b2fe48-08579532%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bcc199371765e68cceccc793796b77f6a06ba118' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/product-list.tpl',
-      1 => 1490717104,
+      1 => 1494324255,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '72955212958da8bf2c9d8d0-36221182',
+  'nocache_hash' => '117488837959119110b2fe48-08579532',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19',
+  'unifunc' => 'content_59119110bb77a7_86550490',
   'variables' => 
   array (
     'products' => 0,
@@ -43,10 +45,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'compared_products' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19',
-  'unifunc' => 'content_58da8bf2d63678_41099851',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58da8bf2d63678_41099851')) {function content_58da8bf2d63678_41099851($_smarty_tpl) {?><?php if (!is_callable('smarty_function_math')) include '/var/www/html/prestashop/tools/smarty/plugins/function.math.php';
+<?php if ($_valid && !is_callable('content_59119110bb77a7_86550490')) {function content_59119110bb77a7_86550490($_smarty_tpl) {?><?php if (!is_callable('smarty_function_math')) include '/var/www/html/prestashop/tools/smarty/plugins/function.math.php';
 ?>
 <?php if (isset($_smarty_tpl->tpl_vars['products']->value)&&$_smarty_tpl->tpl_vars['products']->value) {?>
 	
@@ -255,7 +255,7 @@ if (!empty($_capture_buffer)) {
 					</div>
 					<?php }?>
 					<div class="button-container">
-						<?php if (count($_smarty_tpl->tpl_vars['references']->value[$_smarty_tpl->tpl_vars['product']->value['reference']]['tarif'])>0&&$_smarty_tpl->tpl_vars['references']->value[$_smarty_tpl->tpl_vars['product']->value['reference']]['tarif'][0]->pun>0&&$_smarty_tpl->tpl_vars['references']->value[$_smarty_tpl->tpl_vars['product']->value['reference']]['stock']>0&&!$_smarty_tpl->tpl_vars['PS_CATALOG_MODE']->value) {?>
+						<?php if (!$_smarty_tpl->tpl_vars['PS_CATALOG_MODE']->value) {?>
     						<?php $_smarty_tpl->_capture_stack[0][] = array('default', null, null); ob_start(); ?>add=1&amp;id_product=<?php echo intval($_smarty_tpl->tpl_vars['product']->value['id_product']);?>
 <?php if (isset($_smarty_tpl->tpl_vars['static_token']->value)) {?>&amp;token=<?php echo $_smarty_tpl->tpl_vars['static_token']->value;?>
 <?php }?><?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack[0]);

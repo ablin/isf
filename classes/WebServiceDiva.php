@@ -14,7 +14,7 @@ class WebServiceDiva
         $this->param = $param;
         $this->logger = new FileLogger(0);
 
-        $this->logger->setFilename(_PS_ROOT_DIR_."/log/".date('YmdHis')."_ws.log");
+        $this->logger->setFilename(_PS_ROOT_DIR_."/log/".date('Ymd')."_ws.log");
     }
 
     public function call()

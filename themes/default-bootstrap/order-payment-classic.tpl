@@ -30,7 +30,7 @@
                 <table id="cart_summary" class="table table-bordered">
                     <thead>
                     <tr>
-                        <th class="cart_product first_item">{l s='Product'}</th>
+                        <!--<th class="cart_product first_item">{l s='Product'}</th>-->
                         <th class="cart_description item">{l s='Description'}</th>
                         {if $PS_STOCK_MANAGEMENT}
                             <th class="cart_availability item text-center">{l s='Availability'}</th>
@@ -59,7 +59,7 @@
                             <td colspan="2" class="price" id="total_product">{displayPrice price=$total_products}</td>
                         </tr>
                     {/if}
-                    <tr class="cart_total_voucher" {if $total_wrapping == 0}style="display:none"{/if}>
+                    <!--<tr class="cart_total_voucher" {if $total_wrapping == 0}style="display:none"{/if}>
                         <td colspan="4" class="text-right">
                             {if $use_taxes}
                                 {if $priceDisplay}
@@ -82,8 +82,8 @@
                                 {displayPrice price=$total_wrapping_tax_exc}
                             {/if}
                         </td>
-                    </tr>
-                    {if $total_shipping_tax_exc <= 0 && (!isset($isVirtualCart) || !$isVirtualCart) && $free_ship}
+                    </tr>-->
+                    <!--{if $total_shipping_tax_exc <= 0 && (!isset($isVirtualCart) || !$isVirtualCart) && $free_ship}
                         <tr class="cart_total_delivery">
                             <td colspan="4" class="text-right">{l s='Total shipping'}</td>
                             <td colspan="2" class="price" id="total_shipping">{l s='Free Shipping!'}</td>
@@ -107,8 +107,8 @@
                                 <td colspan="2" class="price" id="total_shipping" >{displayPrice price=$shippingCostTaxExc}</td>
                             </tr>
                         {/if}
-                    {/if}
-                    <tr class="cart_total_voucher" {if $total_discounts == 0}style="display:none"{/if}>
+                    {/if}-->
+                    <!--<tr class="cart_total_voucher" {if $total_discounts == 0}style="display:none"{/if}>
                         <td colspan="4" class="text-right">
                             {if $use_taxes}
                                 {if $priceDisplay}
@@ -131,7 +131,7 @@
                                 {displayPrice price=$total_discounts_tax_exc*-1}
                             {/if}
                         </td>
-                    </tr>
+                    </tr>-->
                     {if $use_taxes}
                         {if $total_tax != 0 && $show_taxes}
                             {if $priceDisplay != 0}
@@ -303,7 +303,14 @@
             </div> <!-- end opc_payment_methods-content -->
         {/if}
     {else}
-        <p class="alert alert-warning">{l s='No payment modules have been installed.'}</p>
+        <p class="cart_navigation clearfix">
+            <button type="submit" name="processCarrier" class="button btn btn-default standard-checkout button-medium">
+                <span>
+                    {l s='Proceed to checkout'}
+                    <i class="icon-chevron-right right"></i>
+                </span>
+            </button>
+        </p>
     {/if}
     {if !$opc}
     <p class="cart_navigation clearfix">

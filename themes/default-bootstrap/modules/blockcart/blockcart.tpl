@@ -60,10 +60,10 @@
 									{assign var='productId' value=$product.id_product}
 									{assign var='productAttributeId' value=$product.id_product_attribute}
 									<dt data-id="cart_block_product_{$product.id_product|intval}_{if $product.id_product_attribute}{$product.id_product_attribute|intval}{else}0{/if}_{if $product.id_address_delivery}{$product.id_address_delivery|intval}{else}0{/if}" class="{if $smarty.foreach.myLoop.first}first_item{elseif $smarty.foreach.myLoop.last}last_item{else}item{/if}">
-										<a class="cart-images" href="{$link->getProductLink($product.id_product, $product.link_rewrite, $product.category)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}"><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'cart_default')}" alt="{$product.name|escape:'html':'UTF-8'}" /></a>
+										<!--<a class="cart-images" href="{$link->getProductLink($product.id_product, $product.link_rewrite, $product.category)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}"><img src="{$link->getImageLink($product.link_rewrite, $product.id_image, 'cart_default')}" alt="{$product.name|escape:'html':'UTF-8'}" /></a>-->
 										<div class="cart-info">
 											<div class="product-name">
-												<span class="quantity-formated"><span class="quantity">{$product.cart_quantity}</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="{$link->getProductLink($product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}">{$product.name|truncate:13:'...'|escape:'html':'UTF-8'}</a>
+												<span class="quantity-formated"><span class="quantity">{$product.cart_quantity}</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="{$link->getProductLink($product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}">{$product.name|truncate:25:'...'|escape:'html':'UTF-8'}</a>
 											</div>
 											{if isset($product.attributes_small)}
 												<div class="product-atributes">
@@ -144,7 +144,7 @@
 						{/if}
 						{assign var='free_ship' value=count($cart->getDeliveryAddressesWithoutCarriers(true, $errors))}
 						<div class="cart-prices">
-							<div class="cart-prices-line first-line">
+							<!--<div class="cart-prices-line first-line">
 								<span class="price cart_block_shipping_cost ajax_cart_shipping_cost{if !($page_name == 'order-opc') && $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery || $free_ship)} unvisible{/if}">
 									{if $shipping_cost_float == 0}
 										 {if !($page_name == 'order-opc') && (!isset($cart->id_address_delivery) || !$cart->id_address_delivery)}{l s='To be determined' mod='blockcart'}{else}{l s='Free shipping!' mod='blockcart'}{/if}
@@ -174,7 +174,7 @@
 									<span class="price cart_block_tax_cost ajax_cart_tax_cost">{$tax_cost}</span>
 									<span>{l s='Tax' mod='blockcart'}</span>
 								</div>
-							{/if}
+							{/if}-->
 							<div class="cart-prices-line last-line">
 								<span class="price cart_block_total ajax_block_cart_total">{$total}</span>
 								<span>{l s='Total' mod='blockcart'}</span>
@@ -213,8 +213,8 @@
 				<span class="title">
 					<i class="icon-check"></i>{l s='Product successfully added to your shopping cart' mod='blockcart'}
 				</span>
-				<div class="product-image-container layer_cart_img">
-				</div>
+				<!--<div class="product-image-container layer_cart_img">
+				</div>-->
 				<div class="layer_cart_product_info">
 					<span id="layer_cart_product_title" class="product-name"></span>
 					<span id="layer_cart_product_attributes"></span>
@@ -256,7 +256,6 @@
 						{/if}
 					</span>
 				</div>
-
 				{if $show_wrapping}
 					<div class="layer_cart_row">
 						<strong class="dark">
@@ -278,7 +277,7 @@
 						</span>
 					</div>
 				{/if}
-				<div class="layer_cart_row">
+				<!--<div class="layer_cart_row">
 					<strong class="dark{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
 						{l s='Total shipping' mod='blockcart'}&nbsp;{if $use_taxes && $display_tax_label && $show_tax}{if $priceDisplay == 1}{l s='(tax excl.)' mod='blockcart'}{else}{l s='(tax incl.)' mod='blockcart'}{/if}{/if}
 					</strong>
@@ -289,7 +288,7 @@
 							{$shipping_cost}
 						{/if}
 					</span>
-				</div>
+				</div>-->
 				{if $show_tax && isset($tax_cost)}
 					<div class="layer_cart_row">
 						<strong class="dark">{l s='Tax' mod='blockcart'}</strong>

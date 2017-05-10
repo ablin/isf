@@ -159,7 +159,7 @@
 					</div>
 					{/if}
 					<div class="button-container">
-						{if $references[$product.reference]['tarif']|@count > 0 && $references[$product.reference]['tarif'][0]->pun > 0 && $references[$product.reference]['stock'] > 0 && !$PS_CATALOG_MODE}
+						{if !$PS_CATALOG_MODE}
     						{capture}add=1&amp;id_product={$product.id_product|intval}{if isset($static_token)}&amp;token={$static_token}{/if}{/capture}
 								<a class="button ajax_add_to_cart_button btn btn-default" href="{$link->getPageLink('cart', true, NULL, $smarty.capture.default, false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart'}" data-id-product-attribute="{$product.id_product_attribute|intval}" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity >= 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}">
 									<span>{l s='Add to cart'}</span>
