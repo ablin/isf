@@ -98,11 +98,23 @@ class Customer extends CustomerCore
      */
     public static function getAddressesTotalById($id_customer)
     {
-        return Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue('
-            SELECT COUNT(`id_address`)
-            FROM `'._DB_PREFIX_.'address`
-            WHERE `id_customer` = '.(int)$id_customer.'
-            AND `deleted` = 0'
-        );
+        $total = 0;
+
+        $webServiceDiva = new WebServiceDiva('<ACTION>ADR_CLI', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers);
+
+        try {
+            $datas = $webServiceDiva->call();
+
+            if ($datas && $datas->trouve == 1) {
+
+                $total = count($datas->adresse);
+
+            }
+
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+        }
+
+        return $total;
     }
 }
