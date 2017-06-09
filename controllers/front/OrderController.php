@@ -161,6 +161,7 @@ class OrderControllerCore extends ParentOrderController
             break;
 
             case OrderController::STEP_ADDRESSES:
+            die('ok');
                 $this->_assignAddress();
                 $this->processAddressFormat();
                 if (Tools::getValue('multi-shipping') == 1) {

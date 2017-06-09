@@ -36,7 +36,6 @@ class Customer extends CustomerCore
     {
         $addresses = array();
 
-
         $webServiceDiva = new WebServiceDiva('<ACTION>ADR_CLI', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers);
 
         try {
@@ -89,5 +88,21 @@ class Customer extends CustomerCore
         } catch (SoapFault $fault) {
             throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
+    }
+
+    /**
+     * Count the number of addresses for a customer
+     *
+     * @param int $id_customer Customer ID
+     * @return int Number of addresses
+     */
+    public static function getAddressesTotalById($id_customer)
+    {
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue('
+            SELECT COUNT(`id_address`)
+            FROM `'._DB_PREFIX_.'address`
+            WHERE `id_customer` = '.(int)$id_customer.'
+            AND `deleted` = 0'
+        );
     }
 }
