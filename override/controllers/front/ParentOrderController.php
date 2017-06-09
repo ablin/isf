@@ -83,7 +83,7 @@ class ParentOrderController extends ParentOrderControllerCore
             /* If delivery address is valid in cart, assign it to Smarty */
             if (isset($this->context->cart->id_address_delivery)) {
                 $deliveryAddress = new Address((int)$this->context->cart->id_address_delivery);
-                if (Validate::isLoadedObject($deliveryAddress) && ($deliveryAddress->id_customer == $customer->id)) {
+                if ($deliveryAddress) {
                     $this->context->smarty->assign('delivery', $deliveryAddress);
                 }
             }
@@ -91,7 +91,7 @@ class ParentOrderController extends ParentOrderControllerCore
             /* If invoice address is valid in cart, assign it to Smarty */
             if (isset($this->context->cart->id_address_invoice)) {
                 $invoiceAddress = new Address((int)$this->context->cart->id_address_invoice);
-                if (Validate::isLoadedObject($invoiceAddress) && ($invoiceAddress->id_customer == $customer->id)) {
+                if ($invoiceAddress) {
                     $this->context->smarty->assign('invoice', $invoiceAddress);
                 }
             }

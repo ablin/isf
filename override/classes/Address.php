@@ -47,7 +47,11 @@ class Address extends AddressCore
         Address::$definition['fields']['address3'] = array('type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128);
         Address::$definition['fields']['locality'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'size' => 128);
 
-        parent::__construct($id_address);
+        if ($id_address) {
+            $this->hydrateAddress($id_address);
+        } else {
+            parent::__construct($id_address);
+        }
     }
 
     /**
@@ -61,5 +65,52 @@ class Address extends AddressCore
         $fields['locality'] = pSQL($this->locality);
 
         return $fields;
+    }
+
+    /**
+     * Check if country is active for a given address
+     *
+     * @param int $id_address Address id for which we want to get country status
+     * @return int Country status
+     */
+    public static function isCountryActiveById($id_address)
+    {
+        return true;
+    }
+
+    /**
+     * Hydrate address by id
+     *
+     * @param int id_address
+     */
+    private function hydrateAddress($id_address)
+    {
+        $webServiceDiva = new WebServiceDiva('<ACTION>ADR_CLI', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers);
+
+        try {
+            $datas = $webServiceDiva->call();
+
+            if ($datas && $datas->trouve == 1) {
+
+                foreach ($datas->adresse as $detail) {
+                    if ($detail->id_adr == $id_address) {
+                        $this->firstname = Context::getContext()->cookie->customer_firstname;
+                        $this->lastname = Context::getContext()->cookie->customer_lastname;
+                        $this->address1 = $detail->rue;
+                        $this->address2 = $detail->adrcpl1;
+                        $this->address3 = $detail->adrcpl2;
+                        $this->locality = $detail->loc;
+                        $this->postcode = $detail->cpostal;
+                        $this->city = $detail->vil;
+                        $this->country = $detail->pay;
+                        $this->alias = $detail->adrcod;
+                        $this->id = $detail->id_adr;
+                    }
+                }
+            }
+
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+        }
     }
 }
