@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2017-05-10 21:56:58
+<?php /* Smarty version Smarty-3.1.19, created on 2017-05-10 23:02:02
          compiled from "/var/www/html/prestashop/themes/default-bootstrap/history-detail.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:91646062359135f4692d500-90476462%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b99ee6a59f4d8ae5de022c67cf84b99e63e1f2cc' => 
     array (
       0 => '/var/www/html/prestashop/themes/default-bootstrap/history-detail.tpl',
-      1 => 1494446134,
+      1 => 1494450118,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,7 @@ if (!empty($_capture_buffer)) {
 <?php echo $_smarty_tpl->getSubTemplate (((string)$_smarty_tpl->tpl_vars['tpl_dir']->value)."./errors.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-<?php if (isset($_smarty_tpl->tpl_vars['order']->value)) {?>
+<?php if ($_smarty_tpl->tpl_vars['order']->value==1) {?>
     <p class="order-confirm"><?php echo smartyTranslate(array('s'=>'Your order has been successfully registered. You will find the details below:'),$_smarty_tpl);?>
 </p>
 <?php }?>
@@ -64,8 +64,6 @@ if (!empty($_capture_buffer)) {
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th><?php echo smartyTranslate(array('s'=>'Line'),$_smarty_tpl);?>
-</th>
                 <th><?php echo smartyTranslate(array('s'=>'Quantity'),$_smarty_tpl);?>
 </th>
                 <th><?php echo smartyTranslate(array('s'=>'Reference'),$_smarty_tpl);?>
@@ -91,8 +89,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['ligne']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['ligne']->_loop = true;
 ?>
                 <tr>
-                    <td><?php echo $_smarty_tpl->tpl_vars['ligne']->value->ligne;?>
-</td>
                     <td><?php echo $_smarty_tpl->tpl_vars['ligne']->value->qte;?>
 </td>
                     <td><?php echo $_smarty_tpl->tpl_vars['ligne']->value->ref;?>

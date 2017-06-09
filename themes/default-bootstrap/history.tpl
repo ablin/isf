@@ -22,7 +22,6 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-{addCSS url="/nTpl/themes/prestashop_new/css/global.css"}
 {capture name=path}
 	<a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 		{l s='My account'}

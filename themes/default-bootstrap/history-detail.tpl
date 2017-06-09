@@ -31,7 +31,7 @@
 {/capture}
 {include file="$tpl_dir./errors.tpl"}
 
-{if isset($order)}
+{if $order == 1}
     <p class="order-confirm">{l s='Your order has been successfully registered. You will find the details below:'}</p>
 {/if}
 
@@ -41,7 +41,6 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>{l s='Line'}</th>
                 <th>{l s='Quantity'}</th>
                 <th>{l s='Reference'}</th>
                 <th>{l s='Description'}</th>
@@ -55,7 +54,6 @@
         <tbody>
             {foreach from=$lignes item=ligne}
                 <tr>
-                    <td>{$ligne->ligne}</td>
                     <td>{$ligne->qte}</td>
                     <td>{$ligne->ref}</td>
                     <td>{$ligne->des}</td>

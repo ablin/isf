@@ -119,36 +119,38 @@ class SearchController extends SearchControllerCore
         $productIds = array();
         $products = array();
 
-        foreach ($search['result'] as &$product) {
-            $productIds[] = $product['reference'];
-        }
-        $productIds = implode(";", $productIds);
+        if (isset($search)) {
+            foreach ($search['result'] as &$product) {
+                $productIds[] = $product['reference'];
+            }
+            $productIds = implode(";", $productIds);
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds);
+            $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds);
 
-        try {
-            $datas = $webServiceDiva->call();
+            try {
+                $datas = $webServiceDiva->call();
 
-            if ($datas && $datas->references) {
+                if ($datas && $datas->references) {
 
-                foreach ($datas->references as $reference) {
+                    foreach ($datas->references as $reference) {
 
-                    if ($reference->trouve == 1) {
-                        $products[$reference->ref] = array(
-                            'stock' => $reference->qteStock,
-                            'tarif' => $reference->tarifs
-                        );
-                    } else {
-                        $products[$reference->ref] = array(
-                            'stock' => 0,
-                            'tarif' => array()
-                        );
+                        if ($reference->trouve == 1) {
+                            $products[$reference->ref] = array(
+                                'stock' => $reference->qteStock,
+                                'tarif' => $reference->tarifs
+                            );
+                        } else {
+                            $products[$reference->ref] = array(
+                                'stock' => 0,
+                                'tarif' => array()
+                            );
+                        }
                     }
                 }
-            }
 
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            } catch (SoapFault $fault) {
+                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            }
         }
 
         $this->context->smarty->assign('references', $products);
