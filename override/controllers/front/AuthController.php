@@ -32,6 +32,7 @@ class AuthController extends AuthControllerCore
 
                 $_POST['email'] = $customer->email;
                 $this->context->cookie->__set('tiers', $datas->tiers);
+                $this->context->cookie->__set('login', $login);
 
             } else {
                 $_POST['email'] = 'fail@erreur.com';

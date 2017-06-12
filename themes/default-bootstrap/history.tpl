@@ -42,7 +42,7 @@
         <label for="picod">{l s='Type of part:'}</label>
         <select name="picod">
             <option value="1" {if isset($picod) && $picod == 1}selected="selected"{/if}>Devis</option>
-            <option value="2" {if isset($picod) && $picod == 2}selected="selected"{/if}>Comande</option>
+            <option value="2" {if isset($picod) && $picod == 2}selected="selected"{/if}>Commande</option>
             <option value="3" {if isset($picod) && $picod == 3}selected="selected"{/if}>Bon de livraison</option>
             <option value="4" {if isset($picod) && $picod == 4}selected="selected"{/if}>Facture</option>
         </select>

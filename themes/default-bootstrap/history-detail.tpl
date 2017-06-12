@@ -32,7 +32,12 @@
 {include file="$tpl_dir./errors.tpl"}
 
 {if $order == 1}
-    <p class="order-confirm">{l s='Your order has been successfully registered. You will find the details below:'}</p>
+    <p class="order-confirm">
+        {l s='Your order has been successfully registered.'}
+        {if $ordermessage}
+            <br />{$ordermessage}
+        {/if}
+    </p>
 {/if}
 
 <h1 class="page-heading bottom-indent">{l s='Order detail'} {$id}</h1>

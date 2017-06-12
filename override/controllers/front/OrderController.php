@@ -36,13 +36,16 @@ class OrderController extends OrderControllerCore
                 $params .= '<REF>'.$product['reference'].'<SREF1>N<SREF2> <QTE>'.$product['cart_quantity'];
             }
 
-            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<PICOD>2<BLMOD> <SAMEDI> '.$params);
+            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD> <SAMEDI> '.$params);
 
             try {
                 $datas = $webServiceDiva->call();
 
                 if ($datas && $datas->num_cde) {
                     $this->context->cart->delete();
+                    if ($datas->mail) {
+                        $this->context->cookie->__set('ordermessage', $datas->mail);
+                    }
                     Tools::redirect('index.php?controller=history-detail&id='.$datas->num_cde.'&picod=2&order=1');
                 }
 

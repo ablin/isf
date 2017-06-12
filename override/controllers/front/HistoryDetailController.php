@@ -9,8 +9,11 @@ class HistoryDetailController extends FrontController
 
         $this->context->smarty->assign(array(
             'id' => Tools::getValue('id'),
-            'order' => Tools::getValue('order')
+            'order' => Tools::getValue('order'),
+            'ordermessage' => $this->context->cookie->ordermessage
         ));
+
+        unset($this->context->cookie->ordermessage);
 
         $webServiceDiva = new WebServiceDiva('<ACTION>DETAIL_PIECE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<PICOD>'.Tools::getValue('picod').'<numero>'.Tools::getValue('id'));
 
