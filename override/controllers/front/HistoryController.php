@@ -8,13 +8,17 @@ class HistoryController extends HistoryControllerCore
     public function initContent()
     {
         parent::initContent();
-
         if (Tools::isSubmit('submit'))
         {
             $this->context->smarty->assign(array(
                 'submit' => 1,
                 'picod' => Tools::getValue('picod'),
-                'Date_Year' => Tools::getValue('Date_Year')
+                'begin_Day' => Tools::getValue('begin_Day'),
+                'begin_Month' => Tools::getValue('begin_Month'),
+                'begin_Year' => Tools::getValue('begin_Year'),
+                'end_Day' => Tools::getValue('end_Day'),
+                'end_Month' => Tools::getValue('end_Month'),
+                'end_Year' => Tools::getValue('end_Year')
             ));
         }
     }
@@ -23,7 +27,7 @@ class HistoryController extends HistoryControllerCore
     {
         if (Tools::isSubmit('submit'))
         {
-            $webServiceDiva = new WebServiceDiva('<ACTION>ENTETES', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<PICOD>'.Tools::getValue('picod').'<ANNEE>'.Tools::getValue('Date_Year'));
+            $webServiceDiva = new WebServiceDiva('<ACTION>ENTETES', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<PICOD>'.Tools::getValue('picod').'<DEBUT>'.Tools::getValue('begin_Year').sprintf('%02d', Tools::getValue('begin_Month')).sprintf('%02d', Tools::getValue('begin_Day')).'<FIN>'.Tools::getValue('end_Year').sprintf('%02d', Tools::getValue('end_Month')).sprintf('%02d', Tools::getValue('end_Day')));
 
             try {
                 $datas = $webServiceDiva->call();

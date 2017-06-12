@@ -47,13 +47,21 @@
             <option value="4" {if isset($picod) && $picod == 4}selected="selected"{/if}>Facture</option>
         </select>
         <br />
-        <label for="Date_Year">{l s='Year:'}</label>
-        {if isset($Date_Year)}
-            {assign var="annee" value="01-01-`$Date_Year`"}
+        <label for="Date_Month">{l s='BeginPeriod:'}</label>
+        {if isset($begin_Year)}
+            {assign var="begin" value="`$begin_Day`-`$begin_Month`-`$begin_Year`"}
         {else}
-            {assign var="annee" value="01-01-`$smarty.now|date_format:"%Y"`"}
+            {assign var="begin" value="`$smarty.now|date_format:"%D%M%Y"`"}
         {/if}
-        {html_select_date time=$annee start_year='2010' reverse_years=true display_days=false display_months=false}
+        {html_select_date time=$begin start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='begin_'}
+        <br />
+        <label>{l s='EndPeriod:'}</label>
+        {if isset($end_Year)}
+            {assign var="end" value="`$end_Day`-`$end_Month`-`$end_Year`"}
+        {else}
+            {assign var="end" value="`$smarty.now|date_format:"%D%M%Y"`"}
+        {/if}
+        {html_select_date time=$end start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='end_'}
         <br />
         <input type="submit" class="button btn btn-default " value="{l s='Submit'}"></input>
         <br />
