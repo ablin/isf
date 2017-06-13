@@ -21,6 +21,11 @@ class HistoryDetailController extends FrontController
             $datas = $webServiceDiva->call();
 
             if ($datas && $datas->lignes) {
+                foreach ($datas->lignes as $ligne) {
+                    if ($ligne->ref && $product_id = Product::getProductByReference($ligne->ref)) {
+                        $ligne->link = $this->context->link->getProductLink($product_id);
+                    }
+                }
                 $this->context->smarty->assign('lignes', $datas->lignes);
             }
 

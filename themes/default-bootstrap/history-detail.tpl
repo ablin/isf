@@ -48,7 +48,7 @@
             <tr>
                 <th>{l s='Quantity'}</th>
                 <th>{l s='Reference'}</th>
-                <th>{l s='Description'}</th>
+                <th>{l s='Designation'}</th>
                 <th>{l s='Sub reference 1'}</th>
                 <th>{l s='Sub reference 2'}</th>
                 <th>{l s='Unit price'}</th>
@@ -60,8 +60,8 @@
             {foreach from=$lignes item=ligne}
                 <tr>
                     <td>{$ligne->qte}</td>
-                    <td>{$ligne->ref}</td>
-                    <td>{$ligne->des}</td>
+                    <td><a href="{$ligne->link}">{$ligne->ref}</a></td>
+                    <td><a href="{$ligne->link}">{$ligne->des}</a></td>
                     <td>{$ligne->sref1}</td>
                     <td>{$ligne->sref2}</td>
                     <td>{displayPrice price=$ligne->Pub}</td>
