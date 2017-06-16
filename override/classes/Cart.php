@@ -335,14 +335,16 @@ class Cart extends CartCore
         }
 
         foreach ($this->_products as $key => $product) {
-            $this->_products[$key]['price'] = $productList[$product['reference']]['pun'];
-            $this->_products[$key]['price_without_reduction'] = $productList[$product['reference']]['pun'];
-            $this->_products[$key]['price_with_reduction'] = $productList[$product['reference']]['pun'] - $productList[$product['reference']]['remise'];
-            $this->_products[$key]['price_with_reduction_without_tax'] = $productList[$product['reference']]['pub'] - $productList[$product['reference']]['remise'];
-            $this->_products[$key]['price_wt'] = $productList[$product['reference']]['pun'];
-            $this->_products[$key]['total'] = $productList[$product['reference']]['mont'];
-            $this->_products[$key]['total_wt'] = $productList[$product['reference']]['mont'];
-            $this->_products[$key]['quantity_available'] = $productDatas[$product['reference']]['stock'];
+            if (isset($this->_products[$key])) {
+                $this->_products[$key]['price'] = $productList[$product['reference']]['pun'];
+                $this->_products[$key]['price_without_reduction'] = $productList[$product['reference']]['pun'];
+                $this->_products[$key]['price_with_reduction'] = $productList[$product['reference']]['pun'] - $productList[$product['reference']]['remise'];
+                $this->_products[$key]['price_with_reduction_without_tax'] = $productList[$product['reference']]['pub'] - $productList[$product['reference']]['remise'];
+                $this->_products[$key]['price_wt'] = $productList[$product['reference']]['pun'];
+                $this->_products[$key]['total'] = $productList[$product['reference']]['mont'];
+                $this->_products[$key]['total_wt'] = $productList[$product['reference']]['mont'];
+                $this->_products[$key]['quantity_available'] = $productDatas[$product['reference']]['stock'];
+            }
         }
 
         Context::getContext()->cookie->montant_total = $montantTotal;

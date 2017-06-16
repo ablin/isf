@@ -26,6 +26,17 @@
 
 class Customer extends CustomerCore
 {
+    public function __construct($id = null)
+    {
+        $definition = self::$definition;
+        $definition['fields']['firstname'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'required' => true, 'size' => 32);
+        $definition['fields']['lastname'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'required' => true, 'size' => 32);
+
+        self::$definition = $definition;
+
+        parent::__construct($id);
+    }
+
     /**
      * Return customer addresses
      *
