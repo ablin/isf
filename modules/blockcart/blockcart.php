@@ -206,12 +206,14 @@ class BlockCart extends Module
 			return;
 
 		// @todo this variable seems not used
-		$this->smarty->assign(array(
-			'order_page' => (strpos($_SERVER['PHP_SELF'], 'order') !== false),
-			'blockcart_top' => (isset($params['blockcart_top']) && $params['blockcart_top']) ? true : false,
-		));
-		$this->assignContentVars($params);
-		return $this->display(__FILE__, 'blockcart.tpl');
+        if ($this->context->cookie->isLogged()) {
+    		$this->smarty->assign(array(
+    			'order_page' => (strpos($_SERVER['PHP_SELF'], 'order') !== false),
+    			'blockcart_top' => (isset($params['blockcart_top']) && $params['blockcart_top']) ? true : false,
+    		));
+    		$this->assignContentVars($params);
+            return $this->display(__FILE__, 'blockcart.tpl');
+        }
 	}
 
 	public function hookLeftColumn($params)

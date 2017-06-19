@@ -136,7 +136,7 @@ var ajaxCart = {
 			if (!minimalQuantity)
 				minimalQuantity = 1;
 			if ($(this).prop('disabled') != 'disabled')
-				ajaxCart.add(idProduct, idProductAttribute, false, this, minimalQuantity);
+				ajaxCart.add(idProduct, idProductAttribute, false, this, $('#quantity_wanted_'+idProduct+'').val());
 		});
 		//for product page 'add' button...
 		if ($('.cart_block').length) {

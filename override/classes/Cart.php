@@ -2,6 +2,10 @@
 class Cart extends CartCore
 {
 
+    private $_productList = array();
+    private $_productDatas = array();
+    private $_montantTotal = 0;
+
     /**
      * Return cart products
      *
@@ -271,8 +275,6 @@ class Cart extends CartCore
         }
 
         $params = '';
-        $montantTotal = 0;
-        $productList = array();
 
         foreach ($products as $product) {
             $params .= '<REF>'.$product['reference'].'<QTE>'.$product['quantity'];
@@ -284,7 +286,7 @@ class Cart extends CartCore
             $datas = $webServiceDiva->call();
             if ($datas && $datas->references) {
                 foreach ($datas->references as $reference) {
-                    $productList[$reference->ref] = array(
+                    $this->_productList[$reference->ref] = array(
                         'pub' => $reference->pub,
                         'remise' => $reference->remise,
                         'pun' => $reference->pun,
@@ -293,61 +295,60 @@ class Cart extends CartCore
                 }
             }
             if ($datas && $datas->montantTotal) {
-                $montantTotal = $datas->montantTotal;
+                $this->_montantTotal = $datas->montantTotal;
             }
 
         } catch (SoapFault $fault) {
             throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
 
-        $productDatas = array();
+        if (empty($this->_productDatas)) {
 
-        foreach ($products as $product) {
-            $productIds[] = $product['reference'];
-        }
-        $productIds = implode(";", $productIds);
+            foreach ($products as $product) {
+                $productIds[] = $product['reference'];
+            }
+            $productIds = implode(";", $productIds);
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<REF>'.$productIds);
+            $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<REF>'.$productIds);
 
-        try {
-            $datas = $webServiceDiva->call();
+            try {
+                $datas = $webServiceDiva->call();
 
-            if ($datas && $datas->references) {
+                if ($datas && $datas->references) {
 
-                foreach ($datas->references as $reference) {
+                    foreach ($datas->references as $reference) {
 
-                    if ($reference->trouve == 1) {
-                        $productDatas[$reference->ref] = array(
-                            'stock' => $reference->qteStock,
-                            'tarif' => $reference->tarifs
-                        );
-                    } else {
-                        $productDatas[$reference->ref] = array(
-                            'stock' => 0,
-                            'tarif' => array()
-                        );
+                        if ($reference->trouve == 1) {
+                            $this->_productDatas[$reference->ref] = array(
+                                'stock' => $reference->qteStock,
+                                'tarif' => $reference->tarifs
+                            );
+                        } else {
+                            $this->_productDatas[$reference->ref] = array(
+                                'stock' => 0,
+                                'tarif' => array()
+                            );
+                        }
                     }
                 }
-            }
 
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            } catch (SoapFault $fault) {
+                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            }
         }
 
         foreach ($this->_products as $key => $product) {
-            if (isset($this->_products[$key])) {
-                $this->_products[$key]['price'] = $productList[$product['reference']]['pun'];
-                $this->_products[$key]['price_without_reduction'] = $productList[$product['reference']]['pun'];
-                $this->_products[$key]['price_with_reduction'] = $productList[$product['reference']]['pun'] - $productList[$product['reference']]['remise'];
-                $this->_products[$key]['price_with_reduction_without_tax'] = $productList[$product['reference']]['pub'] - $productList[$product['reference']]['remise'];
-                $this->_products[$key]['price_wt'] = $productList[$product['reference']]['pun'];
-                $this->_products[$key]['total'] = $productList[$product['reference']]['mont'];
-                $this->_products[$key]['total_wt'] = $productList[$product['reference']]['mont'];
-                $this->_products[$key]['quantity_available'] = $productDatas[$product['reference']]['stock'];
+            if (isset($this->_productList[$product['reference']]) && isset($this->_productDatas[$product['reference']])) {
+                $this->_products[$key]['price'] = $this->_productList[$product['reference']]['pun'];
+                $this->_products[$key]['price_without_reduction'] = $this->_productList[$product['reference']]['pun'];
+                $this->_products[$key]['price_with_reduction'] = $this->_productList[$product['reference']]['pun'] - $this->_productList[$product['reference']]['remise'];
+                $this->_products[$key]['price_with_reduction_without_tax'] = $this->_productList[$product['reference']]['pub'] - $this->_productList[$product['reference']]['remise'];
+                $this->_products[$key]['price_wt'] = $this->_productList[$product['reference']]['pun'];
+                $this->_products[$key]['total'] = $this->_productList[$product['reference']]['mont'];
+                $this->_products[$key]['total_wt'] = $this->_productList[$product['reference']]['mont'];
+                $this->_products[$key]['quantity_available'] = $this->_productDatas[$product['reference']]['stock'];
             }
         }
-
-        Context::getContext()->cookie->montant_total = $montantTotal;
 
         return $this->_products;
     }
@@ -372,7 +373,7 @@ class Cart extends CartCore
     */
     public function getOrderTotal($with_taxes = true, $type = Cart::BOTH, $products = null, $id_carrier = null, $use_cache = true)
     {
-        return Context::getContext()->cookie->montant_total;
+        return $this->_montantTotal;
     }
 
 }

@@ -182,6 +182,18 @@
 				<div class="box-info-product">
 					<div class="box-cart-bottom">
 						<div>
+                            <!-- quantity wanted -->
+                            <p id="quantity_wanted_p" class="quantity-wanted"{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
+                                <label>{l s='Quantity:'}</label>
+                                <input type="text" name="qty" id="quantity_wanted" class="text" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product->minimal_quantity > 1}{$product->minimal_quantity}{else}1{/if}{/if}" />
+                                <a href="#" data-field-qty="qty" class="btn btn-default button-minus product_quantity_down">
+                                    <span><i class="icon-minus"></i></span>
+                                </a>
+                                <a href="#" data-field-qty="qty" class="btn btn-default button-plus product_quantity_up">
+                                    <span><i class="icon-plus"></i></span>
+                                </a>
+                                <span class="clearfix"></span>
+                            </p>
 							<p id="add_to_cart" class="buttons_bottom_block no-print">
 								<button type="submit" name="Submit" class="exclusive" {if $PS_CATALOG_MODE} disabled{/if}>
 									<span>{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Add to cart'}{/if}</span>

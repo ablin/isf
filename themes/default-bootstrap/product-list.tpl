@@ -146,6 +146,12 @@
                             {/if}
                         </span>
                     </p>
+                    {if $references[$product.reference]['tarif']|@count > 0 && $references[$product.reference]['tarif'][0]->pun > 0}
+                        <p class="product-tarifs">
+                            {l s='From:'}
+                            {convertPrice price=$references[$product.reference]['tarif'][0]->pun}
+                        </p>
+                    {/if}
 					{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
 					<div class="content_price">
 						<span class="price product-price">
@@ -160,10 +166,24 @@
 					{/if}
 					<div class="button-container">
 						{if !$PS_CATALOG_MODE}
+                            <div class="quantity">
+                                <label>
+                                    <strong>{l s='Quantity:'}</strong>
+                                </label>
+                                <span class="clearfix"></span>
+                                <input type="text" id="quantity_wanted_{$product.id_product|intval}" class="text" name="ajax_qty_to_add_to_cart[{$product.id_product|intval}]" title="Quantity" value="{if isset($quantityBackup)}{$quantityBackup|intval}{else}{if $product.minimal_quantity > 1}{$product.minimal_quantity}{else}1{/if}{/if}"></input>
+                                <a href="#" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity > 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}" class="btn btn-default button-minus product_quantity_down">
+                                    <span><i class="icon-minus"></i></span>
+                                </a>
+                                <a href="#" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity > 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}" class="btn btn-default button-plus product_quantity_up">
+                                    <span><i class="icon-plus"></i></span>
+                                </a>
+                                <span class="clearfix"></span>
+                            </div>
     						{capture}add=1&amp;id_product={$product.id_product|intval}{if isset($static_token)}&amp;token={$static_token}{/if}{/capture}
-								<a class="button ajax_add_to_cart_button btn btn-default" href="{$link->getPageLink('cart', true, NULL, $smarty.capture.default, false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart'}" data-id-product-attribute="{$product.id_product_attribute|intval}" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity >= 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}">
-									<span>{l s='Add to cart'}</span>
-								</a>
+							<a class="button ajax_add_to_cart_button btn btn-default" href="{$link->getPageLink('cart', true, NULL, $smarty.capture.default, false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart'}" data-id-product-attribute="{$product.id_product_attribute|intval}" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity >= 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}">
+								<span>{l s='Add to cart'}</span>
+							</a>
 						{else}
 							<span class="button ajax_add_to_cart_button btn btn-default disabled">
 								<span>{l s='Add to cart'}</span>

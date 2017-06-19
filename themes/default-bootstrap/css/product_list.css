@@ -148,6 +148,18 @@ ul.product_list .functional-buttons div.compare a:before {
       display: none; } }
 ul.product_list .functional-buttons div.compare a.checked:before {
   content: "\f068"; }
+div.quantity .text{
+  width: 78px;
+  height: 27px;
+  padding: 0 6px;
+  float: left;
+  line-height: 27px; }
+ul.product_list.list > li .right-block .right-block-content .button-container div.quantity .btn{
+     float: left;
+     clear:none;
+     margin-left:5px; }
+.grid div.quantity{
+    display:none; }
 
 /*******************************************************
 Product list(Grid) Styles
