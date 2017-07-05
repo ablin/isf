@@ -51,7 +51,7 @@ $(document).on('click', '.product_quantity_up', function(e){
         $('#quantity_wanted_'+fieldName).val(currentVal + 1).trigger('keyup');
 });
 
- // The button to decrement the product value
+// The button to decrement the product value
 $(document).on('click', '.product_quantity_down', function(e){
     e.preventDefault();
    fieldName = $(this).data('id-product');

@@ -157,4 +157,12 @@ class SearchController extends SearchControllerCore
 
         $this->setTemplate(_PS_THEME_DIR_.'search.tpl');
     }
+
+    public function setMedia()
+    {
+        parent::setMedia();
+
+        $this->addJS(_THEME_JS_DIR_.'search.js');
+
+    }
 }

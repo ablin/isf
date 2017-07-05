@@ -373,6 +373,7 @@ class Cart extends CartCore
     */
     public function getOrderTotal($with_taxes = true, $type = Cart::BOTH, $products = null, $id_carrier = null, $use_cache = true)
     {
+        Context::getContext()->cookie->montant_total = $this->_montantTotal;
         return $this->_montantTotal;
     }
 
