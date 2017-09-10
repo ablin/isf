@@ -8573,6 +8573,7 @@ div.star.star_hover:after {
 .idTabs {
     list-style-type:none;
     margin-bottom: 2px;
+    margin-top: 10px;
 }
 
 ul.idTabs li {
@@ -8592,11 +8593,6 @@ ul.idTabs li {
     background:#fbfbfb;
     margin:0 0 20px;
     padding:14px 20px 17px;
-}
-
-#more_info_sheets {
-    border: 1px solid;
-    padding-top: 10px;
 }
 
 #more_info_sheets .product_desc .block_description {
@@ -8620,6 +8616,7 @@ ul.idTabs li {
 
 #more_info_sheets .rte {
     padding:10px!important;
+    border: 1px solid;
 }
 
 #more_info_sheets .bx-wrapper {

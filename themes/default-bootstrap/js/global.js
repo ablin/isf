@@ -278,8 +278,8 @@ function display(view)
 		$('.product_list > li').each(function(index, element) {
 			var html = '';
 			html = '<div class="product-container"><div class="row">';
-			//html += '<div class="left-block col-xs-4 col-sm-5 col-md-4">' + $(element).find('.left-block').html() + '</div>';
-			html += '<div class="center-block col-xs-4 col-sm-7 col-md-8">';
+			html += '<div class="left-block col-xs-4 col-sm-5 col-md-4">' + $(element).find('.left-block').html() + '</div>';
+			html += '<div class="center-block col-xs-4 col-sm-7 col-md-4">';
 			html += '<div class="product-flags">'+ $(element).find('.product-flags').html() + '</div>';
 			html += '<h5 itemprop="name">'+ $(element).find('h5').html() + '</h5>';
 			var hookReviews = $(element).find('.hook-reviews');

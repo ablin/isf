@@ -62,89 +62,174 @@
             </p>
         {/if}
         <!-- left infos-->
-        <!-- end left infos-->
-        <!-- center infos -->
-        <div class="pb-center-column col-xs-12 col-sm-9">
-            <div class="col-sm-5">
-                {if $product->online_only}
-                    <p class="online_only">{l s='Online only'}</p>
+        <div class="pb-left-column col-xs-12 col-sm-4 col-md-5">
+            <!-- product img-->
+            <div id="image-block" class="clearfix">
+                {if $product->new}
+                    <span class="new-box">
+                        <span class="new-label">{l s='New'}</span>
+                    </span>
                 {/if}
-                <h1 itemprop="name">{$product->name|escape:'html':'UTF-8'}</h1>
-                {if $product->description_short || $packItems|@count > 0}
-                    <div id="short_description_block">
-                        {if $product->description_short}
-                            <div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
-                        {/if}
-
-                        {if $product->description}
-                            <p class="buttons_bottom_block">
-                                <a href="javascript:{ldelim}{rdelim}" class="button">
-                                    {l s='More details'}
-                                </a>
-                            </p>
-                        {/if}
-                    </div> <!-- end short_description_block -->
+                {if $product->on_sale}
+                    <span class="sale-box no-print">
+                        <span class="sale-label">{l s='Sale!'}</span>
+                    </span>
+                {elseif $product->specificPrice && $product->specificPrice.reduction && $productPriceWithoutReduction > $productPrice}
+                    <span class="discount">{l s='Reduced price!'}</span>
                 {/if}
-                <p id="product_reference"{if empty($product->reference) || !$product->reference} style="display: none;"{/if}>
-                    <label>{l s='Reference:'} </label>
-                    <span class="editable" itemprop="sku"{if !empty($product->reference) && $product->reference} content="{$product->reference}"{/if}>{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
-                </p>
-                <p id="product_manufacturer_name"{if empty($product->manufacturer_name) || !$product->manufacturer_name} style="display: none;"{/if}>
-                    <label>{l s='Manufacturer:'} </label>
-                    <span class="editable" itemprop="sku"{if !empty($product->manufacturer_name) && $product->manufacturer_name} content="{$product->manufacturer_name}"{/if}>{if !isset($groups)}{$product->manufacturer_name|escape:'html':'UTF-8'}{/if}</span>
-                </p>
-                {if ($display_qties == 1 && !$PS_CATALOG_MODE && $PS_STOCK_MANAGEMENT && $product->available_for_order)}
-                    <!-- number of item in stock -->
-                    <p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>
-                        <span id="quantityAvailable">{$product->quantity|intval}</span>
-                        <span {if $product->quantity > 1} style="display: none;"{/if} id="quantityAvailableTxt">{l s='Item'}</span>
-                        <span {if $product->quantity == 1} style="display: none;"{/if} id="quantityAvailableTxtMultiple">{l s='Items'}</span>
-                    </p>
-                {/if}
-                <p id="availability_statut">
-                    <label>{l s='Stock:'}</label>
-                    <span class="availability">
-                        {if $stock > 0}
-                            <span id="availability_value" class="label label-success">
-                                {$stock}
-                            </span>
+                {if $have_image}
+                    <span id="view_full_size">
+                        {if $jqZoomEnabled && $have_image && !$content_only}
+                            <a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')|escape:'html':'UTF-8'}">
+                                <img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
+                            </a>
                         {else}
-                            <span id="availability_value" class="label label-danger">
-                                0
+                            <img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
+                            {if !$content_only}
+                                <span class="span_link no-print">{l s='View larger'}</span>
+                            {/if}
+                        {/if}
+                    </span>
+                {else}
+                    <span id="view_full_size">
+                        <img itemprop="image" src="{$img_prod_dir}{$lang_iso}-default-large_default.jpg" id="bigpic" alt="" title="{$product->name|escape:'html':'UTF-8'}" width="{$largeSize.width}" height="{$largeSize.height}"/>
+                        {if !$content_only}
+                            <span class="span_link">
+                                {l s='View larger'}
                             </span>
                         {/if}
                     </span>
-                </p>
-                {if $tarif == 0}
-                    <p id="price_on_demand">
-                        <span class="label label-warning">{l s='Price on demand'}</span>
-                    </p>
                 {/if}
-                {if $PS_STOCK_MANAGEMENT}
-                    {if !$product->is_virtual}{hook h="displayProductDeliveryTime" product=$product}{/if}
-                    <p class="warning_inline" id="last_quantities"{if ($product->quantity > $last_qties || $product->quantity <= 0) || $allow_oosp || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none"{/if} >{l s='Warning: Last items in stock!'}</p>
-                {/if}
-                <p id="availability_date"{if ($product->quantity > 0) || !$product->available_for_order || $PS_CATALOG_MODE || !isset($product->available_date) || $product->available_date < $smarty.now|date_format:'%Y-%m-%d'} style="display: none;"{/if}>
-                    <span id="availability_date_label">{l s='Availability date:'}</span>
-                    <span id="availability_date_value">{if Validate::isDate($product->available_date)}{dateFormat date=$product->available_date full=false}{/if}</span>
-                </p>
-                <!-- Out of stock hook -->
-                <div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
-                    {$HOOK_PRODUCT_OOS}
-                </div>
-                {if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
-                {if !$content_only}
-                    <!-- usefull links-->
-                    <ul id="usefull_link_block" class="clearfix no-print">
-                        {if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
-                        <li class="print">
-                            <a href="javascript:print();">
-                                {l s='Print'}
+            </div> <!-- end image-block -->
+            {if isset($images) && count($images) > 0}
+                <!-- thumbnails -->
+                <div id="views_block" class="clearfix {if isset($images) && count($images) < 2}hidden{/if}">
+                    {if isset($images) && count($images) > 2}
+                        <span class="view_scroll_spacer">
+                            <a id="view_scroll_left" class="" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
+                                {l s='Previous'}
                             </a>
-                        </li>
-                    </ul>
-                {/if}
+                        </span>
+                    {/if}
+                    <div id="thumbs_list">
+                        <ul id="thumbs_list_frame">
+                        {if isset($images)}
+                            {foreach from=$images item=image name=thumbnails}
+                                {assign var=imageIds value="`$product->id`-`$image.id_image`"}
+                                {if !empty($image.legend)}
+                                    {assign var=imageTitle value=$image.legend|escape:'html':'UTF-8'}
+                                {else}
+                                    {assign var=imageTitle value=$product->name|escape:'html':'UTF-8'}
+                                {/if}
+                                <li id="thumbnail_{$image.id_image}"{if $smarty.foreach.thumbnails.last} class="last"{/if}>
+                                    <a{if $jqZoomEnabled && $have_image && !$content_only} href="javascript:void(0);" rel="{literal}{{/literal}gallery: 'gal1', smallimage: '{$link->getImageLink($product->link_rewrite, $imageIds, 'large_default')|escape:'html':'UTF-8'}',largeimage: '{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox_default')|escape:'html':'UTF-8'}'{literal}}{/literal}"{else} href="{$link->getImageLink($product->link_rewrite, $imageIds, 'thickbox_default')|escape:'html':'UTF-8'}" data-fancybox-group="other-views" class="fancybox{if $image.id_image == $cover.id_image} shown{/if}"{/if} title="{$imageTitle}">
+                                        <img class="img-responsive" id="thumb_{$image.id_image}" src="{$link->getImageLink($product->link_rewrite, $imageIds, 'cart_default')|escape:'html':'UTF-8'}" alt="{$imageTitle}" title="{$imageTitle}"{if isset($cartSize)} height="{$cartSize.height}" width="{$cartSize.width}"{/if} itemprop="image" />
+                                    </a>
+                                </li>
+                            {/foreach}
+                        {/if}
+                        </ul>
+                    </div> <!-- end thumbs_list -->
+                    {if isset($images) && count($images) > 2}
+                        <a id="view_scroll_right" title="{l s='Other views'}" href="javascript:{ldelim}{rdelim}">
+                            {l s='Next'}
+                        </a>
+                    {/if}
+                </div> <!-- end views-block -->
+                <!-- end thumbnails -->
+            {/if}
+            {if isset($images) && count($images) > 1}
+                <p class="resetimg clear no-print">
+                    <span id="wrapResetImages" style="display: none;">
+                        <a href="{$link->getProductLink($product)|escape:'html':'UTF-8'}" data-id="resetImages">
+                            <i class="icon-repeat"></i>
+                            {l s='Display all pictures'}
+                        </a>
+                    </span>
+                </p>
+            {/if}
+        </div> <!-- end pb-left-column -->
+        <!-- end left infos-->
+        <!-- center infos -->
+        <div class="pb-center-column col-xs-12 col-sm-4">
+            {if $product->online_only}
+                <p class="online_only">{l s='Online only'}</p>
+            {/if}
+            <h1 itemprop="name">{$product->name|escape:'html':'UTF-8'}</h1>
+            {if $product->description_short || $packItems|@count > 0}
+                <div id="short_description_block">
+                    {if $product->description_short}
+                        <div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
+                    {/if}
+
+                    {if $product->description}
+                        <p class="buttons_bottom_block">
+                            <a href="javascript:{ldelim}{rdelim}" class="button">
+                                {l s='More details'}
+                            </a>
+                        </p>
+                    {/if}
+                </div> <!-- end short_description_block -->
+            {/if}
+            <p id="product_reference"{if empty($product->reference) || !$product->reference} style="display: none;"{/if}>
+                <label>{l s='Reference:'} </label>
+                <span class="editable" itemprop="sku"{if !empty($product->reference) && $product->reference} content="{$product->reference}"{/if}>{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
+            </p>
+            <p id="product_manufacturer_name"{if empty($product->manufacturer_name) || !$product->manufacturer_name} style="display: none;"{/if}>
+                <label>{l s='Manufacturer:'} </label>
+                <span class="editable" itemprop="sku"{if !empty($product->manufacturer_name) && $product->manufacturer_name} content="{$product->manufacturer_name}"{/if}>{if !isset($groups)}{$product->manufacturer_name|escape:'html':'UTF-8'}{/if}</span>
+            </p>
+            {if ($display_qties == 1 && !$PS_CATALOG_MODE && $PS_STOCK_MANAGEMENT && $product->available_for_order)}
+                <!-- number of item in stock -->
+                <p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>
+                    <span id="quantityAvailable">{$product->quantity|intval}</span>
+                    <span {if $product->quantity > 1} style="display: none;"{/if} id="quantityAvailableTxt">{l s='Item'}</span>
+                    <span {if $product->quantity == 1} style="display: none;"{/if} id="quantityAvailableTxtMultiple">{l s='Items'}</span>
+                </p>
+            {/if}
+            <p id="availability_statut">
+                <label>{l s='Stock:'}</label>
+                <span class="availability">
+                    {if $stock > 0}
+                        <span id="availability_value" class="label label-success">
+                            {$stock}
+                        </span>
+                    {else}
+                        <span id="availability_value" class="label label-danger">
+                            0
+                        </span>
+                    {/if}
+                </span>
+            </p>
+            {if $tarif == 0}
+                <p id="price_on_demand">
+                    <span class="label label-warning">{l s='Price on demand'}</span>
+                </p>
+            {/if}
+            {if $PS_STOCK_MANAGEMENT}
+                {if !$product->is_virtual}{hook h="displayProductDeliveryTime" product=$product}{/if}
+                <p class="warning_inline" id="last_quantities"{if ($product->quantity > $last_qties || $product->quantity <= 0) || $allow_oosp || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none"{/if} >{l s='Warning: Last items in stock!'}</p>
+            {/if}
+            <p id="availability_date"{if ($product->quantity > 0) || !$product->available_for_order || $PS_CATALOG_MODE || !isset($product->available_date) || $product->available_date < $smarty.now|date_format:'%Y-%m-%d'} style="display: none;"{/if}>
+                <span id="availability_date_label">{l s='Availability date:'}</span>
+                <span id="availability_date_value">{if Validate::isDate($product->available_date)}{dateFormat date=$product->available_date full=false}{/if}</span>
+            </p>
+            <!-- Out of stock hook -->
+            <div id="oosHook"{if $product->quantity > 0} style="display: none;"{/if}>
+                {$HOOK_PRODUCT_OOS}
             </div>
+            {if isset($HOOK_EXTRA_RIGHT) && $HOOK_EXTRA_RIGHT}{$HOOK_EXTRA_RIGHT}{/if}
+            {if !$content_only}
+                <!-- usefull links-->
+                <ul id="usefull_link_block" class="clearfix no-print">
+                    {if $HOOK_EXTRA_LEFT}{$HOOK_EXTRA_LEFT}{/if}
+                    <li class="print">
+                        <a href="javascript:print();">
+                            {l s='Print'}
+                        </a>
+                    </li>
+                </ul>
+            {/if}
             {if $tarif > 0 && $sousRefs|@count > 0}
                 <div class="col-sm-7">
                     <table id="productTarifs">
