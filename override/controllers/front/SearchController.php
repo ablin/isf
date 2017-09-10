@@ -142,7 +142,7 @@ class SearchController extends SearchControllerCore
                         } else {
                             $products[$reference->ref] = array(
                                 'stock' => 0,
-                                'tarif' => array()
+                                'tarif' => 0
                             );
                         }
                     }
