@@ -3174,8 +3174,8 @@ class BlockLayered extends Module
 
                     if ($reference->trouve == 1) {
                         $productList[$reference->ref] = array(
-                            'stock' => $reference->qteStock,
-                            'tarif' => $reference->tarifs
+                            'stock' => $reference->total_stock,
+                            'tarif' => $reference->max_pub
                         );
                     } else {
                         $productList[$reference->ref] = array(

@@ -35,17 +35,16 @@ class ProductController extends ProductControllerCore
 
         try {
             $datas = $webServiceDiva->call();
+            $stock = 0;
+            $tarif = 0;
+            $sousRefs = array();
 
             if ($datas && $datas->references) {
-
                 foreach ($datas->references as $reference) {
-
                     if ($reference->trouve == 1) {
-                        $stock = $reference->qteStock;
-                        $tarif = $reference->tarifs;
-                    } else {
-                        $stock = 0;
-                        $tarif = array();
+                        $stock = $reference->total_stock;
+                        $tarif = $reference->max_pub;
+                        $sousRefs = $reference->sousRefs;
                     }
                 }
             }
@@ -56,7 +55,8 @@ class ProductController extends ProductControllerCore
 
         $this->context->smarty->assign(array(
             'stock' => $stock,
-            'tarif' => $tarif
+            'tarif' => $tarif,
+            'sousRefs' => $sousRefs
         ));
 
         $id_customer = (isset($this->context->customer) ? (int)$this->context->customer->id : 0);

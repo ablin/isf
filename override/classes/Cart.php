@@ -320,8 +320,8 @@ class Cart extends CartCore
 
                         if ($reference->trouve == 1) {
                             $this->_productDatas[$reference->ref] = array(
-                                'stock' => $reference->qteStock,
-                                'tarif' => $reference->tarifs
+                                'stock' => $reference->total_stock,
+                                'tarif' => $reference->max_pub
                             );
                         } else {
                             $this->_productDatas[$reference->ref] = array(

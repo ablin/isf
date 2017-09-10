@@ -466,6 +466,7 @@ class Blocktopmenu extends Module
         $menu_items = $this->getMenuItems();
         $id_lang = (int)$this->context->language->id;
         $id_shop = (int)Shop::getContextShopID();
+        $count = 0;
 
         foreach ($menu_items as $item) {
             if (!$item) {
@@ -517,7 +518,9 @@ class Blocktopmenu extends Module
                     break;
 
                 case 'MAN':
+                    $count++;
                     $selected = ($this->page_name == 'manufacturer' && (Tools::getValue('id_manufacturer') == $id)) ? ' class="sfHover"' : '';
+                    $lineBreak = ($count == 1) ? ' style="clear:left;"' : '';
                     $manufacturer = new Manufacturer((int)$id, (int)$id_lang);
                     if (!is_null($manufacturer->id)) {
                         if (intval(Configuration::get('PS_REWRITING_SETTINGS'))) {
@@ -526,7 +529,7 @@ class Blocktopmenu extends Module
                             $manufacturer->link_rewrite = 0;
                         }
                         $link = new Link;
-                        $this->_menu .= '<li'.$selected.'><a href="'.Tools::HtmlEntitiesUTF8($link->getManufacturerLink((int)$id, $manufacturer->link_rewrite)).'" title="'.Tools::safeOutput($manufacturer->name).'">'.Tools::safeOutput($manufacturer->name).'</a></li>'.PHP_EOL;
+                        $this->_menu .= '<li'.$selected.$lineBreak.'><a href="'.Tools::HtmlEntitiesUTF8($link->getManufacturerLink((int)$id, $manufacturer->link_rewrite)).'" title="'.Tools::safeOutput($manufacturer->name).'">'.Tools::safeOutput($manufacturer->name).'</a></li>'.PHP_EOL;
                     }
                     break;
 
@@ -609,7 +612,7 @@ class Blocktopmenu extends Module
 
             $html .= '<li'.(($this->page_name == 'category'
                 && (int)Tools::getValue('id_category') == (int)$category['id_category']) ? ' class="sfHoverForce"' : '').'>';
-            $html .= '<a href="'.$link.'" title="'.strip_tags($category['description']).'">'.strip_tags($category['description']).'</a>';
+            $html .= '<a href="'.$link.'" title="'.strip_tags($category['description']).'">'.substr(strip_tags($category['description']), 0, 30).'</a>';
 
             if (isset($category['children']) && !empty($category['children'])) {
                 $html .= '<ul>';

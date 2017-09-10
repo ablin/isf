@@ -70,6 +70,21 @@
     				<p class="online_only">{l s='Online only'}</p>
     			{/if}
     			<h1 itemprop="name">{$product->name|escape:'html':'UTF-8'}</h1>
+                {if $product->description_short || $packItems|@count > 0}
+                    <div id="short_description_block">
+                        {if $product->description_short}
+                            <div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
+                        {/if}
+
+                        {if $product->description}
+                            <p class="buttons_bottom_block">
+                                <a href="javascript:{ldelim}{rdelim}" class="button">
+                                    {l s='More details'}
+                                </a>
+                            </p>
+                        {/if}
+                    </div> <!-- end short_description_block -->
+                {/if}
                 <p id="product_reference"{if empty($product->reference) || !$product->reference} style="display: none;"{/if}>
                     <label>{l s='Reference:'} </label>
                     <span class="editable" itemprop="sku"{if !empty($product->reference) && $product->reference} content="{$product->reference}"{/if}>{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
@@ -78,21 +93,6 @@
                     <label>{l s='Manufacturer:'} </label>
                     <span class="editable" itemprop="sku"{if !empty($product->manufacturer_name) && $product->manufacturer_name} content="{$product->manufacturer_name}"{/if}>{if !isset($groups)}{$product->manufacturer_name|escape:'html':'UTF-8'}{/if}</span>
                 </p>
-    			{if $product->description_short || $packItems|@count > 0}
-    				<div id="short_description_block">
-    					{if $product->description_short}
-    						<div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
-    					{/if}
-
-    					{if $product->description}
-    						<p class="buttons_bottom_block">
-    							<a href="javascript:{ldelim}{rdelim}" class="button">
-    								{l s='More details'}
-    							</a>
-    						</p>
-    					{/if}
-    				</div> <!-- end short_description_block -->
-    			{/if}
     			{if ($display_qties == 1 && !$PS_CATALOG_MODE && $PS_STOCK_MANAGEMENT && $product->available_for_order)}
     				<!-- number of item in stock -->
     				<p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>
@@ -115,7 +115,7 @@
                         {/if}
                     </span>
                 </p>
-                {if $tarif[0]|@count == 0 || $tarif[0]->pun == 0}
+                {if $tarif == 0}
                     <p id="price_on_demand">
                         <span class="label label-warning">{l s='Price on demand'}</span>
                     </p>
@@ -145,22 +145,28 @@
     				</ul>
     			{/if}
             </div>
-            {if $tarif|@count > 0 && $tarif[0]->pun > 0}
+            {if $tarif > 0 && $sousRefs|@count > 0}
                 <div class="col-sm-7">
                     <table id="productTarifs">
-                        <tr>
-                            <th>{l s='Minimal quantity'}</th>
-                            <th>{l s='Unit price'}</th>
-                            <th>{l s='Discount'}</th>
-                            <th>{l s='Net price'}</th>
-                        </tr>
-                        {foreach from=$tarif item=line}
-                            <tr>
-                                <td>{$line->qte}</li>
-                                <td>{convertPrice price=$line->pub}</li>
-                                <td>{$line->remise}</li>
-                                <td>{convertPrice price=$line->pun}</li>
-                            <tr>
+                        {foreach from=$sousRefs item=sousref}
+                            {if 'tarifs'|array_key_exists:$sousref}
+                                <tr>
+                                    <th>{l s='Minimal quantity'}</th>
+                                    <th>{l s='Price by'}</th>
+                                    <th>{l s='Unit price'}</th>
+                                    <th>{l s='Discount'}</th>
+                                    <th>{l s='Net price'}</th>
+                                </tr>
+                                {foreach from=$sousref->tarifs item=line}
+                                    <tr>
+                                        <td>{$line->qte}</li>
+                                        <td>{$line->ppar}</li>
+                                        <td>{convertPrice price=$line->pub}</li>
+                                        <td>{$line->remise}</li>
+                                        <td>{convertPrice price=$line->pun}</li>
+                                    <tr>
+                                {/foreach}
+                            {/if}
                         {/foreach}
                     </table>
                 </div>

@@ -135,7 +135,7 @@
                     <p class="product-stock" itemprop="stock">
                         <label>{l s='Stock:'}</label>
                         <span class="availability">
-                            {if $references[$product.reference]['stock'] > 0}
+                            {if $product.reference|array_key_exists:$references && 'stock'|array_key_exists:$references[$product.reference] && $references[$product.reference]['stock'] > 0}
                                 <span class="label-success">
                                     {$references[$product.reference]['stock']}
                                 </span>
@@ -146,18 +146,18 @@
                             {/if}
                         </span>
                     </p>
-                    {if $references[$product.reference]['tarif']|@count > 0 && $references[$product.reference]['tarif'][0]->pun > 0}
+                    {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
                         <p class="product-tarifs">
                             {l s='From:'}
-                            {convertPrice price=$references[$product.reference]['tarif'][0]->pun}
+                            {convertPrice price=$references[$product.reference]['tarif']}
                         </p>
                     {/if}
 					{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
 					<div class="content_price">
 						<span class="price product-price">
-                            {if $references[$product.reference]['tarif']|@count > 0 && $references[$product.reference]['tarif'][0]->pun > 0}
+                            {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
                                 {l s='From:'}
-                                {convertPrice price=$references[$product.reference]['tarif'][0]->pun}
+                                {convertPrice price=$references[$product.reference]['tarif']}
                             {else}
                                 {l s='Price on demand'}
                             {/if}
