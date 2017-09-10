@@ -8569,3 +8569,61 @@ div.star.star_hover:after {
   cursor: pointer; }
 
 /*# sourceMappingURL=global.css.map */
+
+.idTabs {
+    list-style-type:none;
+    margin-bottom: 2px;
+}
+
+ul.idTabs li {
+    float:left;
+    margin-right:-1px;
+}
+
+.idTabs a {
+    color:#555454;
+    text-transform:uppercase;
+    font-family:"Open Sans",sans-serif;
+    font-weight:600;
+    font-size:18px;
+    line-height:60px;
+    position:relative;
+    border:1px solid #d6d4d4;
+    background:#fbfbfb;
+    margin:0 0 20px;
+    padding:14px 20px 17px;
+}
+
+#more_info_sheets {
+    border: 1px solid;
+    padding-top: 10px;
+}
+
+#more_info_sheets .product_desc .block_description {
+    float:left;
+    margin-left:10px;
+    width:420px;
+}
+
+#more_info_sheets .product_desc .clear_product_desc {
+    clear:both;
+    height:0;
+    line-height:0;
+}
+
+.idTabs .selected,#header .sf-menu > li.sfHover > a,#header .sf-menu > li > a:hover,#header .sf-menu > li.sfHoverForce > a {
+    color:#fff;
+    background: #553D3D;
+    border-bottom-color: #000000;
+    text-decoration:none;
+}
+
+#more_info_sheets .rte {
+    padding:10px!important;
+}
+
+#more_info_sheets .bx-wrapper {
+    width:100%!important;
+    max-width:none!important;
+    display:block;
+}

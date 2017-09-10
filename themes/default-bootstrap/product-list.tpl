@@ -124,11 +124,14 @@
 						{hook h='displayProductListReviews' product=$product}
 						</div>
 					{/if}
+                    <p class="product-desc" itemprop="description">
+                        {$product.description_short|strip_tags:'UTF-8'|truncate:360:'...'}
+                    </p>
                     <p class="product-reference" itemprop="reference">
                         <label>{l s='Reference:'}</label>
                         {$product.reference|strip_tags:'UTF-8'}
                     </p>
-                    <p class="product-manufacturer" itemprop="reference">
+                    <p class="product-manufacturer" itemprop="manufacturer">
                         <label>{l s='Manufacturer:'}</label>
                         {$product.manufacturer_name|strip_tags:'UTF-8'}
                     </p>

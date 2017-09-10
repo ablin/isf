@@ -46,7 +46,7 @@
 								{$viewedProduct->name|truncate:25:'...'|escape:'html':'UTF-8'}
 							</a>
 						</h5>
-						<!--<p class="product-description">{$viewedProduct->description_short|strip_tags:'UTF-8'|truncate:40}</p>-->
+					   <p class="product-description">{$viewedProduct->description_short|strip_tags:'UTF-8'|truncate:40}</p>
 					</div>
 				</li>
 			{/foreach}

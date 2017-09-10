@@ -1,8 +1,5 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
-.primary_block {
-  margin-bottom: 40px; }
-
 .top-hr {
   background: #C4C4C4;
   height: 5px;
@@ -309,9 +306,6 @@ span.view_scroll_spacer {
       content: "\f004"; }
 
 /* pb-left-column ****************************************************************************** */
-.pb-center-column {
-  margin-bottom: 30px;
-  /* form */ }
   .pb-center-column h1 {
     padding-bottom: 16px;
     font-size: 20px;
