@@ -230,32 +230,6 @@
                     </li>
                 </ul>
             {/if}
-            {if $tarif > 0 && $sousRefs|@count > 0}
-                <div class="col-sm-7">
-                    <table id="productTarifs">
-                        {foreach from=$sousRefs item=sousref}
-                            {if 'tarifs'|array_key_exists:$sousref}
-                                <tr>
-                                    <th>{l s='Minimal quantity'}</th>
-                                    <th>{l s='Price by'}</th>
-                                    <th>{l s='Unit price'}</th>
-                                    <th>{l s='Discount'}</th>
-                                    <th>{l s='Net price'}</th>
-                                </tr>
-                                {foreach from=$sousref->tarifs item=line}
-                                    <tr>
-                                        <td>{$line->qte}</li>
-                                        <td>{$line->ppar}</li>
-                                        <td>{convertPrice price=$line->pub}</li>
-                                        <td>{$line->remise}</li>
-                                        <td>{convertPrice price=$line->pun}</li>
-                                    <tr>
-                                {/foreach}
-                            {/if}
-                        {/foreach}
-                    </table>
-                </div>
-            {/if}
         </div>
         <!-- end center infos-->
         <!-- pb-right-column-->
@@ -297,6 +271,32 @@
             </form>
             {/if}
         </div> <!-- end pb-right-column-->
+        {if $tarif > 0 && $sousRefs|@count > 0}
+            <div class="col-sm-7">
+                <table id="productTarifs">
+                    {foreach from=$sousRefs item=sousref}
+                        {if 'tarifs'|array_key_exists:$sousref}
+                            <tr>
+                                <th>{l s='Minimal quantity'}</th>
+                                <th>{l s='Price by'}</th>
+                                <th>{l s='Unit price'}</th>
+                                <th>{l s='Discount'}</th>
+                                <th>{l s='Net price'}</th>
+                            </tr>
+                            {foreach from=$sousref->tarifs item=line}
+                                <tr>
+                                    <td>{$line->qte}</li>
+                                    <td>{$line->ppar}</li>
+                                    <td>{convertPrice price=$line->pub}</li>
+                                    <td>{$line->remise}</li>
+                                    <td>{convertPrice price=$line->pun}</li>
+                                <tr>
+                            {/foreach}
+                        {/if}
+                    {/foreach}
+                </table>
+            </div>
+        {/if}
     </div> <!-- end primary_block -->
     {if !$content_only}
 {if (isset($quantity_discounts) && count($quantity_discounts) > 0)}
