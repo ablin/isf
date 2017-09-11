@@ -42,7 +42,7 @@ $_MODULE['<{blocklayered}default-bootstrap>blocklayered_5da618e8e4b89c66fe86e32c
 $_MODULE['<{blocklayered}default-bootstrap>blocklayered_01b6e20344b68835c5ed1ddedf20d531'] = 'jusqu\'au';
 $_MODULE['<{blocklayered}default-bootstrap>blocklayered_146ffe2fd9fa5bec3b63b52543793ec7'] = 'Voir plus';
 $_MODULE['<{blocklayered}default-bootstrap>blocklayered_c74ea6dbff701bfa23819583c52ebd97'] = 'Voir moins';
-$_MODULE['<{blocklayered}default-bootstrap>blocklayered_8524de963f07201e5c086830d370797f'] = 'Chargement...';
+$_MODULE['<{blocklayered}default-bootstrap>blocklayered_8524de963f07201e5c086830d370797f'] = 'Vérification stocks et tarifs...';
 $_MODULE['<{blocklayered}default-bootstrap>add_1.6_51e17eed0057675de4bde1b34206bb12'] = 'Nouveau modèle de filtres';
 $_MODULE['<{blocklayered}default-bootstrap>add_1.6_f8263d99054a4cdb3428196f078fa212'] = 'Nom du modèle :';
 $_MODULE['<{blocklayered}default-bootstrap>add_1.6_4284fda63513b7da70b5d8f032900580'] = 'Ne sert que de rappel';
@@ -156,7 +156,7 @@ $_MODULE['<{blocklayered}default-bootstrap>view_1.6_414301b329318b3e916c5b91b0ca
 $_MODULE['<{blocklayered}default-bootstrap>view_1.6_fa059e7a64ab37fe21b01a220b6c073f'] = 'Indexation des prix terminée';
 $_MODULE['<{blocklayered}default-bootstrap>view_1.6_b55143bb1f46af4207ea4b5eb8e844ed'] = 'L\'indexation des prix a échoué';
 $_MODULE['<{blocklayered}default-bootstrap>view_1.6_7cf7d150dd287df0a8e17eeb4cf2161d'] = '(en cours, %s prix de articles à indexer)';
-$_MODULE['<{blocklayered}default-bootstrap>view_1.6_8524de963f07201e5c086830d370797f'] = 'Chargement...';
+$_MODULE['<{blocklayered}default-bootstrap>view_1.6_8524de963f07201e5c086830d370797f'] = 'Vérification stocks et tarifs...';
 $_MODULE['<{blocklayered}default-bootstrap>view_1.6_eb9c805f7590679f0742ba0ea0a3e77f'] = 'Vous avez sélectionné -Toutes les familles- : tous les modèles de filtres existants seront supprimés. Est-ce bien ce que vous voulez ?';
 $_MODULE['<{blocklayered}default-bootstrap>view_1.6_18c6120643596bd2626f3b0720b1df3a'] = 'Vous devez sélectionner au moins une famille';
 $_MODULE['<{blocklayered}default-bootstrap>view_df2bbc994d10995dcffdf96dbb7acbb1'] = 'Index et caches';
@@ -203,7 +203,7 @@ $_MODULE['<{blocklayered}default-bootstrap>view_414301b329318b3e916c5b91b0ca9126
 $_MODULE['<{blocklayered}default-bootstrap>view_fa059e7a64ab37fe21b01a220b6c073f'] = 'Indexation des prix terminée';
 $_MODULE['<{blocklayered}default-bootstrap>view_b55143bb1f46af4207ea4b5eb8e844ed'] = 'L\'indexation des prix a échoué';
 $_MODULE['<{blocklayered}default-bootstrap>view_7cf7d150dd287df0a8e17eeb4cf2161d'] = '(en cours, %s prix de articles à indexer)';
-$_MODULE['<{blocklayered}default-bootstrap>view_8524de963f07201e5c086830d370797f'] = 'Chargement...';
+$_MODULE['<{blocklayered}default-bootstrap>view_8524de963f07201e5c086830d370797f'] = 'Vérification stocks et tarifs...';
 $_MODULE['<{blocklayered}default-bootstrap>view_eb9c805f7590679f0742ba0ea0a3e77f'] = 'Vous avez sélectionné -Toutes les familles- : tous les modèles de filtres existants seront supprimés. Est-ce bien ce que vous voulez ?';
 $_MODULE['<{blocklayered}default-bootstrap>view_18c6120643596bd2626f3b0720b1df3a'] = 'Vous devez sélectionner au moins une famille';
 $_MODULE['<{blocklayered}default-bootstrap>attribute_form_1.6_28034a200e932f22b324a4dda1bb9f64'] = 'Caractères invalides :  >';

@@ -117,16 +117,16 @@
                     </p>
                     {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
                         <p class="product-tarifs">
-                            {l s='From:'}
-                            {convertPrice price=$references[$product.reference]['tarif']}
+                            {convertPrice price=$references[$product.reference]['tarif']}<br />
+                            <span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
                         </p>
                     {/if}
 					{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
 					<div class="content_price">
 						<span class="price product-price">
                             {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
-                                {l s='From:'}
-                                {convertPrice price=$references[$product.reference]['tarif']}
+                                {convertPrice price=$references[$product.reference]['tarif']}<br />
+                                <span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
                             {else}
                                 {l s='Price on demand'}
                             {/if}

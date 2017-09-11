@@ -329,7 +329,7 @@ ul.product_list.list > li .right-block .right-block-content .content_price {
       width: 100%; } }
   ul.product_list.list > li .right-block .right-block-content .content_price .price {
     display: inline-block;
-    margin-top: -4px; }
+    line-height: inherit; }
     ul.product_list.list > li .right-block .right-block-content .content_price .price.old-price {
       margin-right: 8px; }
 ul.product_list.list > li .right-block .right-block-content .button-container {
@@ -403,3 +403,7 @@ Product list(Index page) Styles
   border: 1px solid #d6d4d4; }
 
 /*# sourceMappingURL=product_list.css.map */
+
+.product-tarifs-infos {
+    font-size: 10px;
+}

@@ -44,7 +44,7 @@
 				<select name="id_address_delivery" id="id_address_delivery" class="address_select form-control">
 					{foreach from=$addresses key=k item=address}
 						<option value="{$address.id_address|intval}"{if $address.id_address == $cart->id_address_delivery} selected="selected"{/if}>
-							{$address.alias|escape:'html':'UTF-8'}
+							{$address.address1|escape:'html':'UTF-8'} {$address.postcode|escape:'html':'UTF-8'} {$address.city|escape:'html':'UTF-8'}
 						</option>
 					{/foreach}
 				</select><span class="waitimage"></span>
@@ -61,7 +61,7 @@
 					<select name="id_address_invoice" id="id_address_invoice" class="address_select form-control">
 					{section loop=$addresses step=-1 name=address}
 						<option value="{$addresses[address].id_address|intval}"{if $addresses[address].id_address == $cart->id_address_invoice && $cart->id_address_delivery != $cart->id_address_invoice} selected="selected"{/if}>
-							{$addresses[address].alias|escape:'html':'UTF-8'}
+							{$addresses[address].address1|escape:'html':'UTF-8'} {$addresses[address].postcode|escape:'html':'UTF-8'} {$addresses[address].city|escape:'html':'UTF-8'}
 						</option>
 					{/section}
 					</select><span class="waitimage"></span>

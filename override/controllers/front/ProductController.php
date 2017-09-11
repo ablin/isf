@@ -43,7 +43,7 @@ class ProductController extends ProductControllerCore
                 foreach ($datas->references as $reference) {
                     if ($reference->trouve == 1) {
                         $stock = $reference->total_stock;
-                        $tarif = $reference->max_pub;
+                        $tarif = $reference->max_pun;
                         $sousRefs = $reference->sousRefs;
                     }
                 }

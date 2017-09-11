@@ -302,7 +302,7 @@ class Cart extends CartCore
             throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
 
-        if (empty($this->_productDatas)) {
+        if (count($products) !== count($this->_productDatas)) {
 
             foreach ($products as $product) {
                 $productIds[] = $product['reference'];
@@ -321,12 +321,12 @@ class Cart extends CartCore
                         if ($reference->trouve == 1) {
                             $this->_productDatas[$reference->ref] = array(
                                 'stock' => $reference->total_stock,
-                                'tarif' => $reference->max_pub
+                                'tarif' => $reference->max_pun
                             );
                         } else {
                             $this->_productDatas[$reference->ref] = array(
                                 'stock' => 0,
-                                'tarif' => array()
+                                'tarif' => 0
                             );
                         }
                     }

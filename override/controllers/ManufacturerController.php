@@ -70,12 +70,12 @@ class ManufacturerController extends ManufacturerControllerCore
                     if ($reference->trouve == 1) {
                         $productDatas[$reference->ref] = array(
                             'stock' => $reference->total_stock,
-                            'tarif' => $reference->max_pub
+                            'tarif' => $reference->max_pun
                         );
                     } else {
                         $productDatas[$reference->ref] = array(
                             'stock' => 0,
-                            'tarif' => array()
+                            'tarif' => 0
                         );
                     }
                 }
