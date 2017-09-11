@@ -277,7 +277,7 @@ class Cart extends CartCore
         $params = '';
 
         foreach ($products as $product) {
-            $params .= '<REF>'.$product['reference'].'<QTE>'.$product['quantity'];
+            $params .= '<REF>'.$product['reference'].'<SREF1> <SREF2> <QTE>'.$product['quantity'];
         }
 
         $webServiceDiva = new WebServiceDiva('<ACTION>PANIER', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params);
@@ -321,12 +321,14 @@ class Cart extends CartCore
                         if ($reference->trouve == 1) {
                             $this->_productDatas[$reference->ref] = array(
                                 'stock' => $reference->total_stock,
-                                'tarif' => $reference->max_pun
+                                'tarif' => $reference->max_pun,
+                                'nb_tarif' => $reference->nbTarifs
                             );
                         } else {
                             $this->_productDatas[$reference->ref] = array(
                                 'stock' => 0,
-                                'tarif' => 0
+                                'tarif' => 0,
+                                'nb_tarif' => 0
                             );
                         }
                     }

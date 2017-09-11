@@ -336,8 +336,9 @@ class SearchCore
 				LEFT JOIN `'._DB_PREFIX_.'image_lang` il ON (image_shop.`id_image` = il.`id_image` AND il.`id_lang` = '.(int)$id_lang.')
 				WHERE p.`id_product` '.$product_pool.'
 				GROUP BY product_shop.id_product
-				'.($order_by ? 'ORDER BY  '.$alias.$order_by : '').($order_way ? ' '.$order_way : '').'
-				LIMIT '.(int)(($page_number - 1) * $page_size).','.(int)$page_size;
+                ORDER BY pl.`name`'.
+//				($order_by ? 'ORDER BY  '.$alias.$order_by : '').($order_way ? ' '.$order_way : '').'
+				'LIMIT '.(int)(($page_number - 1) * $page_size).','.(int)$page_size;
         $result = $db->executeS($sql, true, false);
 
         $sql = 'SELECT COUNT(*)

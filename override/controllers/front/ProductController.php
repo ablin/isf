@@ -38,6 +38,7 @@ class ProductController extends ProductControllerCore
             $stock = 0;
             $tarif = 0;
             $sousRefs = array();
+            $nb_tarif = 0;
 
             if ($datas && $datas->references) {
                 foreach ($datas->references as $reference) {
@@ -45,6 +46,7 @@ class ProductController extends ProductControllerCore
                         $stock = $reference->total_stock;
                         $tarif = $reference->max_pun;
                         $sousRefs = $reference->sousRefs;
+                        $nb_tarif = $reference->nbTarifs;
                     }
                 }
             }
@@ -56,7 +58,8 @@ class ProductController extends ProductControllerCore
         $this->context->smarty->assign(array(
             'stock' => $stock,
             'tarif' => $tarif,
-            'sousRefs' => $sousRefs
+            'sousRefs' => $sousRefs,
+            'nb_tarif' => $nb_tarif
         ));
 
         $id_customer = (isset($this->context->customer) ? (int)$this->context->customer->id : 0);

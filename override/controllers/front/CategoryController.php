@@ -80,12 +80,14 @@ class CategoryController extends CategoryControllerCore
                     if ($reference->trouve == 1) {
                         $products[$reference->ref] = array(
                             'stock' => $reference->total_stock,
-                            'tarif' => $reference->max_pun
+                            'tarif' => $reference->max_pun,
+                            'nb_tarif' => $reference->nbTarifs
                         );
                     } else {
                         $products[$reference->ref] = array(
                             'stock' => 0,
-                            'tarif' => 0
+                            'tarif' => 0,
+                            'nb_tarif' => 0
                         );
                     }
                 }
