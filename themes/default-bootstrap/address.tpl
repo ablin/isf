@@ -45,7 +45,7 @@
 			{if $field_name eq 'alias'}
                 <div class="required form-group">
                     <label for="alias">{l s='Alias'} <sup>*</sup></label>
-                    <input class="is_required validate form-control" data-validate="{$address_validation.$field_name.validate}" type="text" name="alias" id="alias" value="{if isset($smarty.post.alias)}{$smarty.post.alias}{else}{if isset($address->alias)}{$address->alias|escape:'html':'UTF-8'}{/if}{/if}" />
+                    <input class="is_required validate form-control" readonly="readonly" data-validate="{$address_validation.$field_name.validate}" type="text" name="alias" id="alias" value="{if isset($smarty.post.alias)}{$smarty.post.alias}{else}{if isset($address->alias)}{$address->alias|escape:'html':'UTF-8'}{/if}{/if}" />
                 </div>
             {/if}
             {if $field_name eq 'firstname'}

@@ -2344,7 +2344,7 @@ class BlockLayered extends Module
 					AND c.nright < '.(int)$parent->nright.'
 					'.($depth ? 'AND c.level_depth <= '.($parent->level_depth+(int)$depth) : '').'
 					AND c.active = 1
-					GROUP BY c.id_category ORDER BY c.nleft, c.position';
+					GROUP BY c.id_category ORDER BY cl.description ASC, c.nleft, c.position';
 
 					$sql_query['from'] .= Shop::addSqlAssociation('product', 'p');
 			}
