@@ -179,7 +179,7 @@
 								<span class="price cart_block_total ajax_block_cart_total">{$total}</span>
 								<span>{l s='Total' mod='blockcart'}</span>
 							</div>
-							{if $use_taxes && $display_tax_label && $show_tax}
+							<!--{if $use_taxes && $display_tax_label && $show_tax}
 								<p>
 								{if $priceDisplay == 0}
 									{l s='Prices are tax included' mod='blockcart'}
@@ -187,7 +187,7 @@
 									{l s='Prices are tax excluded' mod='blockcart'}
 								{/if}
 								</p>
-							{/if}
+							{/if}-->
 						</div>
 						<p class="cart-buttons">
 							<a id="button_order_cart" class="btn btn-default button button-small" href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Check out' mod='blockcart'}" rel="nofollow">

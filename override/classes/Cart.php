@@ -3,8 +3,6 @@ class Cart extends CartCore
 {
 
     private $_productList = array();
-    private $_productDatas = array();
-    private $_montantTotal = 0;
 
     /**
      * Return cart products
@@ -280,67 +278,45 @@ class Cart extends CartCore
             $params .= '<REF>'.$product['reference'].'<SREF1> <SREF2> <QTE>'.$product['quantity'];
         }
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>PANIER', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params);
+        $cartParams = '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params;
 
-        try {
-            $datas = $webServiceDiva->call();
-            if ($datas && $datas->references) {
-                foreach ($datas->references as $reference) {
-                    $this->_productList[$reference->ref] = array(
-                        'pub' => $reference->pub,
-                        'remise' => $reference->remise,
-                        'pun' => $reference->pun,
-                        'mont' => $reference->mont
-                    );
-                }
-            }
-            if ($datas && $datas->montantTotal) {
-                $this->_montantTotal = $datas->montantTotal;
-            }
+        if (serialize($cartParams) != Context::getContext()->cookie->last_cart_params || !isset(Context::getContext()->cookie->cart_datas)) {
 
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
-        }
-
-        if (count($products) !== count($this->_productDatas)) {
-
-            foreach ($products as $product) {
-                $productIds[] = $product['reference'];
-            }
-            $productIds = implode(";", $productIds);
-
-            $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<REF>'.$productIds);
+            $webServiceDiva = new WebServiceDiva('<ACTION>PANIER', $cartParams);
 
             try {
                 $datas = $webServiceDiva->call();
-
-                if ($datas && $datas->references) {
-
-                    foreach ($datas->references as $reference) {
-
-                        if ($reference->trouve == 1) {
-                            $this->_productDatas[$reference->ref] = array(
-                                'stock' => $reference->total_stock,
-                                'tarif' => $reference->max_pun,
-                                'nb_tarif' => $reference->nbTarifs
-                            );
-                        } else {
-                            $this->_productDatas[$reference->ref] = array(
-                                'stock' => 0,
-                                'tarif' => 0,
-                                'nb_tarif' => 0
-                            );
-                        }
-                    }
+                if ($datas && $datas->montantTotal) {
+                    Context::getContext()->cookie->last_cart_params = serialize('<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params);
+                    Context::getContext()->cookie->cart_datas = serialize($datas);
                 }
 
             } catch (SoapFault $fault) {
                 throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
             }
+        } else {
+            $datas = unserialize(Context::getContext()->cookie->cart_datas);
+        }
+
+        if ($datas && $datas->references) {
+            foreach ($datas->references as $reference) {
+                $this->_productList[$reference->ref] = array(
+                    'pub' => $reference->pub,
+                    'remise' => $reference->remise,
+                    'pun' => $reference->pun,
+                    'mont' => $reference->mont,
+                    'stock' => $reference->qteStock
+                );
+            }
+
+            Context::getContext()->cookie->montant_total = $datas->montantTotal;
+            Context::getContext()->cookie->montant_ttc = $datas->montantTTC;
+            Context::getContext()->cookie->montant_tva = $datas->montantTVA;
+            Context::getContext()->cookie->montant_ht = $datas->montantHT;
         }
 
         foreach ($this->_products as $key => $product) {
-            if (isset($this->_productList[$product['reference']]) && isset($this->_productDatas[$product['reference']])) {
+            if (isset($this->_productList[$product['reference']])) {
                 $this->_products[$key]['price'] = $this->_productList[$product['reference']]['pun'];
                 $this->_products[$key]['price_without_reduction'] = $this->_productList[$product['reference']]['pun'];
                 $this->_products[$key]['price_with_reduction'] = $this->_productList[$product['reference']]['pun'] - $this->_productList[$product['reference']]['remise'];
@@ -348,7 +324,7 @@ class Cart extends CartCore
                 $this->_products[$key]['price_wt'] = $this->_productList[$product['reference']]['pun'];
                 $this->_products[$key]['total'] = $this->_productList[$product['reference']]['mont'];
                 $this->_products[$key]['total_wt'] = $this->_productList[$product['reference']]['mont'];
-                $this->_products[$key]['quantity_available'] = $this->_productDatas[$product['reference']]['stock'];
+                $this->_products[$key]['quantity_available'] = $this->_productList[$product['reference']]['stock'];
             }
         }
 
@@ -375,8 +351,12 @@ class Cart extends CartCore
     */
     public function getOrderTotal($with_taxes = true, $type = Cart::BOTH, $products = null, $id_carrier = null, $use_cache = true)
     {
-        Context::getContext()->cookie->montant_total = $this->_montantTotal;
-        return $this->_montantTotal;
+        return Context::getContext()->cookie->montant_total;
+        if ($with_taxes) {
+            return Context::getContext()->cookie->montant_ttc;
+        } else {
+            return Context::getContext()->cookie->montant_ht;
+        }
     }
 
 }

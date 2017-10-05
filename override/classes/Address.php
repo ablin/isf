@@ -85,32 +85,52 @@ class Address extends AddressCore
      */
     private function hydrateAddress($id_address)
     {
-        $webServiceDiva = new WebServiceDiva('<ACTION>ADR_CLI', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers);
+        if (!isset(Context::getContext()->cookie->addresses) || count(Context::getContext()->cookie->addresses) == 0) {
+            $webServiceDiva = new WebServiceDiva('<ACTION>ADR_CLI', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers);
 
-        try {
-            $datas = $webServiceDiva->call();
+            try {
+                $datas = $webServiceDiva->call();
 
-            if ($datas && $datas->trouve == 1) {
+                if ($datas && $datas->trouve == 1) {
 
-                foreach ($datas->adresse as $detail) {
-                    if ($detail->id_adr == $id_address) {
-                        $this->firstname = Context::getContext()->cookie->customer_firstname;
-                        $this->lastname = Context::getContext()->cookie->customer_lastname;
-                        $this->address1 = $detail->rue;
-                        $this->address2 = $detail->adrcpl1;
-                        $this->address3 = $detail->adrcpl2;
-                        $this->locality = $detail->loc;
-                        $this->postcode = $detail->cpostal;
-                        $this->city = $detail->vil;
-                        $this->country = $detail->pay;
-                        $this->alias = $detail->adrcod;
-                        $this->id = $detail->id_adr;
+                    Context::getContext()->cookie->addresses = serialize($datas);
+                    foreach ($datas->adresse as $detail) {
+                        if ($detail->id_adr == $id_address) {
+                            $this->firstname = Context::getContext()->cookie->customer_firstname;
+                            $this->lastname = Context::getContext()->cookie->customer_lastname;
+                            $this->address1 = $detail->rue;
+                            $this->address2 = $detail->adrcpl1;
+                            $this->address3 = $detail->adrcpl2;
+                            $this->locality = $detail->loc;
+                            $this->postcode = $detail->cpostal;
+                            $this->city = $detail->vil;
+                            $this->country = $detail->pay;
+                            $this->alias = $detail->adrcod;
+                            $this->id = $detail->id_adr;
+                        }
                     }
                 }
-            }
 
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            } catch (SoapFault $fault) {
+                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            }
+        } else {
+            $addresses = unserialize(Context::getContext()->cookie->addresses);
+            foreach ($addresses->adresse as $detail) {
+                if ($detail->id_adr == $id_address) {
+                    $this->firstname = Context::getContext()->cookie->customer_firstname;
+                    $this->lastname = Context::getContext()->cookie->customer_lastname;
+                    $this->address1 = $detail->rue;
+                    $this->address2 = $detail->adrcpl1;
+                    $this->address3 = $detail->adrcpl2;
+                    $this->locality = $detail->loc;
+                    $this->postcode = $detail->cpostal;
+                    $this->city = $detail->vil;
+                    $this->country = $detail->pay;
+                    $this->alias = $detail->adrcod;
+                    $this->id = $detail->id_adr;
+                }
+            }
         }
     }
 }

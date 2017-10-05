@@ -93,7 +93,7 @@
                     <td>{$entete->description}</td>
                     <td>{displayPrice price=$entete->montant}</td>
                     <td>{displayPrice price=$entete->montantPort}</td>
-                    <td><i class="icon-file-text"></i> {l s='Print'}</td>
+                    <td><i class="icon-file-text"></i> <a target="_blank" href="{$link->getPageLink('history-print', true, NULL, $params)|escape:'html':'UTF-8'}">{l s='Print'}</a></td>
                 </tr>
             {/foreach}
         </tbody>

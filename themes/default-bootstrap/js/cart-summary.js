@@ -694,7 +694,6 @@ function downQuantity(id, qty)
 	if(typeof(qty) == 'undefined' || !qty)
 	{
 		qty = 1;
-		newVal = val - 1;
 	}
 	else if (qty < 0)
 		qty = -qty;
