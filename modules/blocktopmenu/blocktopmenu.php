@@ -612,7 +612,7 @@ class Blocktopmenu extends Module
 
             $html .= '<li'.(($this->page_name == 'category'
                 && (int)Tools::getValue('id_category') == (int)$category['id_category']) ? ' class="sfHoverForce"' : '').'>';
-            $html .= '<a href="'.$link.'" title="'.strip_tags($category['description']).'">'.substr(strip_tags($category['description']), 0, 30).'</a>';
+            $html .= '<a href="'.$link.'" title="'.strip_tags(stripslashes($category['description'])).'">'.substr(strip_tags(stripslashes($category['description'])), 0, 40).'</a>';
 
             if (isset($category['children']) && !empty($category['children'])) {
                 $html .= '<ul>';

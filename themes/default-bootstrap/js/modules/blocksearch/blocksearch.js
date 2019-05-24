@@ -48,7 +48,7 @@ $(document).ready(function()
 				parse: function(data) {
 					var mytab = [];
 					for (var i = 0; i < data.length; i++)
-						mytab[mytab.length] = { data: data[i], value: data[i].cname + ' > ' + data[i].pname + ' (ref ' + data[i].reference + ')' };
+						mytab[mytab.length] = { data: data[i], value: data[i].cname + ' > ' + data[i].pname };
 					return mytab;
 				},
 				extraParams: {

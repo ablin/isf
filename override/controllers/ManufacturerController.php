@@ -58,7 +58,7 @@ class ManufacturerController extends ManufacturerControllerCore
         }
         $productIds = implode(";", $productIds);
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds);
+        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds.'<FICHE>0');
 
         try {
             $datas = $webServiceDiva->call();

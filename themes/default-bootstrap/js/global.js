@@ -286,13 +286,14 @@ function display(view)
 			if (hookReviews.length) {
 				html += hookReviews.clone().wrap('<div>').parent().html();
 			}
-            html += '<p class="product-desc">'+ $(element).find('.product-desc').html() + '</p>';
-            html += '<p class="product-reference">'+ $(element).find('.product-reference').html() + '</p>';
-            html += '<p class="product-manufacturer">'+ $(element).find('.product-manufacturer').html() + '</p>';
-            html += '<p class="product-stock">'+ $(element).find('.product-stock').html() + '</p>';
+			html += '<p class="product-desc">'+ $(element).find('.product-desc').html() + '</p>';
 			var colorList = $(element).find('.color-list-container').html();
 			if (colorList != null) {
 				html += '<div class="color-list-container">'+ colorList +'</div>';
+			}
+			var availability = $(element).find('.availability').html();	// check : catalog mode is enabled
+			if (availability != null) {
+				html += '<span class="availability">'+ availability +'</span>';
 			}
 			html += '</div>';
 			html += '<div class="right-block col-xs-4 col-sm-12 col-md-4"><div class="right-block-content row">';

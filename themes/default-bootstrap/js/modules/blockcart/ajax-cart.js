@@ -135,15 +135,14 @@ var ajaxCart = {
 			var minimalQuantity =  parseInt($(this).data('minimal_quantity'));
 			if (!minimalQuantity)
 				minimalQuantity = 1;
-			if ($(this).prop('disabled') != 'disabled') {
-				ajaxCart.add(idProduct, idProductAttribute, false, this, $('#quantity_wanted_'+idProduct+''));
-            }
+			if ($(this).prop('disabled') != 'disabled')
+				ajaxCart.add(idProduct, idProductAttribute, false, this, minimalQuantity);
 		});
 		//for product page 'add' button...
 		if ($('.cart_block').length) {
 			$(document).off('click', '#add_to_cart button').on('click', '#add_to_cart button', function(e){
 				e.preventDefault();
-				ajaxCart.add($('#product_page_product_id').val(), $('#idCombination').val(), true, null, $('#quantity_wanted'), null);
+				ajaxCart.add($('#product_page_product_id').val(), $('#idCombination').val(), true, null, $('#quantity_wanted').val(), null);
 			});
 		}
 
@@ -326,7 +325,7 @@ var ajaxCart = {
 			async: true,
 			cache: false,
 			dataType : "json",
-			data: 'controller=cart&add=1&ajax=true&qty=' + ((quantity.val() && quantity.val() != null) ? quantity.val() : '1') + '&id_product=' + idProduct + '&token=' + static_token + ( (parseInt(idCombination) && idCombination != null) ? '&ipa=' + parseInt(idCombination): '' + '&id_customization=' + ((typeof customizationId !== 'undefined') ? customizationId : 0)),
+			data: 'controller=cart&add=1&ajax=true&qty=' + ((quantity && quantity != null) ? quantity : '1') + '&id_product=' + idProduct + '&token=' + static_token + ( (parseInt(idCombination) && idCombination != null) ? '&ipa=' + parseInt(idCombination): '' + '&id_customization=' + ((typeof customizationId !== 'undefined') ? customizationId : 0)),
 			success: function(jsonData,textStatus,jqXHR)
 			{
 				// add appliance to whishlist module
@@ -361,7 +360,6 @@ var ajaxCart = {
 						});
 					if (contentOnly)
 						parent.$.fancybox.close();
-                    quantity.val(1);
 				}
 				else
 				{
@@ -612,12 +610,12 @@ var ajaxCart = {
 					var content =  '<dt class="unvisible" data-id="cart_block_product_' + domIdProduct + '">';
 					var name = $.trim($('<span />').html(this.name).text());
 					name = (name.length > 12 ? name.substring(0, 10) + '...' : name);
-					//content += '<a class="cart-images" href="' + this.link + '" title="' + name + '"><img  src="' + this.image_cart + '" alt="' + this.name +'"></a>';
+					content += '<a class="cart-images" href="' + this.link + '" title="' + name + '"><img  src="' + this.image_cart + '" alt="' + this.name +'"></a>';
 					content += '<div class="cart-info"><div class="product-name">' + '<span class="quantity-formated"><span class="quantity">' + this.quantity + '</span>&nbsp;x&nbsp;</span><a href="' + this.link + '" title="' + this.name + '" class="cart_block_product_name">' + name + '</a></div>';
 					if (this.hasAttributes)
 						  content += '<div class="product-atributes"><a href="' + this.link + '" title="' + this.name + '">' + this.attributes + '</a></div>';
 					if (typeof(freeProductTranslation) != 'undefined')
-						content += '<span class="price">' + this.priceByLine + '</span></div>';
+						content += '<span class="price">' + (parseFloat(this.price_float) > 0 ? this.priceByLine : freeProductTranslation) + '</span></div>';
 
 					if (typeof(this.is_gift) == 'undefined' || this.is_gift == 0)
 						content += '<span class="remove_link"><a rel="nofollow" class="ajax_cart_block_remove_link" href="' + baseUri + '?controller=cart&amp;delete=1&amp;id_product=' + productId + '&amp;token=' + static_token + (this.hasAttributes ? '&amp;ipa=' + parseInt(this.idCombination) : '') + '"> </a></span>';

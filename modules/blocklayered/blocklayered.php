@@ -37,7 +37,7 @@ class BlockLayered extends Module
 	{
 		$this->name = 'blocklayered';
 		$this->tab = 'front_office_features';
-		$this->version = '2.2.0';
+		$this->version = '2.2.1';
 		$this->author = 'PrestaShop';
 		$this->need_instance = 0;
 		$this->bootstrap = true;
@@ -1701,7 +1701,7 @@ class BlockLayered extends Module
 				$url = preg_replace('/\/(?:\w*)\/(?:[0-9]+[-\w]*)([^\?]*)\??.*/', '$1', Tools::safeOutput($_SERVER['REQUEST_URI'], true));
 
 			$url_attributes = explode('/', ltrim($url, '/'));
-			$selected_filters = array('category' => array());
+			$selected_filters = array('category' => array($id_parent));
 			if (!empty($url_attributes))
 			{
 				foreach ($url_attributes as $url_attribute)
@@ -1741,7 +1741,7 @@ class BlockLayered extends Module
 
 		/* Analyze all the filters selected by the user and store them into a tab */
 		$selected_filters = array('category' => array(), 'manufacturer' => array(), 'quantity' => array(), 'condition' => array());
-		foreach ($_GET as $key => $value)
+		foreach ($_GET as $key => $value) {
 			if (substr($key, 0, 8) == 'layered_')
 			{
 				preg_match('/^(.*)_([0-9]+|new|used|refurbished|slider)$/', substr($key, 8, strlen($key) - 8), $res);
@@ -1774,6 +1774,12 @@ class BlockLayered extends Module
 						$selected_filters[$res[1]] = $tmp_tab;
 				}
 			}
+		}
+
+		if (empty($selected_filters['category'])) {
+			$selected_filters['category'][] = $id_parent;
+		}
+
 		return $selected_filters;
 	}
 
@@ -2326,7 +2332,7 @@ class BlockLayered extends Module
 						$depth = 1;
 
 					$sql_query['select'] = '
-					SELECT c.id_category, c.id_parent, cl.description as name, (SELECT count(DISTINCT p.id_product) # ';
+					SELECT c.id_category, c.id_parent, cl.name, (SELECT count(DISTINCT p.id_product) # ';
 					$sql_query['from'] = '
 					FROM '._DB_PREFIX_.'category_product cp
 					LEFT JOIN '._DB_PREFIX_.'product p ON (p.id_product = cp.id_product) ';
@@ -2344,7 +2350,7 @@ class BlockLayered extends Module
 					AND c.nright < '.(int)$parent->nright.'
 					'.($depth ? 'AND c.level_depth <= '.($parent->level_depth+(int)$depth) : '').'
 					AND c.active = 1
-					GROUP BY c.id_category ORDER BY cl.description ASC, c.nleft, c.position';
+					GROUP BY c.id_category ORDER BY c.nleft, c.position';
 
 					$sql_query['from'] .= Shop::addSqlAssociation('product', 'p');
 			}
@@ -3154,45 +3160,6 @@ class BlockLayered extends Module
 				'compareProducts' => CompareProduct::getCompareProducts((int)$this->context->cookie->id_compare)
 			)
 		);
-
-        $productIds = array();
-        $productList = array();
-
-        foreach ($products as &$product) {
-            $productIds[] = $product['reference'];
-        }
-        $productIds = implode(";", $productIds);
-
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds);
-
-        try {
-            $datas = $webServiceDiva->call();
-
-            if ($datas && $datas->references) {
-
-                foreach ($datas->references as $reference) {
-
-                    if ($reference->trouve == 1) {
-                        $productList[$reference->ref] = array(
-                            'stock' => $reference->total_stock,
-                            'tarif' => $reference->max_pun,
-                            'nb_tarif' => $reference->nbTarifs
-                        );
-                    } else {
-                        $productList[$reference->ref] = array(
-                            'stock' => 0,
-                            'tarif' => 0,
-                            'nb_tarif' => 0
-                        );
-                    }
-                }
-            }
-
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
-        }
-
-        $smarty->assign('references', $productList);
 
 		// Prevent bug with old template where category.tpl contain the title of the category and category-count.tpl do not exists
 		if (file_exists(_PS_THEME_DIR_.'category-count.tpl'))

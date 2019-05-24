@@ -31,7 +31,7 @@ class ProductController extends ProductControllerCore
      */
     protected function assignPriceAndTax()
     {
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$this->product->reference);
+        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$this->product->reference.'<FICHE>1');
 
         try {
             $datas = $webServiceDiva->call();
@@ -47,6 +47,7 @@ class ProductController extends ProductControllerCore
                         $tarif = $reference->max_pun;
                         $sousRefs = $reference->sousRefs;
                         $nb_tarif = $reference->nbTarifs;
+                        $alerte = $reference->alerte;
                     }
                 }
             }
@@ -59,7 +60,8 @@ class ProductController extends ProductControllerCore
             'stock' => $stock,
             'tarif' => $tarif,
             'sousRefs' => $sousRefs,
-            'nb_tarif' => $nb_tarif
+            'nb_tarif' => $nb_tarif,
+            'alerte' => $alerte
         ));
 
         $id_customer = (isset($this->context->customer) ? (int)$this->context->customer->id : 0);

@@ -33,7 +33,7 @@ class OrderController extends OrderControllerCore
             $params = '';
 
             foreach ($this->context->cart->getProducts() as $product) {
-                $params .= '<REF>'.$product['reference'].'<SREF1>N<SREF2> <QTE>'.$product['cart_quantity'];
+                $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
             }
 
             $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD> <SAMEDI> '.$params);

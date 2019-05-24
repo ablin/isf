@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="35a2e6b3-9af4-464d-9563-988aeca55abf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/override/classes/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/divalto/api/import.php" beforeDir="false" afterPath="$PROJECT_DIR$/divalto/api/import.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/c/fr-default-category_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/c/fr-default-category_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/c/fr-default-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/c/fr-default-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/m/fr-default-large_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/m/fr-default-large_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/m/fr-default-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/m/fr-default-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/m/fr-default-small_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/m/fr-default-small_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-cart_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-cart_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-home_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-home_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-large_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-large_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-small_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-small_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1-thickbox_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1-thickbox_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/1/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/1/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-cart_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-cart_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-home_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-home_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-large_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-large_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-small_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-small_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-thickbox_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-thickbox_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/scenes/fr-default-m_scene_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/scenes/fr-default-m_scene_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/scenes/fr-default-scene_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/scenes/fr-default-scene_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/1-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/1-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/2-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/2-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/3-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/3-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/4-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/4-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/5-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/5-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/st/fr-default-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/st/fr-default-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/su/fr-default-large_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/su/fr-default-large_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/su/fr-default-medium_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/su/fr-default-medium_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/su/fr-default-small_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/su/fr-default-small_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blockcategories/config_fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blockcategories/config_fr.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/CHANGELOG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/CHANGELOG.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-15.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-15.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-attribute-indexer.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-attribute-indexer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-no-products.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-no-products.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-price-indexer.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-price-indexer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered-url-indexer.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered-url-indexer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/blocklayered.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/blocklayered.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/config_fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/config_fr.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/css/blocklayered_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/css/blocklayered_admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/css/blocklayered_admin_1.6.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/css/blocklayered_admin_1.6.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/img/icon/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/img/icon/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/img/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/img/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/js/blocklayered_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/js/blocklayered_admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/js/jquery.sortable.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/js/jquery.sortable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/upgrade/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/upgrade/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-1.9.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-1.9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-2.0.14.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-2.0.14.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-2.0.8.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/upgrade/install-2.0.8.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/add.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/add.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/add_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/add_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/view.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/view.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/view_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/admin/view_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_form.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_form.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_form_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_form_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_group_form.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_group_form.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_group_form_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/attribute_group_form_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_form.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_form.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_form_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_form_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_value_form.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_value_form.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_value_form_1.6.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/feature_value_form_1.6.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocklayered/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocklayered/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blocktopmenu/config_fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blocktopmenu/config_fr.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/CHANGELOG.txt" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/CHANGELOG.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/config_fr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/config_fr.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/controllers/admin/AdminThemeConfiguratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/controllers/admin/AdminThemeConfiguratorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font1.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font1.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font10.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font10.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font2.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font3.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font4.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font5.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font6.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font6.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font7.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font7.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font8.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font8.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/font9.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/font9.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/hooks.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/hooks.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/live_configurator.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/live_configurator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme2.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme3.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme4.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme5.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme5.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme6.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme6.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme7.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme7.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme8.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme8.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/css/theme9.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/css/theme9.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/img/en/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/img/en/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/img/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/img/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/js/live_configurator.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/js/live_configurator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/hooks.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/hooks.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style1.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style1.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style3.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style3.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style8.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme-style8.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme3.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme3.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme4.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme4.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme5.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme5.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme6.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme6.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme7.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme7.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme8.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme8.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme9.scss" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/sass/theme9.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/themeconfigurator.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/themeconfigurator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/upgrade/install-0.8.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/upgrade/install-0.8.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/upgrade/install-1.1.4.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/upgrade/install-1.1.4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/font.css" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/font.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/css/font/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/admin.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/admin.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/items.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/items.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/messages.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/messages.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/new.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/admin/new.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/hook.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/hook.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/live_configurator.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/hook/live_configurator.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/themeconfigurator/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/classes/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/controllers/ManufacturerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/ManufacturerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/controllers/front/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/front/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/controllers/front/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/front/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/controllers/front/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/front/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/controllers/front/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/front/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/404.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/404.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/address.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/address.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/addresses.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/addresses.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/authentication.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/authentication.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/best-sales.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/best-sales.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/breadcrumb.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/breadcrumb.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/cache/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/cache/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/category-cms-tree-branch.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/category-cms-tree-branch.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/category-count.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/category-count.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/category-tree-branch.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/category-tree-branch.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/category.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/category.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/cms.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/cms.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/config.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/contact-form.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/contact-form.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/addresses.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/addresses.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/authentication.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/highdpi.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/highdpi.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/responsive-tables.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/responsive-tables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/uniform.default.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/autoload/uniform.default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/cms.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/cms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/comparator.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/comparator.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/contact-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/contact-form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/font-awesome-ie7.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/font-awesome-ie7.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/font-awesome/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/history.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/maintenance.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/maintenance.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbanner/blockbanner.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbanner/blockbanner.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbanner/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbanner/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbestsellers/blockbestsellers.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbestsellers/blockbestsellers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbestsellers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockbestsellers/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcart/blockcart.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcart/blockcart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcart/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcategories/blockcategories.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcategories/blockcategories.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcategories/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcategories/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcontact/blockcontact.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcontact/blockcontact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcontact/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcontact/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcurrencies/blockcurrencies.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcurrencies/blockcurrencies.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcurrencies/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockcurrencies/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklanguages/blocklanguages.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklanguages/blocklanguages.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklanguages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklanguages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklayered/blocklayered.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklayered/blocklayered.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklayered/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocklayered/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockmyaccountfooter/blockmyaccount.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockmyaccountfooter/blockmyaccount.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockmyaccountfooter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockmyaccountfooter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewproducts/blocknewproducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewproducts/blocknewproducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewsletter/blocknewsletter.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewsletter/blocknewsletter.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewsletter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocknewsletter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocksearch/blocksearch.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocksearch/blocksearch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocksearch/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocksearch/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockspecials/blockspecials.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockspecials/blockspecials.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockspecials/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockspecials/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktags/blocktags.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktags/blocktags.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktags/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktags/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/blocktopmenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/blocktopmenu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/superfish-modified.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/css/superfish-modified.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blocktopmenu/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockuserinfo/blockuserinfo.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockuserinfo/blockuserinfo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockuserinfo/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockuserinfo/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockviewed/blockviewed.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockviewed/blockviewed.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockviewed/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockviewed/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockwishlist/blockwishlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockwishlist/blockwishlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockwishlist/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/blockwishlist/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/carriercompare/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/carriercompare/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/carriercompare/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/carriercompare/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/crossselling/crossselling.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/crossselling/crossselling.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/crossselling/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/crossselling/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/favoriteproducts/favoriteproducts.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/favoriteproducts/favoriteproducts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/favoriteproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/favoriteproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homefeatured/homefeatured.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homefeatured/homefeatured.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homefeatured/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homefeatured/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/homeslider.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/homeslider.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/images/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/homeslider/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/mailalerts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/mailalerts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/mailalerts/mailalerts.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/mailalerts/mailalerts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/img/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/img/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/productcomments.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productcomments/productcomments.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/images/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/images/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/productscategory.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/css/productscategory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/modules/productscategory/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/my-account.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/my-account.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/order-opc.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/order-opc.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/print.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/print.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/product_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/product_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/scenes.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/scenes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/sitemap.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/sitemap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/css/stores.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/css/stores.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/discount.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/discount.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/errors.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/errors.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/fonts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/fonts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/footer.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/footer.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/global.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/global.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/guest-tracking.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/guest-tracking.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/header.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/header.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/history-detail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/history.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/history.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/identity.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/identity.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/img/icon/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/img/icon/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/img/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/img/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/img/jquery/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/img/jquery/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/img/jquery/uniform/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/img/jquery/uniform/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/index.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/addresses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/advanced-payment-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/advanced-payment-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/10-bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/10-bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/15-jquery.total-storage.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/15-jquery.total-storage.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/15-jquery.uniform-modified.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/15-jquery.uniform-modified.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/jquery.total-storage.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/jquery.total-storage.LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/jquery.uniform-modified.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/autoload/jquery.uniform-modified.LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/cart-summary.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/cart-summary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/cms.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/cms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/contact-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/contact-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/jquery.lint.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/jquery.lint.LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/jquery.lint.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/debug/jquery.lint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockcart/ajax-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockcart/ajax-cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockcart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockcart/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocklayered/blocklayered.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocklayered/blocklayered.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocklayered/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocklayered/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocknewsletter/blocknewsletter.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocknewsletter/blocknewsletter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocknewsletter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocknewsletter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocksearch/blocksearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocksearch/blocksearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocksearch/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocksearch/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/blocktopmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/blocktopmenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/hoverIntent.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/hoverIntent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/superfish-modified.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blocktopmenu/js/superfish-modified.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/js/ajax-wishlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/js/ajax-wishlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockwishlist/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/js/crossselling.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/js/crossselling.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/crossselling/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/js/homeslider.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/js/homeslider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/homeslider/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/loyalty/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/loyalty/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/loyalty/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/loyalty/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/mailalerts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/mailalerts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/mailalerts/mailalerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/mailalerts/mailalerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/productcomments.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/productcomments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/products-comparison.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productcomments/js/products-comparison.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/js/productscategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/productscategory/js/productscategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/js/referralprogram.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/referralprogram/js/referralprogram.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/sendtoafriend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/sendtoafriend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/sendtoafriend/sendtoafriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/modules/sendtoafriend/sendtoafriend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/order-address.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/order-address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/order-carrier.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/order-carrier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/order-opc.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/order-opc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/products-comparison.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/products-comparison.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/scenes.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/scenes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/stores.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/stores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/statesManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/statesManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/treeManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/treeManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/vatManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/js/tools/vatManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/lang/en.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/lang/en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/lang/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/lang/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/lang/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/layout.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/layout.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/maintenance.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/maintenance.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/manufacturer-list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/manufacturer-list.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/manufacturer.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/manufacturer.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/mobile/css/autoload/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/mobile/css/autoload/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/mobile/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/mobile/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/mobile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/mobile/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/mobile/js/autoload/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/mobile/js/autoload/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/mobile/js/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/mobile/js/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/en.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/it.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/translations/it.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/front/payment_execution.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/front/payment_execution.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/payment.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/payment.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/payment_return.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/hook/payment_return.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/bankwire/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockbanner/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockbestsellers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockbestsellers/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockbestsellers/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart-json.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart-json.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/crossselling.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/crossselling.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/blockcategories_footer.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/blockcategories_footer.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/category-tree-branch.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/category-tree-branch.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/blockcms.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/blockcms.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/translations/en.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/translations/en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/translations/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcms/translations/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcmsinfo/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/blockcontact.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/blockcontact.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/nav.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/nav.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontact/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontactinfos/blockcontactinfos.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontactinfos/blockcontactinfos.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontactinfos/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontactinfos/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcontactinfos/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcurrencies/blockcurrencies.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcurrencies/blockcurrencies.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcurrencies/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcurrencies/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcurrencies/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcustomerprivacy/blockcustomerprivacy.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcustomerprivacy/blockcustomerprivacy.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcustomerprivacy/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcustomerprivacy/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockfacebook/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklanguages/blocklanguages.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklanguages/blocklanguages.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklanguages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklanguages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklanguages/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/blocklayered-no-products.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/blocklayered-no-products.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/blocklayered.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/blocklayered.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklayered/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklink/blocklink.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklink/blocklink.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklink/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocklink/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmanufacturer/blockmanufacturer.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmanufacturer/blockmanufacturer.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmanufacturer/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmanufacturer/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmanufacturer/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccount/blockmyaccount.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccount/blockmyaccount.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccount/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccount/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccount/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccountfooter/blockmyaccountfooter.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccountfooter/blockmyaccountfooter.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccountfooter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccountfooter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockmyaccountfooter/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewproducts/blocknewproducts.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewproducts/blocknewproducts.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewproducts/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewsletter/blocknewsletter.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewsletter/blocknewsletter.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewsletter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewsletter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocknewsletter/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockpaymentlogo/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockrss/blockrss.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockrss/blockrss.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockrss/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockrss/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/blocksearch-top.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/blocksearch-top.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/blocksearch.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/blocksearch.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksearch/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksocial/blocksocial.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksocial/blocksocial.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksocial/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksocial/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksocial/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockspecials/blockspecials.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockspecials/blockspecials.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockspecials/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockspecials/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockspecials/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockstore/blockstore.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockstore/blockstore.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockstore/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockstore/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockstore/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksupplier/blocksupplier.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksupplier/blocksupplier.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksupplier/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksupplier/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocksupplier/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktags/blocktags.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktags/blocktags.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktags/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktags/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktags/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/blocktopmenu.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/blocktopmenu.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockuserinfo/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockuserinfo/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockuserinfo/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockviewed/blockviewed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockviewed/blockviewed.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockviewed/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockviewed/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockviewed/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist-ajax.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist-ajax.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist-extra.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist-extra.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist_button.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist_button.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist_top.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/blockwishlist_top.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/managewishlist.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/managewishlist.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/mywishlist.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/mywishlist.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/view.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/front/view.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/blockwishlist/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/carriercompare.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/carriercompare.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/configuration.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/configuration.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/carriercompare/template/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/front/validation.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/front/validation.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/confirmation.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/confirmation.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/payment.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/hook/payment.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cashondelivery/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/en.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/en.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/it.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/translations/it.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/front/payment_execution.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/front/payment_execution.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/infos.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/infos.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/payment.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/payment.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/payment_return.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/hook/payment_return.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/cheque/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/cronjobs/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/crossselling/crossselling.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/crossselling/crossselling.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/crossselling/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/crossselling/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/dashactivity/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/dashgoals/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/dashproducts/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/dashtrends/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/front/favoriteproducts-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/front/favoriteproducts-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/favoriteproducts-extra.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/favoriteproducts-extra.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/favoriteproducts-header.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/favoriteproducts-header.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/hook/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/favoriteproducts/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/gamification/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/graphnvd3/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/gridhtml/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homefeatured/homefeatured.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/homefeatured/homefeatured.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homefeatured/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/homefeatured/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homefeatured/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/header.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/header.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/homeslider.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/homeslider.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/homeslider/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/front/loyalty.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/front/loyalty.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/product.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/shopping-cart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/hook/shopping-cart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/loyalty/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/front/mailalerts-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/front/mailalerts-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/hook/product.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/mailalerts/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/pagesnotfound/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments-extra.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments-extra.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments_reviews.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/productcomments_reviews.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/products-comparison.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/products-comparison.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/tab.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productcomments/tab.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productpaymentlogos/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productscategory/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productscategory/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/productscategory/productscategory.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/productscategory/productscategory.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/pscleaner/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/email.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/email.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/program.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/program.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/rules.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/front/rules.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/authentication.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/authentication.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/order-confirmation.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/order-confirmation.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/shopping-cart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/hook/shopping-cart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/referralprogram/views/templates/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/sekeywords/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/sendtoafriend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/sendtoafriend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/sendtoafriend/sendtoafriend-extra.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/modules/sendtoafriend/sendtoafriend-extra.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/socialsharing/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsbestcategories/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsbestcustomers/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsbestproducts/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsbestsuppliers/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsbestvouchers/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statscarrier/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statscatalog/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statscheckup/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsdata/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsequipment/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsforecast/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statslive/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsnewsletter/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsorigin/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statspersonalinfos/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsproduct/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsregistrations/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statssales/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statssearch/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsstock/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/statsvisits/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/modules/themeconfigurator/translations/fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/my-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/my-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/nbr-product-page.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/nbr-product-page.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/new-products.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/new-products.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-address-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-address-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-address-multishipping-products.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-address-multishipping-products.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-address-multishipping.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-address-multishipping.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-address-product-line.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-address-product-line.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-address.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-address.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier-opc-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier-opc-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-carrier.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-confirmation.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-confirmation.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-detail.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-detail.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-follow.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-follow.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-new-account-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-new-account-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-new-account.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-opc-new-account.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-opc.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-opc.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-payment-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-payment-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-payment-classic.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-payment-classic.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-payment.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-payment.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-return.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-return.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-slip.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-slip.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/order-steps.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/order-steps.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/pagination.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/pagination.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/password.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/password.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/pdf/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/pdf/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/pdf/lang/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/pdf/lang/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/prices-drop.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/prices-drop.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/product-compare.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/product-compare.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/product-list-colors.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/product-list-colors.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/product-sort.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/product-sort.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/product.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/products-comparison.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/products-comparison.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/restricted-country.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/restricted-country.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/_bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/_icons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/_theme_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/_theme_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/addresses.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/addresses.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/authentication.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/authentication.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/_uniform._base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/_uniform._base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/uniform.default.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/autoload/uniform.default.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_alerts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_badges.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_badges.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_breadcrumbs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_breadcrumbs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_button-groups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_button-groups.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_close.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_code.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_component-animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_component-animations.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_dropdowns.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_dropdowns.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_glyphicons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_glyphicons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_input-groups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_input-groups.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_jumbotron.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_jumbotron.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_labels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_modals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_navs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_navs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_normalize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_normalize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_pager.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_pager.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_panels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_panels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_popovers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_popovers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_print.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_progress-bars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_progress-bars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_responsive-utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_responsive-utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_scaffolding.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_scaffolding.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_theme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_theme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_thumbnails.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_thumbnails.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_wells.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/_wells.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/bootstrap_lib/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/category.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/category.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/cms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/cms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/comparator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/comparator.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/contact-form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/contact-form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_animated.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_bordered-pulled.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_core.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_fixed-width.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_icons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_larger.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_path.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_path.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_rotated-flipped.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_spinning.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_spinning.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_stacked.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/font-awesome.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/font-awesome/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/history.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/history.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/maintenance.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/maintenance.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockbanner/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockbanner/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockbestsellers/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockbestsellers/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcart/blockcart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcart/blockcart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcart/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcategories/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcategories/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcontact/blockcontact.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcontact/blockcontact.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcontact/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcontact/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcurrencies/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockcurrencies/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklanguages/blocklanguages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklanguages/blocklanguages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklanguages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklanguages/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklayered/blocklayered.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklayered/blocklayered.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklayered/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocklayered/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockmyaccountfooter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockmyaccountfooter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewsletter/blocknewsletter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewsletter/blocknewsletter.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewsletter/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocknewsletter/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocksearch/blocksearch.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocksearch/blocksearch.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocksearch/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocksearch/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockspecials/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockspecials/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktags/blocktags.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktags/blocktags.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktags/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktags/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/css/superfish-modified.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/css/superfish-modified.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blocktopmenu/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockuserinfo/blockuserinfo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockuserinfo/blockuserinfo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockuserinfo/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockuserinfo/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockviewed/blockviewed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockviewed/blockviewed.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockviewed/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockviewed/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockwishlist/blockwishlist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockwishlist/blockwishlist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockwishlist/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/blockwishlist/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/carriercompare/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/carriercompare/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/carriercompare/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/carriercompare/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/crossselling/crossselling.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/crossselling/crossselling.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/crossselling/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/crossselling/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/favoriteproducts/favoriteproducts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/favoriteproducts/favoriteproducts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/favoriteproducts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/favoriteproducts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homefeatured/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homefeatured/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homeslider/homeslider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homeslider/homeslider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homeslider/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/homeslider/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/mailalerts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/mailalerts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/mailalerts/mailalerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/mailalerts/mailalerts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productcomments/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productcomments/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productcomments/productcomments.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productcomments/productcomments.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/css/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/css/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/css/productscategory.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/css/productscategory.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/modules/productscategory/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/my-account.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/my-account.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/order-opc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/order-opc.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/print.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/rtl.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/rtl.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/scenes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/scenes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/sitemap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/sitemap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sass/stores.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sass/stores.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/scenes.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/scenes.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/search.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/search.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-advanced.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-advanced.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-product-line.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-product-line.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/sitemap.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/sitemap.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/store_infos.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/store_infos.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/stores.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/stores.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/supplier-list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/supplier-list.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/default-bootstrap/supplier.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default-bootstrap/supplier.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wabco.php" beforeDir="false" afterPath="$PROJECT_DIR$/wabco.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/isf/category.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="71" column="40" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/front/CategoryController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="190" column="9" lean-forward="true" selection-start-line="190" selection-start-column="9" selection-end-line="190" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/blockcategories/blockcategories.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="630" selection-start-line="630" selection-end-line="666" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/override/classes/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="88" column="37" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>-&gt;</find>
+      <find>ref_des</find>
+      <find>order-detail-content</find>
+      <find>image</find>
+      <find>shopping-cart-product-line</find>
+      <find>&lt;!</find>
+      <find>shopping-cart-product-line.</find>
+      <find>shopping-cart-product-line.tpl</find>
+      <find>shopping-cart.tpl</find>
+      <find>colspan=&quot;4&quot;</find>
+      <find>colspan=&quot;4&quot;&gt;</find>
+      <find>product-image-container</find>
+      <find>product-manufacturer</find>
+      <find>product_manufacturer_name</find>
+      <find>Manufacturer</find>
+      <find>block_top_menu</find>
+      <find>submenu-container</find>
+      <find>blocktopmenu.js</find>
+      <find>_menu</find>
+      <find>addsla</find>
+      <find>generateCategoriesMenu</find>
+      <find>slash</find>
+      <find>dynamized</find>
+      <find>blockCategTree</find>
+      <find>heading-counter</find>
+      <find>category-count.tpl</find>
+      <find>categories_block_left</find>
+      <find>mod='blockcategories'</find>
+      <find>subcategory-heading</find>
+      <find>category.tpl</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>] =</replace>
+      <replace>$famille-&gt;{'</replace>
+      <replace>(string) $famille</replace>
+      <replace>$reference</replace>
+      <replace>product</replace>
+      <replace>$produit</replace>
+      <replace>$product</replace>
+      <replace>(string) $</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\wamp64\www\prestashop\themes\isf\modules</dir>
+      <dir>C:\wamp64\www\prestashop</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/js/modules/blockcart/ajax-cart.js" />
+        <option value="$PROJECT_DIR$/override/controllers/front/HistoryDetailController.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/js/product.js" />
+        <option value="$PROJECT_DIR$/log/20190329_ws.log" />
+        <option value="$PROJECT_DIR$/override/controllers/front/SearchController.php" />
+        <option value="$PROJECT_DIR$/override/controllers/ManufacturerController.php" />
+        <option value="$PROJECT_DIR$/log/20190410_ws.log" />
+        <option value="$PROJECT_DIR$/classes/Cart.php" />
+        <option value="$PROJECT_DIR$/override/controllers/front/OrderController.php" />
+        <option value="$PROJECT_DIR$/log/20190419_ws.log" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-advanced.tpl" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart.tpl" />
+        <option value="$PROJECT_DIR$/override/controllers/front/ProductController.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/css/product.css" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/product.tpl" />
+        <option value="$PROJECT_DIR$/classes/product" />
+        <option value="$PROJECT_DIR$/divalto/category.xml" />
+        <option value="$PROJECT_DIR$/override/classes/Product.php" />
+        <option value="$PROJECT_DIR$/divalto/api/test" />
+        <option value="$PROJECT_DIR$/divalto/product.xml" />
+        <option value="$PROJECT_DIR$/classes/Product.php" />
+        <option value="$PROJECT_DIR$/override/controllers/front/CategoryController.php" />
+        <option value="$PROJECT_DIR$/modules/blocklayered/blocklayered-ajax.php" />
+        <option value="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" />
+        <option value="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" />
+        <option value="$PROJECT_DIR$/divalto/api/import.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/css/category.css" />
+        <option value="$PROJECT_DIR$/classes/Link.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/category.tpl" />
+        <option value="$PROJECT_DIR$/modules/blockcategories/blockcategories.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart.tpl" />
+        <option value="$PROJECT_DIR$/log/20190523_ws.log" />
+        <option value="$PROJECT_DIR$/override/classes/Cart.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-product-line.tpl" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/order-payment-classic.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/shopping-cart-advanced.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/order-payment-classic.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/shopping-cart.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/product-list.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/product.tpl" />
+        <option value="$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockcategories/blockcategories.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockcategories/category-tree-branch.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/category.tpl" />
+        <option value="$PROJECT_DIR$/wabco.php" />
+        <option value="$PROJECT_DIR$/classes/Category.php" />
+        <option value="$PROJECT_DIR$/override/classes/Category.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="816" />
+    <option name="height" value="576" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestashop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestashop" type="462c0819:PsiDirectoryNode" />
+              <item name="divalto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestashop" type="462c0819:PsiDirectoryNode" />
+              <item name="divalto" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\prestashop\divalto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\prestashop\override\classes" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35a2e6b3-9af4-464d-9563-988aeca55abf" name="Default Changelist" comment="" />
+      <created>1552051111107</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1552051111107</updated>
+      <workItem from="1552051113699" duration="10215000" />
+      <workItem from="1552640156054" duration="28449000" />
+      <workItem from="1553008895558" duration="1301000" />
+      <workItem from="1553764198098" duration="13151000" />
+      <workItem from="1553849773438" duration="20511000" />
+      <workItem from="1554453083587" duration="15617000" />
+      <workItem from="1554884247653" duration="9117000" />
+      <workItem from="1554914398334" duration="110000" />
+      <workItem from="1555661620703" duration="10870000" />
+      <workItem from="1556787722252" duration="7646000" />
+      <workItem from="1556871034956" duration="15174000" />
+      <workItem from="1557475883904" duration="10183000" />
+      <workItem from="1558081032805" duration="16665000" />
+      <workItem from="1558598614855" duration="11571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="170580000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/classes/ObjectModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminImportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30991">
+          <caret line="1846" column="39" selection-start-line="1846" selection-start-column="39" selection-end-line="1846" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divalto/api/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10469" selection-start-column="10465" selection-end-column="10469" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/smarty/compile/21/e4/14/21e414a832a940ee03337860f670976bbdcd0340.file.product-list.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="205" column="56" selection-start-line="205" selection-start-column="56" selection-end-line="205" selection-end-column="56" />
+          <folding>
+            <element signature="e#6#164#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/front/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="157" column="40" selection-start-line="157" selection-start-column="40" selection-end-line="157" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blocklayered/blocklayered-ajax.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="30" column="58" lean-forward="true" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/ManufacturerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="28" column="7" lean-forward="true" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Address.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Address.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/front/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="53" column="37" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divalto/api/import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="156" column="59" selection-start-line="156" selection-start-column="59" selection-end-line="156" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/modules/blockcategories/blockcategories.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="29" column="53" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/css/category.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="28" column="74" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/divalto/product.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="92" selection-start-line="53" selection-start-column="80" selection-end-line="53" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blocklayered/blocklayered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53227">
+          <caret line="3154" column="39" selection-start-line="3154" selection-start-column="30" selection-end-line="3154" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/category.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7973">
+          <caret line="492" column="20" selection-start-line="492" selection-start-column="20" selection-end-line="492" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/20190517_ws.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="606" column="33" selection-start-line="606" selection-start-column="33" selection-end-line="606" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/20190523_ws.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="48" lean-forward="true" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin1406yenrh/themes/default/template/controllers/products/multishop/checkbox.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="335" column="98" selection-start-line="335" selection-start-column="98" selection-end-line="335" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/smarty/compile/d3/49/02/d34902a6d5e4e778dff0abab105edad2dc1e1114.file.shopping-cart.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="184" column="13" selection-start-line="184" selection-start-column="13" selection-end-line="184" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/order-payment-classic.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="197" lean-forward="true" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/shopping-cart-advanced.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="322" selection-start-line="321" selection-end-line="322" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/shopping-cart.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4539">
+          <caret line="84" column="76" lean-forward="true" selection-start-line="84" selection-start-column="76" selection-end-line="85" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/shopping-cart.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4522">
+          <caret line="85" column="78" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
+          <folding>
+            <element signature="e#4306#4312#1#HTML" expanded="true" />
+            <element signature="e#24132#24154#0#HTML" expanded="true" />
+            <element signature="e#24282#24288#0#HTML" expanded="true" />
+            <element signature="e#25293#25299#0#HTML" expanded="true" />
+            <element signature="e#26250#26272#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/order-payment-classic.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="142" column="51" selection-start-line="142" selection-start-column="51" selection-end-line="142" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="216" column="22" lean-forward="true" selection-start-line="216" selection-start-column="22" selection-end-line="216" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/modules/blockcart/blockcart.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2958" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/shopping-cart-product-line.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/product.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="179" column="64" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="64" />
+          <folding>
+            <element signature="n#style#0;n#p#2;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/product-list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="100" column="60" selection-start-line="100" selection-start-column="60" selection-end-line="101" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/product.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="190" column="50" lean-forward="true" selection-start-line="190" selection-start-column="50" selection-end-line="190" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="926" column="9" selection-start-line="926" selection-start-column="9" selection-end-line="926" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="614" column="164" selection-start-line="614" selection-start-column="164" selection-end-line="614" selection-end-column="164" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#option#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blocktopmenu/blocktopmenu.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knorr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockcategories/blockcategories.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockcategories/category-tree-branch.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/category-count.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/category.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wabco.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="190" column="9" lean-forward="true" selection-start-line="190" selection-start-column="9" selection-end-line="190" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blockcategories/blockcategories.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="630" selection-start-line="630" selection-end-line="666" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="88" column="37" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -417,6 +417,5 @@
 {/if}
 {if $conditions}
 	{addJsDefL name=msg_order_carrier}{l s='You must agree to the terms of service before continuing.' js=1}{/addJsDefL}
-    {addJsDefL name=msg_waiting_order_carrier}{l s='ongoing treatment...' js=1}{/addJsDefL}
 {/if}
 {/strip}

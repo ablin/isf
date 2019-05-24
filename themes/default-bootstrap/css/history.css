@@ -24,13 +24,6 @@
   width: 105px; }
 .table tfoot strong {
   color: #333; }
-.table td a {
-    font-weight: bold;
-    text-decoration: underline;
-}
-.table td a:hover {
-    text-decoration: none;
-}
 
 .info-order i {
   font-size: 20px; }
@@ -45,14 +38,3 @@
     width: 263px; }
 
 /*# sourceMappingURL=history.css.map */
-
-.block-center  label {
-    width: 150px;
-}
-
-.order-confirm {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: green;
-}

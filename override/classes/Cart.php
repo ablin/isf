@@ -89,11 +89,14 @@ class Cart extends CartCore
                 IF (IFNULL(pa.`ean13`, \'\') = \'\', p.`ean13`, pa.`ean13`) AS ean13,
                 IF (IFNULL(pa.`upc`, \'\') = \'\', p.`upc`, pa.`upc`) AS upc,
                 IFNULL(product_attribute_shop.`minimal_quantity`, product_shop.`minimal_quantity`) as minimal_quantity,
-                IF(product_attribute_shop.wholesale_price > 0,  product_attribute_shop.wholesale_price, product_shop.`wholesale_price`) wholesale_price
+                IF(product_attribute_shop.wholesale_price > 0,  product_attribute_shop.wholesale_price, product_shop.`wholesale_price`) wholesale_price,
+                al.name AS sous_reference
             ');
 
             $sql->leftJoin('product_attribute', 'pa', 'pa.`id_product_attribute` = cp.`id_product_attribute`');
             $sql->leftJoin('product_attribute_shop', 'product_attribute_shop', '(product_attribute_shop.`id_shop` = cp.`id_shop` AND product_attribute_shop.`id_product_attribute` = pa.`id_product_attribute`)');
+            $sql->leftJoin('product_attribute_combination', 'product_attribute_combination', 'pa.`id_product_attribute` = product_attribute_combination.`id_product_attribute`');
+            $sql->leftJoin('attribute_lang', 'al', 'product_attribute_combination.`id_attribute` = al.`id_attribute` AND al.id_lang =  '.(int)$this->id_lang);
         } else {
             $sql->select(
                 'p.`reference` AS reference, p.`ean13`,
@@ -116,6 +119,7 @@ class Cart extends CartCore
                 $products_ids[] = $row['id_product'];
                 $products[$row['id_product']] = array(
                     'reference' => $row['reference'],
+                    'sous_reference' => $row['sous_reference'],
                     'quantity' => $row['cart_quantity']
                 );
                 $pa_ids[] = $row['id_product_attribute'];
@@ -274,8 +278,8 @@ class Cart extends CartCore
 
         $params = '';
 
-        foreach ($products as $product) {
-            $params .= '<REF>'.$product['reference'].'<SREF1> <SREF2> <QTE>'.$product['quantity'];
+        foreach ($this->_products as $product) {
+            $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['quantity'];
         }
 
         $cartParams = '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params;
@@ -300,12 +304,14 @@ class Cart extends CartCore
 
         if ($datas && $datas->references) {
             foreach ($datas->references as $reference) {
-                $this->_productList[$reference->ref] = array(
-                    'pub' => $reference->pub,
-                    'remise' => $reference->remise,
-                    'pun' => $reference->pun,
-                    'mont' => $reference->mont,
-                    'stock' => $reference->qteStock
+                $this->_productList[$reference->ref.$reference->sref1] = array(
+                    'pub' => isset($reference->pub) ? $reference->pub : "",
+                    'remise' => isset($reference->remise) ? $reference->remise : "",
+                    'pun' => isset($reference->pun) ? $reference->pun : "",
+                    'mont' => isset($reference->mont) ? $reference->mont : "",
+                    'stock' => isset($reference->qteStock) ? $reference->qteStock : "",
+                    'ref_des' => isset($reference->ref_des) ? $reference->ref_des : "",
+                    'frais_supp' => isset($reference->frais_supp) ? $reference->frais_supp : ""
                 );
             }
 
@@ -316,15 +322,18 @@ class Cart extends CartCore
         }
 
         foreach ($this->_products as $key => $product) {
-            if (isset($this->_productList[$product['reference']])) {
-                $this->_products[$key]['price'] = $this->_productList[$product['reference']]['pun'];
-                $this->_products[$key]['price_without_reduction'] = $this->_productList[$product['reference']]['pun'];
-                $this->_products[$key]['price_with_reduction'] = $this->_productList[$product['reference']]['pun'] - $this->_productList[$product['reference']]['remise'];
-                $this->_products[$key]['price_with_reduction_without_tax'] = $this->_productList[$product['reference']]['pub'] - $this->_productList[$product['reference']]['remise'];
-                $this->_products[$key]['price_wt'] = $this->_productList[$product['reference']]['pun'];
-                $this->_products[$key]['total'] = $this->_productList[$product['reference']]['mont'];
-                $this->_products[$key]['total_wt'] = $this->_productList[$product['reference']]['mont'];
-                $this->_products[$key]['quantity_available'] = $this->_productList[$product['reference']]['stock'];
+            $reference = $product['reference'].$product['sous_reference'];
+            if (isset($this->_productList[$reference])) {
+                $this->_products[$key]['price'] = $this->_productList[$reference]['pun'];
+                $this->_products[$key]['price_without_reduction'] = $this->_productList[$reference]['pun'];
+                $this->_products[$key]['price_with_reduction'] = $this->_productList[$reference]['pun'] - $this->_productList[$reference]['remise'];
+                $this->_products[$key]['price_with_reduction_without_tax'] = $this->_productList[$reference]['pub'] - $this->_productList[$reference]['remise'];
+                $this->_products[$key]['price_wt'] = $this->_productList[$reference]['pun'];
+                $this->_products[$key]['total'] = $this->_productList[$reference]['mont'];
+                $this->_products[$key]['total_wt'] = $this->_productList[$reference]['mont'];
+                $this->_products[$key]['quantity_available'] = $this->_productList[$reference]['stock'];
+                $this->_products[$key]['ref_des'] = $this->_productList[$reference]['ref_des'];
+                $this->_products[$key]['frais_supp'] = $this->_productList[$reference]['frais_supp'];
             }
         }
 

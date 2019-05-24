@@ -1,0 +1,24 @@
+<prestashop
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+    <product>
+        <reference>
+            <![CDATA[TESTANTHO1]]>
+        </reference>
+        <name>
+            <![CDATA[TESTANTHONAME]]>
+        </name>
+        <description_short>
+            <![CDATA[TESTANTHODESCRIPTIONSHORT]]>
+        </description_short>
+        <description>
+            <![CDATA[TESTANTHODESCRIPTION]]>
+        </description>
+        <familles>
+            <famille>
+                <name><![CDATA[FADPNEUM]]></name>
+            </famille>
+        </familles>
+        <active>1</active>
+        <date_upd>2019-05-03 12:06:23</date_upd>
+    </product>
+</prestashop>

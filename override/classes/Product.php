@@ -1,6 +1,15 @@
 <?php
 class Product extends ProductCore
 {
+    /** @var string Object last modification date in divalto */
+    public $date_upd_divalto;
+
+    public function __construct($id_product = null, $full = false, $id_lang = null, $id_shop = null, Context $context = null)
+    {
+        Category::$definition['fields']['date_upd_divalto'] = array('type' => self::TYPE_DATE, 'validate' => 'isDate');
+        parent::__construct($id_product, $id_lang, $id_shop);
+    }
+
     public static function getProductByReference($reference)
     {
         $sql = sprintf(
@@ -12,5 +21,25 @@ class Product extends ProductCore
         $product_id = Db::getInstance()->getValue($sql);
 
         return $product_id;
+    }
+
+    public static function getProduct($reference)
+    {
+        $sql = sprintf(
+            'SELECT p.id_product FROM %sproduct p WHERE p.reference = "%s"',
+            _DB_PREFIX_,
+            $reference
+        );
+        return Db::getInstance()->getRow($sql);
+    }
+
+    public static function productHasChanged($reference, $date) // TODO a deporter dans product.php
+    {
+        $sql = sprintf(
+            'SELECT p.date_upd_divalto FROM %sproduct p WHERE p.reference = "%s"',
+            _DB_PREFIX_,
+            $reference
+        );
+        return Db::getInstance()->getValue($sql) < $date;
     }
 }

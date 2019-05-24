@@ -50,7 +50,7 @@
 	</div>
 	{/if}-->
 	<div class="row">
-		<!--<div class="col-xs-12 col-sm-6">
+		<div class="col-xs-12 col-sm-6">
 			<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="create-account_form" class="box">
 				<h3 class="page-subheading">{l s='Create an account'}</h3>
 				<div class="form_content clearfix">
@@ -72,20 +72,20 @@
 					</div>
 				</div>
 			</form>
-		</div>-->
-		<div class="col-xs-12">
+		</div>
+		<div class="col-xs-12 col-sm-6">
 			<form action="{$link->getPageLink('authentication', true)|escape:'html':'UTF-8'}" method="post" id="login_form" class="box">
-				<!--<h3 class="page-subheading">{l s='Already registered?'}</h3>-->
+				<h3 class="page-subheading">{l s='Already registered?'}</h3>
 				<div class="form_content clearfix">
 					<div class="form-group">
-						<label for="login">{l s='Login'}</label>
-						<input class="is_required validate account_input form-control" type="text" id="login" maxlength="8" data-validate="isLogin" name="login" value="{if isset($smarty.post.login)}{$smarty.post.login|stripslashes}{/if}" />
+						<label for="email">{l s='Email address'}</label>
+						<input class="is_required validate account_input form-control" data-validate="isEmail" type="email" id="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" />
 					</div>
 					<div class="form-group">
 						<label for="passwd">{l s='Password'}</label>
 						<input class="is_required validate account_input form-control" type="password" data-validate="isPasswd" id="passwd" name="passwd" value="" />
 					</div>
-					<!--<p class="lost_password form-group"><a href="{$link->getPageLink('password')|escape:'html':'UTF-8'}" title="{l s='Recover your forgotten password'}" rel="nofollow">{l s='Forgot your password?'}</a></p>-->
+					<p class="lost_password form-group"><a href="{$link->getPageLink('password')|escape:'html':'UTF-8'}" title="{l s='Recover your forgotten password'}" rel="nofollow">{l s='Forgot your password?'}</a></p>
 					<p class="submit">
 						{if isset($back)}<input type="hidden" class="hidden" name="back" value="{$back|escape:'html':'UTF-8'}" />{/if}
 						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium">

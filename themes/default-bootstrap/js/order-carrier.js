@@ -44,12 +44,6 @@ $(document).ready(function(){
 	});
 
 	$(document).on('submit', 'form[name=carrier_area]', function(){
-        if (acceptCGV()) {
-            $(this).find(':submit').prop('disabled', true);
-            $(this).find(':submit').find('span').html(msg_waiting_order_carrier + '<i class="icon-chevron-right right"></i>');
-        } else {
-            return false;
-        }
 		return acceptCGV();
 	});
 

@@ -26,17 +26,11 @@
 $(document).ready(function(){
 	$('.cart_quantity_up').off('click').on('click', function(e){
 		e.preventDefault();
-        var cart_quantity_name = $(this).attr('id').replace('cart_quantity_up_', 'quantity_');
-        var cart_quantity = $('input[name='+cart_quantity_name+']').val();
-        $('input[name='+cart_quantity_name+']').val(Number(cart_quantity) + 1);
 		upQuantity($(this).attr('id').replace('cart_quantity_up_', ''));
 		$('#' + $(this).attr('id').replace('_up_', '_down_')).removeClass('disabled');
 	});
 	$('.cart_quantity_down').off('click').on('click', function(e){
 		e.preventDefault();
-        var cart_quantity_name = $(this).attr('id').replace('cart_quantity_down_', 'quantity_');
-        var cart_quantity = $('input[name='+cart_quantity_name+']').val();
-        $('input[name='+cart_quantity_name+']').val(Number(cart_quantity) - 1);
 		downQuantity($(this).attr('id').replace('cart_quantity_down_', ''));
 	});
 	$('.cart_quantity_delete' ).off('click').on('click', function(e){
@@ -599,7 +593,7 @@ function upQuantity(id, qty)
 	if (typeof(ids[3]) !== 'undefined')
 		id_address_delivery = parseInt(ids[3]);
 
-	var xhr = $.ajax({
+	$.ajax({
 		type: 'POST',
 		headers: { "cache-control": "no-cache" },
 		url: baseUri + '?rand=' + new Date().getTime(),
@@ -679,12 +673,6 @@ function upQuantity(id, qty)
 			}
 		}
 	});
-
-    $('.cart_quantity_up, .cart_quantity_down, .cart_quantity_delete').on('click', function(e) {
-        if (xhr) {
-            xhr.abort();
-        }
-    });
 }
 
 function downQuantity(id, qty)
@@ -694,6 +682,7 @@ function downQuantity(id, qty)
 	if(typeof(qty) == 'undefined' || !qty)
 	{
 		qty = 1;
+		newVal = val - 1;
 	}
 	else if (qty < 0)
 		qty = -qty;
@@ -715,7 +704,7 @@ function downQuantity(id, qty)
 
 	if (newVal > 0 || $('#product_' + id + '_gift').length)
 	{
-		var xhr = $.ajax({
+		$.ajax({
 			type: 'POST',
 			headers: { "cache-control": "no-cache" },
 			url: baseUri + '?rand=' + new Date().getTime(),
@@ -786,13 +775,6 @@ function downQuantity(id, qty)
 					alert("TECHNICAL ERROR: unable to save update quantity \n\nDetails:\nError thrown: " + XMLHttpRequest + "\n" + 'Text status: ' + textStatus);
 			}
 		});
-
-
-        $('.cart_quantity_up, .cart_quantity_down, .cart_quantity_delete').on('click', function(e) {
-            if (xhr) {
-                xhr.abort();
-            }
-        });
 
 	}
 	else

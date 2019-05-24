@@ -1,0 +1,16 @@
+<prestashop
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+    <category>
+        <name>
+            <![CDATA[ACCELERA]]>
+        </name>
+        <description>
+            <![CDATA[Accélérateurs]]>
+        </description>
+        <parent>
+            <![CDATA[]]>
+        </parent>
+        <date_upd>2019-03-29 12:06:23</date_upd>
+        <top_menu>1</top_menu>
+    </category>
+</prestashop>

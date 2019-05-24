@@ -48,10 +48,11 @@
   #subcategories ul {
     margin: 0 0 0 -20px; }
     #subcategories ul li {
-        list-style-type: square;
+      float: left;
       width: 145px;
       margin: 0 0 13px 33px;
-      text-align: center; }
+      text-align: center;
+      height: 202px; }
       #subcategories ul li .subcategory-image {
         padding: 0 0 8px 0; }
         #subcategories ul li .subcategory-image a {

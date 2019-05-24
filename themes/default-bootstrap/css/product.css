@@ -1,5 +1,8 @@
 /* product desc */
 /* primary_block ***************************************************************************** */
+.primary_block {
+  margin-bottom: 40px; }
+
 .top-hr {
   background: #C4C4C4;
   height: 5px;
@@ -306,6 +309,9 @@ span.view_scroll_spacer {
       content: "\f004"; }
 
 /* pb-left-column ****************************************************************************** */
+.pb-center-column {
+  margin-bottom: 30px;
+  /* form */ }
   .pb-center-column h1 {
     padding-bottom: 16px;
     font-size: 20px;
@@ -434,8 +440,6 @@ span.view_scroll_spacer {
   border-bottom: 1px solid #b0afaf; }
   .box-info-product p {
     margin-bottom: 7px; }
-  .box-info-product p.quantity-wanted {
-    padding: 7px 15px; }
   .box-info-product .exclusive {
     padding: 0;
     border-top: 1px solid #0079b6;
@@ -496,8 +500,6 @@ span.view_scroll_spacer {
       @media (max-width: 991px) {
         .box-info-product .exclusive:after {
           display: none; } }
-    .box-info-product .exclusive:disabled {
-        opacity: 0.3;}
     .box-info-product .exclusive span {
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -773,7 +775,8 @@ table.table-product-discounts {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#fbfbfb',GradientType=0 ); }
 
 /* prices */
-.content_prices { }
+.content_prices {
+  padding: 13px 19px; }
 
 .discount {
   display: none; }
@@ -914,15 +917,6 @@ ul#text_fields {
 
 #customizedDatas {
   float: right; }
-
-#productTarifs {
-    border: 1px solid;
-    border-collapse: initial;
-}
-
-#productTarifs tr th, #productTarifs tr td {
-    text-align: center;
-}
 
 /******************************************************************
 Quick View Styles
