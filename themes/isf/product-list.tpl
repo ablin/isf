@@ -103,17 +103,13 @@
                     </p>
                     <p class="product-stock" itemprop="stock">
                         <label>{l s='Stock:'}</label>
-                        <span class="availability">
-                            {if $product.reference|array_key_exists:$references && 'stock'|array_key_exists:$references[$product.reference] && $references[$product.reference]['stock'] > 0}
-                                <span class="label-success">
-                                    {$references[$product.reference]['stock']}
-                                </span>
-                            {else}
-                                <span class="label-danger">
-                                    0
-                                </span>
-                            {/if}
-                        </span>
+						{if $product.reference|array_key_exists:$references && 'total_jauge'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_jauge'] != -1}
+							<span class="availability">
+								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] == 1} orange{elseif $references[$product.reference]['total_jauge'] > 0} green{/if}"></span>
+								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 1} green{/if}"></span>
+								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 2} green{/if}"></span>
+							</span>
+						{/if}
                     </p>
                     {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
                         <p class="product-tarifs">
@@ -123,20 +119,6 @@
                             {/if}
                         </p>
                     {/if}
-					{if (!$PS_CATALOG_MODE AND ((isset($product.show_price) && $product.show_price) || (isset($product.available_for_order) && $product.available_for_order)))}
-					<div class="content_price">
-						<span class="price product-price">
-                            {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
-                                {convertPrice price=$references[$product.reference]['tarif']}<br />
-                                {if $references[$product.reference]['nb_tarif'] > 1}
-                                    <span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
-                                {/if}
-                            {else}
-                                {l s='Price on demand'}
-                            {/if}
-						</span>
-					</div>
-					{/if}
 					<div class="button-container">
 						{if !$PS_CATALOG_MODE}
                             <div class="quantity">

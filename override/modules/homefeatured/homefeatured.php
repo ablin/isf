@@ -4,10 +4,10 @@
 *
 * NOTICE OF LICENSE
 *
-* This source file is subject to the Open Software License (OSL 3.0)
+* This source file is subject to the Academic Free License (AFL 3.0)
 * that is bundled with this package in the file LICENSE.txt.
 * It is also available through the world-wide-web at this URL:
-* http://opensource.org/licenses/osl-3.0.php
+* http://opensource.org/licenses/afl-3.0.php
 * If you did not receive a copy of the license and are unable to
 * obtain it through the world-wide-web, please send an email
 * to license@prestashop.com so we can send you a copy immediately.
@@ -20,50 +20,34 @@
 *
 *  @author PrestaShop SA <contact@prestashop.com>
 *  @copyright  2007-2016 PrestaShop SA
-*  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+*  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-class CategoryController extends CategoryControllerCore
+if (!defined('_PS_VERSION_'))
+    exit;
+
+class HomeFeaturedOverride extends HomeFeatured
 {
-    /**
-     * Assigns product list template variables
-     */
-    public function assignProductList()
+    public function _cacheProducts()
     {
-        $hook_executed = false;
-        Hook::exec('actionProductListOverride', array(
-            'nbProducts'   => &$this->nbProducts,
-            'catProducts'  => &$this->cat_products,
-            'hookExecuted' => &$hook_executed,
-        ));
-
-        // The hook was not executed, standard working
-        if (!$hook_executed) {
-            $this->context->smarty->assign('categoryNameComplement', '');
-            $this->nbProducts = $this->category->getProducts(null, null, null, $this->orderBy, $this->orderWay, true);
-            $this->pagination((int)$this->nbProducts); // Pagination must be call after "getProducts"
-            $this->cat_products = $this->category->getProducts($this->context->language->id, (int)$this->p, (int)$this->n, $this->orderBy, $this->orderWay);
+        if (!isset(HomeFeatured::$cache_products))
+        {
+            $category = new Category((int)Configuration::get('HOME_FEATURED_CAT'), (int)Context::getContext()->language->id);
+            $nb = (int)Configuration::get('HOME_FEATURED_NBR');
+            if (Configuration::get('HOME_FEATURED_RANDOMIZE'))
+                HomeFeatured::$cache_products = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 8), null, null, false, true, true, ($nb ? $nb : 8));
+            else
+                HomeFeatured::$cache_products = $category->getProducts((int)Context::getContext()->language->id, 1, ($nb ? $nb : 8), 'position');
         }
-        // Hook executed, use the override
-        else {
-            // Pagination must be call after "getProducts"
-            $this->pagination($this->nbProducts);
-        }
-        
-        $this->addColorsToProductList($this->cat_products);
 
-        Hook::exec('actionProductListModifier', array(
-            'nb_products'  => &$this->nbProducts,
-            'cat_products' => &$this->cat_products,
-        ));
-
-        $this->context->smarty->assign('nb_products', $this->nbProducts);
+        if (HomeFeatured::$cache_products === false || empty(HomeFeatured::$cache_products))
+            return false;
 
         $productIds = array();
-        $products = array();
+        $productsFeatured = array();
 
-        foreach ($this->cat_products as &$product) {
+        foreach (HomeFeatured::$cache_products as &$product) {
             $productIds[] = $product['reference'];
         }
         $productIds = implode(";", $productIds);
@@ -78,7 +62,7 @@ class CategoryController extends CategoryControllerCore
                 foreach ($datas->references as $reference) {
 
                     if ($reference->trouve == 1) {
-                        $products[$reference->ref] = array(
+                        $productsFeatured[$reference->ref] = array(
                             'total_stock' => $reference->total_stock,
                             'total_dispo' => $reference->total_dispo,
                             'total_jauge' => $reference->total_jauge,
@@ -86,8 +70,10 @@ class CategoryController extends CategoryControllerCore
                             'nb_tarif' => $reference->nbTarifs
                         );
                     } else {
-                        $products[$reference->ref] = array(
-                            'stock' => 0,
+                        $productsFeatured[$reference->ref] = array(
+                            'total_stock' => 0,
+                            'total_dispo' => 0,
+                            'total_jauge' => 0,
                             'tarif' => 0,
                             'nb_tarif' => 0
                         );
@@ -99,6 +85,6 @@ class CategoryController extends CategoryControllerCore
             throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
 
-        $this->context->smarty->assign('references', $products);
+        $this->smarty->assign('references', $productsFeatured);
     }
 }

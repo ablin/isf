@@ -139,7 +139,7 @@
 </tr>
 {if $product.frais_supp}
 	{foreach from=$product.frais_supp item=frais_supp}
-		<tr style="background:#4EA1FF;">
+		<tr class="additional_costs">
 			<td class="cart_description" colspan="5">
 				<p class="product-name">&rarr;&nbsp;{$frais_supp->libelle|escape:'html':'UTF-8'}</p>
 			</td>

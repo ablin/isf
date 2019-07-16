@@ -31,7 +31,6 @@ a.fancybox-nav {
   display: block;
   cursor: pointer;
   padding: 5px;
-  border: 1px solid #dbdbdb;
   background: #fff; }
   @media (max-width: 767px) {
     .pb-left-column #image-block {
@@ -309,7 +308,8 @@ span.view_scroll_spacer {
   .pb-center-column h1 {
     padding-bottom: 16px;
     font-size: 20px;
-    color: #3a3939; }
+    font-weight: bold;
+    color: #4ea1ff; }
   .pb-center-column p {
     margin-bottom: 10px; }
   .pb-center-column #product_reference {
@@ -759,6 +759,27 @@ table.table-product-discounts {
 #pQuantityAvailable span {
   font-weight: 700;
   color: #333; }
+
+.availability span {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px 8px 4px 8px; }
+
+.availability span.availability-gauge {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  padding: 0;
+  margin: -3px -1px;
+  background: #fff;
+}
+.availability span.availability-gauge.green {
+  background: #00ca20;
+}
+.availability span.availability-gauge.orange {
+  background: orange;
+}
 
 /* box-security */
 .box-security {

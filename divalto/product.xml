@@ -18,7 +18,34 @@
                 <name><![CDATA[FADPNEUM]]></name>
             </famille>
         </familles>
+        <image>http://interface59.ath.cx:8081/documents/IMAGES/ref_40456033_1.jpg</image>
         <active>1</active>
         <date_upd>2019-05-03 12:06:23</date_upd>
+        <attributes>
+            <attribute>
+                <name>Sous référence</name>
+                <value>N</value>
+            </attribute>
+            <attribute>
+                <name>Sous référence</name>
+                <value>ER</value>
+            </attribute>
+            <attribute>
+                <name>Sous référence</name>
+                <value>ES</value>
+            </attribute>
+        </attributes>
+        <features>
+            <feature>
+                <name>Type</name>
+                <value>456 F-O</value>
+                <custom>0</custom>
+            </feature>
+            <feature>
+                <name>Remarque</name>
+                <value>Blabla blabla</value>
+                <custom>1</custom>
+            </feature>
+        </features>
     </product>
 </prestashop>

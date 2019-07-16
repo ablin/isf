@@ -136,13 +136,17 @@ class SearchController extends SearchControllerCore
 
                         if ($reference->trouve == 1) {
                             $products[$reference->ref] = array(
-                                'stock' => $reference->total_stock,
+                                'total_stock' => $reference->total_stock,
+                                'total_dispo' => $reference->total_dispo,
+                                'total_jauge' => $reference->total_jauge,
                                 'tarif' => $reference->max_pun,
                                 'nb_tarif' => $reference->nbTarifs
                             );
                         } else {
                             $products[$reference->ref] = array(
-                                'stock' => 0,
+                                'total_stock' => 0,
+                                'total_dispo' => 0,
+                                'total_jauge' => 0,
                                 'tarif' => 0,
                                 'nb_tarif' => 0
                             );

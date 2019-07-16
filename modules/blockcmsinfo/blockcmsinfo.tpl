@@ -29,5 +29,11 @@
 			<div class="col-xs-6">{$info.text}</div>
 		{/foreach}
 </div>
+<div id="slider_row" class="row">
+	{capture name='displayTopColumn'}{hook h='displayTopColumn'}{/capture}
+	{if $smarty.capture.displayTopColumn}
+		<div id="top_column" class="center_column col-xs-12 col-sm-12">{$smarty.capture.displayTopColumn}</div>
+	{/if}
+</div>
 <!-- /MODULE Block cmsinfo -->
 {/if}

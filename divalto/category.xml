@@ -1,16 +1,58 @@
-<prestashop
-        xmlns:xlink="http://www.w3.org/1999/xlink">
+<prestashop xmlns:xlink="http://www.w3.org/1999/xlink">
     <category>
-        <name>
-            <![CDATA[ACCELERA]]>
-        </name>
-        <description>
-            <![CDATA[Accélérateurs]]>
-        </description>
-        <parent>
-            <![CDATA[]]>
-        </parent>
-        <date_upd>2019-03-29 12:06:23</date_upd>
-        <top_menu>1</top_menu>
+        <active>1</active>
+        <name><![CDATA[FRICDISH]]></name>
+        <description><![CDATA[Freins disque hydrauliques]]></description>
+        <parent><![CDATA[FRIC]]></parent>
+        <date_upd>2019-07-05 15:00:00</date_upd>
+        <top_menu>0</top_menu>
+        <image>http://interface59.ath.cx:8081/documents/IMAGES/ref_40456033_1.jpg</image>
+        <features>
+            <feature>
+                <name>remarques</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>Type</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>Coté de la fixation</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>vis a vis</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>garnitures de frein à tambour</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>BVA</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>Mâchoires de frein garnies</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>Fixation</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+            <feature>
+                <name>Application</name>
+                <active>1</active>
+                <type>0</type>
+            </feature>
+        </features>
     </category>
 </prestashop>

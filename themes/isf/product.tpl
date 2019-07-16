@@ -62,7 +62,7 @@
             </p>
         {/if}
         <!-- left infos-->
-        <div class="pb-left-column col-xs-12 col-sm-4 col-md-5">
+        <div class="pb-left-column col-xs-12 col-sm-4 col-md-4">
             <!-- product img-->
             <div id="image-block" class="clearfix">
                 {if $product->new}
@@ -151,7 +151,7 @@
         </div> <!-- end pb-left-column -->
         <!-- end left infos-->
         <!-- center infos -->
-        <div class="pb-center-column col-xs-12 col-sm-4">
+        <div class="pb-center-column col-xs-12 col-sm-5">
             {if $product->online_only}
                 <p class="online_only">{l s='Online only'}</p>
             {/if}
@@ -337,17 +337,39 @@
                                         <td style="text-align: left"><strong>{$sousref->sref1_Des}</strong></td>
                                         <td colspan="5" style="text-align: right;">
                                             <strong>{l s='Stock:'}</strong>
-                                            <span class="availability">
-                                                {if $sousref->qteStock > 0}
-                                                    <span id="availability_value" class="label label-success">
-                                                        {$sousref->qteStock}
-                                                    </span>
-                                                {else}
-                                                    <span id="availability_value" class="label label-danger">
-                                                        0
-                                                    </span>
-                                                {/if}
-                                            </span>
+                                            {if $sousref->qteStock != -1}
+                                                <span class="availability">
+                                                    {if $sousref->qteStock > 0}
+                                                        <span id="availability_value" class="label label-success">
+                                                            {$sousref->qteStock}
+                                                        </span>
+                                                    {else}
+                                                        <span id="availability_value" class="label label-danger">
+                                                            0
+                                                        </span>
+                                                    {/if}
+                                                </span>
+                                            {/if}
+                                            {if $sousref->qteDispo != -1}
+                                                <span class="availability">
+                                                    {if $sousref->qteDispo > 0}
+                                                        <span id="availability_value" class="label-success">
+                                                            {l s='Available'}
+                                                        </span>
+                                                    {else}
+                                                        <span id="availability_value" class="label-danger">
+                                                            {l s='Unavailable'}
+                                                        </span>
+                                                    {/if}
+                                                </span>
+                                            {/if}
+                                            {if $sousref->qteJauge != -1}
+                                                <span class="availability">
+                                                    <span class="availability-gauge{if $sousref->qteJauge == 1} orange{elseif $sousref->qteJauge > 0} green{/if}"></span>
+                                                    <span class="availability-gauge{if $sousref->qteJauge > 1} green{/if}"></span>
+                                                    <span class="availability-gauge{if $sousref->qteJauge > 2} green{/if}"></span>
+                                                </span>
+                                            {/if}
                                         </td>
                                     </tr>
                                 {/if}
