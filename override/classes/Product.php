@@ -6,7 +6,7 @@ class Product extends ProductCore
 
     public function __construct($id_product = null, $full = false, $id_lang = null, $id_shop = null, Context $context = null)
     {
-        Category::$definition['fields']['date_upd_divalto'] = array('type' => self::TYPE_DATE, 'validate' => 'isDate');
+        Product::$definition['fields']['date_upd_divalto'] = array('type' => self::TYPE_DATE, 'validate' => 'isDate');
         parent::__construct($id_product, $id_lang, $id_shop);
     }
 
@@ -33,7 +33,7 @@ class Product extends ProductCore
         return Db::getInstance()->getRow($sql);
     }
 
-    public static function productHasChanged($reference, $date) // TODO a deporter dans product.php
+    public static function productHasChanged($reference, $date)
     {
         $sql = sprintf(
             'SELECT p.date_upd_divalto FROM %sproduct p WHERE p.reference = "%s"',

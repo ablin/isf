@@ -13,25 +13,44 @@
         <description>
             <![CDATA[TESTANTHODESCRIPTION]]>
         </description>
+        <price>
+            100.00
+        </price>
+        <active>1</active>
+        <date_upd>2019-05-03 12:06:23</date_upd>
         <familles>
+            <famille>
+                <name><![CDATA[WABCO]]></name>
+            </famille>
             <famille>
                 <name><![CDATA[FADPNEUM]]></name>
             </famille>
+            <famille>
+                <name><![CDATA[ACCUEIL]]></name>
+            </famille>
         </familles>
-        <image>http://interface59.ath.cx:8081/documents/IMAGES/ref_40456033_1.jpg</image>
-        <active>1</active>
-        <date_upd>2019-05-03 12:06:23</date_upd>
+        <images>
+            <image>
+                <url>http://interface59.ath.cx:8081/documents/IMAGES/ref_40456033_1.jpg</url>
+            </image>
+            <image>
+                <url>http://interface59.ath.cx:8081/documents/IMAGES/ref_40456033_2.jpg</url>
+            </image>
+        </images>
         <attributes>
             <attribute>
                 <name>Sous référence</name>
+                <description>Neuf</description>
                 <value>N</value>
             </attribute>
             <attribute>
                 <name>Sous référence</name>
+                <description>Echange réparation</description>
                 <value>ER</value>
             </attribute>
             <attribute>
                 <name>Sous référence</name>
+                <description>Echange Standard</description>
                 <value>ES</value>
             </attribute>
         </attributes>

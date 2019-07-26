@@ -39,6 +39,7 @@ class ProductController extends ProductControllerCore
             $tarif = 0;
             $sousRefs = array();
             $nb_tarif = 0;
+            $alerte = "";
 
             if ($datas && $datas->references) {
                 foreach ($datas->references as $reference) {
