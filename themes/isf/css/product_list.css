@@ -416,10 +416,12 @@ Product list(Index page) Styles
 /*# sourceMappingURL=product_list.css.map */
 
 .product-tarifs-infos {
-    font-size: 10px;
+  font-size: 10px;
+  display: block;
 }
 
 .product-tarifs {
   font: 600 21px/26px "Open Sans", sans-serif;
-  color: #333;
+  color: #4ea1ff;
+  padding-bottom: 10px;
 }

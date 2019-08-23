@@ -231,7 +231,6 @@ class Import
             // Check if product must be updated
             $productHasChanged = Product::productHasChanged((string) $produit->reference, (string) $produit->date_upd);
             $productId = Product::getProductByReference((string) $produit->reference);
-            $productHasChanged = true; //TODO a supprimer
 
             if (!$productId || $productHasChanged) {
                 $product = new Product();
@@ -303,6 +302,7 @@ class Import
 
                 // Product attributes
                 if ($produit->attributes) {
+                    $attributes = $this->getAllproductAttributes($product->id);
                     foreach ($produit->attributes->attribute as $attribute) {
                         $attributeList = array();
                         if (false == $id_product_attribute = $this->productAttributeExists($attribute, $product->id)) {
@@ -329,25 +329,84 @@ class Import
                         } else {
                             $product->updateAttribute((int) $id_product_attribute,null,null, null,null,null,array(),"","",(int) $attribute->default, null, null,null, false);
                         }
+                        unset($attributes[array_search($id_product_attribute, $attributes)]);
                     }
                 }
-                //TODO Supprimer attributs qui n'existent pas dans divalto   <========= 1
-                /* A tester
-                Récupérer le $id_product_attribute
-                $combination = new Combination($id_product_attribute);
-                $res = $combination->delete();
-                }*/
 
+                if ($attributes) {
+                    foreach ($attributes as $id_product_attribute) {
+                        $product->deleteAttributeCombination((int) $id_product_attribute);
+                    }
+                }
 
-                //TODO restent caractéristiques    <========= 2
+                // Product features
+                if ($produit->features) {
+                    foreach ($produit->features->feature as $productFeature) {
+                        $feature = Feature::getFeatureByName((string) $productFeature->name);
+
+                        // Add feature if not exists
+                        if (!$feature) {
+                            $featureAdd = new Feature();
+                            $featureAdd->name = AdminImportController::createMultiLangField((string) $productFeature->name);
+                            $featureAdd->add();
+                            $feature = Feature::getFeatureByName((string) $productFeature->name);
+                        }
+
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value);
+                        // Add feature value if not exists, update otherwise
+                        if (!$featureValue) {
+                            $featureValueAdd = new FeatureValue();
+                            $featureValueAdd->id_feature = $feature['id_feature'];
+                        } else {
+                            $featureValueAdd = new FeatureValue($featureValue['id_feature_value']);
+                        }
+                        $featureValueAdd->value = AdminImportController::createMultiLangField((string) $productFeature->value);
+                        $featureValueAdd->custom = (int) $productFeature->custom;
+                        if (!$featureValue) {
+                            $featureValueAdd->add();
+                        } else {
+                            $featureValueAdd->update();
+                        }
+
+                        Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
+
+                    }
+                }
 
                 if (count($productCategories) > 0  && $product->id) {
                     $product->updateCategories($productCategories);
                 }
             }
 
-            //TODO réindexer les produits    <========= 3
+            Search::indexation(false);
+
         }
+    }
+
+    /**
+     * @param $attribute
+     * @param $productId
+     * @return false|string|null
+     */
+    private function getAllproductAttributes($productId)
+    {
+        $attributes = array();
+
+        $sql = sprintf(
+            "SELECT pac.id_product_attribute FROM %sproduct_attribute_combination pac
+                            INNER JOIN %sproduct_attribute pa using (id_product_attribute)
+                            WHERE pa.id_product = %d",
+            _DB_PREFIX_,
+            _DB_PREFIX_,
+            $productId
+        );
+
+        $result = Db::getInstance()->executeS($sql);
+        foreach ($result as $attribute) {
+            $attributes[] = $attribute['id_product_attribute'];
+        }
+
+        return $attributes;
     }
 
     /**
@@ -358,7 +417,7 @@ class Import
     private function productAttributeExists($attribute, $productId)
     {
         $sql = sprintf(
-            "SELECT pac.* FROM %sattribute_lang al
+            "SELECT pac.id_product_attribute FROM %sattribute_lang al
                             INNER JOIN %sproduct_attribute_combination pac using (id_attribute)
                             INNER JOIN %sproduct_attribute pa using (id_product_attribute)
                             INNER JOIN %sattribute a using (id_attribute)
@@ -392,19 +451,6 @@ class Import
             (int) $attribute->id_attribute_group,
             (string) $attribute->value,
             (int) Context::getContext()->language->id
-        );
-
-        return Db::getInstance()->getValue($sql);
-    }
-
-    /**
-     *
-     */
-    private function getLastProductAttribute()
-    {
-        $sql = sprintf(
-            "SELECT pa.id_product_attribute FROM %sproduct_attribute pa order by 1 DESC",
-            _DB_PREFIX_
         );
 
         return Db::getInstance()->getValue($sql);

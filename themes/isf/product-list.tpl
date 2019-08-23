@@ -111,16 +111,16 @@
 							</span>
 						{/if}
                     </p>
-                    {if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
-                        <p class="product-tarifs">
-                            {convertPrice price=$references[$product.reference]['tarif']}<br />
-                            {if $references[$product.reference]['nb_tarif'] > 1}
-                                <span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
-                            {/if}
-                        </p>
-                    {/if}
 					<div class="button-container">
 						{if !$PS_CATALOG_MODE}
+							{if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
+								<p class="product-tarifs">
+									{convertPrice price=$references[$product.reference]['tarif']}
+									{if $references[$product.reference]['nb_tarif'] > 1}
+										<span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
+									{/if}
+								</p>
+							{/if}
                             <div class="quantity">
                                 <label>
                                     <strong>{l s='Quantity:'}</strong>

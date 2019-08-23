@@ -10,7 +10,7 @@ SetEnv HTTP_MOD_REWRITE On
 RewriteEngine on
 
 
-#Domain: 192.168.0.114
+#Domain: 192.168.0.107
 RewriteRule . - [E=REWRITEBASE:/prestashop/]
 RewriteRule ^api$ api/ [L]
 
