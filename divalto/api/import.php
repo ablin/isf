@@ -117,6 +117,7 @@ class Import
                 // Category informations
                 $category->active = (int) $famille->active;
                 $category->is_root_category = 0;
+                $category->link = (string) $famille->link;
                 $category->date_upd_divalto = date((string) $famille->date_upd);
                 $category->name = AdminImportController::createMultiLangField(addslashes((string) $famille->name));
                 $category->description = AdminImportController::createMultiLangField(addslashes((string) $famille->description));
@@ -141,7 +142,7 @@ class Import
 
                 // Category image
                 if ((string) $famille->image) {
-                    AdminImportController::copyImg($category->id, null, $famille->image, 'categories', true);
+                    AdminImportController::copyImg($category->id, null, (string) $famille->image, 'categories', true);
                 }
 
                 // Category blocklayered
@@ -314,12 +315,13 @@ class Import
                                 $attributeId = $this->attributeExists($attribute);
                             }
                             $attributeList[] = $attributeId;
+                            //TODO bug ici lors de l'import premier
                             $id_product_attribute = $product->addCombinationEntity(0, 0, 0, 0, 0, 0, array(), "", null, "", (int) $attribute->default, null, null, 1, array(), "0000-00-00");
 
                             $combination = new Combination((int) $id_product_attribute);
                             $combination->setAttributes($attributeList);
                             $product->checkDefaultAttributes();
-                            if ($attribute->default) {
+                            if ((int) $attribute->default) {
                                 Product::updateDefaultAttribute((int) $product->id);
                                 if (isset($id_product_attribute)) {
                                     $product->cache_default_attribute = (int) $id_product_attribute;
@@ -367,6 +369,7 @@ class Import
                         } else {
                             $featureValueAdd->update();
                         }
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value);
 
                         Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
 

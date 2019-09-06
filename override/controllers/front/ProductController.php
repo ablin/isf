@@ -27,6 +27,15 @@
 class ProductController extends ProductControllerCore
 {
     /**
+     * Assign template vars related to page content
+     * @see FrontController::initContent()
+     */
+    public function initContent()
+    {
+        parent::initContent();
+    }
+
+    /**
      * Assign price and tax to the template
      */
     protected function assignPriceAndTax()

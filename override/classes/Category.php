@@ -29,9 +29,13 @@ class Category extends CategoryCore
     /** @var string Object last modification date in divalto */
     public $date_upd_divalto;
 
+    /** @var string Link in divalto */
+    public $link;
+
     public function __construct($id_category = null, $id_lang = null, $id_shop = null)
     {
         Category::$definition['fields']['date_upd_divalto'] = array('type' => self::TYPE_DATE, 'validate' => 'isDate');
+        Category::$definition['fields']['link'] = array('type' => self::TYPE_STRING, 'validate' => 'isAnything', 'size' => 255);
         parent::__construct($id_category, $id_lang, $id_shop);
     }
 
