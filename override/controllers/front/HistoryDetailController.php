@@ -24,6 +24,8 @@ class HistoryDetailController extends FrontController
                 foreach ($datas->lignes as $ligne) {
                     if ($ligne->ref && $product_id = Product::getProductByReference($ligne->ref)) {
                         $ligne->link = $this->context->link->getProductLink($product_id);
+                    } else {
+                        $ligne->link = "";
                     }
                 }
                 $this->context->smarty->assign('lignes', $datas->lignes);

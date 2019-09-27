@@ -288,7 +288,6 @@ function display(view)
 			}
             html += '<p class="product-desc">'+ $(element).find('.product-desc').html() + '</p>';
             html += '<p class="product-reference">'+ $(element).find('.product-reference').html() + '</p>';
-            html += '<p class="product-manufacturer">'+ $(element).find('.product-manufacturer').html() + '</p>';
 			html += '<p class="product-stock">'+ $(element).find('.product-stock').html() + '</p>';
 			var colorList = $(element).find('.color-list-container').html();
 			if (colorList != null) {

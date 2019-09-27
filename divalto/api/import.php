@@ -98,6 +98,7 @@ class Import
                     if ($categoryParent) {
                         $category->id_parent = $categoryParent['id_category'];
                         $category->level_depth = !$categoryId ? (int) $categoryParent['level_depth'] + 1 : $categoryExists['level_depth'];
+                        $category->is_root_category = 0;
                     } else {
                         $webServiceDiva = new WebServiceDiva(
                             '<ACTION>ERREUR',
@@ -110,13 +111,13 @@ class Import
                         continue;
                     }
                 } else {
-                    $category->id_parent = 2;
-                    $category->level_depth = !$categoryId ? 2 : $categoryExists['level_depth'];
+                    $category->id_parent = 1;
+                    $category->level_depth = !$categoryId ? 1 : $categoryExists['level_depth'];
+                    $category->is_root_category = 1;
                 }
 
                 // Category informations
                 $category->active = (int) $famille->active;
-                $category->is_root_category = 0;
                 $category->link = (string) $famille->link;
                 $category->date_upd_divalto = date((string) $famille->date_upd);
                 $category->name = AdminImportController::createMultiLangField(addslashes((string) $famille->name));
@@ -315,7 +316,9 @@ class Import
                                 $attributeId = $this->attributeExists($attribute);
                             }
                             $attributeList[] = $attributeId;
-                            //TODO bug ici lors de l'import premier
+                            if ((int) $attribute->default) {
+                                $product->deleteDefaultAttributes();
+                            }
                             $id_product_attribute = $product->addCombinationEntity(0, 0, 0, 0, 0, 0, array(), "", null, "", (int) $attribute->default, null, null, 1, array(), "0000-00-00");
 
                             $combination = new Combination((int) $id_product_attribute);
@@ -363,7 +366,7 @@ class Import
                             $featureValueAdd = new FeatureValue($featureValue['id_feature_value']);
                         }
                         $featureValueAdd->value = AdminImportController::createMultiLangField((string) $productFeature->value);
-                        $featureValueAdd->custom = (int) $productFeature->custom;
+                        $featureValueAdd->custom = (int) $productFeature->custom; //TODO fonctionne pas
                         if (!$featureValue) {
                             $featureValueAdd->add();
                         } else {

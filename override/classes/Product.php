@@ -1,13 +1,17 @@
 <?php
 class Product extends ProductCore
 {
+    /** @var string Name */
+    public $name;
+
     /** @var string Object last modification date in divalto */
     public $date_upd_divalto;
 
     public function __construct($id_product = null, $full = false, $id_lang = null, $id_shop = null, Context $context = null)
     {
+        Product::$definition['fields']['name'] = array('type' => self::TYPE_STRING, 'lang' => true, 'required' => true, 'size' => 128);
         Product::$definition['fields']['date_upd_divalto'] = array('type' => self::TYPE_DATE, 'validate' => 'isDate');
-        parent::__construct($id_product, $id_lang, $id_shop);
+        parent::__construct($id_product, false, $id_lang, $id_shop);
     }
 
     public static function getProductByReference($reference)

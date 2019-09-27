@@ -97,10 +97,6 @@
                         <label>{l s='Reference:'}</label>
                         {$product.reference|strip_tags:'UTF-8'}
                     </p>
-                    <p class="product-manufacturer" itemprop="manufacturer">
-                        <label>{l s='Manufacturer:'}</label>
-                        {$product.manufacturer_name|strip_tags:'UTF-8'}
-                    </p>
                     <p class="product-stock" itemprop="stock">
                         <label>{l s='Stock:'}</label>
 						{if $product.reference|array_key_exists:$references && 'total_jauge'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_jauge'] != -1}

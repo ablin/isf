@@ -175,10 +175,6 @@
                 <label>{l s='Reference:'} </label>
                 <span class="editable" itemprop="sku"{if !empty($product->reference) && $product->reference} content="{$product->reference}"{/if}>{if !isset($groups)}{$product->reference|escape:'html':'UTF-8'}{/if}</span>
             </p>
-            <p id="product_manufacturer_name"{if empty($product->manufacturer_name) || !$product->manufacturer_name} style="display: none;"{/if}>
-                <label>{l s='Manufacturer:'} </label>
-                {$product->manufacturer_name|strip_tags:'UTF-8'}
-            </p>
             {if ($display_qties == 1 && !$PS_CATALOG_MODE && $PS_STOCK_MANAGEMENT && $product->available_for_order)}
                 <!-- number of item in stock -->
                 <p id="pQuantityAvailable"{if $product->quantity <= 0} style="display: none;"{/if}>

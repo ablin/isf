@@ -2,11 +2,17 @@
 
 class BlocktopmenuOverride extends Blocktopmenu
 {
+    private $count;
+
     protected function generateCategoriesMenu($categories, $is_children = 0)
     {
         $html = '';
 
         foreach ($categories as $key => $category) {
+
+            if (!$is_children) {
+                $this->count = 0;
+            }
 
             $nb_products = Db::getInstance()->ExecuteS('
                 SELECT COUNT(cp.`id_product`) as totalProducts
@@ -34,7 +40,7 @@ class BlocktopmenuOverride extends Blocktopmenu
                     && (int)Tools::getValue('id_category') == (int)$category['id_category']) ? ' class="sfHoverForce"' : '').'>';
             $html .= '<a href="'.$link.'" title="'.strip_tags(stripslashes($category['description'])).'">'.substr(strip_tags(stripslashes($category['description'])), 0, 40);
 
-            if ((int)$category['level_depth'] == 3) {
+            if ($is_children) {
 
                 $files = scandir(_PS_CAT_IMG_DIR_);
 
@@ -52,7 +58,8 @@ class BlocktopmenuOverride extends Blocktopmenu
 
             $html .= '</a>';
 
-            if (isset($category['children']) && !empty($category['children'])) {
+            if (isset($category['children']) && !empty($category['children']) && $this->count < 1) {
+                $this->count++;
                 $html .= '<ul>';
                 $html .= $this->generateCategoriesMenu($category['children'], 1);
 
