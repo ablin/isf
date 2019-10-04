@@ -650,6 +650,14 @@ span.view_scroll_spacer {
         width: 30%;
         font-weight: 700;
         color: #333; }
+        .table-data-sheet tr td a {
+          font-weight: 700;
+          color: #4ea1ff;
+          text-decoration: underline;}
+          .table-data-sheet tr td a:hover {
+            font-weight: 700;
+            color: #4ea1ff;
+            text-decoration: none;}
 
 /* table product-discounts */
 table.table-product-discounts {

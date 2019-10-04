@@ -2,9 +2,6 @@
 
 global $_MODULE;
 $_MODULE = array();
-$_MODULE['<{blocktags}isf>blocktags_189f63f277cd73395561651753563065'] = 'Mots-clés';
-$_MODULE['<{blocktags}isf>blocktags_49fa2426b7903b3d4c89e2c1874d9346'] = 'En savoir plus sur';
-$_MODULE['<{blocktags}isf>blocktags_4e6307cfde762f042d0de430e82ba854'] = 'Aucun mot-clé spécifié pour le moment.';
 $_MODULE['<{blocktags}isf>blocktags_f2568a62d4ac8d1d5b532556379772ba'] = 'Bloc mots-clés';
 $_MODULE['<{blocktags}isf>blocktags_b2de1a21b938fcae9955206a4ca11a12'] = 'Ajoute un bloc contenant vos mots-clés de produit.';
 $_MODULE['<{blocktags}isf>blocktags_8d731d453cacf8cff061df22a269b82b'] = 'Veuillez remplir le champ \"Mots-clés affichés\".';
@@ -24,4 +21,7 @@ $_MODULE['<{blocktags}isf>blocktags_d4a9f41f7f8d2a65cda97d8b5eb0c9d5'] = 'Quand 
 $_MODULE['<{blocktags}isf>blocktags_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'Activé';
 $_MODULE['<{blocktags}isf>blocktags_b9f5c797ebbf55adccdd8539a65a0241'] = 'Désactivé';
 $_MODULE['<{blocktags}isf>blocktags_c9cc8cce247e49bae79f15173ce97354'] = 'Enregistrer';
+$_MODULE['<{blocktags}isf>blocktags_189f63f277cd73395561651753563065'] = 'Mots-clés';
+$_MODULE['<{blocktags}isf>blocktags_49fa2426b7903b3d4c89e2c1874d9346'] = 'En savoir plus sur';
+$_MODULE['<{blocktags}isf>blocktags_4e6307cfde762f042d0de430e82ba854'] = 'Aucun mot-clé spécifié pour le moment.';
 $_MODULE['<{blocktags}isf>blocktags_70d5e9f2bb7bcb17339709134ba3a2c6'] = 'Aucun mot-clé spécifié pour le moment';

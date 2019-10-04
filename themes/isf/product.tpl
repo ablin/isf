@@ -62,7 +62,7 @@
             </p>
         {/if}
         <!-- left infos-->
-        <div class="pb-left-column col-xs-12 col-sm-4 col-md-4">
+        <div class="pb-left-column col-xs-12 col-sm-4 col-md-3">
             <!-- product img-->
             <div id="image-block" class="clearfix">
                 {if $product->new}
@@ -452,8 +452,9 @@
         {/if}
         <div id="more_info_block" class="clear">
     <ul id="more_info_tabs" class="idTabs idTabsShort clearfix">
-        {if $product->description}<li><a id="more_info_tab_more_info" href="#idTab1">{l s='More info'}</a></li>{/if}
         {if $features}<li><a id="more_info_tab_data_sheet" href="#idTab2">{l s='Data sheet'}</a></li>{/if}
+        {if isset($correspondences) && $correspondences}<li><a id="more_info_tab_data_sheet" href="#idTab6">{l s='Correspondences'}</a></li>{/if}
+        {if $product->description}<li><a id="more_info_tab_more_info" href="#idTab1">{l s='More info'}</a></li>{/if}
         {if $attachments}<li><a id="more_info_tab_attachments" href="#idTab3">{l s='Download'}</a></li>{/if}
         {if isset($packItems) && $packItems|@count > 0}<li><a id="more_info_tab_pack" href="#blockpack">{l s='Pack Content'}</a></li>{/if}
         {if isset($accessories) AND $accessories}<li><a href="#idTabz4">{l s='Accessories'}</a></li>{/if}
@@ -476,16 +477,44 @@
             <div id="idTab2" class="rte">
                 <table class="table-data-sheet">
                     {foreach from=$features item=feature}
-                    <tr class="{cycle values="odd,even"}">
-                        {if isset($feature.value)}
-                        <td>{$feature.name|escape:'html':'UTF-8'}</td>
-                        <td>{$feature.value|escape:'html':'UTF-8'}</td>
-                        {/if}
-                    </tr>
+                        <tr class="{cycle values="odd,even"}">
+                            {if isset($feature.value)}
+                                <td>
+                                    {if $feature.id_feature == null}
+                                        {l s='Link'}
+                                    {/if}
+                                    {$feature.name|escape:'html':'UTF-8'}
+                                </td>
+                                <td>
+                                    {$feature.value}
+                                </td>
+                            {/if}
+                        </tr>
                     {/foreach}
                 </table>
             </div>
             <!--end Data sheet -->
+        {/if}
+
+        {if isset($correspondences) && $correspondences}
+            <!-- Correspondences -->
+            <div id="idTab6" class="rte">
+                <table class="table-data-sheet">
+                    {foreach from=$correspondences item=correspondence}
+                        <tr class="{cycle values="odd,even"}">
+                            {if isset($correspondence.value)}
+                                <td>
+                                    {$correspondence.name|escape:'html':'UTF-8'}
+                                </td>
+                                <td>
+                                    {$correspondence.value}
+                                </td>
+                            {/if}
+                        </tr>
+                    {/foreach}
+                </table>
+            </div>
+            <!--end Correspondences -->
         {/if}
 
 

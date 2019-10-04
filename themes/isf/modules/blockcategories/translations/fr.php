@@ -27,7 +27,7 @@ $_MODULE['<{blockcategories}isf>blockcategories_e3cf5ac19407b1a62c6fccaff675a53b
 $_MODULE['<{blockcategories}isf>blockcategories_cf3fb1ff52ea1eed3347ac5401ee7f0c'] = 'croissant';
 $_MODULE['<{blockcategories}isf>blockcategories_5f73e737cedf8f4ccf880473a7823005'] = 'Nombre de colonnes pour le pied de page';
 $_MODULE['<{blockcategories}isf>blockcategories_c9cc8cce247e49bae79f15173ce97354'] = 'Enregistrer';
-$_MODULE['<{blockcategories}isf>blockcategories_footer_af1b98adf7f686b84cd0b443e022b7a0'] = 'Catégories';
 $_MODULE['<{blockcategories}isf>blockcategories_af1b98adf7f686b84cd0b443e022b7a0'] = 'Familles';
+$_MODULE['<{blockcategories}isf>blockcategories_footer_af1b98adf7f686b84cd0b443e022b7a0'] = 'Familles';
 $_MODULE['<{blockcategories}isf>blockcategories_admin_63239117f39d923b2e407620fc1fa5b5'] = 'Dans le thème par défaut, ces images seront affichées dans le menu horizontal du haut ; mais seulement si la catégorie est de premier niveau (voir le module Menu Haut Horizontal pour plus de détails).';
 $_MODULE['<{blockcategories}isf>blockcategories_admin_eea317348d82718d49f9a79189dc0f93'] = 'Miniatures du menu';

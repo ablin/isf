@@ -33,6 +33,37 @@ class ProductController extends ProductControllerCore
     public function initContent()
     {
         parent::initContent();
+        $this->addFeatureLink();
+        $this->addCorrespondences();
+    }
+
+    private function addFeatureLink()
+    {
+        $features = $this->product->getFrontFeatures($this->context->language->id);
+
+        foreach (Product::getProductCategoriesFull($this->product->id) as $productCategory) {
+            if ($productCategory['link'] != '') {
+                $features[] = array(
+                    'name' => $productCategory['name'],
+                    'value' => "<a href=".str_replace("#reference#", $this->product->reference, $productCategory['link'])." target=\"_blank\">".$this->product->reference." - ".$this->product->name."</a>",
+                    'id_feature' => null,
+                );
+                break;
+            }
+        }
+
+        $this->context->smarty->assign(array(
+            'features' => $features,
+        ));
+    }
+
+    private function addCorrespondences()
+    {
+        $correspondences = $this->product->getProductCorrespondences();
+
+        $this->context->smarty->assign(array(
+            'correspondences' => $correspondences,
+        ));
     }
 
     /**

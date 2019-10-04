@@ -30,7 +30,6 @@
         {if (isset($display_subcategories) && $display_subcategories eq 1) || !isset($display_subcategories) }
 		<!-- Subcategories -->
 		<div id="subcategories">
-			<p class="subcategory-heading">{l s='Subcategories'}</p>
 			<ul class="clearfix">
 			{foreach from=$subcategories item=subcategory}
 				<li>

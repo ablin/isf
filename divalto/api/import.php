@@ -159,15 +159,12 @@ class Import
                         'layered_selection_ag_'.$attributeGroup['id_attribute_group'] => array('filter_type' => 0, 'filter_show_limit' => 0)
                     );
 
-                    Db::getInstance()->execute(sprintf(
-                        'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'category\', 1, 0, 0)',
-                        _DB_PREFIX_, $category->id
-                    ));
-
-                    Db::getInstance()->execute(sprintf(
-                        'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 2, 0, 0)',
-                        _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
-                    ));
+                    if ($category->level_depth > 2) {
+                        Db::getInstance()->execute(sprintf(
+                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 2, 0, 0)',
+                            _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
+                        ));
+                    }
 
                     $position = 3;
                     foreach ($famille->features->feature as $familleFeature) {
@@ -366,7 +363,7 @@ class Import
                             $featureValueAdd = new FeatureValue($featureValue['id_feature_value']);
                         }
                         $featureValueAdd->value = AdminImportController::createMultiLangField((string) $productFeature->value);
-                        $featureValueAdd->custom = (int) $productFeature->custom; //TODO fonctionne pas
+                        $featureValueAdd->custom = (int) $productFeature->custom;
                         if (!$featureValue) {
                             $featureValueAdd->add();
                         } else {
@@ -376,6 +373,30 @@ class Import
 
                         Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
 
+                    }
+                }
+
+                // Product correspondences
+                if (isset($produit->correspondences)) {
+                    $correspondences = $this->getAllproductCorrespondences($product->id);
+                    var_dump($correspondences);
+                    foreach ($produit->correspondences->correspondence as $correspondence) {
+                        if (false == $id_product_correspondence = $this->productCorrespondenceExists($correspondence, $product->id)) {
+                            $correspondenceNew = new Correspondence();
+                            $correspondenceNew->id_product = $product->id;
+                            $correspondenceNew->name = (string)$correspondence->name;
+                            $correspondenceNew->value = (string)$correspondence->value;
+                            $correspondenceNew->add();
+                        } else {
+                            unset($correspondences[array_search($id_product_correspondence, $correspondences)]);
+                        }
+                    }
+                }
+
+                if ($correspondences) {
+                    foreach ($correspondences as $id_product_correspondence) {
+                        $correspondence = new Correspondence($id_product_correspondence);
+                        $correspondence->delete();
                     }
                 }
 
@@ -457,6 +478,46 @@ class Import
             (int) $attribute->id_attribute_group,
             (string) $attribute->value,
             (int) Context::getContext()->language->id
+        );
+
+        return Db::getInstance()->getValue($sql);
+    }
+
+    /**
+     * @param $productId
+     * @return false|string|null
+     */
+    private function getAllproductCorrespondences($productId)
+    {
+        $correspondences = array();
+
+        $sql = sprintf(
+            "SELECT pc.id_product_correspondence FROM %sproduct_correspondence pc WHERE pc.id_product = %d",
+            _DB_PREFIX_,
+            $productId
+        );
+
+        $result = Db::getInstance()->executeS($sql);
+        foreach ($result as $correspondence) {
+            $correspondences[] = $correspondence['id_product_correspondence'];
+        }
+
+        return $correspondences;
+    }
+
+    /**
+     * @param $correspondence
+     * @param $productId
+     * @return false|string|null
+     */
+    private function productCorrespondenceExists($correspondence, $productId)
+    {
+        $sql = sprintf(
+            "SELECT pc.id_product_correspondence FROM %sproduct_correspondence pc WHERE pc.name = '%s' AND pc.value = '%s' AND pc.id_product = %d",
+            _DB_PREFIX_,
+            (string) $correspondence->name,
+            (string) $correspondence->value,
+            $productId
         );
 
         return Db::getInstance()->getValue($sql);
