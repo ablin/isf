@@ -2,19 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35a2e6b3-9af4-464d-9563-988aeca55abf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/divalto.inc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/override/classes/Link.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/divalto/api/import.php" beforeDir="false" afterPath="$PROJECT_DIR$/divalto/api/import.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-cart_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-home_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-large_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-medium_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-small_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1-thickbox_default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/p/1/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/override/classes/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/p/fr-default-home_default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/p/fr-default-home_default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/blockcart/blockcart-json.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/modules/blockcart/blockcart-json.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/classes/Feature.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/Feature.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/classes/FeatureValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/FeatureValue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/classes/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/classes/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/override/controllers/front/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/controllers/front/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" beforeDir="false" afterPath="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/category.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/isf/css/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/modules/blockcart/blockcart.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/modules/blockcart/blockcart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/modules/blocklayered/blocklayered.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/modules/blocklayered/blocklayered.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/css/product_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/css/product_list.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/js/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/js/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/js/modules/blockcart/ajax-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/js/modules/blockcart/ajax-cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/js/modules/blocklayered/blocklayered.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/js/modules/blocklayered/blocklayered.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/lang/fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/lang/fr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart-json.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart-json.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/modules/blockcart/translations/fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/modules/blockcart/translations/fr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/modules/blockviewed/translations/fr.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/modules/blockviewed/translations/fr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/order-address-product-line.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/order-address-product-line.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/product-list.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/product-list.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/product.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/product.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,47 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/divalto/api/import.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="362" column="44" selection-start-line="362" selection-start-column="28" selection-end-line="362" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/admin/AdminImportController.php">
+        <entry file="file://$PROJECT_DIR$/themes/isf/product.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="2300" column="62" selection-start-line="2300" selection-start-column="62" selection-end-line="2300" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/admin/AdminProductsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="979" column="62" selection-start-line="979" selection-start-column="62" selection-end-line="979" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/isf/css/global.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="6581" column="9" selection-start-line="6581" selection-start-column="9" selection-end-line="6581" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tools/smarty/sysplugins/smarty_internal_templatebase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="277" column="19" selection-start-line="277" selection-start-column="19" selection-end-line="277" selection-end-column="19" />
+            <state relative-caret-position="511">
+              <caret line="553" column="39" selection-start-line="553" selection-start-column="28" selection-end-line="553" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -72,35 +55,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/override/controllers/front/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state relative-caret-position="399">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/override/classes/Cart.php">
+        <entry file="file://$PROJECT_DIR$/override/classes/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="279" lean-forward="true" selection-start-line="279" selection-end-line="279" />
+            <state relative-caret-position="532">
+              <caret line="207" column="69" selection-start-line="207" selection-start-column="69" selection-end-line="207" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/override/classes/Category.php">
+        <entry file="file://$PROJECT_DIR$/override/controllers/front/CategoryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+            <state relative-caret-position="583">
+              <caret line="93" column="21" selection-start-line="79" selection-start-column="20" selection-end-line="93" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Category.php">
+        <entry file="file://$PROJECT_DIR$/override/controllers/ManufacturerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="606">
+              <caret line="83" column="21" selection-start-line="69" selection-start-column="20" selection-end-line="83" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/isf/product-list.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="148" column="16" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -109,36 +110,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$params['cookie']-&gt;</find>
-      <find>$params['cookie']</find>
-      <find>Context::getContext()-&gt;cookie-&gt;</find>
-      <find>viewedhhhhh</find>
-      <find>data-minimal_quantity</find>
-      <find>ajax_add_to_cart_button</find>
-      <find>price</find>
-      <find>product-stock</find>
-      <find>nb_tarif</find>
-      <find>nbTarifs&quot;:</find>
-      <find>nbTarifs</find>
-      <find>#4ea1ff</find>
-      <find>product-ta</find>
-      <find>custom</find>
-      <find>image</find>
-      <find>link</find>
-      <find>TODO</find>
-      <find>dival</find>
-      <find>date_upd_divalto</find>
-      <find>assignPri</find>
-      <find>product-&gt;reference</find>
-      <find>assignPriceAndTax</find>
-      <find>'N'</find>
-      <find>$this-&gt;product-&gt;reference</find>
+      <find>&quot;image&quot;:</find>
+      <find>&quot;cart-images&quot;</find>
+      <find>&quot;cart_product&quot;</find>
+      <find>cart_product</find>
+      <find>.cart_product</find>
+      <find>cart-images</find>
+      <find>viewed-products_block_left</find>
+      <find>img</find>
+      <find>product-image-container layer_cart_img</find>
+      <find>layer_cart_product</find>
+      <find>layer_cart_img img-responsive</find>
+      <find>json</find>
+      <find>$attributes</find>
+      <find>Accessory</find>
+      <find>haveThisAccessory</find>
+      <find>$accessories</find>
+      <find>INSERT</find>
+      <find>brea</find>
+      <find>exit</find>
+      <find>ERRE</find>
+      <find>getProduct</find>
+      <find>more_info_block</find>
+      <find>product.tpl</find>
+      <find>addCorrespondences</find>
+      <find>accessories</find>
+      <find>lang</find>
       <find>WebServiceDiva</find>
-      <find>SREF1</find>
-      <find>ps_product_attribute</find>
-      <find>var_dump</find>
-      <find>$product-&gt;checkDefaultAttributes()</find>
-      <find>addCombinationEntity</find>
+      <find>if ($reference-&gt;trouve == 1) {</find>
+      <find>references</find>
+      <find>hover</find>
     </findStrings>
     <replaceStrings>
       <replace>] =</replace>
@@ -148,7 +149,6 @@
       <replace>product</replace>
       <replace>$produit</replace>
       <replace>$product</replace>
-      <replace>(string) $</replace>
       <replace>4EA1FF</replace>
       <replace>4ea1ff</replace>
       <replace>$sousref-&gt;qteJauge</replace>
@@ -165,12 +165,17 @@
       <replace>-&gt;viewedhhhhh</replace>
       <replace>Context::getContext()-&gt;cookie</replace>
       <replace>viewedhhhhhiii</replace>
+      <replace>correspondence</replace>
+      <replace>(string) $</replace>
+      <replace>$accessories</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\prestashop\themes\isf\modules</dir>
       <dir>C:\wamp64\www\prestashopproduct-flags</dir>
       <dir>C:\wamp64\www\prestashop</dir>
       <dir>C:\wamp64\www\prestashop\admin1406yenrh</dir>
+      <dir>C:\wamp64\www\prestashop\classes</dir>
+      <dir>C:\wamp64\www\prestashop\</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -179,65 +184,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl" />
-        <option value="$PROJECT_DIR$/themes/default-bootstrap/css/category.css" />
-        <option value="$PROJECT_DIR$/themes/isf/category.tpl" />
-        <option value="$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl" />
-        <option value="$PROJECT_DIR$/override/controllers/front/CategoryController.php" />
-        <option value="$PROJECT_DIR$/themes/isf/sass/product_list.scss" />
-        <option value="$PROJECT_DIR$/themes/isf/css/product.css" />
-        <option value="$PROJECT_DIR$/override/controllers/ManufacturerController.php" />
-        <option value="$PROJECT_DIR$/override/controllers/front/SearchController.php" />
-        <option value="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" />
-        <option value="$PROJECT_DIR$/modules/blockcategories/blockcategories.php" />
-        <option value="$PROJECT_DIR$/override/modules/blockcategories/blockcategories.php" />
-        <option value="$PROJECT_DIR$/classes/Category.php" />
-        <option value="$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php" />
+        <option value="$PROJECT_DIR$/classes/ObjectModel.php" />
+        <option value="$PROJECT_DIR$/classes/db/Db.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/modules/blocktopmenu/blocktopmenu.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blocktopmenu/blocktopmenu.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/history-detail.tpl" />
+        <option value="$PROJECT_DIR$/override/controllers/front/HistoryDetailController.php" />
         <option value="$PROJECT_DIR$/override/modules/blocktopmenu/blocktopmenu.php" />
-        <option value="$PROJECT_DIR$/controllers/admin/AdminCategoriesController.php" />
-        <option value="$PROJECT_DIR$/controllers/admin/AdminImportController.php" />
-        <option value="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" />
+        <option value="$PROJECT_DIR$/tools/profiling/ObjectModel.php" />
+        <option value="$PROJECT_DIR$/override/classes/Correspondence.php" />
+        <option value="$PROJECT_DIR$/classes/Product.php" />
         <option value="$PROJECT_DIR$/override/classes/Feature.php" />
-        <option value="$PROJECT_DIR$/override/classes/AttributeGroup.php" />
-        <option value="$PROJECT_DIR$/themes/isf/css/modules/blockcontact/blockcontact.css" />
-        <option value="$PROJECT_DIR$/themes/isf/css/modules/blockuserinfo/blockuserinfo.css" />
-        <option value="$PROJECT_DIR$/themes/isf/css/modules/blockcart/blockcart.css" />
-        <option value="$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css" />
-        <option value="$PROJECT_DIR$/themes/isf/css/modules/blocksearch/blocksearch.css" />
-        <option value="$PROJECT_DIR$/themes/isf/css/category.css" />
-        <option value="$PROJECT_DIR$/admin1406yenrh/filemanager/include/utils.php" />
-        <option value="$PROJECT_DIR$/admin1406yenrh/filemanager/upload.php" />
-        <option value="$PROJECT_DIR$/modules/blockcmsinfo/blockcmsinfo.tpl" />
-        <option value="$PROJECT_DIR$/themes/isf/modules/homefeatured/homefeatured.tpl" />
-        <option value="$PROJECT_DIR$/themes/isf/index.tpl" />
-        <option value="$PROJECT_DIR$/modules/homefeatured/homefeatured.php" />
-        <option value="$PROJECT_DIR$/override/modules/homefeatured/homefeatured.php" />
-        <option value="$PROJECT_DIR$/divalto/category.xml" />
-        <option value="$PROJECT_DIR$/override/classes/Product.php" />
-        <option value="$PROJECT_DIR$/override/controllers/admin/AdminImportController.php" />
-        <option value="$PROJECT_DIR$/divalto/product.xml" />
-        <option value="$PROJECT_DIR$/controllers/admin/AdminProductsController.php" />
         <option value="$PROJECT_DIR$/override/classes/FeatureValue.php" />
-        <option value="$PROJECT_DIR$/themes/isf/header.tpl" />
-        <option value="$PROJECT_DIR$/themes/isf/product.tpl" />
-        <option value="$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl" />
-        <option value="$PROJECT_DIR$/admin1406yenrh/filemanager/dialog.php" />
-        <option value="$PROJECT_DIR$/modules/blockviewed/blockviewed.php" />
+        <option value="$PROJECT_DIR$/modules/blocklayered/blocklayered.php" />
+        <option value="$PROJECT_DIR$/config/config.inc.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/category.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/category.tpl" />
+        <option value="$PROJECT_DIR$/controllers/front/CategoryController.php" />
+        <option value="$PROJECT_DIR$/classes/Category.php" />
+        <option value="$PROJECT_DIR$/override/controllers/front/CategoryController.php" />
+        <option value="$PROJECT_DIR$/controllers/front/ProductController.php" />
+        <option value="$PROJECT_DIR$/classes/Link.php" />
+        <option value="$PROJECT_DIR$/config/divalto.inc.php" />
+        <option value="$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php" />
+        <option value="$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php" />
+        <option value="$PROJECT_DIR$/themes/default-bootstrap/js/global.js" />
+        <option value="$PROJECT_DIR$/themes/isf/js/modules/blocklayered/blocklayered.js" />
+        <option value="$PROJECT_DIR$/themes/isf/js/autoload/15-jquery.uniform-modified.js" />
         <option value="$PROJECT_DIR$/themes/isf/js/global.js" />
+        <option value="$PROJECT_DIR$/themes/isf/css/modules/blocklayered/blocklayered.css" />
+        <option value="$PROJECT_DIR$/override/classes/Cart.php" />
+        <option value="$PROJECT_DIR$/override/classes/Link.php" />
+        <option value="$PROJECT_DIR$/modules/blockcart/blockcart-json.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/product.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/order-address-product-line.tpl" />
         <option value="$PROJECT_DIR$/themes/isf/css/product_list.css" />
-        <option value="$PROJECT_DIR$/themes/isf/product-list.tpl" />
-        <option value="$PROJECT_DIR$/override/classes/Category.php" />
-        <option value="$PROJECT_DIR$/override/controllers/front/ProductController.php" />
+        <option value="$PROJECT_DIR$/themes/isf/css/modules/blockcart/blockcart.css" />
+        <option value="$PROJECT_DIR$/themes/isf/css/product.css" />
+        <option value="$PROJECT_DIR$/themes/isf/css/category.css" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl" />
+        <option value="$PROJECT_DIR$/themes/isf/js/modules/blockcart/ajax-cart.js" />
+        <option value="$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart-json.tpl" />
         <option value="$PROJECT_DIR$/themes/isf/css/global.css" />
+        <option value="$PROJECT_DIR$/controllers/admin/AdminProductsController.php" />
         <option value="$PROJECT_DIR$/divalto/api/import.php" />
+        <option value="$PROJECT_DIR$/themes/isf/product-list.tpl" />
+        <option value="$PROJECT_DIR$/override/controllers/front/ProductController.php" />
+        <option value="$PROJECT_DIR$/override/classes/Product.php" />
+        <option value="$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="320" />
     <option name="y" value="-8" />
-    <option name="width" value="816" />
-    <option name="height" value="576" />
+    <option name="width" value="974" />
+    <option name="height" value="778" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -255,6 +260,11 @@
               <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
               <item name="prestashop" type="462c0819:PsiDirectoryNode" />
               <item name="cache" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prestashop" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
@@ -333,15 +343,7 @@
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="isf" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="blockviewed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prestashop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prestashop" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="isf" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="homefeatured" type="462c0819:PsiDirectoryNode" />
+              <item name="blockcart" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -411,18 +413,27 @@
       <workItem from="1566549996856" duration="18645000" />
       <workItem from="1567153039413" duration="1192000" />
       <workItem from="1567160503534" duration="5361000" />
-      <workItem from="1567756237802" duration="16501000" />
+      <workItem from="1567756237802" duration="17500000" />
+      <workItem from="1568360653009" duration="12631000" />
+      <workItem from="1568966040830" duration="11129000" />
+      <workItem from="1569571951289" duration="30827000" />
+      <workItem from="1570619650255" duration="1206000" />
+      <workItem from="1570780547012" duration="6778000" />
+      <workItem from="1570796944778" duration="10629000" />
+      <workItem from="1571388228277" duration="15608000" />
+      <workItem from="1571410624689" duration="5180000" />
+      <workItem from="1571992230950" duration="26918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332564000" />
+    <option name="totallyTimeSpent" value="454469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23667377" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,7 +446,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -448,367 +459,382 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/classes/WebServiceDiva.php">
+    <entry file="file://$PROJECT_DIR$/modules/blocklayered/blocklayered.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="298">
+          <caret line="860" column="20" selection-start-line="860" selection-start-column="20" selection-end-line="860" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/20190726_ws.log">
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/category.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="86" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
+        <state relative-caret-position="575">
+          <caret line="110" column="12" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/20190716_ws.log">
+    <entry file="file://$PROJECT_DIR$/themes/isf/category.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="341" column="178" lean-forward="true" selection-start-line="341" selection-start-column="178" selection-end-line="341" selection-end-column="178" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/controllers/front/HistoryDetailController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="83" selection-start-line="24" selection-start-column="62" selection-end-line="24" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ProductDownload.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/divalto/category.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/divalto/product.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/AttributeGroup.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/db/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="716" column="20" selection-start-line="716" selection-start-column="20" selection-end-line="716" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Combination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/profiling/ObjectModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ObjectModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="200" column="35" selection-start-line="200" selection-start-column="32" selection-end-line="200" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Attribute.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="86" column="16" selection-start-line="86" selection-start-column="16" selection-end-line="86" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/classes/Feature.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/FeatureValue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/classes/FeatureValue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/controllers/front/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="577" column="38" selection-start-line="577" selection-start-column="27" selection-end-line="577" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin1406yenrh/searchcron.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="42" column="44" selection-start-line="42" selection-end-line="42" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1253">
-          <caret line="14" column="1" selection-end-line="133" />
+        <state relative-caret-position="552">
+          <caret line="60" column="66" lean-forward="true" selection-start-line="60" selection-start-column="66" selection-end-line="60" selection-end-column="66" />
+          <folding>
+            <element signature="e#1361#1367#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/controller/FrontController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="755" column="44" selection-start-line="755" selection-start-column="44" selection-end-line="755" selection-end-column="44" />
+        <state relative-caret-position="43">
+          <caret line="1634" column="20" selection-start-line="1634" selection-start-column="20" selection-end-line="1634" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/product.tpl">
+    <entry file="file://$PROJECT_DIR$/config/defines_uri.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="62" selection-end-line="777" />
+        <state relative-caret-position="334">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/product.tpl">
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blocktopmenu/blocktopmenu.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#3;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#3;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#p#3;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#5;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#6;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#17028#17034#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#div#5;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#1;n#table#0;n#div#5;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#0;n#div#5;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#1;n#table#0;n#div#5;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/header.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="122" column="123" selection-start-line="122" selection-start-column="107" selection-end-line="122" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockviewed/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/blocknewproducts/blocknewproducts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3378">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/front/CartController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="378" column="24" selection-start-line="378" selection-start-column="24" selection-end-line="378" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin1406yenrh/filemanager/dialog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="178" column="19" lean-forward="true" selection-start-line="178" selection-start-column="19" selection-end-line="178" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/20190823_ws.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="1216" column="169" lean-forward="true" selection-start-line="1216" selection-start-column="169" selection-end-line="1216" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/css/product_list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7123">
-          <caret line="419" column="12" selection-start-line="419" selection-start-column="12" selection-end-line="419" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/product-list.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="119" column="114" selection-start-line="119" selection-start-column="114" selection-end-line="119" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/controllers/ManufacturerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="75" column="62" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4556">
-          <caret line="291" column="99" selection-start-line="291" selection-start-column="99" selection-end-line="291" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/blockviewed/blockviewed.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="74" column="58" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cookie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminCategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/controllers/admin/AdminImportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminAttributeGeneratorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="256" column="35" selection-start-line="256" selection-start-column="35" selection-end-line="256" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/front/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/classes/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/classes/Cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="279" lean-forward="true" selection-start-line="279" selection-end-line="279" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tools/smarty/sysplugins/smarty_internal_templatebase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="277" column="19" selection-start-line="277" selection-start-column="19" selection-end-line="277" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/override/controllers/front/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/isf/css/global.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="6581" column="9" selection-start-line="6581" selection-start-column="9" selection-end-line="6581" selection-end-column="9" />
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="639">
+          <caret line="762" selection-start-line="762" selection-end-line="763" selection-end-column="139" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminImportController.php">
+    <entry file="file://$PROJECT_DIR$/controllers/front/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="2300" column="62" selection-start-line="2300" selection-start-column="62" selection-end-line="2300" selection-end-column="62" />
+        <state relative-caret-position="188">
+          <caret line="210" column="37" selection-start-line="210" selection-start-column="20" selection-end-line="210" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Product.php">
+    <entry file="file://$PROJECT_DIR$/classes/Image.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="1481" column="27" selection-start-line="1481" selection-start-column="27" selection-end-line="1481" selection-end-column="27" />
+        <state relative-caret-position="861">
+          <caret line="254" selection-start-line="254" selection-end-line="254" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/override/classes/Category.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        <state relative-caret-position="413">
+          <caret line="144" column="13" lean-forward="true" selection-start-line="144" selection-start-column="13" selection-end-line="144" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminProductsController.php">
+    <entry file="file://$PROJECT_DIR$/config/divalto.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="979" column="62" selection-start-line="979" selection-start-column="62" selection-end-line="979" selection-end-column="62" />
+        <state relative-caret-position="136">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blocktopmenu/blocktopmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="628" column="93" selection-start-line="628" selection-start-column="81" selection-end-line="628" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#option#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/modules/blocktopmenu/blocktopmenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/homefeatured/homefeatured.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/admin/AdminImportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="61" column="35" lean-forward="true" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="453" column="31" lean-forward="true" selection-start-line="453" selection-start-column="31" selection-end-line="453" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="178" column="5" lean-forward="true" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/js/autoload/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/modules/blocklayered/blocklayered.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="46" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/js/modules/blocklayered/blocklayered.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="201" column="78" selection-start-line="201" selection-start-column="78" selection-end-line="201" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/js/autoload/15-jquery.uniform-modified.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/modules/blocklayered/blocklayered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="339" column="101" selection-start-line="339" selection-start-column="96" selection-end-line="339" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/default-bootstrap/product-list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="53" column="74" selection-start-line="53" selection-start-column="74" selection-end-line="53" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blockcart/blockcart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="61" column="48" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Link.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="67" column="53" selection-start-line="67" selection-start-column="53" selection-end-line="67" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/shopping-cart-product-line.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/product.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="1097" column="39" selection-start-line="1097" selection-start-column="39" selection-end-line="1097" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/product_list.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="426" column="1" selection-start-line="426" selection-start-column="1" selection-end-line="426" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/modules/blockcart/blockcart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="451" column="41" selection-start-line="451" selection-start-column="41" selection-end-line="451" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blockviewed/blockviewed.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/blockcart/blockcart-json.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="35" column="138" lean-forward="true" selection-start-line="35" selection-start-column="138" selection-end-line="35" selection-end-column="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="8646" column="21" lean-forward="true" selection-start-line="8646" selection-start-column="21" selection-end-line="8646" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/category.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockviewed/blockviewed.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="521">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="219" column="42" selection-start-line="219" selection-start-column="24" selection-end-line="219" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/js/modules/blockcart/ajax-cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="758" column="9" selection-start-line="758" selection-start-column="9" selection-end-line="758" selection-end-column="9" />
+          <folding>
+            <element signature="e#111#117#0" expanded="true" />
+            <element signature="e#118#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/modules/blockcart/blockcart-json.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/order-address-product-line.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/divalto/api/import.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="413" column="17" selection-start-line="413" selection-start-column="17" selection-end-line="413" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/admin/AdminProductsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="3211" column="32" selection-start-line="3211" selection-start-column="20" selection-end-line="3211" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/product.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="553" column="39" selection-start-line="553" selection-start-column="28" selection-end-line="553" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="3563" column="20" selection-start-line="3563" selection-start-column="20" selection-end-line="3563" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/front/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/ManufacturerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="83" column="21" selection-start-line="69" selection-start-column="20" selection-end-line="83" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/front/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="93" column="21" selection-start-line="79" selection-start-column="20" selection-end-line="93" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/controllers/front/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/override/classes/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="207" column="69" selection-start-line="207" selection-start-column="69" selection-end-line="207" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/product-list.tpl">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
-          <caret line="362" column="44" selection-start-line="362" selection-start-column="28" selection-end-line="362" selection-end-column="44" />
+          <caret line="107" column="53" selection-start-line="107" selection-start-column="53" selection-end-line="107" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/isf/css/modules/blocktopmenu/css/superfish-modified.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="148" column="16" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
         </state>
       </provider>
     </entry>

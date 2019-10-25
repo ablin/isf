@@ -6673,7 +6673,7 @@ ul.footer_links {
     margin-right: 20px;
     margin-bottom: 10px; }
     .content_sortPagiBar .sortPagiBar #productsSortForm select {
-      max-width: 192px;
+      width: 192px;
       float: left; }
       @media (max-width: 991px) {
         .content_sortPagiBar .sortPagiBar #productsSortForm select {
@@ -6683,7 +6683,7 @@ ul.footer_links {
   .content_sortPagiBar .sortPagiBar .nbrItemPage {
     float: left; }
     .content_sortPagiBar .sortPagiBar .nbrItemPage select {
-      max-width: 59px;
+      width: 59px;
       float: left; }
     .content_sortPagiBar .sortPagiBar .nbrItemPage .clearfix > span {
       padding: 3px 0 0 12px;
@@ -8619,4 +8619,72 @@ ul.idTabs li {
     width:100%!important;
     max-width:none!important;
     display:block;
+}
+
+.filigrane {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  z-index: 999;
+  color: red;
+}
+
+.filigrane span {
+  position: relative;
+  left: -50%;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 70%;
+}
+
+.cart-images, .cart_product, .products-block-image, .product-image-container {
+  position: relative;
+}
+
+.cart-images .filigrane {
+  top: 75%;
+  width: 100%;
+  text-align: center;
+}
+
+.cart-images .filigrane span {
+  font-size: 45%;
+}
+
+.cart_product .filigrane {
+  top: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+.cart_product .filigrane span {
+  font-size: 50%;
+}
+
+.products-block-image .filigrane {
+  top: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+.products-block-image .filigrane span {
+  font-size: 50%;
+}
+
+.product-image-container .filigrane {
+  top: 85%;
+  width: 100%;
+  text-align: center;
+}
+
+.product-image-container .filigrane span {
+  font-size: 50%;
+}
+
+#view_full_size .filigrane {
+  top: 80%;
+}
+
+#view_full_size .filigrane span {
+  font-size: 130%;
 }

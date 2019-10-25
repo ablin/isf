@@ -186,7 +186,7 @@ function initFilters()
 
 			$('.layered_' + filter.type).show();
 		}
-		initUniform();
+		//initUniform();
 	}
 }
 
@@ -563,6 +563,7 @@ function reloadContent(params_plus)
 				// Reload products and pagination
 				reloadContent();
 			});
+
 			if (typeof(ajaxCart) != "undefined")
 				ajaxCart.overrideButtonsInThePage();
 

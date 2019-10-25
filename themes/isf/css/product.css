@@ -311,7 +311,10 @@ span.view_scroll_spacer {
     font-weight: bold;
     color: #4ea1ff; }
   .pb-center-column p {
-    margin-bottom: 10px; }
+    margin: 0; }
+.pb-center-column p#price_on_demand {
+    margin-bottom: 9px;
+}
   .pb-center-column #product_reference {
     margin-bottom: 6px; }
   .pb-center-column #short_description_block {
@@ -323,8 +326,6 @@ span.view_scroll_spacer {
       word-wrap: break-word; }
       .pb-center-column #short_description_block #short_description_content p {
         line-height: 18px; }
-  .pb-center-column #buy_block {
-    margin-top: 10px; }
     .pb-center-column #buy_block label {
       display: inline-block;
       width: 125px;
@@ -358,9 +359,6 @@ span.view_scroll_spacer {
 #page .rte {
   padding: 0 20px 20px;
   word-wrap: break-word; }
-  #page .rte p {
-    margin-bottom: 1em;
-    min-height: 1px; }
 
 #attributes fieldset {
   padding-bottom: 3px; }
@@ -946,7 +944,7 @@ ul#text_fields {
 
 #productTarifs {
   float: left;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 #productTarifs .alert {

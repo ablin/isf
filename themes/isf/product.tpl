@@ -77,29 +77,32 @@
                 {elseif $product->specificPrice && $product->specificPrice.reduction && $productPriceWithoutReduction > $productPrice}
                     <span class="discount">{l s='Reduced price!'}</span>
                 {/if}
-                {if $have_image}
-                    <span id="view_full_size">
-                        {if $jqZoomEnabled && $have_image && !$content_only}
-                            <a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')|escape:'html':'UTF-8'}">
-                                <img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}"/>
-                            </a>
-                        {else}
-                            <img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
-                            {if !$content_only}
-                                <span class="span_link no-print">{l s='View larger'}</span>
+                <span id="view_full_size">
+                    {if $jqZoomEnabled && $have_image && !$content_only}
+                        <a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')|escape:'html':'UTF-8'}">
+                            {if preg_match("/-default/", $cover.id_image)}
+                                <div class="filigrane">
+									<span>
+										{l s='Non contractual photo'}
+									</span>
+								</div>
                             {/if}
+                            <img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
+                        </a>
+                    {else}
+                        {if preg_match("/-default/", $cover.id_image)}
+                            <div class="filigrane">
+                                <span>
+                                    {l s='Non contractual photo'}
+                                </span>
+                            </div>
                         {/if}
-                    </span>
-                {else}
-                    <span id="view_full_size">
-                        <img itemprop="image" src="{$img_prod_dir}{$lang_iso}-default-large_default.jpg" id="bigpic" alt="" title="{$product->name|escape:'html':'UTF-8'}" width="{$largeSize.width}" height="{$largeSize.height}"/>
+                        <img id="bigpic" itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default', $product->id)|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
                         {if !$content_only}
-                            <span class="span_link">
-                                {l s='View larger'}
-                            </span>
+                            <span class="span_link no-print">{l s='View larger'}</span>
                         {/if}
-                    </span>
-                {/if}
+                    {/if}
+                </span>
             </div> <!-- end image-block -->
             {if isset($images) && count($images) > 0}
                 <!-- thumbnails -->

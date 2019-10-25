@@ -737,7 +737,11 @@ var ajaxCart = {
 			$('#layer_cart_product_attributes').html(product.attributes);
 		$('#layer_cart_product_price').text(product.price);
 		$('#layer_cart_product_quantity').text(product.quantity);
-		$('.layer_cart_img').html('<img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
+		if (product.filigrane == 1) {
+			$('.layer_cart_img').html('<div class="filigrane"><span>' + product.filigraneLabel + '</span></div><img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
+		} else {
+			$('.layer_cart_img').html('<img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
+		}
 
 		var n = parseInt($(window).scrollTop()) + 'px';
 

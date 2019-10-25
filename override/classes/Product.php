@@ -176,4 +176,53 @@ class Product extends ProductCore
 
         return $correspondences;
     }
+
+    public function getProductAccessories()
+    {
+        $accessories = $this->getAccessories(Context::getContext()->language->id);
+
+        if (!$accessories) {
+            return;
+        }
+
+        $productIds = array();
+
+        foreach ($accessories as &$accessory) {
+            $productIds[] = $accessory['reference'];
+        }
+        $productIds = implode(";", $productIds);
+
+        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<REF>'.$productIds.'<FICHE>0');
+
+        try {
+            $datas = $webServiceDiva->call();
+
+            if ($datas && $datas->references) {
+
+                foreach ($datas->references as $reference) {
+
+                    if ($reference->trouve == 1) {
+                        $products[$reference->ref] = array(
+                            'total_stock' => $reference->total_stock,
+                            'total_dispo' => $reference->total_dispo,
+                            'total_jauge' => $reference->total_jauge,
+                            'tarif' => $reference->max_pun,
+                            'nb_tarif' => $reference->nbTarifs
+                        );
+                    } else {
+                        $products[$reference->ref] = array(
+                            'stock' => 0,
+                            'tarif' => 0,
+                            'nb_tarif' => 0
+                        );
+                    }
+                }
+            }
+
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+        }
+
+        return $products;
+    }
 }

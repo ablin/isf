@@ -26,6 +26,8 @@
 var responsiveflag = false;
 
 $(document).ready(function(){
+	// désactivation uniform
+	(function($) {$.fn.uniform = function() {return this;};})(jQuery);
 	highdpiInit();
 	responsiveResize();
 	$(window).resize(responsiveResize);
@@ -174,8 +176,8 @@ function responsiveResize()
 		accordion('disable');
 		accordionFooter('disable');
 		responsiveflag = false;
-		if (typeof bindUniform !=='undefined')
-			bindUniform();
+		/*if (typeof bindUniform !=='undefined')
+			bindUniform();*/
 	}
 	blockHover();
 }

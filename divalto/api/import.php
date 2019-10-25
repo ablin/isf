@@ -103,7 +103,7 @@ class Import
                         $webServiceDiva = new WebServiceDiva(
                             '<ACTION>ERREUR',
                             sprintf(
-                                'La famille parent %s n\'existe pas',
+                                date('Y-m-d H:i:s').' : La famille parent %s n\'existe pas',
                                 (string) $famille->parent
                             )
                         );
@@ -161,8 +161,16 @@ class Import
 
                     if ($category->level_depth > 2) {
                         Db::getInstance()->execute(sprintf(
-                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 2, 0, 0)',
+                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'price\', 2, 0, 0)',
+                            _DB_PREFIX_, $category->id
+                        ));
+                        Db::getInstance()->execute(sprintf(
+                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 3, 0, 0)',
                             _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
+                        ));
+                        Db::getInstance()->execute(sprintf(
+                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'id_attribute_group\', 3, 0, 0)',
+                            _DB_PREFIX_, $category->id
                         ));
                     }
 
@@ -230,6 +238,7 @@ class Import
             // Check if product must be updated
             $productHasChanged = Product::productHasChanged((string) $produit->reference, (string) $produit->date_upd);
             $productId = Product::getProductByReference((string) $produit->reference);
+            $productHasChanged = true;
 
             if (!$productId || $productHasChanged) {
                 $product = new Product();
@@ -255,7 +264,7 @@ class Import
                             $webServiceDiva = new WebServiceDiva(
                                 '<ACTION>ERREUR',
                                 sprintf(
-                                    'La famille %s n\'existe pas',
+                                    date('Y-m-d H:i:s').' : La famille %s n\'existe pas',
                                     (string) $famille->name
                                 )
                             );
@@ -271,7 +280,7 @@ class Import
                 $product->name = AdminImportController::createMultiLangField((string) $produit->name);
                 $product->description_short = AdminImportController::createMultiLangField(addslashes((string) $produit->description_short));
                 $product->description = AdminImportController::createMultiLangField(addslashes((string) $produit->description));
-                $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $produit->name));
+                $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $produit->reference . "-" . $produit->name));
                 $product->price = (float) $produit->price;
 
                 // Product update/add
@@ -294,7 +303,7 @@ class Import
                         $image->position = Image::getHighestPosition($product->id) + 1;
                         $image->cover = ($i == 0) ? true : false;
                         $image->add();
-                        AdminImportController::copyImg($product->id, $image->id, (string)$imageDivalto->url, 'products', true);
+                        AdminImportController::copyImg($product->id, $image->id, (string) $imageDivalto->url, 'products', true);
                         $i++;
                     }
                 }
@@ -308,7 +317,7 @@ class Import
                             if (false == $attributeId = $this->attributeExists($attribute)) {
                                 $attributeNew = new AttributeCore();
                                 $attributeNew->id_attribute_group = (int) $attribute->id_attribute_group;
-                                $attributeNew->name = AdminImportController::createMultiLangField((string)$attribute->value);
+                                $attributeNew->name = AdminImportController::createMultiLangField((string) $attribute->value);
                                 $attributeNew->add();
                                 $attributeId = $this->attributeExists($attribute);
                             }
@@ -335,7 +344,7 @@ class Import
                     }
                 }
 
-                if ($attributes) {
+                if (isset($attributes) && $attributes) {
                     foreach ($attributes as $id_product_attribute) {
                         $product->deleteAttributeCombination((int) $id_product_attribute);
                     }
@@ -354,7 +363,7 @@ class Import
                             $feature = Feature::getFeatureByName((string) $productFeature->name);
                         }
 
-                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value);
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature']);
                         // Add feature value if not exists, update otherwise
                         if (!$featureValue) {
                             $featureValueAdd = new FeatureValue();
@@ -369,9 +378,14 @@ class Import
                         } else {
                             $featureValueAdd->update();
                         }
-                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value);
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature']);
 
                         Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
+
+                        if ((string) $productFeature->name == "Marque") {
+                            $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $productFeature->value . "-" . (string) $produit->reference . "-" . $produit->name));
+                            $product->update();
+                        }
 
                     }
                 }
@@ -379,13 +393,12 @@ class Import
                 // Product correspondences
                 if (isset($produit->correspondences)) {
                     $correspondences = $this->getAllproductCorrespondences($product->id);
-                    var_dump($correspondences);
                     foreach ($produit->correspondences->correspondence as $correspondence) {
                         if (false == $id_product_correspondence = $this->productCorrespondenceExists($correspondence, $product->id)) {
                             $correspondenceNew = new Correspondence();
                             $correspondenceNew->id_product = $product->id;
-                            $correspondenceNew->name = (string)$correspondence->name;
-                            $correspondenceNew->value = (string)$correspondence->value;
+                            $correspondenceNew->name = (string) $correspondence->name;
+                            $correspondenceNew->value = (string) $correspondence->value;
                             $correspondenceNew->add();
                         } else {
                             unset($correspondences[array_search($id_product_correspondence, $correspondences)]);
@@ -393,10 +406,33 @@ class Import
                     }
                 }
 
-                if ($correspondences) {
+                if (isset($correspondences) && $correspondences) {
                     foreach ($correspondences as $id_product_correspondence) {
                         $correspondence = new Correspondence($id_product_correspondence);
                         $correspondence->delete();
+                    }
+                }
+
+                // Product accessories
+                if ($produit->accessories) {
+                    Db::getInstance()->execute(sprintf('DELETE FROM %saccessory WHERE id_product_1 = "%d"', _DB_PREFIX_, $product->id));
+                    foreach ($produit->accessories->accessory as $accessory) {
+                        $product_2 = Product::getProductByReference((string) $accessory->reference);
+                        if (!$product_2) {
+                            $webServiceDiva = new WebServiceDiva(
+                                '<ACTION>ERREUR',
+                                sprintf(
+                                    date('Y-m-d H:i:s').' : Le produit associé %s n\'existe pas',
+                                    (string) $accessory->reference
+                                )
+                            );
+                            $webServiceDiva->call();
+                            continue;
+                        }
+                        Db::getInstance()->execute(sprintf(
+                            'INSERT INTO %saccessory (id_product_1, id_product_2) VALUES (%d, %d)',
+                            _DB_PREFIX_, $product->id, (int) $product_2
+                        ));
                     }
                 }
 
@@ -411,9 +447,8 @@ class Import
     }
 
     /**
-     * @param $attribute
      * @param $productId
-     * @return false|string|null
+     * @return array
      */
     private function getAllproductAttributes($productId)
     {
@@ -464,7 +499,6 @@ class Import
 
     /**
      * @param $attribute
-     * @param $productId
      * @return false|string|null
      */
     private function attributeExists($attribute)
@@ -485,7 +519,7 @@ class Import
 
     /**
      * @param $productId
-     * @return false|string|null
+     * @return array
      */
     private function getAllproductCorrespondences($productId)
     {

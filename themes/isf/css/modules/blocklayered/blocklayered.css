@@ -77,7 +77,10 @@
 
 #layered_block_left ul li input.checkbox {
   vertical-align: middle;
-  margin-left: 2px; }
+  margin-left: 2px;
+  display: inline-block;
+  margin: 0 !important;
+  cursor: pointer; }
 
 #layered_block_left ul li .disabled {
   color: #666; }

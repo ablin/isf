@@ -35,6 +35,7 @@ class ProductController extends ProductControllerCore
         parent::initContent();
         $this->addFeatureLink();
         $this->addCorrespondences();
+        $this->addAccessories();
     }
 
     private function addFeatureLink()
@@ -63,6 +64,15 @@ class ProductController extends ProductControllerCore
 
         $this->context->smarty->assign(array(
             'correspondences' => $correspondences,
+        ));
+    }
+
+    private function addAccessories()
+    {
+        $accessories = $this->product->getProductAccessories();
+
+        $this->context->smarty->assign(array(
+            'references' => $accessories,
         ));
     }
 

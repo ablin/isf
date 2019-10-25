@@ -32,7 +32,14 @@
 		"id": {$product.id_product|intval},
 		"link": {$link->getProductLink($product.id_product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|json_encode},
 		"quantity": {$product.cart_quantity|intval},
-		"image": {$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default')|json_encode},
+		"filigraneLabel": "{l s='Non contractual photo' mod='blockcart'}",
+		{if preg_match("/-default/", $product.id_image)}
+			"filigrane": 1,
+		{else}
+
+			"filigrane": 0,
+		{/if}
+		"image": {$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default', $product.id_product)|json_encode},
 		"image_cart": {$link->getImageLink($product.link_rewrite, $product.id_image, 'cart_default')|json_encode},
 		"priceByLine": {if $priceDisplay == $smarty.const.PS_TAX_EXC}{displayWtPrice|json_encode p=$product.total}{else}{displayWtPrice|json_encode p=$product.total_wt}{/if},
 		"name": {$product.name|trim|html_entity_decode:2:'UTF-8'|json_encode},

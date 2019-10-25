@@ -26,13 +26,30 @@
 
 class FeatureValue extends FeatureValueCore
 {
-    public static function getFeatureValueByName($name)
+    /**
+     * @see ObjectModel::$definition
+     */
+    public static $definition = array(
+        'table' => 'feature_value',
+        'primary' => 'id_feature_value',
+        'multilang' => true,
+        'fields' => array(
+            'id_feature' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId', 'required' => true),
+            'custom' =>    array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),
+
+            /* Lang fields */
+            'value' =>        array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isAnything', 'required' => true, 'size' => 255),
+        ),
+    );
+
+    public static function getFeatureValueByName($name, $id_feature)
     {
         $sql = sprintf(
-            'SELECT fvl.id_feature_value FROM %sfeature_value_lang fvl WHERE fvl.id_lang = %s AND fvl.value = "%s"',
+            'SELECT fvl.id_feature_value FROM %sfeature_value_lang fvl inner join ps_feature_value fv using(id_feature_value) WHERE fvl.id_lang = %s AND fvl.value = "%s" AND fv.id_feature = %d',
             _DB_PREFIX_,
             (int)Context::getContext()->language->id,
-            $name
+            addslashes($name),
+            $id_feature
         );
         return Db::getInstance()->getRow($sql);
     }

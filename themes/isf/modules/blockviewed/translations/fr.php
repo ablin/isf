@@ -14,3 +14,4 @@ $_MODULE['<{blockviewed}isf>blockviewed_c9cc8cce247e49bae79f15173ce97354'] = 'En
 $_MODULE['<{blockviewed}isf>blockviewed_43560641f91e63dc83682bc598892fa1'] = 'Déjà vus';
 $_MODULE['<{blockviewed}isf>blockviewed_8f7f4c1ce7a4f933663d10543562b096'] = 'En savoir plus sur';
 $_MODULE['<{blockviewed}isf>blockviewed_c70ad5f80e4c6f299013e08cabc980df'] = 'En savoir plus sur %s';
+$_MODULE['<{blockviewed}isf>blockviewed_1245114184cf478e2c15f19f9a87c755'] = 'Photo non contractuelle';

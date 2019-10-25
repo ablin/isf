@@ -260,6 +260,8 @@ if (!defined('_MEDIA_SERVER_3_')) {
     define('_MEDIA_SERVER_3_', Configuration::get('PS_MEDIA_SERVER_3'));
 }
 
+require_once($currentDir.'/divalto.inc.php');
+
 /* Get smarty */
 require_once($currentDir.'/smarty.config.inc.php');
 $context->smarty = $smarty;

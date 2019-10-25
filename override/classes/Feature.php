@@ -26,6 +26,21 @@
 
 class Feature extends FeatureCore
 {
+    /**
+     * @see ObjectModel::$definition
+     */
+    public static $definition = array(
+        'table' => 'feature',
+        'primary' => 'id_feature',
+        'multilang' => true,
+        'fields' => array(
+            'position' =>    array('type' => self::TYPE_INT, 'validate' => 'isInt'),
+
+            /* Lang fields */
+            'name' =>        array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isAnything', 'required' => true, 'size' => 128),
+        ),
+    );
+
     public static function getFeatureByName($name)
     {
         $sql = sprintf(
