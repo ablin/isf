@@ -52,6 +52,8 @@ class BlocktopmenuOverride extends Blocktopmenu
                             break;
                         }
                     }
+                } else {
+                    $html .= '<div><img src="'.$this->context->link->getMediaLink(_THEME_CAT_DIR_.$this->context->language->iso_code.'-default-medium_default.jpg').'" alt="'.Tools::SafeOutput($category['description']).'" title="'.Tools::SafeOutput($category['description']).'" class="imgm" /></div>';
                 }
 
             }
