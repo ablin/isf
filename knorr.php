@@ -17,7 +17,7 @@ $array_header = ['Reference', 'Trouve', 'Reference IAM', 'Lien', 'Libelle', 'Nb 
 $array_line = [];
 
 $bdd = new PDO('mysql:host=localhost;dbname=prestashop;charset=utf8', 'root', 'root');
-$products = $bdd->query('select p.reference, pl.name from ps_product p inner join ps_product_lang pl using(id_product) where p.id_manufacturer = 104');
+$products = $bdd->query('select p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) inner join ps_category_lang cl using(id_category) where cl.name = "KNORR";');
 
 $nb = 0;
 
@@ -85,7 +85,6 @@ while ($product = $products->fetch())
             }
         }
 
-
         if ($link) {
             $array_line[$ref][3] = $link;
             $doc = new \DOMDocument();
@@ -119,9 +118,9 @@ while ($product = $products->fetch())
             $i++;
             $array_line[$ref][6] = $array_line[$ref][6] + 1;
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            /*if (!file_exists("knorr/doc/ref_".$ref.'_'.$i.'.'.$extension)) {
+            if (!file_exists("knorr/doc/ref_".$ref.'_'.$i.'.'.$extension)) {
                 downloadFile($node->nodeValue, "knorr/doc/ref_".$ref.'_'.$i.'.'.$extension);
-            }*/
+            }
         }
 
         echo "\n";
@@ -138,9 +137,9 @@ while ($product = $products->fetch())
             $i++;
             $array_line[$ref][5] = $array_line[$ref][5] + 1;
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            /*if (!file_exists("knorr/images/ref_".$ref.'_'.$i.'.'.$extension)) {
+            if (!file_exists("knorr/images/ref_".$ref.'_'.$i.'.'.$extension)) {
                 grab_image($node->nodeValue, "knorr/images/ref_".$ref.'_'.$i.'.'.$extension);
-            }*/
+            }
         }
 
     }

@@ -6,27 +6,27 @@ include('simple_html_dom.php');
 
 header('Content-Type: text/html; charset=utf-8');
 
-if (!is_dir("isf")) {
-    mkdir("isf", 0777);
+if (!is_dir("wabco")) {
+    mkdir("wabco", 0777);
 }
 
-$fichier_csv = fopen("isf/test.csv", 'w+');
+$fichier_csv = fopen("wabco/test.csv", 'w+');
 fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
 
 $array_header = ['Reference', 'Libelle', 'Nb images', 'Nb Docs'];
 $array_line = [];
 
 $bdd = new PDO('mysql:host=localhost;dbname=prestashop;charset=utf8', 'root', 'root');
-$products = $bdd->query('select p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) where id_category IN (170,171);');
+$products = $bdd->query('select p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) inner join ps_category_lang cl using(id_category) where cl.name = "WABCO";');
 
 while ($product = $products->fetch())
 {
     $ref = $product["reference"];
     $name = $product["name"];
 
-    echo '**************************************************************************************************************<br />';
-    echo '*********************************************'.$ref.'*********************************************************<br />';
-    echo '**************************************************************************************************************<br />';
+    echo "**************************************************************************************************************\n";
+    echo "*********************************************".$ref."*********************************************************\n";
+    echo "**************************************************************************************************************\n";
 
     $doc = new \DOMDocument();
     @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'.&category=18', false, null, -1, -1, true, true, 'ISO-8859-1'));
@@ -39,35 +39,34 @@ while ($product = $products->fetch())
     $array_line[$ref][3] = 0;
 
     //Images
-    echo 'Images :<br />';
+    echo "Images :\n";
     if ($xpath->query('//table//p/img/@src')->length > 0) {
         $i = 0;
         foreach ($xpath->query('//table//p/img/@src') as $node) {
             $i++;
             $array_line[$ref][2] = $array_line[$ref][2] + 1;
-            if (!is_dir("isf/images")) {
-                mkdir("isf/images", 0777);
+            if (!is_dir("wabco/images")) {
+                mkdir("wabco/images", 0777);
             }
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            grab_image('http://inform.wabco-auto.com/'.$node->nodeValue, "isf/images/ref_".$ref.'_'.$i.'.'.$extension);
+            grab_image('http://inform.wabco-auto.com/'.$node->nodeValue, "wabco/images/ref_".$ref.'_'.$i.'.'.$extension);
         }
     } else {
-        echo 'Pas d\'images<br />';
+        echo "Pas d'images\n";
     }
 
-    echo '<br />';
+    echo "\n";
 
     //Données techniques page 1
-    echo 'Données techniques :<br />';
+    echo "Données techniques :\n";
     if ($xpath->query('//body//table//table[2]//tr/td[2]')->length > 0) {
         foreach ($xpath->query('//body//table//table[2]//tr/td[2]') as $node) {
             preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
             if (!$key = array_search($matches[1], $array_header)) {
                 array_push($array_header, $matches[1]);
-                $array_line[$ref][count($array_header) - 1] = $matches[2];
-            } else {
-                $array_line[$ref][$key] = $matches[2];
+                $key = count($array_header) - 1;
             }
+            $array_line[$ref][$key] = $matches[2];
         }
 
         //Pages suivantes
@@ -95,40 +94,38 @@ while ($product = $products->fetch())
         ksort($array_line[$ref]);
 
     } else {
-        echo 'Pas de données techniques<br />';
+        echo "Pas de données techniques\n";
     }
 
-    echo '<br />';
+    echo "\n";
 
     //Plan
     @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'&category=20', false, null, -1, -1, true, true, 'ISO-8859-1'));
 
     $xpath = new \DOMXPath($doc);
 
-    echo 'Plan :<br />';
+    echo "Plan :\n";
 
-    if ($xpath->query('//table//table[2]//td[@class="clsWh"][2]/a/@href')->length > 0) {
+    if ($xpath->query('//table//table[2]//td[@class="clsWh"][2]/a[contains(.,"Page")]/@href')->length > 0) {
         $i = 0;
         foreach ($xpath->query('//table//table[2]//td[@class="clsWh"][2]/a/@href') as $node) {
             $i++;
             $array_line[$ref][3] = $array_line[$ref][3] + 1;
-            if (!is_dir("isf/doc")) {
-                mkdir("isf/doc", 0777);
+            if (!is_dir("wabco/doc")) {
+                mkdir("wabco/doc", 0777);
             }
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            downloadFile('http://inform.wabco-auto.com/'.$node->nodeValue, "isf/doc/ref_".$ref.'_'.$i.'.'.$extension);
+            downloadFile('http://inform.wabco-auto.com/'.$node->nodeValue, "wabco/doc/ref_".$ref.'_'.$i.'.'.$extension);
         }
     } else {
-        echo 'Pas de plan<br />';
+        echo "Pas de plan\n";
     }
-
-    sleep(2);
 
 }
 
-echo '**************************************************************************************************************<br />';
-echo '*************************************** Ecriture fichier *****************************************************<br />';
-echo '**************************************************************************************************************<br />';
+echo "**************************************************************************************************************\n";
+echo "*************************************** Ecriture fichier *****************************************************\n";
+echo "**************************************************************************************************************\n";
 
 fputcsv($fichier_csv, $array_header, ';');
 foreach($array_line as $ligne) {
@@ -138,9 +135,9 @@ foreach($array_line as $ligne) {
 // fermeture du fichier csv
 fclose($fichier_csv);
 
-echo '**************************************************************************************************************<br />';
-echo '******************************************** fonctions *******************************************************<br />';
-echo '**************************************************************************************************************<br />';
+echo "**************************************************************************************************************\n";
+echo "******************************************** fonctions *******************************************************\n";
+echo "**************************************************************************************************************\n";
 
 function grab_image($url, $saveto){
     $ch = curl_init ($url);
