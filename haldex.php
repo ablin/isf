@@ -101,11 +101,18 @@ while ($product = $products->fetch())
                 preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
                 if (!$key = array_search(trim($matches[1]), $array_header)) {
                     array_push($array_header, trim($matches[1]));
-                    $array_line[$ref][count($array_header) - 1] = $matches[2];
+                    $array_line[$ref][count($array_header) - 1] = trim($matches[2]);
                 } else {
                     $array_line[$ref][$key] = trim($matches[2]);
                 }
             }
+            for ($i = 0; $i < count($array_line[$ref]); $i++)
+            {
+                if (!isset($array_line[$ref][$i])) {
+                    $array_line[$ref][$i] = '';
+                }
+            }
+            ksort($array_line[$ref]);
         }
 
     }

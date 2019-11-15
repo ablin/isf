@@ -5259,30 +5259,6 @@ CREATE TABLE IF NOT EXISTS `ps_layered_price_index` (
   KEY `price_max` (`price_max`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Déchargement des données de la table `ps_layered_price_index`
---
-
-INSERT INTO `ps_layered_price_index` (`id_product`, `id_currency`, `id_shop`, `price_min`, `price_max`) VALUES
-(1, 1, 1, 0, 0),
-(2, 1, 1, 0, 0),
-(3, 1, 1, 0, 0),
-(4, 1, 1, 0, 0),
-(5, 1, 1, 0, 0),
-(6, 1, 1, 0, 0),
-(7, 1, 1, 0, 0),
-(8, 1, 1, 0, 0),
-(9, 1, 1, 0, 0),
-(10, 1, 1, 0, 0),
-(11, 1, 1, 0, 0),
-(12, 1, 1, 0, 0),
-(13, 1, 1, 0, 0),
-(14, 1, 1, 0, 0),
-(15, 1, 1, 0, 0),
-(16, 1, 1, 0, 0),
-(17, 1, 1, 0, 0),
-(18, 1, 1, 100, 120);
-
 -- --------------------------------------------------------
 
 --

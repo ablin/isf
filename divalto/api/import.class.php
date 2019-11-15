@@ -2,6 +2,7 @@
 require_once __DIR__.'/../../config/config.inc.php';
 
 set_time_limit(0);
+ini_set('memory_limit','512M');
 
 class Import
 {
@@ -123,10 +124,15 @@ class Import
                         'categories' => array($category->id),
                         'shop_list' => Shop::getShops(false, null, true),
                         'layered_selection_subcategories' => array('filter_type' => 0, 'filter_show_limit' => 0),
+                        'layered_selection_price_slider' => array('filter_type' => 0, 'filter_show_limit' => 0),
                         'layered_selection_ag_'.$attributeGroup['id_attribute_group'] => array('filter_type' => 0, 'filter_show_limit' => 0)
                     );
 
                     if ($category->level_depth > 2) {
+                        Db::getInstance()->execute(sprintf(
+                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'category\', 1, 0, 0)',
+                            _DB_PREFIX_, $category->id
+                        ));
                         Db::getInstance()->execute(sprintf(
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'price\', 2, 0, 0)',
                             _DB_PREFIX_, $category->id
@@ -134,10 +140,6 @@ class Import
                         Db::getInstance()->execute(sprintf(
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 3, 0, 0)',
                             _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
-                        ));
-                        Db::getInstance()->execute(sprintf(
-                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'id_attribute_group\', 3, 0, 0)',
-                            _DB_PREFIX_, $category->id
                         ));
                     }
 
@@ -246,7 +248,16 @@ class Import
                 $product->name = AdminImportController::createMultiLangField((string) $produit->name);
                 $product->description_short = AdminImportController::createMultiLangField(addslashes((string) $produit->description_short));
                 $product->description = AdminImportController::createMultiLangField(addslashes((string) $produit->description));
-                $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $produit->reference . "-" . $produit->name));
+                if ($produit->features) {
+                    foreach ($produit->features->feature as $productFeature) {
+                        if ((string) $productFeature->name == "Marque") {
+                            $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $productFeature->value . "-" . (string) $produit->reference . "-" . $produit->name));
+                            break;
+                        }
+                    }
+                } else {
+                    $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $produit->reference . "-" . $produit->name));
+                }
                 $product->price = (float) $produit->price;
 
                 // Product update/add
@@ -257,6 +268,10 @@ class Import
                     $product->add();
                     $product->id = Product::getProductByReference((string) $produit->reference);
                 }
+
+                // Product price indexes
+                $blockLayered = new BlockLayered();
+                $blockLayered->indexProductPrices((int) $product->id);
 
                 // Product images
                 if ($produit->images) {
@@ -316,6 +331,9 @@ class Import
                     }
                 }
 
+                $blockLayered = new BlockLayered();
+                $blockLayered->indexAttribute((int) $product->id);
+
                 // Product features
                 if ($produit->features) {
                     $features = $this->getAllproductFeatures($product->id);
@@ -350,12 +368,6 @@ class Import
                         $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature']);
 
                         Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
-
-                        if ((string) $productFeature->name == "Marque") {
-                            $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $productFeature->value . "-" . (string) $produit->reference . "-" . $produit->name));
-                            $product->update();
-                        }
-
                     }
                 }
 

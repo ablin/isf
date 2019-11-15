@@ -13,7 +13,7 @@ if (!is_dir("knorr")) {
 $fichier_csv = fopen("knorr/test.csv", 'w+');
 fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
 
-$array_header = ['Reference', 'Trouve', 'Reference IAM', 'Lien', 'Libelle', 'Nb images', 'Nb Docs', 'Type', 'Description', 'Statut'];
+$array_header = ['Reference', 'Trouve', 'Reference IAM', 'Lien', 'Libelle', 'Nb images', 'Nb Docs', 'Type', 'Description', 'Statut', 'Correspondances'];
 $array_line = [];
 
 $bdd = new PDO('mysql:host=localhost;dbname=prestashop;charset=utf8', 'root', 'root');
@@ -51,6 +51,7 @@ while ($product = $products->fetch())
     $array_line[$ref][7] = '';
     $array_line[$ref][8] = '';
     $array_line[$ref][9] = '';
+    $array_line[$ref][10] = '';
 
     //Description & IAM
     echo "Description & IAM :\n";
@@ -73,6 +74,13 @@ while ($product = $products->fetch())
                         $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue.'&lang=fr-fr';
                     }
                 }
+            }
+        }
+
+        //Correspondances
+        foreach ($xpath->query('//body//table[@class="dataView"]//tr/td[2]') as $node) {
+            if ($node->nodeValue && $node->nodeValue != $ref) {
+                $array_line[$ref][10] = $array_line[$ref][10] . $node->nodeValue . "|";
             }
         }
 
@@ -104,6 +112,31 @@ while ($product = $products->fetch())
             //Statut
             foreach ($xpath->query('//body//div[@class="productInformation"]//table//tr[3]//td[2]') as $node) {
                 $array_line[$ref][9] = $node->nodeValue;
+            }
+
+            //Données techniques
+            if ($xpath->query('//table[@class="mediaArea"]//tr[2]/td[1]/ul')->length > 0) {
+                $index = 0;
+                foreach ($xpath->query('//table[@class="mediaArea"]//tr[2]/td[1]/ul/li/text()') as $node) {
+                    $index++;
+                    if (!$key = array_search(trim(utf8_decode($node->nodeValue)), $array_header)) {
+                        array_push($array_header, trim(utf8_decode($node->nodeValue)));
+                        foreach ($xpath->query('//table[@class="mediaArea"]//tr[2]/td[1]/ul/li['.$index.']/span') as $node) {
+                            $array_line[$ref][count($array_header) - 1] = trim(utf8_decode($node->nodeValue));
+                        }
+                    } else {
+                        foreach ($xpath->query('//table[@class="mediaArea"]//tr[2]/td[1]/ul/li['.$index.']/span') as $node) {
+                            $array_line[$ref][$key] = trim(utf8_decode($node->nodeValue));
+                        }
+                    }
+                }
+                for ($i = 0; $i < count($array_line[$ref]); $i++)
+                {
+                    if (!isset($array_line[$ref][$i])) {
+                        $array_line[$ref][$i] = '';
+                    }
+                }
+                ksort($array_line[$ref]);
             }
         }
 
@@ -137,8 +170,8 @@ while ($product = $products->fetch())
             $i++;
             $array_line[$ref][5] = $array_line[$ref][5] + 1;
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            if (!file_exists("knorr/images/ref_".$ref.'_'.$i.'.'.$extension)) {
-                grab_image($node->nodeValue, "knorr/images/ref_".$ref.'_'.$i.'.'.$extension);
+            if (!file_exists("knorr/images/ref_".$ref.'_'.$i.'.'.$extension) && substr($node->nodeValue, 0, 4) == "http") {
+                download_image($node->nodeValue, "knorr/images/ref_".$ref.'_'.$i.'.'.$extension);
             }
         }
 
@@ -163,19 +196,20 @@ echo "**************************************************************************
 echo "******************************************** fonctions *******************************************************\n";
 echo "**************************************************************************************************************\n";
 
-function grab_image($url, $saveto){
-    $ch = curl_init ($url);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
-    $raw=curl_exec($ch);
-    curl_close ($ch);
-    if(file_exists($saveto)){
-        unlink($saveto);
-    }
-    $fp = fopen($saveto,'x');
-    fwrite($fp, $raw);
-    fclose($fp);
+function download_image($image_url, $image_file){
+    $fp = fopen ($image_file, 'w+');              // open file handle
+
+    $ch = curl_init($image_url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // enable if you want
+    curl_setopt($ch, CURLOPT_FILE, $fp);          // output to file
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 1000);      // some large value to allow curl to run for a long time
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
+    // curl_setopt($ch, CURLOPT_VERBOSE, true);   // Enable this line to see debug prints
+    curl_exec($ch);
+
+    curl_close($ch);                              // closing curl handle
+    fclose($fp);                                  // closing file handle
 }
 
 function downloadFile($url, $desti) {

@@ -103,7 +103,7 @@ class Product extends ProductCore
         $sql = sprintf(
             "SELECT id_product FROM %sproduct WHERE reference = '%s'",
             _DB_PREFIX_,
-            $reference
+            addslashes($reference)
         );
 
         $product_id = Db::getInstance()->getValue($sql);
@@ -116,7 +116,7 @@ class Product extends ProductCore
         $sql = sprintf(
             'SELECT p.id_product FROM %sproduct p WHERE p.reference = "%s"',
             _DB_PREFIX_,
-            $reference
+            addslashes($reference)
         );
         return Db::getInstance()->getRow($sql);
     }
@@ -126,7 +126,7 @@ class Product extends ProductCore
         $sql = sprintf(
             'SELECT p.date_upd_divalto FROM %sproduct p WHERE p.reference = "%s"',
             _DB_PREFIX_,
-            $reference
+            addslashes($reference)
         );
         return Db::getInstance()->getValue($sql) < $date;
     }

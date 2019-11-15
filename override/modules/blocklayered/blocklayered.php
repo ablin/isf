@@ -338,7 +338,7 @@ class BlockLayeredOverride extends BlockLayered
 			SELECT type, id_value, filter_show_limit, filter_type FROM ' . _DB_PREFIX_ . 'layered_category
 			WHERE id_category = ' . (int)$id_parent . '
 				AND id_shop = ' . $id_shop . ' AND (type IN ("id_attribute_group", "category", "price")' . $filterProducts .')
-			GROUP BY `type`, id_value ORDER BY position ASC'
+			GROUP BY `type`, id_value ORDER BY position ASC LIMIT 30'
         );
 
         /* Create the table which contains all the id_product in a cat or a tree */
