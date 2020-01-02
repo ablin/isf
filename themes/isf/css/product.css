@@ -315,7 +315,7 @@ span.view_scroll_spacer {
 .pb-center-column p#price_on_demand {
     margin-bottom: 9px;
 }
-  .pb-center-column #product_reference {
+  .pb-center-column #product_reference, .pb-center-column #product_stock {
     margin-bottom: 6px; }
   .pb-center-column #short_description_block {
     color: #666; }

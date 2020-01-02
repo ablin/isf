@@ -150,21 +150,23 @@ class BlockViewed extends Module
 
 	public function hookHeader($params)
 	{
-		$id_product = (int)Tools::getValue('id_product');
-		$productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, Configuration::get('PRODUCTS_VIEWED_NBR')) : array();
+        $id_product = (int)Tools::getValue('id_product');
+        $productsViewed = (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) ? array_slice(array_reverse(explode(',', $params['cookie']->viewed)), 0, Configuration::get('PRODUCTS_VIEWED_NBR')) : array();
 
-		if ($id_product && !in_array($id_product, $productsViewed))
-		{
-			$product = new Product((int)$id_product);
-			if ($product->checkAccess((int)$this->context->customer->id))
-			{
-				if (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed))
-					$params['cookie']->viewed .= ','.(int)$id_product;
-				else
-					$params['cookie']->viewed = (int)$id_product;
-			}
-		}
-		$this->context->controller->addCSS(($this->_path).'blockviewed.css', 'all');
+        if ($id_product && !in_array($id_product, $productsViewed))
+        {
+            $product = new Product((int)$id_product);
+            if ($product->checkAccess((int)$this->context->customer->id))
+            {
+                $currentCookieValues = array();
+                if (isset($params['cookie']->viewed) && !empty($params['cookie']->viewed)) {
+                    $currentCookieValues = explode(",", $params['cookie']->viewed);
+                }
+                $currentCookieValues[] = ','.(int)$id_product;
+                $params['cookie']->viewed = implode(",", array_slice($currentCookieValues, max(0, count($currentCookieValues) - 15), 15));
+            }
+        }
+        $this->context->controller->addCSS(($this->_path).'blockviewed.css', 'all');
 	}
 
 	public function renderForm()

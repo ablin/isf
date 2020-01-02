@@ -33,7 +33,7 @@
 		"link": {$link->getProductLink($product.id_product, $product.link_rewrite, $product.category, null, null, $product.id_shop, $product.id_product_attribute)|json_encode},
 		"quantity": {$product.cart_quantity|intval},
 		"filigraneLabel": "{l s='Non contractual photo' mod='blockcart'}",
-		{if preg_match("/-default/", $product.id_image)}
+		{if preg_match("/-default/", $product.id_image) && !preg_match("/-default/", {$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default', $product.id_product)|escape:'html':'UTF-8'})}
 			"filigrane": 1,
 		{else}
 

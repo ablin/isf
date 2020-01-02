@@ -26,7 +26,7 @@
 <tr id="product_{$product.id_product}_{$product.id_product_attribute}_0_{$product.id_address_delivery|intval}" class="{if $productLast}last_item{elseif $productFirst}first_item{/if} {if isset($customizedDatas.$productId.$productAttributeId) AND $quantityDisplayed == 0}alternate_item{/if} cart_item {if $odd}odd{else}even{/if}">
 	<td class="cart_product">
 		<a href="{$link->getProductLink($product.id_product, $product.link_rewrite, $product.category)|escape:'html':'UTF-8'}">
-			{if preg_match("/-default/", $product.id_image)}
+			{if preg_match("/-default/", $product.id_image) && !preg_match("/-default/", {$link->getImageLink($product.link_rewrite, $product.id_image, 'small_default', $product.id_product)|escape:'html':'UTF-8'})}
 				<div class="filigrane">
 						<span>
 							{l s='Non contractual photo'}

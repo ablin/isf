@@ -50,6 +50,8 @@ class Import
             $categoryExists = Category::getCategory((string) $famille->name);
             $categoryId = $categoryExists['id_category'];
 
+            echo (string) $famille->name . "\n";
+
             if (!$categoryId || $categoryHasChanged) {
                 $category = new Category();
 
@@ -133,10 +135,10 @@ class Import
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'category\', 1, 0, 0)',
                             _DB_PREFIX_, $category->id
                         ));
-                        Db::getInstance()->execute(sprintf(
+                        /*Db::getInstance()->execute(sprintf(
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'price\', 2, 0, 0)',
                             _DB_PREFIX_, $category->id
-                        ));
+                        ));*/
                         Db::getInstance()->execute(sprintf(
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 3, 0, 0)',
                             _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
@@ -207,6 +209,7 @@ class Import
             // Check if product must be updated
             $productHasChanged = Product::productHasChanged((string) $produit->reference, (string) $produit->date_upd);
             $productId = Product::getProductByReference((string) $produit->reference);
+            echo (string) $produit->reference . "\n";
 
             if (!$productId || $productHasChanged) {
                 $product = new Product();
@@ -287,6 +290,29 @@ class Import
                         AdminImportController::copyImg($product->id, $image->id, (string) $imageDivalto->url, 'products', true);
                         $i++;
                     }
+                }
+
+                // Product files
+                if ($produit->files) {
+                    $attachments = array();
+                    Attachment::deleteProductAttachments($product->id);
+                    foreach ($produit->files->file as $file) {
+                        if (false == $attachmentId = $this->getAttachment($file->name)) {
+                            $uniqid = sha1(microtime());
+                            $attachment = new Attachment();
+                            copy($file->url, _PS_DOWNLOAD_DIR_ . $uniqid);
+                            foreach (Language::getIDs(false) as $id_lang) {
+                                $attachment->name[(int) $id_lang] = $file->name;
+                            }
+                            $attachment->file = $uniqid;
+                            $attachment->mime = mime_content_type(_PS_DOWNLOAD_DIR_ . $uniqid);
+                            $attachment->file_name = basename($file->url);
+                            $attachment->add();
+                            $attachmentId = $attachmentId = $this->getAttachment($file->name);
+                        }
+                        $attachments[] = $attachmentId;
+                    }
+                    Attachment::attachToProduct($product->id, $attachments);
                 }
 
                 // Product attributes
@@ -431,6 +457,24 @@ class Import
             Search::indexation(false);
 
         }
+    }
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    private function getAttachment($name)
+    {
+        $sql = sprintf(
+            "SELECT pal.id_attachment FROM %sattachment_lang pal
+                            INNER JOIN %sattachment pa using (id_attachment)
+                            WHERE pal.name = '%s'",
+            _DB_PREFIX_,
+            _DB_PREFIX_,
+            $name
+        );
+
+        return Db::getInstance()->getValue($sql);
     }
 
     /**

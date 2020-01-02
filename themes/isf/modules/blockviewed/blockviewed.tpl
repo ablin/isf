@@ -34,7 +34,7 @@
 					class="products-block-image" 
 					href="{$viewedProduct->product_link|escape:'html':'UTF-8'}" 
 					title="{l s='More about %s' mod='blockviewed' sprintf=[$viewedProduct->name|escape:'html':'UTF-8']}" >
-						{if preg_match("/-default/", $viewedProduct->cover)}
+						{if preg_match("/-default/", $viewedProduct->cover) && !preg_match("/-default/", {$link->getImageLink($product->link_rewrite, $viewedProduct->cover, 'small_default', $viewedProduct->id)|escape:'html':'UTF-8'})}
 							<div class="filigrane">
 								<span>
 									{l s='Non contractual photo' mod='blockviewed'}

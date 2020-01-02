@@ -51,7 +51,7 @@
 				<div class="left-block">
 					<div class="product-image-container">
 						<a class="product_img_link" href="{$product.link|escape:'html':'UTF-8'}" title="{$product.name|escape:'html':'UTF-8'}" itemprop="url">
-							{if preg_match("/-default/", $product.id_image)}
+							{if preg_match("/-default/", $product.id_image) && !preg_match("/-default/", {$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default', $product.id_product)|escape:'html':'UTF-8'})}
 								<div class="filigrane">
 									<span>
 										{l s='Non contractual photo'}
@@ -98,7 +98,7 @@
 						</div>
 					{/if}
                     <p class="product-desc" itemprop="description">
-                        {$product.description_short|strip_tags:'UTF-8'|truncate:360:'...'}
+                        {$product.description_short|stripslashes|truncate:360:'...'}
                     </p>
                     <p class="product-reference" itemprop="reference">
                         <label>{l s='Reference:'}</label>

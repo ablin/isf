@@ -80,7 +80,7 @@
                 <span id="view_full_size">
                     {if $jqZoomEnabled && $have_image && !$content_only}
                         <a class="jqzoom" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" rel="gal1" href="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'thickbox_default')|escape:'html':'UTF-8'}">
-                            {if preg_match("/-default/", $cover.id_image)}
+                            {if preg_match("/-default/", $cover.id_image) && !preg_match("/-default/", {$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default', $product->id)|escape:'html':'UTF-8'})}
                                 <div class="filigrane">
 									<span>
 										{l s='Non contractual photo'}
@@ -90,7 +90,7 @@
                             <img itemprop="image" src="{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}" title="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" alt="{if !empty($cover.legend)}{$cover.legend|escape:'html':'UTF-8'}{else}{$product->name|escape:'html':'UTF-8'}{/if}" width="{$largeSize.width}" height="{$largeSize.height}"/>
                         </a>
                     {else}
-                        {if preg_match("/-default/", $cover.id_image)}
+                        {if preg_match("/-default/", $cover.id_image) && !preg_match("/-default/", {$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default', $product->id)|escape:'html':'UTF-8'})}
                             <div class="filigrane">
                                 <span>
                                     {l s='Non contractual photo'}
@@ -162,7 +162,7 @@
             {if $product->description_short || $packItems|@count > 0}
                 <div id="short_description_block">
                     {if $product->description_short}
-                        <div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short}</div>
+                        <div id="short_description_content" class="rte align_justify" itemprop="description">{$product->description_short|stripslashes}</div>
                     {/if}
 
                     {if $product->description}
@@ -186,9 +186,45 @@
                     <span {if $product->quantity == 1} style="display: none;"{/if} id="quantityAvailableTxtMultiple">{l s='Items'}</span>
                 </p>
             {/if}
-            {if $tarif == 0}
+            {if $nb_tarif == 0}
                 <p id="price_on_demand">
                     <span class="label label-warning">{l s='Price on demand'}</span>
+                </p>
+                <p id="product_stock">
+                    <strong>{l s='Stock:'}</strong>
+                    {if $stock != -1}
+                        <span class="availability">
+                            {if $stock > 0}
+                                <span id="availability_value" class="label label-success">
+                                    {$stock}
+                                </span>
+                            {else}
+                                <span id="availability_value" class="label label-danger">
+                                    0
+                                </span>
+                            {/if}
+                        </span>
+                    {/if}
+                    {if $dispo != -1}
+                        <span class="availability">
+                            {if $dispo > 0}
+                                <span id="availability_value" class="label-success">
+                                    {l s='Available'}
+                                </span>
+                            {else}
+                                <span id="availability_value" class="label-danger">
+                                    {l s='Unavailable'}
+                                </span>
+                            {/if}
+                        </span>
+                    {/if}
+                    {if $jauge != -1}
+                        <span class="availability">
+                            <span class="availability-gauge{if $jauge == 1} orange{elseif $jauge > 0} green{/if}"></span>
+                            <span class="availability-gauge{if $jauge > 1} green{/if}"></span>
+                            <span class="availability-gauge{if $jauge > 2} green{/if}"></span>
+                        </span>
+                    {/if}
                 </p>
             {/if}
             {if $PS_STOCK_MANAGEMENT}
@@ -529,7 +565,7 @@
                             <tr>
                                 <th>{l s='File'}</th>
                                 <th>{l s='Size'}</th>
-                                <th>{l s='Download'}</th>
+                                <th width="15%">{l s='Download'}</th>
                             </tr>
                         </thead>
                         <tbody>

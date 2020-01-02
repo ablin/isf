@@ -86,6 +86,8 @@ class ProductController extends ProductControllerCore
         try {
             $datas = $webServiceDiva->call();
             $stock = 0;
+            $dispo = 0;
+            $jauge = 0;
             $tarif = 0;
             $sousRefs = array();
             $nb_tarif = 0;
@@ -95,6 +97,8 @@ class ProductController extends ProductControllerCore
                 foreach ($datas->references as $reference) {
                     if ($reference->trouve == 1) {
                         $stock = $reference->total_stock;
+                        $dispo = $reference->total_dispo;
+                        $jauge = $reference->total_jauge;
                         $tarif = $reference->max_pun;
                         $sousRefs = $reference->sousRefs;
                         $nb_tarif = $reference->nbTarifs;
@@ -109,6 +113,8 @@ class ProductController extends ProductControllerCore
 
         $this->context->smarty->assign(array(
             'stock' => $stock,
+            'dispo' => $dispo,
+            'jauge' => $jauge,
             'tarif' => $tarif,
             'sousRefs' => $sousRefs,
             'nb_tarif' => $nb_tarif,
