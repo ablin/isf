@@ -105,7 +105,8 @@ class Address extends AddressCore
                             $this->postcode = $detail->cpostal;
                             $this->city = $detail->vil;
                             $this->country = $detail->pay;
-                            $this->alias = $detail->adrcod;
+                            $this->adrcod = $detail->adrcod;
+                            $this->alias = $detail->alias;
                             $this->id = $detail->id_adr;
                         }
                     }
@@ -127,7 +128,8 @@ class Address extends AddressCore
                     $this->postcode = $detail->cpostal;
                     $this->city = $detail->vil;
                     $this->country = $detail->pay;
-                    $this->alias = $detail->adrcod;
+                    $this->adrcod = $detail->adrcod;
+                    $this->alias = $detail->alias;
                     $this->id = $detail->id_adr;
                 }
             }

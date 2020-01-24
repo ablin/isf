@@ -7697,10 +7697,6 @@ table#cart_summary .gift-icon {
 #ordermsg {
   margin-bottom: 30px; }
 
-#id_address_invoice.form-control,
-#id_address_delivery.form-control {
-  width: 269px; }
-
 .addresses .select label,
 .addresses .selector,
 .addresses .addresses .address_select {

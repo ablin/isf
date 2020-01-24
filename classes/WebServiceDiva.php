@@ -10,8 +10,8 @@ class WebServiceDiva
 
     public function __construct($action, $param) 
     {
-        //$this->client = new SoapClient("http://interface59.ath.cx:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
-        $this->client = new SoapClient("http://192.168.0.110:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
+        $this->client = new SoapClient("http://interface59.ath.cx:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
+        //$this->client = new SoapClient("http://192.168.0.110:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
         $this->action = $action;
         $this->param = $param;
         $this->logger = new FileLogger(0);

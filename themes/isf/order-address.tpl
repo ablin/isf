@@ -44,7 +44,7 @@
 				<select name="id_address_delivery" id="id_address_delivery" class="address_select form-control">
 					{foreach from=$addresses key=k item=address}
 						<option value="{$address.id_address|intval}"{if $address.id_address == $cart->id_address_delivery} selected="selected"{/if}>
-							{$address.address1|escape:'html':'UTF-8'} {$address.postcode|escape:'html':'UTF-8'} {$address.city|escape:'html':'UTF-8'}
+							{$address.alias|escape:'html':'UTF-8'} - {$address.address1|escape:'html':'UTF-8'} {$address.postcode|escape:'html':'UTF-8'} {$address.city|escape:'html':'UTF-8'}
 						</option>
 					{/foreach}
 				</select><span class="waitimage"></span>
@@ -59,9 +59,9 @@
 				{if $addresses|@count > 1}
 					<label for="id_address_invoice" class="strong">{l s='Choose a billing address:'}</label>
 					<select name="id_address_invoice" id="id_address_invoice" class="address_select form-control">
-					{section loop=$addresses step=-1 name=address}
+					{section loop=$addresses step=1 name=address}
 						<option value="{$addresses[address].id_address|intval}"{if $addresses[address].id_address == $cart->id_address_invoice && $cart->id_address_delivery != $cart->id_address_invoice} selected="selected"{/if}>
-							{$addresses[address].address1|escape:'html':'UTF-8'} {$addresses[address].postcode|escape:'html':'UTF-8'} {$addresses[address].city|escape:'html':'UTF-8'}
+							{$addresses[address].alias|escape:'html':'UTF-8'} - {$addresses[address].address1|escape:'html':'UTF-8'} {$addresses[address].postcode|escape:'html':'UTF-8'} {$addresses[address].city|escape:'html':'UTF-8'}
 						</option>
 					{/section}
 					</select><span class="waitimage"></span>
@@ -86,12 +86,12 @@
 			</ul>
 		</div>
 	</div> <!-- end row -->
-	<!-- TODO Adresse<p class="address_add submit">
+	<p class="address_add submit">
 		<a href="{$link->getPageLink('address', true, NULL, "back={$back_order_page}?step=1{if $back}&mod={$back}{/if}")|escape:'html':'UTF-8'}" title="{l s='Add'}" class="button button-small btn btn-default">
 			<span>{l s='Add a new address'}<i class="icon-chevron-right right"></i></span>
 		</a>
 	</p>
-	{if !$opc}
+	<!--{if !$opc}
 		<div id="ordermsg" class="form-group">
 			<label>{l s='If you would like to add a comment about your order, please write it in the field below.'}</label>
 			<textarea class="form-control" cols="60" rows="6" name="message">{if isset($oldMessage)}{$oldMessage}{/if}</textarea>

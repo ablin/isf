@@ -62,7 +62,8 @@ class AddressController extends AddressControllerCore
                         $this->_address->postcode = $detail->cpostal;
                         $this->_address->city = $detail->vil;
                         $this->_address->country = $detail->pay;
-                        $this->_address->alias = $detail->adrcod;
+                        $this->_address->adrcod = $detail->adrcod;
+                        $this->_address->alias = $detail->alias;
                         $this->_address->id = $detail->id_adr;
                     }
                 }
@@ -124,7 +125,8 @@ class AddressController extends AddressControllerCore
             return;
         }
 
-        $addressFormatted = '<ADRCOD>'.strtoupper(Tools::getValue('alias'));
+        $addressFormatted = '<ADRCOD>'.strtoupper(Tools::getValue('adrcod'));
+        $addressFormatted .= '<ALIAS>'.strtoupper(Tools::getValue('alias'));
         $addressFormatted .='<NOM>'.Tools::getValue('firstname').' '.Tools::getValue('lastname');
         $addressFormatted .='<RUE>'.Tools::getValue('address1');
         $addressFormatted .='<ADRCPL1>'.Tools::getValue('address2');
@@ -137,9 +139,6 @@ class AddressController extends AddressControllerCore
         $addressFormatted .='<CD>2';
         $addressFormatted .='<BL>2';
         $addressFormatted .='<FA>2';
-        if (Tools::getValue('alias') != Tools::getValue('previous_alias')) {
-            $addressFormatted .='<SUPPR>1';
-        }
 
         // Save address
         $webServiceDiva = new WebServiceDiva('<ACTION>MAJ_ADR_CLI', '<DOS>1<TIERS>'.$this->context->cookie->tiers.$addressFormatted);
@@ -150,6 +149,8 @@ class AddressController extends AddressControllerCore
                 $this->context->cookie->customer_firstname = Tools::getValue('firstname');
                 $this->context->cookie->customer_lastname = Tools::getValue('lastname');
                 $this->context->cart->update();
+
+                unset(Context::getContext()->cookie->addresses);
 
                  // Redirect to old page or current page
                 if ($back = Tools::getValue('back')) {
@@ -185,7 +186,8 @@ class AddressController extends AddressControllerCore
             'errors' => $this->errors,
             'token' => Tools::getToken(false),
             'address' => $this->_address,
-            'id_address' => (Validate::isLoadedObject($this->_address)) ? $this->_address->id : 0
+            'id_address' => (Validate::isLoadedObject($this->_address)) ? $this->_address->id : 0,
+            'adrcod' => (Validate::isLoadedObject($this->_address)) ? $this->_address->adrcod : 0
         ));
 
         if ($back = Tools::getValue('back')) {

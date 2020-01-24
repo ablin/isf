@@ -190,42 +190,44 @@
                 <p id="price_on_demand">
                     <span class="label label-warning">{l s='Price on demand'}</span>
                 </p>
-                <p id="product_stock">
-                    <strong>{l s='Stock:'}</strong>
-                    {if $stock != -1}
-                        <span class="availability">
-                            {if $stock > 0}
-                                <span id="availability_value" class="label label-success">
-                                    {$stock}
-                                </span>
-                            {else}
-                                <span id="availability_value" class="label label-danger">
-                                    0
-                                </span>
-                            {/if}
-                        </span>
-                    {/if}
-                    {if $dispo != -1}
-                        <span class="availability">
-                            {if $dispo > 0}
-                                <span id="availability_value" class="label-success">
-                                    {l s='Available'}
-                                </span>
-                            {else}
-                                <span id="availability_value" class="label-danger">
-                                    {l s='Unavailable'}
-                                </span>
-                            {/if}
-                        </span>
-                    {/if}
-                    {if $jauge != -1}
-                        <span class="availability">
-                            <span class="availability-gauge{if $jauge == 1} orange{elseif $jauge > 0} green{/if}"></span>
-                            <span class="availability-gauge{if $jauge > 1} green{/if}"></span>
-                            <span class="availability-gauge{if $jauge > 2} green{/if}"></span>
-                        </span>
-                    {/if}
-                </p>
+                {if $stock != '' or $dispo != '' or $jauge != ''}
+                    <p id="product_stock">
+                        <strong>{l s='Stock:'}</strong>
+                        {if $stock != -1 and $stock != ''}
+                            <span class="availability">
+                                {if $stock > 0}
+                                    <span id="availability_value" class="label label-success">
+                                        {$stock}
+                                    </span>
+                                {else}
+                                    <span id="availability_value" class="label label-danger">
+                                        0
+                                    </span>
+                                {/if}
+                            </span>
+                        {/if}
+                        {if $dispo != -1 and $dispo != ''}
+                            <span class="availability">
+                                {if $dispo > 0}
+                                    <span id="availability_value" class="label-success">
+                                        {l s='Available'}
+                                    </span>
+                                {else}
+                                    <span id="availability_value" class="label-danger">
+                                        {l s='Unavailable'}
+                                    </span>
+                                {/if}
+                            </span>
+                        {/if}
+                        {if $jauge != -1 and $jauge != ''}
+                            <span class="availability">
+                                <span class="availability-gauge{if $jauge == 1} orange{elseif $jauge > 0} green{/if}"></span>
+                                <span class="availability-gauge{if $jauge > 1} green{/if}"></span>
+                                <span class="availability-gauge{if $jauge > 2} green{/if}"></span>
+                            </span>
+                        {/if}
+                    </p>
+                {/if}
             {/if}
             {if $PS_STOCK_MANAGEMENT}
                 {if !$product->is_virtual}{hook h="displayProductDeliveryTime" product=$product}{/if}

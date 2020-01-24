@@ -40,14 +40,14 @@
 	{include file="$tpl_dir./errors.tpl"}
 	<p class="required"><sup>*</sup>{l s='Required field'}</p>
 	<form action="{$link->getPageLink('address', true)|escape:'html':'UTF-8'}" method="post" class="std" id="add_address">
-		<!--h3 class="page-subheading">{if isset($id_address)}{l s='Your address'}{else}{l s='New address'}{/if}</h3-->
+		<h3 class="page-subheading">{if isset($id_address)}{l s='Your address'}{else}{l s='New address'}{/if}</h3>
 		{foreach from=$ordered_adr_fields item=field_name}
 			{if $field_name eq 'alias'}
-                <div class="required form-group">
-                    <label for="alias">{l s='Alias'} <sup>*</sup></label>
-                    <input class="is_required validate form-control" readonly="readonly" data-validate="{$address_validation.$field_name.validate}" type="text" name="alias" id="alias" value="{if isset($smarty.post.alias)}{$smarty.post.alias}{else}{if isset($address->alias)}{$address->alias|escape:'html':'UTF-8'}{/if}{/if}" />
-                </div>
-            {/if}
+				<div class="required form-group">
+					<label for="alias">{l s='Alias'} <sup>*</sup></label>
+					<input class="is_required validate form-control"{if isset($id_address) && $id_address==1} readonly="readonly"{/if} data-validate="{$address_validation.$field_name.validate}" type="text" name="alias" id="alias" value="{if isset($smarty.post.alias)}{$smarty.post.alias}{else}{if isset($address->alias)}{$address->alias|escape:'html':'UTF-8'}{/if}{/if}" maxlength="32" />
+				</div>
+			{/if}
             {if $field_name eq 'firstname'}
 				<div class="required form-group">
 					<label for="firstname">{l s='First name'} <sup>*</sup></label>
@@ -106,6 +106,7 @@
 		{/foreach}
 		<p class="submit2">
 			{if isset($id_address)}<input type="hidden" name="id_address" value="{$id_address|intval}" />{/if}
+			{if isset($adrcod)}<input type="hidden" name="adrcod" value="{$adrcod}" />{/if}
 			{if isset($back)}<input type="hidden" name="back" value="{$back}" />{/if}
 			{if isset($mod)}<input type="hidden" name="mod" value="{$mod}" />{/if}
 			{if isset($select_address)}<input type="hidden" name="select_address" value="{$select_address|intval}" />{/if}

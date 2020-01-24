@@ -54,10 +54,6 @@ class Customer extends CustomerCore
 
             if ($datas && $datas->trouve == 1) {
 
-                $total = 0;
-                $multiple_addresses_formated = array();
-                $ordered_fields = array();
-
                 foreach ($datas->adresse as $detail) {
                     $address = array();
                     $address['id_address'] = $detail->id_adr;
@@ -69,7 +65,7 @@ class Customer extends CustomerCore
                     $address['locality'] = $detail->loc;
                     $address['postcode'] = $detail->cpostal;
                     $address['city'] = $detail->vil;
-                    $address['alias'] = $detail->adrcod;
+                    $address['alias'] = $detail->alias;
                     $address['id'] = $detail->id_adr;
 
                     $id_country = null;
