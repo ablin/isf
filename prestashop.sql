@@ -3953,6 +3953,8 @@ CREATE TABLE IF NOT EXISTS `ps_feature_value` (
   `id_feature_value` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_feature` int(10) UNSIGNED NOT NULL,
   `custom` tinyint(3) UNSIGNED DEFAULT NULL,
+  `id_category` int(10) UNSIGNED,
+  `level` int(10) UNSIGNED,
   PRIMARY KEY (`id_feature_value`),
   KEY `feature` (`id_feature`)
 ) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
@@ -5029,7 +5031,7 @@ DROP TABLE IF EXISTS `ps_layered_filter`;
 CREATE TABLE IF NOT EXISTS `ps_layered_filter` (
   `id_layered_filter` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
-  `filters` text,
+  `filters` longtext,
   `n_categories` int(10) UNSIGNED NOT NULL,
   `date_add` datetime NOT NULL,
   PRIMARY KEY (`id_layered_filter`)

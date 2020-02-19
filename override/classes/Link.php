@@ -79,57 +79,28 @@ class Link extends LinkCore
     private function getParentImage($id_product, $type)
     {
         $sql = sprintf(
-            "SELECT cl.id_category FROM %sfeature_product fp
+            "SELECT c.id_category FROM %sfeature_product fp
                       INNER JOIN %sfeature_value fv USING (id_feature_value)
-                      INNER JOIN %sfeature_value_lang fvl USING(id_feature_value)
-                      INNER JOIN %scategory_lang cl ON fvl.value = cl.description
-                      WHERE fp.id_feature = %d AND fp.id_product = %d AND fvl.id_lang = %d",
+                      INNER JOIN %scategory c ON fv.id_category = c.id_category
+                      WHERE fp.id_product = %d
+                      ORDER BY fv.level DESC",
             _DB_PREFIX_,
             _DB_PREFIX_,
             _DB_PREFIX_,
-            _DB_PREFIX_,
-            _DV_FEATURE_LEVEL_2_IMAGE_,
-            $id_product,
-            (int) Context::getContext()->language->id
+            $id_product
         );
-        $subCategory = Db::getInstance()->getValue($sql);
+        $categories = Db::getInstance()->executeS($sql);
 
         $files = scandir(_PS_CAT_IMG_DIR_);
+        foreach ($categories as $category) {
 
-        if (count(preg_grep('/^'.$subCategory.($type ? '-'.$type : '').'.jpg/i', $files)) > 0) {
+            if (count(preg_grep('/^'.$category['id_category'].($type ? '-'.$type : '').'.jpg/i', $files)) > 0) {
 
-            foreach ($files as $file) {
-                if (preg_match('/^'.$subCategory.($type ? '-'.$type : '').'.jpg/i', $file) === 1) {
-                    return $this->getMediaLink(_THEME_CAT_DIR_.$file);
-                    break;
-                }
-            }
-        }
-
-        $sql = sprintf(
-            "SELECT cl.id_category FROM %sfeature_product fp
-                      INNER JOIN %sfeature_value fv USING (id_feature_value)
-                      INNER JOIN %sfeature_value_lang fvl USING(id_feature_value)
-                      INNER JOIN %scategory_lang cl ON fvl.value = cl.description
-                      WHERE fp.id_feature = %d AND fp.id_product = %d AND fvl.id_lang = %d",
-            _DB_PREFIX_,
-            _DB_PREFIX_,
-            _DB_PREFIX_,
-            _DB_PREFIX_,
-            _DV_FEATURE_LEVEL_1_IMAGE_,
-            $id_product,
-            (int) Context::getContext()->language->id
-        );
-        $category = Db::getInstance()->getValue($sql);
-
-        $files = scandir(_PS_CAT_IMG_DIR_);
-
-        if (count(preg_grep('/^'.$category.($type ? '-'.$type : '').'.jpg/i', $files)) > 0) {
-
-            foreach ($files as $file) {
-                if (preg_match('/^'.$category.($type ? '-'.$type : '').'.jpg/i', $file) === 1) {
-                    return $this->getMediaLink(_THEME_CAT_DIR_.$file);
-                    break;
+                foreach ($files as $file) {
+                    if (preg_match('/^'.$category['id_category'].($type ? '-'.$type : '').'.jpg/i', $file) === 1) {
+                        return $this->getMediaLink(_THEME_CAT_DIR_.$file);
+                        break;
+                    }
                 }
             }
         }

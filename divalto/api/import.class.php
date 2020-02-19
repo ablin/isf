@@ -2,7 +2,7 @@
 require_once __DIR__.'/../../config/config.inc.php';
 
 set_time_limit(0);
-ini_set('memory_limit','512M');
+ini_set('memory_limit','1G');
 
 class Import
 {
@@ -126,7 +126,6 @@ class Import
                         'categories' => array($category->id),
                         'shop_list' => Shop::getShops(false, null, true),
                         'layered_selection_subcategories' => array('filter_type' => 0, 'filter_show_limit' => 0),
-                        'layered_selection_price_slider' => array('filter_type' => 0, 'filter_show_limit' => 0),
                         'layered_selection_ag_'.$attributeGroup['id_attribute_group'] => array('filter_type' => 0, 'filter_show_limit' => 0)
                     );
 
@@ -135,10 +134,6 @@ class Import
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'category\', 1, 0, 0)',
                             _DB_PREFIX_, $category->id
                         ));
-                        /*Db::getInstance()->execute(sprintf(
-                            'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, NULL,\'price\', 2, 0, 0)',
-                            _DB_PREFIX_, $category->id
-                        ));*/
                         Db::getInstance()->execute(sprintf(
                             'INSERT INTO %slayered_category (id_category, id_shop, id_value, type, position, filter_show_limit, filter_type) VALUES (%d, 1, %d,\'id_attribute_group\', 3, 0, 0)',
                             _DB_PREFIX_, $category->id, $attributeGroup['id_attribute_group']
@@ -277,7 +272,7 @@ class Import
                 $blockLayered->indexProductPrices((int) $product->id);
 
                 // Product images
-                if ($produit->images) {
+                /*if ($produit->images) {
                     $i = 0;
                     Db::getInstance()->execute(sprintf('DELETE FROM %simage WHERE id_product = %d', _DB_PREFIX_, $product->id));
                     Db::getInstance()->execute(sprintf('DELETE FROM %simage_shop WHERE id_product = %d', _DB_PREFIX_, $product->id));
@@ -290,10 +285,10 @@ class Import
                         AdminImportController::copyImg($product->id, $image->id, (string) $imageDivalto->url, 'products', true);
                         $i++;
                     }
-                }
+                }*/
 
                 // Product files
-                if ($produit->files) {
+                /*if ($produit->files) {
                     $attachments = array();
                     Attachment::deleteProductAttachments($product->id);
                     foreach ($produit->files->file as $file) {
@@ -313,10 +308,10 @@ class Import
                         $attachments[] = $attachmentId;
                     }
                     Attachment::attachToProduct($product->id, $attachments);
-                }
+                }*/
 
                 // Product attributes
-                if ($produit->attributes) {
+                /*if ($produit->attributes) {
                     $attributes = $this->getAllproductAttributes($product->id);
                     foreach ($produit->attributes->attribute as $attribute) {
                         $attributeList = array();
@@ -358,7 +353,7 @@ class Import
                 }
 
                 $blockLayered = new BlockLayered();
-                $blockLayered->indexAttribute((int) $product->id);
+                $blockLayered->indexAttribute((int) $product->id);*/
 
                 // Product features
                 if ($produit->features) {
@@ -386,6 +381,16 @@ class Import
                         }
                         $featureValueAdd->value = AdminImportController::createMultiLangField((string) $productFeature->value);
                         $featureValueAdd->custom = (int) $productFeature->custom;
+
+                        if ((string) $productFeature->category && (int) $productFeature->level) {
+                            $featureValueCategory = Category::getCategory((string) $productFeature->category);
+                            $featureValueCategoryId = $featureValueCategory['id_category'];
+                            if ($featureValueCategoryId) {
+                                $featureValueAdd->id_category = $featureValueCategoryId;
+                                $featureValueAdd->level = (int) $productFeature->level;
+                            }
+                        }
+
                         if (!$featureValue) {
                             $featureValueAdd->add();
                         } else {
@@ -404,7 +409,7 @@ class Import
                 }
 
                 // Product correspondences
-                if (isset($produit->correspondences)) {
+                /*if (isset($produit->correspondences)) {
                     $correspondences = $this->getAllproductCorrespondences($product->id);
                     foreach ($produit->correspondences->correspondence as $correspondence) {
                         if (false == $id_product_correspondence = $this->productCorrespondenceExists($correspondence, $product->id)) {
@@ -424,10 +429,10 @@ class Import
                         $correspondence = new Correspondence($id_product_correspondence);
                         $correspondence->delete();
                     }
-                }
+                }*/
 
                 // Product accessories
-                if ($produit->accessories) {
+                /*if ($produit->accessories) {
                     Db::getInstance()->execute(sprintf('DELETE FROM %saccessory WHERE id_product_1 = %d', _DB_PREFIX_, $product->id));
                     foreach ($produit->accessories->accessory as $accessory) {
                         $product_2 = Product::getProductByReference((string) $accessory->reference);
@@ -451,7 +456,7 @@ class Import
 
                 if (count($productCategories) > 0  && $product->id) {
                     $product->updateCategories($productCategories);
-                }
+                }*/
             }
 
             Search::indexation(false);

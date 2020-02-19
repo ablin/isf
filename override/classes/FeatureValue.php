@@ -26,6 +26,12 @@
 
 class FeatureValue extends FeatureValueCore
 {
+    /** @var int id category */
+    public $id_category;
+
+    /** @var int level */
+    public $level;
+
     /**
      * @see ObjectModel::$definition
      */
@@ -36,6 +42,8 @@ class FeatureValue extends FeatureValueCore
         'fields' => array(
             'id_feature' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId', 'required' => true),
             'custom' =>    array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),
+            'id_category' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
+            'level' => array('type' => self::TYPE_INT, 'validate' => 'isUnsignedId'),
 
             /* Lang fields */
             'value' =>        array('type' => self::TYPE_STRING, 'lang' => true, 'validate' => 'isAnything', 'required' => true, 'size' => 255),
