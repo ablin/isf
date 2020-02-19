@@ -173,6 +173,37 @@ class Import
                     $blockLayered->indexAttribute();
                 }
 
+                // Category description has changed?
+                $sql = sprintf(
+                    "SELECT COUNT(fv.id_category) FROM %sfeature_value_lang fvl
+                    INNER JOIN %sfeature_value fv USING (id_feature_value)
+                    INNER JOIN %scategory_lang cl USING (id_category)
+                    WHERE fv.id_category = %d and fvl.value <> cl.description and fvl.id_lang = %d",
+                    _DB_PREFIX_,
+                    _DB_PREFIX_,
+                    _DB_PREFIX_,
+                    $category->id,
+                    (int) Context::getContext()->language->id
+                );
+
+                if (Db::getInstance()->getValue($sql) > 0) {
+                    Db::getInstance()->execute(sprintf(
+                        "UPDATE %sfeature_value_lang
+                        INNER JOIN %sfeature_value fv USING (id_feature_value)
+                        INNER JOIN %scategory_lang cl USING (id_category)
+                        SET %sfeature_value_lang.value = cl.description
+                        WHERE fv.id_category = %d and %sfeature_value_lang.value <> cl.description and %sfeature_value_lang.id_lang = %d",
+                        _DB_PREFIX_,
+                        _DB_PREFIX_,
+                        _DB_PREFIX_,
+                        _DB_PREFIX_,
+                        $category->id,
+                        _DB_PREFIX_,
+                        _DB_PREFIX_,
+                        (int) Context::getContext()->language->id
+                    ));
+                }
+
                 // Category top menu
                 if ((int) $famille->top_menu == 1) {
                     if (!in_array('CAT'.$category->id, $this->topMenu)) {
@@ -272,7 +303,7 @@ class Import
                 $blockLayered->indexProductPrices((int) $product->id);
 
                 // Product images
-                /*if ($produit->images) {
+                if ($produit->images) {
                     $i = 0;
                     Db::getInstance()->execute(sprintf('DELETE FROM %simage WHERE id_product = %d', _DB_PREFIX_, $product->id));
                     Db::getInstance()->execute(sprintf('DELETE FROM %simage_shop WHERE id_product = %d', _DB_PREFIX_, $product->id));
@@ -285,10 +316,10 @@ class Import
                         AdminImportController::copyImg($product->id, $image->id, (string) $imageDivalto->url, 'products', true);
                         $i++;
                     }
-                }*/
+                }
 
                 // Product files
-                /*if ($produit->files) {
+                if ($produit->files) {
                     $attachments = array();
                     Attachment::deleteProductAttachments($product->id);
                     foreach ($produit->files->file as $file) {
@@ -308,10 +339,10 @@ class Import
                         $attachments[] = $attachmentId;
                     }
                     Attachment::attachToProduct($product->id, $attachments);
-                }*/
+                }
 
                 // Product attributes
-                /*if ($produit->attributes) {
+                if ($produit->attributes) {
                     $attributes = $this->getAllproductAttributes($product->id);
                     foreach ($produit->attributes->attribute as $attribute) {
                         $attributeList = array();
@@ -353,7 +384,7 @@ class Import
                 }
 
                 $blockLayered = new BlockLayered();
-                $blockLayered->indexAttribute((int) $product->id);*/
+                $blockLayered->indexAttribute((int) $product->id);
 
                 // Product features
                 if ($produit->features) {
@@ -371,7 +402,10 @@ class Import
                             unset($features[array_search($feature['id_feature'], $features)]);
                         }
 
-                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature']);
+                        $featureValueCategory = Category::getCategory((string) $productFeature->category);
+                        $featureValueCategoryId = $featureValueCategory['id_category'];
+
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature'], $featureValueCategoryId);
                         // Add feature value if not exists, update otherwise
                         if (!$featureValue) {
                             $featureValueAdd = new FeatureValue();
@@ -382,13 +416,9 @@ class Import
                         $featureValueAdd->value = AdminImportController::createMultiLangField((string) $productFeature->value);
                         $featureValueAdd->custom = (int) $productFeature->custom;
 
-                        if ((string) $productFeature->category && (int) $productFeature->level) {
-                            $featureValueCategory = Category::getCategory((string) $productFeature->category);
-                            $featureValueCategoryId = $featureValueCategory['id_category'];
-                            if ($featureValueCategoryId) {
-                                $featureValueAdd->id_category = $featureValueCategoryId;
-                                $featureValueAdd->level = (int) $productFeature->level;
-                            }
+                        if ($featureValueCategoryId) {
+                            $featureValueAdd->id_category = $featureValueCategoryId;
+                            $featureValueAdd->level = (int) $productFeature->level;
                         }
 
                         if (!$featureValue) {
@@ -396,7 +426,7 @@ class Import
                         } else {
                             $featureValueAdd->update();
                         }
-                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature']);
+                        $featureValue = FeatureValue::getFeatureValueByName((string) $productFeature->value, $feature['id_feature'], $featureValueCategoryId);
 
                         Product::addFeatureProductImport($product->id, $feature['id_feature'], $featureValue['id_feature_value']);
                     }
@@ -409,7 +439,7 @@ class Import
                 }
 
                 // Product correspondences
-                /*if (isset($produit->correspondences)) {
+                if (isset($produit->correspondences)) {
                     $correspondences = $this->getAllproductCorrespondences($product->id);
                     foreach ($produit->correspondences->correspondence as $correspondence) {
                         if (false == $id_product_correspondence = $this->productCorrespondenceExists($correspondence, $product->id)) {
@@ -429,10 +459,10 @@ class Import
                         $correspondence = new Correspondence($id_product_correspondence);
                         $correspondence->delete();
                     }
-                }*/
+                }
 
                 // Product accessories
-                /*if ($produit->accessories) {
+                if ($produit->accessories) {
                     Db::getInstance()->execute(sprintf('DELETE FROM %saccessory WHERE id_product_1 = %d', _DB_PREFIX_, $product->id));
                     foreach ($produit->accessories->accessory as $accessory) {
                         $product_2 = Product::getProductByReference((string) $accessory->reference);
@@ -456,7 +486,7 @@ class Import
 
                 if (count($productCategories) > 0  && $product->id) {
                     $product->updateCategories($productCategories);
-                }*/
+                }
             }
 
             Search::indexation(false);
@@ -472,7 +502,7 @@ class Import
     {
         $sql = sprintf(
             "SELECT pal.id_attachment FROM %sattachment_lang pal
-                            INNER JOIN %sattachment pa using (id_attachment)
+                            INNER JOIN %sattachment pa USING (id_attachment)
                             WHERE pal.name = '%s'",
             _DB_PREFIX_,
             _DB_PREFIX_,
@@ -492,7 +522,7 @@ class Import
 
         $sql = sprintf(
             "SELECT pac.id_product_attribute FROM %sproduct_attribute_combination pac
-                            INNER JOIN %sproduct_attribute pa using (id_product_attribute)
+                            INNER JOIN %sproduct_attribute pa USING (id_product_attribute)
                             WHERE pa.id_product = %d",
             _DB_PREFIX_,
             _DB_PREFIX_,
@@ -516,9 +546,9 @@ class Import
     {
         $sql = sprintf(
             "SELECT pac.id_product_attribute FROM %sattribute_lang al
-                            INNER JOIN %sproduct_attribute_combination pac using (id_attribute)
-                            INNER JOIN %sproduct_attribute pa using (id_product_attribute)
-                            INNER JOIN %sattribute a using (id_attribute)
+                            INNER JOIN %sproduct_attribute_combination pac USING (id_attribute)
+                            INNER JOIN %sproduct_attribute pa USING (id_product_attribute)
+                            INNER JOIN %sattribute a USING (id_attribute)
                             WHERE a.id_attribute_group = %d AND al.name = '%s' AND al.id_lang = %d AND pa.id_product = %d",
             _DB_PREFIX_,
             _DB_PREFIX_,
@@ -541,7 +571,7 @@ class Import
     {
         $sql = sprintf(
             "SELECT al.* FROM %sattribute_lang al
-                            INNER JOIN %sattribute a using (id_attribute)
+                            INNER JOIN %sattribute a USING (id_attribute)
                             WHERE a.id_attribute_group = %d AND al.name = '%s' AND al.id_lang = %d",
             _DB_PREFIX_,
             _DB_PREFIX_,

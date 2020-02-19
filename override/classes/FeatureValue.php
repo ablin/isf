@@ -50,14 +50,15 @@ class FeatureValue extends FeatureValueCore
         ),
     );
 
-    public static function getFeatureValueByName($name, $id_feature)
+    public static function getFeatureValueByName($name, $id_feature, $id_category)
     {
         $sql = sprintf(
-            'SELECT fvl.id_feature_value FROM %sfeature_value_lang fvl inner join ps_feature_value fv using(id_feature_value) WHERE fvl.id_lang = %s AND fvl.value = "%s" AND fv.id_feature = %d',
+            'SELECT fvl.id_feature_value FROM %sfeature_value_lang fvl inner join ps_feature_value fv using(id_feature_value) WHERE fvl.id_lang = %s AND fvl.value = "%s" AND fv.id_feature = %d AND fv.id_category = %d',
             _DB_PREFIX_,
             (int)Context::getContext()->language->id,
             addslashes($name),
-            $id_feature
+            $id_feature,
+            $id_category
         );
         return Db::getInstance()->getRow($sql);
     }
