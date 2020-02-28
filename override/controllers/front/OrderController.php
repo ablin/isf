@@ -36,6 +36,22 @@ class OrderController extends OrderControllerCore
                 $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
             }
 
+            $customer = new Customer();
+
+            foreach ($customer->getAddresses((int)Configuration::get('PS_LANG_DEFAULT')) as $address_delivery) {
+                if ($address_delivery['id_address'] == $this->context->cart->id_address_delivery) {
+                    $params .= '<ADRLIV>' . $address_delivery['adrcod'];
+                    break;
+                }
+            }
+
+            foreach ($customer->getAddresses((int)Configuration::get('PS_LANG_DEFAULT')) as $address_invoice) {
+                if ($address_invoice['id_address'] == $this->context->cart->id_address_invoice) {
+                    $params .= '<ADRFA>' . $address_invoice['adrcod'];
+                    break;
+                }
+            }
+
             $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD> <SAMEDI> '.$params);
 
             try {

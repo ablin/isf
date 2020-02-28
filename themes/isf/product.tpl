@@ -193,7 +193,7 @@
                 {if $stock != '' or $dispo != '' or $jauge != ''}
                     <p id="product_stock">
                         <strong>{l s='Stock:'}</strong>
-                        {if $stock != -1 and $stock != ''}
+                        {if $stock != -1}
                             <span class="availability">
                                 {if $stock > 0}
                                     <span id="availability_value" class="label label-success">
@@ -206,7 +206,7 @@
                                 {/if}
                             </span>
                         {/if}
-                        {if $dispo != -1 and $dispo != ''}
+                        {if $dispo != -1}
                             <span class="availability">
                                 {if $dispo > 0}
                                     <span id="availability_value" class="label-success">
@@ -219,7 +219,7 @@
                                 {/if}
                             </span>
                         {/if}
-                        {if $jauge != -1 and $jauge != ''}
+                        {if $jauge != -1}
                             <span class="availability">
                                 <span class="availability-gauge{if $jauge == 1} orange{elseif $jauge > 0} green{/if}"></span>
                                 <span class="availability-gauge{if $jauge > 1} green{/if}"></span>

@@ -29,6 +29,7 @@ class AddressesController extends AddressesControllerCore
                     $address->locality = $detail->loc;
                     $address->postcode = $detail->cpostal;
                     $address->city = $detail->vil;
+                    $address->adrcod = $detail->adrcod;
                     $address->alias = $detail->alias;
                     $address->id = $detail->id_adr;
 

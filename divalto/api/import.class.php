@@ -658,7 +658,21 @@ class Import
      */
     private function updateTopMenu()
     {
-        Configuration::updateValue('MOD_BLOCKTOPMENU_ITEMS', (string)implode(',', $this->topMenu));
+        $sql = sprintf(
+            "SELECT CONCAT('CAT', c.id_category) as id_category FROM %scategory c INNER JOIN %scategory_lang cl using(id_category) WHERE id_category IN (%s) ORDER BY c.level_depth, c.id_parent, cl.description",
+            _DB_PREFIX_,
+            _DB_PREFIX_,
+            str_replace('CAT', '', (string) implode(',', $this->topMenu))
+        );
+
+        $result = Db::getInstance()->executeS($sql);
+
+        $this->topMenu = "";
+        foreach ($result as $topMenu) {
+            $this->topMenu[] = $topMenu['id_category'];
+        }
+
+        Configuration::updateValue('MOD_BLOCKTOPMENU_ITEMS', (string) implode(',', $this->topMenu));
     }
 
     /**
