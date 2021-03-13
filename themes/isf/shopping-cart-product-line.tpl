@@ -149,7 +149,7 @@
 {if $product.frais_supp}
 	{foreach from=$product.frais_supp item=frais_supp}
 		<tr class="additional_costs">
-			<td class="cart_description" colspan="5">
+			<td class="cart_description" colspan="{if !isset($noDeleteButton) || !$noDeleteButton}5{else}4{/if}">
 				<p class="product-name">&rarr;&nbsp;{$frais_supp->libelle|escape:'html':'UTF-8'}</p>
 			</td>
 			<td class="cart_total">

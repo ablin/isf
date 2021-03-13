@@ -40,7 +40,7 @@
 
     <div class="block-center" id="block-history">
         <label for="picod">{l s='Type of part:'}</label>
-        <select name="picod">
+        <select name="picod" class="form-control">
             <option value="1" {if isset($picod) && $picod == 1}selected="selected"{/if}>Devis</option>
             <option value="2" {if isset($picod) && $picod == 2}selected="selected"{/if}>Commande</option>
             <option value="3" {if isset($picod) && $picod == 3}selected="selected"{/if}>Bon de livraison</option>
@@ -53,7 +53,7 @@
         {else}
             {assign var="begin" value="`$smarty.now|date_format:"%D%M%Y"`"}
         {/if}
-        {html_select_date time=$begin start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='begin_'}
+        {html_select_date time=$begin start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='begin_' day_extra='class="form-control form-control-select"' month_extra='class="form-control form-control-select"' year_extra='class="form-control form-control-select"'}
         <br />
         <label>{l s='EndPeriod:'}</label>
         {if isset($end_Year)}
@@ -61,7 +61,7 @@
         {else}
             {assign var="end" value="`$smarty.now|date_format:"%D%M%Y"`"}
         {/if}
-        {html_select_date time=$end start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='end_'}
+        {html_select_date time=$end start_year='2010' reverse_years=true display_days=true display_months=true field_order='DMY' prefix='end_' day_extra='class="form-control form-control-select"' month_extra='class="form-control form-control-select"' year_extra='class="form-control form-control-select"'}
         <br />
         <input type="submit" class="button btn btn-default " value="{l s='Submit'}"></input>
         <br />

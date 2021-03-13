@@ -5847,7 +5847,8 @@ label {
 .checkbox {
   line-height: 16px; }
   .checkbox label {
-    color: #777777; }
+    color: #777777;
+    margin-left: 5px; }
 
 .close {
   opacity: 1; }
@@ -5890,10 +5891,10 @@ span.exclusive_large_disabled {
   position: relative;
   display: inline-block;
   padding: 5px 7px;
-  border: 1px solid #cc9900;
+  border: solid 1px #06b2e6;
   font-weight: bold;
-  color: black;
-  background: url(../img/bg_bt.gif) repeat-x 0 0 #f4b61b;
+  color: #fff;
+  background: #4ea1ff;
   cursor: pointer;
   white-space: normal;
   text-align: left; }
@@ -5932,8 +5933,8 @@ a.exclusive_mini:hover,
 a.exclusive_small:hover,
 a.exclusive:hover,
 a.exclusive_large:hover {
-  text-decoration: none;
-  background-position: left -50px; }
+  background: #0084bf;
+  color: #fff; }
 
 input.button_mini:active,
 input.button_small:active,
@@ -5951,7 +5952,8 @@ a.exclusive_mini:active,
 a.exclusive_small:active,
 a.exclusive:active,
 a.exclusive_large:active {
-  background-position: left -100px; }
+  background: #0084bf;
+  color: #fff; }
 
 input.button_disabled,
 input.exclusive_disabled,
@@ -6894,7 +6896,7 @@ ul.step {
       border-radius: 4px; } }
   ul.step li {
     float: left;
-    width: 24%;
+    width: 20%;
     text-align: left;
     border: 1px solid;
     border-top-color: #cacaca;

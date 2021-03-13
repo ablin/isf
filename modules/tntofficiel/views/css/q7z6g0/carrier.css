@@ -1,0 +1,667 @@
+div.fancybox-bgc div.fancybox-skin {
+    background-color: #FFFFFF !important;
+    font-size: 14px;
+}
+div.fancybox-bgc div.fancybox-skin div {
+    color: #232323;
+}
+
+.relay-points *,
+.repositories * {
+    font-family: 'Noto Sans', 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.addresses-list {
+    position: absolute;
+    left: 0;
+    top: 142px;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #FFFFFF;
+}
+
+.addresses-list ul,
+.addresses-list ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+#list_scrollbar_container,
+#relay_points_map,
+#repositories_map {
+    display: block;
+}
+
+#list_scrollbar_container {
+    float: left;
+    position: relative;
+    width: 64.5% !important;
+}
+
+#relay_points_map,
+#repositories_map {
+    float: right;
+    width: 35%;
+    height: 100%;
+    border-left: 1px solid #FFFFFF;
+}
+
+.relay-points .validation-advice,
+.repositories .validation-advice {
+    position: absolute;
+    background-color: #df280a;
+    padding: 0 10px;
+    color: #FFF !important;
+    top: -30px;
+    border-radius: 2px;
+}
+
+.relay-points .validation-advice::before,
+.repositories .validation-advice::before {
+    content: '\25BC';
+    color: #df280a;
+    position: absolute;
+    top: 17px;
+    left: 30px;
+}
+
+.relay-points button, .repositories button {
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: white;
+    background: #1cb3f4;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.relay-points-container,
+.repositories-container {
+    overflow: hidden;
+}
+
+.relay-points-form,
+.repositories-form {
+    overflow: hidden;
+}
+
+.relay-points-form .label,
+.repositories-form .label {
+    font-weight: bold;
+    color: #444;
+}
+
+.relay-points-list .relay-point-item:hover,
+.relay-points-list .relay-point-item.is-selected,
+.repositories-list .repository-item:hover,
+.repositories-list .repository-item.is-selected {
+    background: #eeeeee !important;
+    cursor: pointer;
+}
+
+.relay-points-list .relay-point-item-please-wait,
+.repositories-list .repository-item-please-wait {
+    float: none;
+}
+
+.relay-points-list .relay-point-name,
+.relay-points-list .repository-name,
+.repositories-list .relay-point-name,
+.repositories-list .repository-name {
+    font-weight: bold;
+}
+
+.relay-points-list .no-results,
+.repositories-list .no-results{
+    border: 1px solid #e7e7e7;
+    padding: 20px;
+    margin-right: -26px;
+    text-align: center;
+}
+.relay-points-header {
+    height: 80px;
+    margin-right: 25px;
+}
+
+.repositories-header {
+    height: 80px;
+    margin-right: 25px;
+}
+
+.relay-points-header h2, .repositories-header h2 {
+    display: block;
+    font-size: 24px;
+    margin: 0;
+    border: 0;
+    padding-left: 110px;
+    line-height: 80px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #232323;
+}
+.relay-points-header h2 {
+    background: url("../../img/carrier/93x66.png") left center no-repeat;
+}
+.repositories-header h2 {
+    background: url("../../img/carrier/93x66.png") left center no-repeat;
+}
+
+.location-topbar {
+    padding: 8px 10px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #e7e7e7;
+    background: #f8f8f8;
+    overflow: visible;
+    position: relative;
+}
+
+.location-topbar .relay-points-form,
+.location-topbar .repositories-form {
+    display: table;
+    width: 100%;
+}
+
+.location-topbar .relay-points-form span,
+.location-topbar .relay-points-form .form-list,
+.location-topbar .repositories-form span,
+.location-topbar .repositories-form .form-list {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.location-topbar .relay-points-form .form-list,
+.location-topbar .repositories-form .form-list {
+    max-width: 750px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.location-topbar .relay-points-form .fields,
+.location-topbar .repositories-form .fields {
+    margin: 0 0 0 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.location-topbar .relay-points-form .field,
+.location-topbar .repositories-form .field {
+    float: left;
+    margin: 0 10px;
+    position: relative;
+    vertical-align: middle;
+    width: inherit
+}
+
+.lt-ie8 .location-topbar .relay-points-form .field,
+.lt-ie8 .location-topbar .repositories-form .field {
+    display: inline;
+    zoom: 1;
+}
+
+.location-topbar .relay-points-form .field label,
+.location-topbar .repositories-form .field label {
+    color: #000000 !important;
+    font-weight: normal !important;
+}
+
+.location-topbar .relay-points-form .field label,
+.location-topbar .relay-points-form .field select,
+.location-topbar .relay-points-form .field .input-box,
+.location-topbar .repositories-form .field label,
+.location-topbar .repositories-form .field select,
+.location-topbar .repositories-form .field .input-box {
+    display: table-cell;
+    vertical-align: middle;
+    height: 30px;
+    line-height: 1em;
+}
+
+.location-topbar .relay-points-form .field select,
+.location-topbar .repositories-form .field select {
+    margin-top: 0
+}
+
+.location-topbar .relay-points-form .field select,
+.location-topbar .relay-points-form .field .input-box input,
+.location-topbar .repositories-form .field select,
+.location-topbar .repositories-form .field .input-box input {
+    height: 30px;
+    width: inherit;
+    margin-left: 20px;
+    padding: 0 10px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    line-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.location-topbar .relay-points-form .field em.required,
+.location-topbar .repositories-form .field em.required {
+    color: #eb340a;
+    float: right;
+}
+
+.location-topbar button {
+    font-size: 14px;
+    position: relative;
+}
+
+.relay-points-list .relay-point-item,
+.repositories-list .repository-item {
+    display: table;
+    margin-bottom: 18px;
+    border: 1px solid #e7e7e7;
+}
+
+.relay-points-list .relay-point-item:hover,
+.repositories-list .repository-item:hover {
+    background: white;
+}
+
+.relay-points-list .relay-point-item > div,
+.repositories-list .repository-item > div {
+    display: table-cell;
+    vertical-align: top;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.relay-points-list .relay-point-item div.relay-point-address,
+.repositories-list .repository-item div.repository-address {
+    width: 32%;
+    background: #F8F8F8;
+    color: #444444;
+}
+
+.relay-points-list .relay-point-item div.relay-point-closing,
+.repositories-list .repository-item div.repository-closing {
+    margin-top: 0.5em;
+    font-style: italic;
+    color: #DB3624;
+}
+
+
+.relay-points-list .relay-point-item div.relay-point-details,
+.repositories-list .repository-item div.repository-details {
+    width: 44%;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-details p,
+.repositories-list .repository-item > div.repository-details p {
+    display: inline;
+    color: #444444;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-action,
+.repositories-list .repository-item > div.repository-action {
+    width: 10%;
+    text-align: center;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-action > div,
+.repositories-list .repository-item > div.repository-action > div {
+    margin-bottom: 10px;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-action .location-code,
+.repositories-list .repository-item > div.repository-action .location-code {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-action .location-nb,
+.repositories-list .repository-item > div.repository-action .location-nb {
+    background: url("../../img/map/marker.png") center no-repeat;
+    height: 34px;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    width: 21px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lt-ie8 .relay-points-list .relay-point-item > div.relay-point-action .location-nb,
+.lt-ie8 .repositories-list .repository-item > div.repository-action .location-nb {
+    display: inline;
+    zoom: 1;
+}
+
+.relay-points-list .relay-point-item > div.relay-point-action .location-distance,
+.repositories-list .repository-item > div.repository-action .location-distance {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: #EA661D;
+    display: inline-block;
+    padding: 0px 12px 1px;
+    margin: 2px auto 0;
+    border-radius: 2px;
+}
+
+.shipping-method-info {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: rgba(251, 251, 251, 0.692);
+    text-align: left;
+    border-left: 3px solid #ff6600;
+    margin: 8px 8px 0 0;
+    line-height: 1.325em;
+}
+
+.shipping-method-info p {
+    margin: 0;
+    padding : 0;
+}
+
+.shipping-method-info-name {
+    font-weight: bold;
+}
+
+.shipping-method-info-details {
+    margin-top: 0.75em;
+}
+
+.shipping-method-info-time > p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+div.shipping-method-info-code,
+.relay-points-list div.relay-point-code,
+.repositories-list div.repositories-code {
+    display: inline-block;
+    margin: 0 0 0.325ex 0;
+}
+
+div.shipping-method-info-details p.relay-point-time-title,
+div.shipping-method-info-details p.repository-time-title,
+.relay-points-list .relay-point-item div.relay-point-details p.relay-point-time-title,
+.repositories-list .repository-item div.repository-details p.repository-time-title {
+    display: inline-block;
+    margin: 0.25ex 0 0.325ex 0;
+}
+
+.relay-point-time p,
+.repository-time p {
+    display: inline-block;
+    *display: inline;
+    *z-index: 1;
+}
+
+div.shipping-method-info-details div.relay-point-time p.relay-point-time-label,
+div.shipping-method-info-details div.repository-time p.repository-time-label,
+.relay-points-list .relay-point-item div.relay-point-details div.relay-point-time p.relay-point-time-label,
+.repositories-list .repository-item div.repository-details div.repository-time p.repository-time-label {
+    display: inline-block;
+    min-width: 10ex;
+    margin: 0;
+    padding : 0;
+}
+
+
+.lt-ie8 .shipping-method-info-time > p {
+    display: inline;
+    zoom: 1;
+}
+
+/* TNT delivery logo */
+body div table tr.tntofficiel td.delivery_option_logo {
+    padding: 4px 0px !important;
+    vertical-align: middle !important;
+}
+
+body div table tr.tntofficiel td.delivery_option_logo img.order_carrier_logo {
+    max-width: 100% !important;
+    min-width: 48px !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* TNT Service description */
+body div table tr.tntofficiel td .tntofficiel-name {
+    display: inline-block !important;
+    margin: 0.25ex 0 0.325ex 0 !important;
+}
+body div table tr.tntofficiel td  .tntofficiel-dpl{
+    display: inline-block !important;
+    margin: 0.65ex 0 0.25ex !important;
+    font-weight: bold;
+}
+
+
+@media (max-width: 770px) {
+    .relay-points-header, .repositories-header {
+        background-position: 50% 0;
+        background-size: auto 50px;
+        display: block;
+        height: auto;
+        margin-bottom: 10px;
+        margin-right: 0;
+        padding-top: 10px;
+        text-align: center;
+        vertical-align: middle
+    }
+
+    .relay-points-header h2, .repositories-header h2 {
+        background: transparent none repeat scroll 0 0;
+        display: inline;
+        font-size: 16px;
+        line-height: inherit;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        position: relative
+    }
+
+    .relay-points-container .relay-points-form > span,
+    .repositories-container .repositories-form > span {
+        display: block
+    }
+
+    .relay-points-container .relay-points-form .form-list,
+    .repositories-container .repositories-form .form-list {
+        display: block
+    }
+
+    .relay-points-container .relay-points-form .form-list .fields,
+    .relay-points-container .relay-points-form .form-list .field,
+    .relay-points-container .relay-points-form .form-list input,
+    .relay-points-container .relay-points-form .form-list select,
+    .repositories-container .repositories-form .form-list .fields,
+    .repositories-container .repositories-form .form-list .field,
+    .repositories-container .repositories-form .form-list input,
+    .repositories-container .repositories-form .form-list select {
+        margin: 0
+    }
+
+    .relay-points-container .relay-points-form .form-list .field,
+    .repositories-container .repositories-form .form-list .field {
+        overflow: hidden;
+        padding-top: 6px;
+        width: 100%
+    }
+
+    .relay-points-container .relay-points-form .form-list .field label,
+    .repositories-container .repositories-form .form-list .field label {
+        width: 15%
+    }
+
+    .relay-points-container .relay-points-form .form-list .field .input-box,
+    .repositories-container .repositories-form .form-list .field .input-box {
+        width: 20%
+    }
+
+    .relay-points-container .relay-points-form .form-list .field input,
+    .relay-points-container .relay-points-form .form-list .field select,
+    .repositories-container .repositories-form .form-list .field input,
+    .repositories-container .repositories-form .form-list .field select {
+        display: block;
+        margin: 0;
+        width: 100%
+    }
+
+    .relay-points-container .relay-points-form .form-list button[type="submit"],
+    .repositories-container .repositories-form .form-list button[type="submit"] {
+        text-align: center;
+        width: 100%
+    }
+
+    .relay-points-container .relay-points-form .form-list button[type="submit"] span,
+    .repositories-container .repositories-form .form-list button[type="submit"] span {
+        display: block
+    }
+
+    .relay-points-container #list_scrollbar_container,
+    .repositories-container #list_scrollbar_container {
+        display: block;
+        float: none;
+        width: 100% !important
+    }
+
+    .relay-points-container #list_scrollbar_container .relay-point-address,
+    .relay-points-container #list_scrollbar_container .relay-point-details,
+    .relay-points-container #list_scrollbar_container .relay-point-action,
+    .repositories-container #list_scrollbar_container .repository-address,
+    .repositories-container #list_scrollbar_container .repository-details,
+    .repositories-container #list_scrollbar_container .repository-action {
+        display: block;
+        width: 100%
+    }
+
+    .relay-points-container #list_scrollbar_container div.relay-point-address,
+    .relay-points-container #list_scrollbar_container div.relay-point-details,
+    .relay-points-container #list_scrollbar_container .relay-point-action,
+    .repositories-container #list_scrollbar_container .repository-action {
+        font-size: 1em;
+        line-height: normal;
+        padding: 0.825em 0;
+    }
+
+    .relay-points-container #list_scrollbar_container .relay-point-action .location-nb,
+    .repositories-container #list_scrollbar_container .repository-action .location-nb {
+        display: block;
+        width: 100%
+    }
+
+    .relay-points-container #list_scrollbar_container .relay-point-action .location-distance,
+    .repositories-container #list_scrollbar_container .repository-action .location-distance {
+        padding: 0 10px;
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    .lt-ie8 .relay-points-container #list_scrollbar_container .relay-point-action .location-distance,
+    .lt-ie8 .repositories-container #list_scrollbar_container .repository-action .location-distance {
+        display: inline;
+        zoom: 1
+    }
+
+    .relay-points-container #list_scrollbar_container .relay-point-item,
+    .repositories-container #list_scrollbar_container .repository-item {
+        display: block;
+        text-align: center !important
+    }
+
+    .relay-points-container #list_scrollbar_container .please-wait,
+    .repositories-container #list_scrollbar_container .please-wait {
+        margin-bottom: 15px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        display: inline-block;
+        vertical-align: middle
+    }
+
+    .lt-ie8 .relay-points-container #list_scrollbar_container .please-wait,
+    .lt-ie8 .repositories-container #list_scrollbar_container .please-wait {
+        display: inline;
+        zoom: 1
+    }
+
+    .relay-points-container .relay-points-map, .relay-points-container .repositories-map,
+    .repositories-container .relay-points-map, .repositories-container .repositories-map {
+        display: none !important
+    }
+
+    .relay-points .addresses-list, .repositories .addresses-list {
+        top: 204px;
+    }
+
+    .lv_contentBottom {
+        overflow: hidden
+    }
+}
+
+@media (max-width: 320px) {
+    .relay-points-container #list_scrollbar_container div.relay-point-address,
+    .relay-points-container #list_scrollbar_container div.relay-point-details,
+    .relay-points-container #list_scrollbar_container .relay-point-action,
+    .repositories-container #list_scrollbar_container .repository-action {
+        font-size: 0.925em;
+        line-height: normal;
+        padding: 0.825em 0;
+    }
+
+    .relay-points-container #list_scrollbar_container li.relay-point-item p,
+    .repositories-container #list_scrollbar_container li.relay-point-item p {
+        margin: 0 0 0.5ex;
+    }
+}
+
+
+@media (min-width: 770px) and (max-width: 979px) {
+    .location-topbar .relay-points-form .field,
+    .location-topbar .repositories-form .field {
+        display: table-row;
+        display: block;
+        float: none;
+    }
+
+    .location-topbar .relay-points-form .field label,
+    .location-topbar .repositories-form .field label {
+        width: 40%
+    }
+
+    .location-topbar .relay-points-form .field .input-box,
+    .location-topbar .repositories-form .field .input-box {
+        width: 60%
+    }
+
+    .location-topbar .relay-points-form button[type="submit"],
+    .location-topbar .repositories-form button[type="submit"] {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%
+    }
+
+    .location-topbar .relay-points-form button[type="submit"] span,
+    .location-topbar .repositories-form button[type="submit"] span {
+        display: block
+    }
+
+    .relay-points .addresses-list, .repositories .addresses-list {
+        top: 212px;
+    }
+}

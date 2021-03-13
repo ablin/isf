@@ -56,3 +56,10 @@
     font-weight: bold;
     color: green;
 }
+
+#block-history select.form-control {
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+  margin-bottom: 5px;
+}

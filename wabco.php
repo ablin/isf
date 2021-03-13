@@ -1,5 +1,6 @@
 <?php
 set_time_limit(0);
+ini_set('memory_limit', '-1');
 
 // Include the library
 include('simple_html_dom.php');
@@ -17,10 +18,11 @@ $array_header = ['Reference', 'Libelle', 'Nb images', 'Nb Docs'];
 $array_line = [];
 
 $bdd = new PDO('mysql:host=localhost;dbname=prestashop;charset=utf8', 'root', 'root');
-$products = $bdd->query('select p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) inner join ps_category_lang cl using(id_category) where cl.name = "WABCO";');
+$products = $bdd->query('select p.id_product, p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) inner join ps_category_lang cl using(id_category) where cl.name = "WABCO";');
 
 while ($product = $products->fetch())
 {
+    $id = $product["id_product"];
     $ref = $product["reference"];
     $name = $product["name"];
 
@@ -29,7 +31,7 @@ while ($product = $products->fetch())
     echo "**************************************************************************************************************\n";
 
     $doc = new \DOMDocument();
-    @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'.&category=18', false, null, -1, -1, true, true, 'ISO-8859-1'));
+    @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'&category=18', false, null, -1, -1, true, true, 'ISO-8859-1'));
 
     $xpath = new \DOMXPath($doc);
 
@@ -49,7 +51,7 @@ while ($product = $products->fetch())
                 mkdir("wabco/images", 0777);
             }
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            grab_image('http://inform.wabco-auto.com/'.$node->nodeValue, "wabco/images/ref_".$ref.'_'.$i.'.'.$extension);
+            grab_image('http://inform.wabco-auto.com/' . $node->nodeValue, "wabco/images/ref_" . $ref . '_' . $i . '.' . $extension);
         }
     } else {
         echo "Pas d'images\n";
@@ -61,12 +63,13 @@ while ($product = $products->fetch())
     echo "Données techniques :\n";
     if ($xpath->query('//body//table//table[2]//tr/td[2]')->length > 0) {
         foreach ($xpath->query('//body//table//table[2]//tr/td[2]') as $node) {
-            preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
-            if (!$key = array_search($matches[1], $array_header)) {
-                array_push($array_header, $matches[1]);
-                $key = count($array_header) - 1;
+            if (preg_match('/(.*):(.*)/', $node->nodeValue, $matches)) {
+                if (!$key = array_search($matches[1], $array_header)) {
+                    array_push($array_header, $matches[1]);
+                    $key = count($array_header) - 1;
+                }
+                $array_line[$ref][$key] = $matches[2];
             }
-            $array_line[$ref][$key] = $matches[2];
         }
 
         //Pages suivantes
@@ -75,12 +78,13 @@ while ($product = $products->fetch())
             $xpath = new \DOMXPath($doc);
 
             foreach ($xpath->query('//body//table//table[2]//tr/td[2]') as $node) {
-                preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
-                if (!$key = array_search(trim($matches[1]), $array_header)) {
-                    array_push($array_header, trim($matches[1]));
-                    $array_line[$ref][count($array_header) - 1] = $matches[2];
-                } else {
-                    $array_line[$ref][$key] = trim($matches[2]);
+                if (preg_match('/(.*):(.*)/', $node->nodeValue, $matches)) {
+                    if (!$key = array_search(trim($matches[1]), $array_header)) {
+                        array_push($array_header, trim($matches[1]));
+                        $array_line[$ref][count($array_header) - 1] = $matches[2];
+                    } else {
+                        $array_line[$ref][$key] = trim($matches[2]);
+                    }
                 }
             }
         }
@@ -115,7 +119,7 @@ while ($product = $products->fetch())
                 mkdir("wabco/doc", 0777);
             }
             $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            downloadFile('http://inform.wabco-auto.com/'.$node->nodeValue, "wabco/doc/ref_".$ref.'_'.$i.'.'.$extension);
+            downloadFile('http://inform.wabco-auto.com/' . $node->nodeValue, "wabco/doc/ref_" . $ref . '_' . $i . '.' . $extension);
         }
     } else {
         echo "Pas de plan\n";
@@ -158,3 +162,6 @@ function downloadFile($url, $desti) {
     $file= file_get_contents($url);
     file_put_contents ($desti, $file);
 }
+
+
+//9254229040 soit l'id 12067

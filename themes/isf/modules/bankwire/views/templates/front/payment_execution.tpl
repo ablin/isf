@@ -39,7 +39,7 @@
         {l s='Your shopping cart is empty.' mod='bankwire'}
     </p>
 {else}
-    <form action="{$link->getModuleLink('bankwire', 'validation', [], true)|escape:'html':'UTF-8'}" method="post">
+    <form action="{$link->getModuleLink('bankwire', 'validation', [], true)|escape:'html':'UTF-8'}" name="payment" method="post">
         <div class="box cheque-box">
             <h3 class="page-subheading">
                 {l s='Bank-wire payment' mod='bankwire'}
@@ -91,3 +91,5 @@
         </p>
     </form>
 {/if}
+
+{addJsDefL name=msg_waiting_order}{l s='ongoing treatment...' mod='bankwire' js=1}{/addJsDefL}

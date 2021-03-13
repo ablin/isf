@@ -251,4 +251,9 @@ class Product extends ProductCore
         }
         return self::$_frontFeaturesCache[$id_product.'-'.$id_lang];
     }
+
+    public static function getTaxCalculationMethod($id_customer = null)
+    {
+        return 1;
+    }
 }

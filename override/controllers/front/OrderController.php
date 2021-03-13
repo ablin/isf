@@ -27,9 +27,121 @@
 class OrderController extends OrderControllerCore
 {
 
+    /**
+     * Assign template vars related to page content
+     * @see FrontController::initContent()
+     */
+    public function initContent()
+    {
+        FrontController::initContent();
+
+        if (Tools::isSubmit('ajax') && Tools::getValue('method') == 'updateExtraCarrier') {
+            // Change virtualy the currents delivery options
+            $delivery_option = $this->context->cart->getDeliveryOption();
+            $delivery_option[(int)Tools::getValue('id_address')] = Tools::getValue('id_delivery_option');
+            $this->context->cart->setDeliveryOption($delivery_option);
+            $this->context->cart->save();
+            $return = array(
+                'content' => Hook::exec(
+                    'displayCarrierList',
+                    array(
+                        'address' => new Address((int)Tools::getValue('id_address'))
+                    )
+                )
+            );
+            $this->ajaxDie(Tools::jsonEncode($return));
+        }
+
+        if ($this->nbProducts) {
+            $this->context->smarty->assign('virtual_cart', $this->context->cart->isVirtualCart());
+        }
+
+        if (!Tools::getValue('multi-shipping')) {
+            $this->context->cart->setNoMultishipping();
+        }
+
+        // Check for alternative payment api
+        $is_advanced_payment_api = (bool)Configuration::get('PS_ADVANCED_PAYMENT_API');
+
+                    Context::getContext()->cookie->cart_delivery_option = "oui";
+        // 4 steps to the order
+        switch ((int)$this->step) {
+
+            case OrderController::STEP_SUMMARY_EMPTY_CART:
+                $this->context->smarty->assign('empty', 1);
+                $this->setTemplate(_PS_THEME_DIR_.'shopping-cart.tpl');
+            break;
+
+            case OrderController::STEP_ADDRESSES:
+                $this->_assignAddress();
+                $this->processAddressFormat();
+                if (Tools::getValue('multi-shipping') == 1) {
+                    $this->_assignSummaryInformations();
+                    $this->context->smarty->assign('product_list', $this->context->cart->getProducts());
+                    $this->setTemplate(_PS_THEME_DIR_.'order-address-multishipping.tpl');
+                } else {
+                    $this->setTemplate(_PS_THEME_DIR_.'order-address.tpl');
+                }
+            break;
+
+            case OrderController::STEP_DELIVERY:
+                if (Tools::isSubmit('processAddress')) {
+                    $this->processAddress();
+                }
+                $this->autoStep();
+                $this->_assignCarrier();
+                $this->setTemplate(_PS_THEME_DIR_.'order-carrier.tpl');
+            break;
+
+            case OrderController::STEP_PAYMENT:
+                // Check that the conditions (so active) were accepted by the customer
+                $cgv = Tools::getValue('cgv') || $this->context->cookie->check_cgv;
+
+                if ($is_advanced_payment_api === false && Configuration::get('PS_CONDITIONS')
+                    && (!Validate::isBool($cgv) || $cgv == false)) {
+                    Tools::redirect('index.php?controller=order&step=2');
+                }
+
+                if ($is_advanced_payment_api === false) {
+                    Context::getContext()->cookie->check_cgv = true;
+                }
+
+                if (Tools::getValue('delivery_option')) {
+                    $this->context->cart->delivery_option = serialize(array(Tools::getValue('delivery_option')));
+                    $this->context->cart->save();
+                }
+
+                // Check the delivery option is set
+                if ($this->context->cart->isVirtualCart() === false) {
+                    if (!Tools::getValue('delivery_option') && !$this->context->cart->delivery_option) {
+                        Tools::redirect('index.php?controller=order&step=2');
+                    } else {
+                        $this->context->cart->carrier = Tools::getValue('delivery_option');
+                    }
+                }
+
+                $this->autoStep();
+                $this->_assignPayment();
+
+                if ($is_advanced_payment_api === true) {
+                    $this->_assignAddress();
+                }
+
+                // assign some informations to display cart
+                $this->_assignSummaryInformations();
+                $this->setTemplate(_PS_THEME_DIR_.'order-payment.tpl');
+            break;
+
+            default:
+                $this->_assignSummaryInformations();
+                $this->setTemplate(_PS_THEME_DIR_.'shopping-cart.tpl');
+            break;
+        }
+    }
+
     public function postProcess()
     {
-        if ($this->step == 3) {
+        if ($this->step == 4) {
             $params = '';
 
             foreach ($this->context->cart->getProducts() as $product) {
@@ -52,7 +164,7 @@ class OrderController extends OrderControllerCore
                 }
             }
 
-            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD> <SAMEDI> '.$params);
+            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD>'.unserialize($this->context->cart->delivery_option)[0].'<SAMEDI> '.$params);
 
             try {
                 $datas = $webServiceDiva->call();
@@ -127,6 +239,77 @@ class OrderController extends OrderControllerCore
 
         if ($this->ajax) {
             $this->ajaxDie(true);
+        }
+    }
+
+    /**
+     * Carrier step
+     */
+    protected function _assignCarrier()
+    {
+        $carriers = array();
+
+        $params = '<POIDS>'.Context::getContext()->cookie->poids_total;
+
+        $customer = new Customer();
+        foreach ($customer->getAddresses((int)Configuration::get('PS_LANG_DEFAULT')) as $address_delivery) {
+            if ($address_delivery['id_address'] == $this->context->cart->id_address_delivery) {
+                $address_label = $address_delivery['alias'];
+                $params .= '<ADRLIV>' . $address_delivery['adrcod'];
+                break;
+            }
+        }
+
+        foreach ($this->context->cart->getProducts() as $product) {
+            $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
+        }
+
+        $webServiceDiva = new WebServiceDiva('<ACTION>LIVRAISON', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.$params);
+
+        try {
+            $datas = $webServiceDiva->call();
+
+            if ($datas && $datas->carriers) {
+                foreach ($datas->carriers as $carrier) {
+                    $carriers[] = array(
+                        'code' => $carrier->code,
+                        'label' => $carrier->label,
+                        'texte' => $carrier->texte,
+                        'tarif' => $carrier->tarif
+                    );
+                }
+
+            }
+
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+        }
+
+        $cms = new CMS(Configuration::get('PS_CONDITIONS_CMS_ID'), $this->context->language->id);
+        $this->link_conditions = $this->context->link->getCMSLink($cms, $cms->link_rewrite, (bool)Configuration::get('PS_SSL_ENABLED'));
+        if (!strpos($this->link_conditions, '?')) {
+            $this->link_conditions .= '?content_only=1';
+        } else {
+            $this->link_conditions .= '&content_only=1';
+        }
+
+        $this->context->smarty->assign(array(
+            'carriers' => $carriers,
+            'address_label' => $address_label,
+            'checkedTOS' => (int)$this->context->cookie->checkedTOS,
+            'recyclablePackAllowed' => (int)Configuration::get('PS_RECYCLABLE_PACK'),
+            'giftAllowed' => (int)Configuration::get('PS_GIFT_WRAPPING'),
+            'cms_id' => (int)Configuration::get('PS_CONDITIONS_CMS_ID'),
+            'conditions' => (int)Configuration::get('PS_CONDITIONS'),
+            'link_conditions' => $this->link_conditions
+        ));
+    }
+
+    public function setMedia()
+    {
+        parent::setMedia();
+        if ($this->step == 2) {
+            $this->addJS(_THEME_JS_DIR_.'order-carrier.js');
         }
     }
 }

@@ -169,8 +169,8 @@
 									{/if}
 								{/if}
 							</td>
-							<td colspan="{$col_span_subtotal}" class="text-right">{l s='Total products (tax excl.)'}</td>
-							<td colspan="2" class="price" id="total_product">{displayPrice price=$total_products}</td>
+							<td colspan="{$col_span_subtotal}" class="text-right">{if $display_tax_label}{l s='Total products (tax incl.)'}{else}{l s='Total products'}{/if}</td>
+                            <td colspan="2" class="price" id="total_product">{displayPrice price=$total_products_wt}</td>
 						</tr>
 					{/if}
 				{else}
@@ -268,12 +268,6 @@
 					</td>
 				</tr>-->
 				{if $use_taxes && $show_taxes && $total_tax != 0 }
-					{if $priceDisplay != 0}
-					<tr class="cart_total_price">
-						<td colspan="{$col_span_subtotal}" class="text-right">{if $display_tax_label}{l s='Total (tax excl.)'}{else}{l s='Total'}{/if}</td>
-						<td colspan="2" class="price" id="total_price_without_tax">{displayPrice price=$total_price_without_tax}</td>
-					</tr>
-					{/if}
 					<tr class="cart_total_tax">
 						<td colspan="{$col_span_subtotal}" class="text-right">{l s='Tax'}</td>
 						<td colspan="2" class="price" id="total_tax">{displayPrice price=$total_tax}</td>
@@ -281,7 +275,7 @@
 				{/if}
 				<tr class="cart_total_price">
 					<td colspan="{$col_span_subtotal}" class="total_price_container text-right">
-						<span>{l s='Total (tax excl.)'}</span>
+						<span>{l s='Total'}</span>
                         <div class="hookDisplayProductPriceBlock-price">
                             {hook h="displayCartTotalPriceLabel"}
                         </div>
@@ -480,7 +474,7 @@
 				{if $delivery->id}
 					<div class="col-xs-12 col-sm-6"{if !$have_non_virtual_products} style="display: none;"{/if}>
 						<ul id="delivery_address" class="address item box">
-							<li><h3 class="page-subheading">{l s='Delivery address'}&nbsp;<span class="address_alias">({$delivery->alias})sdfsdfsdf</span></h3></li>
+							<li><h3 class="page-subheading">{l s='Delivery address'}&nbsp;<span class="address_alias">({$delivery->alias})</span></h3></li>
 							{if $delivery->company}<li class="address_company">{$delivery->company|escape:'html':'UTF-8'}</li>{/if}
 							<li class="address_name">{$delivery->firstname|escape:'html':'UTF-8'} {$delivery->lastname|escape:'html':'UTF-8'}</li>
 							<li class="address_address1">{$delivery->address1|escape:'html':'UTF-8'}</li>

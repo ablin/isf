@@ -1,6 +1,6 @@
 <?php
 /* Features always displayed on layered category */
-define('_DV_LAYERED_FEATURE_ALWAYS_DISPLAYED_', array("Marque" => 1109, "Famille" => 22, "Sous-famille" => 23));
+define('_DV_LAYERED_FEATURE_ALWAYS_DISPLAYED_', array("Marque" => 22, "Famille" => 43, "Sous-famille" => 23));
 
 /* Features which trigger displays of other features on layered category */
 define('_DV_LAYERED_FEATURE_ACTIVE_SUB_FEATURES_', array(23));

@@ -108,6 +108,13 @@ class Address extends AddressCore
                             $this->adrcod = $detail->adrcod;
                             $this->alias = $detail->alias;
                             $this->id = $detail->id_adr;
+
+                            $id_country = Db::getInstance()->getValue('
+                                SELECT id_country
+                                FROM '._DB_PREFIX_.'country
+                                WHERE iso_code = "'.($this->country != '' ? $this->country : 'FR').'"'
+                            );
+                            $this->id_country = $id_country;
                         }
                     }
                 }
@@ -131,6 +138,13 @@ class Address extends AddressCore
                     $this->adrcod = $detail->adrcod;
                     $this->alias = $detail->alias;
                     $this->id = $detail->id_adr;
+
+                    $id_country = Db::getInstance()->getValue('
+                        SELECT id_country
+                        FROM '._DB_PREFIX_.'country
+                        WHERE iso_code = "'.($this->country != '' ? $this->country : 'FR').'"'
+                    );
+                    $this->id_country = $id_country;
                 }
             }
         }

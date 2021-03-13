@@ -36,6 +36,7 @@ class ProductController extends ProductControllerCore
         $this->addFeatureLink();
         $this->addCorrespondences();
         $this->addAccessories();
+        $this->addTabs();
     }
 
     private function addFeatureLink()
@@ -178,6 +179,15 @@ class ProductController extends ProductControllerCore
             'ecotax' => (!count($this->errors) && $this->product->ecotax > 0 ? Tools::convertPrice((float)$this->product->ecotax) : 0),
             'tax_enabled' => Configuration::get('PS_TAX') && !Configuration::get('AEUC_LABEL_TAX_INC_EXC'),
             'customer_group_without_tax' => Group::getPriceDisplayMethod($this->context->customer->id_default_group),
+        ));
+    }
+
+    private function addTabs()
+    {
+        $tabs = $this->context->cookie->tabs;
+
+        $this->context->smarty->assign(array(
+            'tabs' => unserialize($tabs),
         ));
     }
 }

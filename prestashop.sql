@@ -4064,7 +4064,7 @@ CREATE TABLE IF NOT EXISTS `ps_group_lang` (
 INSERT INTO `ps_group_lang` (`id_group`, `id_lang`, `name`) VALUES
 (1, 1, 'Visiteur'),
 (2, 1, 'Invité'),
-(3, 1, 'Client');
+(3, 1, 'Professionnel');
 
 -- --------------------------------------------------------
 
@@ -4885,11 +4885,11 @@ CREATE TABLE IF NOT EXISTS `ps_image_type` (
 --
 
 INSERT INTO `ps_image_type` (`id_image_type`, `name`, `width`, `height`, `products`, `categories`, `manufacturers`, `suppliers`, `scenes`, `stores`) VALUES
-(1, 'cart_default', 80, 80, 1, 0, 0, 0, 0, 0),
-(2, 'small_default', 98, 98, 1, 0, 1, 1, 0, 0),
+(1, 'cart_default', 80, 80, 1, 1, 0, 0, 0, 0),
+(2, 'small_default', 98, 98, 1, 1, 1, 1, 0, 0),
 (3, 'medium_default', 125, 125, 1, 1, 1, 1, 0, 1),
-(4, 'home_default', 125, 125, 1, 0, 0, 0, 0, 0),
-(5, 'large_default', 458, 458, 1, 0, 1, 1, 0, 0),
+(4, 'home_default', 125, 125, 1, 1, 0, 0, 0, 0),
+(5, 'large_default', 458, 458, 1, 1, 1, 1, 0, 0),
 (6, 'thickbox_default', 800, 800, 1, 0, 0, 0, 0, 0),
 (7, 'category_default', 870, 217, 0, 1, 0, 0, 0, 0),
 (8, 'scene_default', 870, 270, 0, 0, 0, 0, 1, 0),

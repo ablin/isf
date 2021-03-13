@@ -1,0 +1,140 @@
+/*
+    Global
+*/
+
+@font-face {
+    font-family: 'tnt-middleware';
+    src: url(data:font/opentype;base64,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) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-AdminTNTOfficiel"], [class*=" icon-AdminTNTOfficiel"] {
+    font-family: 'tnt-middleware';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    width: auto;
+    text-align: center;
+    vertical-align: -8%;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-AdminTNTOfficiel:before {
+    content: "\e600";
+}
+
+
+/*
+    AdminModules (config)
+*/
+
+body.adminmodules img.tntofficiel-logo-config {
+    padding: 4ex 3ex;
+}
+
+/*
+    AdminTNTOfficiel
+*/
+
+body.admintntofficiel #frame_login {
+    width: 400px;
+    margin: 120px auto;
+    padding: 38px 40px 44px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1)
+}
+
+body.admintntofficiel #frame_login img {
+    margin: 36px auto 46px;
+    padding: 0 0;
+    display: block
+}
+
+body.admintntofficiel #frame_login a {
+    border-radius: 50px;
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33333;
+    color: #fff;
+    background-color: #f60;
+    border-color: #e65c00;
+    display: block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none
+}
+
+/*
+    AdminOrders
+*/
+
+/* Delivery Point */
+
+body.adminorders span.TNTOfficiel_DPLogo {
+    background-position: 0 -4px;
+    background-repeat: no-repeat;
+    padding-top: 58px;
+    margin: -1ex -1ex -1ex 1ex;
+    width: 93px;
+    float: right;
+    text-align: center;
+}
+body.adminorders span.TNTOfficiel_DPLogoRelaisColis {
+    background-image: url("../../img/carrier/93x66.png");
+}
+body.adminorders span.TNTOfficiel_DPLogoEntreprise {
+    background-image: url("../../img/carrier/93x66.png");
+}
+
+body.adminorders .weekday {
+    display: inline-block;
+    min-width: 10ex;
+    margin: 0;
+    padding: 0;
+}
+
+body.adminorders #map-delivery-point-canvas {
+    height: 190px
+}
+
+/* Parcels */
+
+body.adminorders .alert.alert-danger.alert-danger-small, .bootstrap .alert.alert-success.alert-danger-small{
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 0px;
+}
+
+body.adminorders .alert.alert-danger.alert-danger-small::before, .bootstrap .alert.alert-success.alert-danger-small::before {
+    content: "";
+}
+
+/* Configuration */
+body.admintntofficiel #content .maxwidth-layout,
+body.adminmodules #content .maxwidth-layout,
+body.adminmodules #content form.tntofficiel .panel {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    position: relative;
+    float: none;
+}

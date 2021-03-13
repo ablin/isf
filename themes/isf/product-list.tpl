@@ -106,6 +106,32 @@
                     </p>
                     <p class="product-stock" itemprop="stock">
                         <label>{l s='Stock:'}</label>
+						{if $product.reference|array_key_exists:$references && 'total_stock'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_stock'] != -1}
+							<span class="availability">
+                                {if $references[$product.reference]['total_stock'] > 0}
+                                    <span id="availability_value" class="label label-success">
+                                        {$references[$product.reference]['total_stock']}
+                                    </span>
+                                {else}
+                                    <span id="availability_value" class="label label-danger">
+                                        0
+                                    </span>
+                                {/if}
+                            </span>
+						{/if}
+						{if $product.reference|array_key_exists:$references && 'total_dispo'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_dispo'] != -1}
+                            <span class="availability">
+                                {if $references[$product.reference]['total_dispo'] > 0}
+                                    <span id="availability_value" class="label-success">
+                                        {l s='Available'}
+                                    </span>
+                                {else}
+                                    <span id="availability_value" class="label-danger">
+                                        {l s='Unavailable'}
+                                    </span>
+                                {/if}
+                            </span>
+                        {/if}
 						{if $product.reference|array_key_exists:$references && 'total_jauge'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_jauge'] != -1}
 							<span class="availability">
 								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] == 1} orange{elseif $references[$product.reference]['total_jauge'] > 0} green{/if}"></span>
@@ -116,13 +142,17 @@
                     </p>
 					<div class="button-container">
 						{if !$PS_CATALOG_MODE}
-							{if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0}
+							{if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0 && $references[$product.reference]['nb_tarif'] > 0}
 								<p class="product-tarifs">
 									{convertPrice price=$references[$product.reference]['tarif']}
 									{if $references[$product.reference]['nb_tarif'] > 1}
 										<span class="product-tarifs-infos">{l s='Declining price according to qty:'}</span>
 									{/if}
 								</p>
+							{else}
+							    <p class="product-tarifs">
+                                    <span class="product-tarifs-infos">{l s='Price on demand'}</span>
+                                </p>
 							{/if}
                             <div class="quantity">
                                 <label>

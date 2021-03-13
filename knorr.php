@@ -1,5 +1,6 @@
 <?php
 set_time_limit(0);
+ini_set('memory_limit', '-1');
 
 // Include the library
 include('simple_html_dom.php');

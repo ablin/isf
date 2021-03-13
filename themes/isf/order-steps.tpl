@@ -71,6 +71,9 @@
 			<span><em>04.</em> {l s='Shipping'}</span>
 		{/if}
 	</li>
+	<li id="step_end" class="{if $current_step=='payment'}step_current{else}step_todo{/if} last">
+        <span><em>05.</em> {l s='Payment'}</span>
+    </li>
 </ul>
 <!-- /Steps -->
 {/if}

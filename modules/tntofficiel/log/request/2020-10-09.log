@@ -1,0 +1,24 @@
+12:59:37 [failure] JSON:getAccountInfos (0.196 sec) Error 0: Invalid arguments: No authenticate
+12:59:37 [failure] JSON:getAccountInfos (0.146 sec) Error 0: Invalid arguments: No authenticate
+12:59:37 [failure] JSON:getAccountInfos (0.134 sec) Error 0: Invalid arguments: No authenticate
+12:59:37 [failure] JSON:getAccountInfos (0.132 sec) Error 0: Invalid arguments: No authenticate
+12:59:37 [failure] JSON:getAccountInfos (0.119 sec) Error 0: Invalid arguments: No authenticate
+12:59:38 [failure] JSON:getAccountInfos (0.128 sec) Error 0: Invalid arguments: No authenticate
+12:59:38 [failure] JSON:getAccountInfos (0.128 sec) Error 0: Invalid arguments: No authenticate
+12:59:38 [failure] JSON:getAccountInfos (0.137 sec) Error 0: Invalid arguments: No authenticate
+12:59:38 [failure] JSON:getAccountInfos (0.133 sec) Error 0: Invalid arguments: No authenticate
+12:59:39 [failure] JSON:getAccountInfos (0.130 sec) Error 0: Invalid arguments: No authenticate
+12:59:39 [failure] JSON:getAccountInfos (0.131 sec) Error 0: Invalid arguments: No authenticate
+12:59:39 [failure] JSON:getAccountInfos (0.121 sec) Error 0: Invalid arguments: No authenticate
+12:59:39 [failure] JSON:getAccountInfos (0.129 sec) Error 0: Invalid arguments: No authenticate
+12:59:39 [failure] JSON:getAccountInfos (0.129 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.128 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.128 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.116 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.127 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.127 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.127 sec) Error 0: Invalid arguments: No authenticate
+12:59:40 [failure] JSON:getAccountInfos (0.129 sec) Error 0: Invalid arguments: No authenticate
+12:59:41 [success] JSON:isCorrectAuthentication (0.128 sec) 
+12:59:41 [failure] JSON:getAccountInfos (0.128 sec) Error 0: Invalid arguments: No authenticate
+12:59:42 [failure] JSON:getAccountInfos (0.141 sec) Error 0: Invalid arguments: No authenticate

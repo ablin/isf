@@ -55,4 +55,11 @@ class BankwirePaymentModuleFrontController extends ModuleFrontController
 
 		$this->setTemplate('payment_execution.tpl');
 	}
+
+    public function setMedia()
+    {
+        parent::setMedia();
+
+        $this->addJS(_THEME_JS_DIR_.'order-payment.js');
+    }
 }

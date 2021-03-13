@@ -44,16 +44,33 @@ $(document).ready(function(){
 	});
 
 	$(document).on('submit', 'form[name=carrier_area]', function(){
-        if (acceptCGV()) {
-            $(this).find(':submit').prop('disabled', true);
-            $(this).find(':submit').find('span').html(msg_waiting_order_carrier + '<i class="icon-chevron-right right"></i>');
-        } else {
-            return false;
-        }
-		return acceptCGV();
+		return chooseOption() && acceptCGV();
 	});
 
 });
+
+function chooseOption()
+{
+	if (typeof msg_choice_order_carrier != 'undefined' && !$('input[name="delivery_option"]:checked').length)
+	{
+		if (!!$.prototype.fancybox)
+		    $.fancybox.open([
+	        {
+	            type: 'inline',
+	            autoScale: true,
+	            minHeight: 30,
+	            content: '<p class="fancybox-error">' + msg_choice_order_carrier + '</p>'
+	        }],
+			{
+		        padding: 0
+		    });
+		else
+		    alert(msg_choice_order_carrier);
+	}
+	else
+		return true;
+	return false;
+}
 
 function acceptCGV()
 {

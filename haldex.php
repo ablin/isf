@@ -1,5 +1,6 @@
 <?php
 set_time_limit(0);
+ini_set('memory_limit', '-1');
 
 // Include the library
 include('simple_html_dom.php');
@@ -25,7 +26,7 @@ while ($product = $products->fetch())
 {
     $nb++;
 
-    $ref = $product["reference"];
+    $ref = (string) $product["reference"];
     $name = $product["name"];
 
     echo "**************************************************************************************************************\n";
@@ -53,9 +54,10 @@ while ($product = $products->fetch())
         $array_line[$ref][1] = 'Oui';
 
         //Lien
-        foreach ($xpath->query('//body//div[@id="products"]//div[@class="name"]/a/@href') as $node) {
+        foreach ($xpath->query('//body//div[@id="products"]//div[@class="part-number"]/a/@href[contains(.,"'.strtolower($ref).'")]') as $node) {
             $link = 'https://www.haldex.com'.$node->nodeValue;
             $array_line[$ref][2] = $link;
+            break;
         }
 
         $doc = new \DOMDocument();
@@ -96,8 +98,8 @@ while ($product = $products->fetch())
         }
 
         //Données techniques
-        if ($xpath->query('//div[@class="product-description"]/ul')->length > 0) {
-            foreach ($xpath->query('//div[@class="product-description"]/ul/li') as $node) {
+        if ($xpath->query('(//div[@class="product-description"])[1]/ul')->length > 0) {
+            foreach ($xpath->query('(//div[@class="product-description"])[1]/ul/li') as $node) {
                 preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
                 if (!$key = array_search(trim($matches[1]), $array_header)) {
                     array_push($array_header, trim($matches[1]));

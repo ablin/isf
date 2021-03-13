@@ -20,7 +20,6 @@ class AuthController extends AuthControllerCore
                     $customer->firstname = $datas->prenom ? $datas->prenom : '.';
                     $customer->lastname = $datas->nom ? $datas->nom : '.';
                     $customer->email = $datas->email;
-                    $customer->active = 1;
                     $customer->passwd = Tools::encrypt($passwd);
                     $customer->add();
                 } else {
@@ -31,8 +30,11 @@ class AuthController extends AuthControllerCore
                 }
 
                 $_POST['email'] = $customer->email;
+                $tabs = isset($datas->tabs) ? $datas->tabs : array();
                 $this->context->cookie->__set('tiers', $datas->tiers);
+                $this->context->cookie->__set('paiement', $datas->paiement);
                 $this->context->cookie->__set('login', $login);
+                $this->context->cookie->__set('tabs', serialize($tabs));
 
             } else {
                 $_POST['email'] = 'fail@erreur.com';

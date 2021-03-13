@@ -29,11 +29,12 @@ $msg = json_encode([
 ]);
 
 //Connexion au serveur RabbitMQ local
-$rabbitConnection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+$rabbitConnection = new AMQPStreamConnection('rabbitmq.interface-web.fr', 5672, 'interface-web', 'hRiIiamjxbWjhNdtNFkqirUojWLCimAL');
+//$rabbitConnection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
 $ch = $rabbitConnection->channel();
 
 $ch->queue_declare(
-    'file-d-attente', //nom de notre file d'attente
+    'interservicefreins', //nom de notre file d'attente
     false,            //passif
     true,             //durable
     false,            //exclusif
@@ -42,7 +43,7 @@ $ch->queue_declare(
 
 $amqpMessage = new AMQPMessage($msg);
 
-$ch->basic_publish($amqpMessage, '', 'file-d-attente');
+$ch->basic_publish($amqpMessage, '', 'interservicefreins');
 
 $ch->close();
 $rabbitConnection->close();

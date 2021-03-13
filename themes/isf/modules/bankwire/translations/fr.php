@@ -53,4 +53,5 @@ $_MODULE['<{bankwire}isf>payment_return_b9a1cae09e5754424e33764777cfcaa0'] = 'Vo
 $_MODULE['<{bankwire}isf>payment_return_ca7e41a658753c87973936d7ce2429a8'] = 'Pour toute question ou information complémentaire, veuillez contacter notre';
 $_MODULE['<{bankwire}isf>payment_return_66fcf4c223bbf4c7c886d4784e1f62e4'] = 'service client';
 $_MODULE['<{bankwire}isf>payment_return_d15feee53d81ea16269e54d4784fa123'] = 'Nous avons rencontré un problème avec votre commande. Nous vous invitons à prendre contact avec notre';
+$_MODULE['<{bankwire}isf>payment_execution_50cc0dfc29111adf59c63df93b3071c8'] = 'Traitement en cours...';
 $_MODULE['<{bankwire}isf>payment_return_decce112a9e64363c997b04aa71b7cb8'] = 'support client';

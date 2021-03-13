@@ -1,0 +1,24 @@
+2020-10-09 12:59:34 [success] ____ TNT Express France (tntofficiel) : install init. ____
+2020-10-09 12:59:36 [success] Module::install
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::updateSettings
+2020-10-09 12:59:36 [success] Module::registerHook
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::createTab
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_2_20
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_2_23
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_3_00_cart
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_3_00_cart_index
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_3_00_order
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_3_00_order_index
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::upgradeTables_1_3_01
+2020-10-09 12:59:36 [success] TNTOfficiel_Install::createTables
+2020-10-09 12:59:40 [success] TNTOfficiel_Carrier::installAllCurrentCarrier
+2020-10-09 12:59:40 [success] TNTOfficiel_Install::checkOverride
+2020-10-09 12:59:40 [success] ____ TNT Express France (tntofficiel) : install complete. ____
+2020-10-09 13:09:16 [success] ____ TNT Express France (tntofficiel) : uninstall init. ____
+2020-10-09 13:09:16 [success] Module::uninstallOverrides
+2020-10-09 13:09:16 [success] Module::unregisterHook
+2020-10-09 13:09:16 [success] TNTOfficiel_Install::deleteTab
+2020-10-09 13:09:16 [success] TNTOfficiel_Carrier::uninstallAllCurrentCarrier
+2020-10-09 13:09:16 [success] TNTOfficiel_Install::deleteSettings
+2020-10-09 13:09:16 [success] Module::uninstall
+2020-10-09 13:09:16 [success] ____ TNT Express France (tntofficiel) : uninstall complete. ____

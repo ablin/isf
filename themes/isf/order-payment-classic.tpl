@@ -83,7 +83,7 @@
                             {/if}
                         </td>
                     </tr>-->
-                    <!--{if $total_shipping_tax_exc <= 0 && (!isset($isVirtualCart) || !$isVirtualCart) && $free_ship}
+                    {if $total_shipping_tax_exc <= 0 && (!isset($isVirtualCart) || !$isVirtualCart) && $free_ship}
                         <tr class="cart_total_delivery">
                             <td colspan="4" class="text-right">{l s='Total shipping'}</td>
                             <td colspan="2" class="price" id="total_shipping">{l s='Free Shipping!'}</td>
@@ -107,7 +107,7 @@
                                 <td colspan="2" class="price" id="total_shipping" >{displayPrice price=$shippingCostTaxExc}</td>
                             </tr>
                         {/if}
-                    {/if}-->
+                    {/if}
                     <!--<tr class="cart_total_voucher" {if $total_discounts == 0}style="display:none"{/if}>
                         <td colspan="4" class="text-right">
                             {if $use_taxes}
@@ -296,9 +296,23 @@
         {if $opc}
             <div id="opc_payment_methods-content">
         {/if}
-        <div id="HOOK_PAYMENT">
-            {$HOOK_PAYMENT}
-        </div>
+        {if $display_payment}
+            <div id="HOOK_PAYMENT">
+                {$HOOK_PAYMENT}
+            </div>
+        {else}
+            <form id="form" action="{$link->getPageLink('order', true, NULL, "{if $multi_shipping}multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}" method="post" name="payment">
+                <p class="cart_navigation clearfix">
+                    <button type="submit" name="processCarrier" class="button btn btn-default standard-checkout button-medium">
+                        <span>
+                            {l s='Proceed to checkout'}
+                            <i class="icon-chevron-right right"></i>
+                        </span>
+                    </button>
+                </p>
+                <input type="hidden" name="step" value="4" />
+            </form>
+        {/if}
         {if $opc}
             </div> <!-- end opc_payment_methods-content -->
         {/if}
@@ -323,3 +337,5 @@
 </div> <!-- end opc_payment_methods -->
 {/if}
 </div> <!-- end HOOK_TOP_PAYMENT -->
+
+{addJsDefL name=msg_waiting_order}{l s='ongoing treatment...' js=1}{/addJsDefL}
