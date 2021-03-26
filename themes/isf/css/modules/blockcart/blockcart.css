@@ -380,6 +380,11 @@
     cursor: pointer; }
   #layer_cart p {
     padding: 0px; }
+  #layer_cart #layer_cart_product_alert {
+    font-weight: bold;
+    color: red;
+    padding: 0;
+  }
 
 /************************************************************************
 						Layer Cart Caroucel

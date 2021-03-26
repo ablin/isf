@@ -235,6 +235,9 @@
 						<strong class="dark">{l s='Total' mod='blockcart'}</strong>
 						<span id="layer_cart_product_price"></span>
 					</div>
+					<div>
+						<span id="layer_cart_product_alert"></span>
+					</div>
 				</div>
 			</div>
 			<div class="layer_cart_cart col-xs-12 col-md-6">
@@ -250,7 +253,7 @@
 				</span>
 				<div class="layer_cart_row">
 					<strong class="dark">
-						{l s='Total products' mod='blockcart'}
+						{l s='Total' mod='blockcart'}
 						{if $use_taxes && $display_tax_label && $show_tax}
 							{if $priceDisplay == 1}
 								{l s='(tax excl.)' mod='blockcart'}
@@ -259,9 +262,13 @@
 							{/if}
 						{/if}
 					</strong>
-					<span class="ajax_block_products_total">
+					<span class="ajax_block_cart_total">
 						{if $cart_qties > 0}
-							{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_PRODUCTS)}
+							{if $priceDisplay == 1}
+								{convertPrice price=$cart->getOrderTotal(false)}
+							{else}
+								{convertPrice price=$cart->getOrderTotal(true)}
+							{/if}
 						{/if}
 					</span>
 				</div>
@@ -286,18 +293,6 @@
 						</span>
 					</div>
 				{/if}
-				<!--<div class="layer_cart_row">
-					<strong class="dark{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
-						{l s='Total shipping' mod='blockcart'}&nbsp;{if $use_taxes && $display_tax_label && $show_tax}{if $priceDisplay == 1}{l s='(tax excl.)' mod='blockcart'}{else}{l s='(tax incl.)' mod='blockcart'}{/if}{/if}
-					</strong>
-					<span class="ajax_cart_shipping_cost{if $shipping_cost_float == 0 && (!$cart_qties || $cart->isVirtualCart() || !isset($cart->id_address_delivery) || !$cart->id_address_delivery)} unvisible{/if}">
-						{if $shipping_cost_float == 0}
-							 {if (!isset($cart->id_address_delivery) || !$cart->id_address_delivery)}{l s='To be determined' mod='blockcart'}{else}{l s='Free shipping!' mod='blockcart'}{/if}
-						{else}
-							{$shipping_cost}
-						{/if}
-					</span>
-				</div>-->
 				{if $show_tax && isset($tax_cost)}
 					<div class="layer_cart_row">
 						<strong class="dark">{l s='Tax' mod='blockcart'}</strong>
@@ -306,22 +301,18 @@
 				{/if}
 				<div class="layer_cart_row">
 					<strong class="dark">
-						{l s='Total' mod='blockcart'}
+						{l s='Total products' mod='blockcart'}
 						{if $use_taxes && $display_tax_label && $show_tax}
 							{if $priceDisplay == 1}
-								{l s='(tax excl.)' mod='blockcart'}
-							{else}
 								{l s='(tax incl.)' mod='blockcart'}
+							{else}
+								{l s='(tax excl.)' mod='blockcart'}
 							{/if}
 						{/if}
 					</strong>
-					<span class="ajax_block_cart_total">
+					<span class="ajax_block_products_total">
 						{if $cart_qties > 0}
-							{if $priceDisplay == 1}
-								{convertPrice price=$cart->getOrderTotal(false)}
-							{else}
-								{convertPrice price=$cart->getOrderTotal(true)}
-							{/if}
+							{convertPrice price=$cart->getOrderTotal(false, Cart::ONLY_PRODUCTS)}
 						{/if}
 					</span>
 				</div>

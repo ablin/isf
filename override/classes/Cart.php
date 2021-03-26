@@ -318,7 +318,8 @@ class Cart extends CartCore
                     'mont' => isset($reference->mont) ? $reference->mont : "",
                     'stock' => isset($reference->qteStock) ? $reference->qteStock : "",
                     'ref_des' => isset($reference->ref_des) ? $reference->ref_des : "",
-                    'frais_supp' => isset($reference->frais_supp) ? $reference->frais_supp : ""
+                    'frais_supp' => isset($reference->frais_supp) ? $reference->frais_supp : "",
+                    'alerte' => isset($reference->alerte) ? $reference->alerte : "",
                 );
             }
 
@@ -343,6 +344,7 @@ class Cart extends CartCore
                 $this->_products[$key]['quantity_available'] = $this->_productList[$reference]['stock'];
                 $this->_products[$key]['ref_des'] = $this->_productList[$reference]['ref_des'];
                 $this->_products[$key]['frais_supp'] = $this->_productList[$reference]['frais_supp'];
+                $this->_products[$key]['alerte'] = $this->_productList[$reference]['alerte'];
             }
         }
 
@@ -547,11 +549,17 @@ class Cart extends CartCore
     */
     public function getTotalShippingCost($delivery_option = null, $use_tax = true, Country $default_country = null)
     {
-        return $this->port_ht;
+        return isset($this->port_ht) ? $this->port_ht : 0;
     }
 
     public function getTva()
     {
+        $base_total_tax_inc = $this->getOrderTotal(true);
+        $base_total_tax_exc = $this->getOrderTotal(false);
+
+        $tax = $base_total_tax_inc - $base_total_tax_exc;
+        Context::getContext()->cookie->montant_tva = $tax;
+
         return Context::getContext()->cookie->montant_tva;
     }
 

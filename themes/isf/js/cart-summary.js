@@ -489,6 +489,9 @@ function deleteProductFromSummary(id)
 				else
 				{
 					$('#product_' + id).fadeOut('slow', function() {
+						if ($(this).next().hasClass('additional_costs')) {
+							$(this).next().remove();
+						}
 						$(this).remove();
 						cleanSelectAddressDelivery();
 						if (!customizationId)
@@ -895,6 +898,11 @@ function updateCartSummary(json)
 		$('input[name=quantity_' + key_for_blockcart_nocustom + '_hidden]').val(product_list[i].id_customization? product_list[i].quantity_without_customization : product_list[i].cart_quantity);
 		if (typeof(product_list[i].customizationQuantityTotal) !== 'undefined' && product_list[i].customizationQuantityTotal > 0)
 			$('#cart_quantity_custom_' + key_for_blockcart).html(product_list[i].customizationQuantityTotal);
+
+		if (product_list[i].frais_supp) {
+			$("#product_" + key_for_blockcart_nocustom).next("tr").html('<td class="cart_description" colspan="5"><p class="product-name">&rarr;&nbsp;' + product_list[i].frais_supp[0].libelle + '</p></td><td class="cart_total"><span class="price">' + formatCurrency(product_list[i].frais_supp[0].valeur, currencyFormat, currencySign, currencyBlank) + '</span></td>');
+		}
+
 		nbrProducts += parseInt(product_list[i].quantity);
 	}
 

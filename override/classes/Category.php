@@ -89,7 +89,8 @@ class Category extends CategoryCore
 		INNER JOIN `'._DB_PREFIX_.'category_product` cp ON (c.`id_category` = cp.`id_category`)
         LEFT JOIN `'._DB_PREFIX_.'product` p ON p.`id_product` = cp.`id_product`
 		WHERE `id_parent` = '.(int)$this->id.'
-		'.($active ? 'AND c.`active` = 1' : '').'
+        '.($active ? 'AND c.`active` = 1' : '').'
+        '.($active ? 'AND p.`active` = 1' : '').'
 		'.$sql_groups_where.'
 		GROUP BY c.`id_category`
 		ORDER BY cl.`description` ASC, category_shop.`position` ASC');

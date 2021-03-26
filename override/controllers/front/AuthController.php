@@ -9,7 +9,7 @@ class AuthController extends AuthControllerCore
         $login = trim(Tools::getValue('login'));
         $passwd = trim(Tools::getValue('passwd'));
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>IDENTIFICATION', '<DOS>1<LOGIN>'.$login.'<WEBPASS>'.$passwd);
+        $webServiceDiva = new WebServiceDiva('<ACTION>IDENTIFICATION', '<DOS>1<LOGIN>'.$login.'<WEBPASS>'.sha1($passwd));
 
         try {
             $datas = $webServiceDiva->call();

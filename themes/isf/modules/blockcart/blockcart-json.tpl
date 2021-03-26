@@ -54,6 +54,7 @@
 {else}
 		"hasAttributes": false,
 {/if}
+		"alert": {$product.alerte|trim|html_entity_decode:2:'UTF-8'|json_encode},
 		"hasCustomizedDatas": {if isset($customizedDatas.$productId.$productAttributeId)}true{else}false{/if},
 		"customizedDatas": [
 		{if isset($customizedDatas.$productId.$productAttributeId[$product.id_address_delivery])}
