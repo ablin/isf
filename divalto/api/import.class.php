@@ -237,7 +237,7 @@ class Import
             $productId = Product::getProductByReference((string) $produit->reference);
             echo (string) $produit->reference . "\n";
 
-            if (!$productId || $productHasChanged) {
+            if ((!$productId && (int) $produit->active == 1) || ($productId && $productHasChanged)) {
                 $product = new Product();
                 $product->reference = (string) $produit->reference;
 
@@ -323,10 +323,11 @@ class Import
                     $attachments = array();
                     Attachment::deleteProductAttachments($product->id);
                     foreach ($produit->files->file as $file) {
-                        if (false == $attachmentId = $this->getAttachment($file->name)) {
+                        if (false == $attachmentId = $this->getAttachment(basename($file->url))) {
                             $uniqid = sha1(microtime());
                             $attachment = new Attachment();
-                            copy($file->url, _PS_DOWNLOAD_DIR_ . $uniqid);
+                            $path = substr($file->url, 0, strrpos($file->url, '/') + 1);
+                            file_put_contents(_PS_DOWNLOAD_DIR_ . $uniqid, file_get_contents($path.rawurlencode(basename($file->url))));
                             foreach (Language::getIDs(false) as $id_lang) {
                                 $attachment->name[(int) $id_lang] = $file->name;
                             }
@@ -334,9 +335,17 @@ class Import
                             $attachment->mime = mime_content_type(_PS_DOWNLOAD_DIR_ . $uniqid);
                             $attachment->file_name = basename($file->url);
                             $attachment->add();
-                            $attachmentId = $attachmentId = $this->getAttachment($file->name);
+                            $attachmentId = $attachmentId = $this->getAttachment(basename($file->url));
+                        } else {
+                            $attachment = new Attachment($attachmentId);
+                            foreach (Language::getIDs(false) as $id_lang) {
+                                $attachment->name[(int) $id_lang] = $file->name;
+                            }
+                            $attachment->update();
                         }
-                        $attachments[] = $attachmentId;
+                        if (!in_array($attachmentId, $attachments)) {
+                            $attachments[] = $attachmentId;
+                        }
                     }
                     Attachment::attachToProduct($product->id, $attachments);
                 }
@@ -501,12 +510,9 @@ class Import
     private function getAttachment($name)
     {
         $sql = sprintf(
-            "SELECT pal.id_attachment FROM %sattachment_lang pal
-                            INNER JOIN %sattachment pa USING (id_attachment)
-                            WHERE pal.name = '%s'",
+            "SELECT p.id_attachment FROM %sattachment p WHERE p.file_name = '%s'",
             _DB_PREFIX_,
-            _DB_PREFIX_,
-            $name
+            addslashes($name)
         );
 
         return Db::getInstance()->getValue($sql);

@@ -36,6 +36,7 @@
 			<div id="opc_delivery_methods" class="opc-main-block">
 				<div id="opc_delivery_methods-overlay" class="opc-overlay" style="display: none;"></div>
 {/if}
+
 <div class="order_carrier_content box">
 	{if isset($virtual_cart) && $virtual_cart}
 		<input id="input_virtual_carrier" class="hidden" type="hidden" name="id_carrier" value="0" />
@@ -139,6 +140,12 @@
             {/if}
         {/if}
     {/if}
+    <div class="box">
+        <p class="checkbox">
+            <input type="checkbox" name="neutralParcel" id="neutralParcel" value="1" />
+            <label for="neutralParcel">{l s='I would like direct delivery in neutral parcel.'}</label>
+        </p>
+    </div>
     {if $conditions && $cms_id && (! isset($advanced_payment_api) || !$advanced_payment_api)}
         {if $opc}
             <hr style="" />

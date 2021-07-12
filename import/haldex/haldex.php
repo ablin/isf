@@ -8,11 +8,15 @@ include('../simple_html_dom.php');
 header('Content-Type: text/html; charset=utf-8');
 
 $fp = fopen("haldex.csv", 'w+');
+$fpFiles = fopen("haldex_fichiers.csv", 'w+');
 
 if (($handle = fopen("references.csv", "r")) !== false) {
 
     $array_header = ['Reference', 'Trouve', 'Lien', 'Libelle', 'Statut', 'Ligne de produit', 'Nb images'];
     $array_line = [];
+
+    $array_header_files = ['Reference'];
+    $array_line_files = [];
 
     while (($data = fgetcsv($handle, 1000, ";")) !== false) {
 
@@ -26,6 +30,7 @@ if (($handle = fopen("references.csv", "r")) !== false) {
         $link = null;
 
         $array_line[$reference][0] = $reference;
+        $array_line_files[$reference][0] = $reference;
         $array_line[$reference][1] = 'Non';
         $array_line[$reference][2] = '';
         $array_line[$reference][3] = '';
@@ -81,14 +86,21 @@ if (($handle = fopen("references.csv", "r")) !== false) {
             }
 
             //Données techniques
-            if ($xpath->query('(//div[@class="product-description"])[1]/ul')->length > 0) {
-                foreach ($xpath->query('(//div[@class="product-description"])[1]/ul/li') as $node) {
-                    preg_match('/(.*):(.*)/', $node->nodeValue, $matches);
-                    if (!$key = array_search(trim(utf8_decode($matches[1])), $array_header)) {
-                        array_push($array_header, trim(utf8_decode($matches[1])));
-                        $array_line[$reference][count($array_header) - 1] = trim(utf8_decode($matches[2]));
+            if ($xpath->query('//div[@class="tech-specs"]')->length > 0) {
+                $index = 0;
+                foreach ($xpath->query('//div[@class="tech-specs"]/table[@class="specs"]//tr') as $node) {
+                    $index++;
+                    foreach ($xpath->query('//div[@class="tech-specs"]/table[@class="specs"]//tr['.$index.']/td[1]') as $node) {
+                        $libelle = trim(utf8_decode($node->nodeValue));
+                    }
+                    foreach ($xpath->query('//div[@class="tech-specs"]/table[@class="specs"]//tr['.$index.']/td[2]') as $node) {
+                        $valeur = trim(utf8_decode($node->nodeValue));
+                    }
+                    if (!$key = array_search($libelle, $array_header)) {
+                        array_push($array_header, $libelle);
+                        $array_line[$reference][count($array_header) - 1] = $valeur;
                     } else {
-                        $array_line[$reference][$key] = trim(utf8_decode($matches[2]));
+                        $array_line[$reference][$key] = $valeur;
                     }
                 }
                 for ($i = 0; $i < count($array_line[$reference]); $i++)
@@ -98,6 +110,34 @@ if (($handle = fopen("references.csv", "r")) !== false) {
                     }
                 }
                 ksort($array_line[$reference]);
+            }
+
+            //Documents
+            if (!is_dir("doc")) {
+                mkdir("doc", 0777);
+            }
+
+            if ($xpath->query('//div[@class="document"]')->length > 0) {
+                $index = 0;
+                $i = 0;
+                foreach ($xpath->query('//div[@class="document"]/div[@class="docs-description"]') as $node) {
+                    $index++;
+                    $i++;
+                    foreach ($xpath->query('(//div[@class="document"])['.$index.']/div[@class="docs-description"]') as $node) {
+                        $name = trim(substr(utf8_decode(str_replace("\xE2\x80\x99", "'", $node->nodeValue)), 0, strpos($node->nodeValue, '|') -1));
+                    }
+                    foreach ($xpath->query('(//div[@class="document"])['.$index.']/a/@href') as $node) {
+                        $filename = trim(utf8_decode(basename($node->nodeValue))).".pdf";
+                    }
+
+                    if (!file_exists("doc/".$filename.".pdf")) {
+                        downloadFile("https://www.haldex.com".$node->nodeValue, "doc/".$filename.".pdf");
+                    }
+
+                    $array_line_files[$reference][$i] = $name;
+                    $i++;
+                    $array_line_files[$reference][$i] = $filename;
+                }
             }
 
         }
@@ -115,10 +155,16 @@ foreach($array_line as $ligne) {
     fputcsv($fp, $ligne, ';');
 }
 
+fputcsv($fpFiles, $array_header_files, ';');
+foreach($array_line_files as $ligne_files) {
+    fputcsv($fpFiles, $ligne_files, ';');
+}
+
 // fermeture du fichier csv
 fclose($fp);
+fclose($fpFiles);
 
-function download_image($image_url, $image_file){
+function download_image($image_url, $image_file) {
     $fp = fopen ($image_file, 'w+');              // open file handle
 
     $ch = curl_init($image_url);

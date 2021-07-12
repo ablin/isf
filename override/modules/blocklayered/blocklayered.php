@@ -334,11 +334,23 @@ class BlockLayeredOverride extends BlockLayered
             }
         }
 
+        $features = "";
+        $nb = 1;
+
+        foreach (_DV_FEATURE_NOT_DISPLAYED_PRODUCT as $feature) {
+            $features .= 'WHEN id_feature = '.$feature.' THEN "3'.$nb.'" ';
+            $nb++;
+        }
+
         $filters = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
-			SELECT type, id_value, filter_show_limit, filter_type FROM ' . _DB_PREFIX_ . 'layered_category
-			WHERE id_category = ' . (int)$id_parent . '
-				AND id_shop = ' . $id_shop . ' AND (type IN ("id_attribute_group", "category", "price")' . $filterProducts .')
-			GROUP BY `type`, id_value ORDER BY position ASC LIMIT 30'
+        SELECT type, id_value, filter_show_limit, filter_type FROM ' . _DB_PREFIX_ . 'layered_category
+            LEFT JOIN ' . _DB_PREFIX_ . 'feature_lang ON type = "id_feature" AND ' . _DB_PREFIX_ . 'feature_lang.id_feature = ' . _DB_PREFIX_ . 'layered_category.id_value
+            WHERE id_category = ' . (int)$id_parent . '
+                AND id_shop = ' . $id_shop . ' AND (type IN ("id_attribute_group", "category", "price")' . $filterProducts .')
+            GROUP BY `type`, id_value 
+            ORDER BY CASE WHEN type = "category" THEN "1"
+                WHEN type = "id_attribute_group" THEN "2"
+                WHEN type = "id_feature" THEN CASE '.$features.' ELSE "4" END END, ' . _DB_PREFIX_ . 'feature_lang.name ASC'
         );
 
         /* Create the table which contains all the id_product in a cat or a tree */
@@ -919,6 +931,10 @@ class BlockLayeredOverride extends BlockLayered
                             );
                     }
                     break;
+            }
+
+            if (count($filter_blocks) >= 30) {
+                break;    
             }
         }
 

@@ -3,165 +3,175 @@ set_time_limit(0);
 ini_set('memory_limit', '-1');
 
 // Include the library
-include('simple_html_dom.php');
+include('../simple_html_dom.php');
 
 header('Content-Type: text/html; charset=utf-8');
 
-if (!is_dir("wabco")) {
-    mkdir("wabco", 0777);
-}
+$fp = fopen("wabco.csv", 'w+');
+$fpFiles = fopen("wabco_fichiers.csv", 'w+');
+$fpCorrespondances = fopen("wabco_correspondances.csv", 'w+');
 
-$fichier_csv = fopen("wabco/test.csv", 'w+');
-fprintf($fichier_csv, chr(0xEF).chr(0xBB).chr(0xBF));
+if (($handle = fopen("references.csv", "r")) !== false) {
 
-$array_header = ['Reference', 'Libelle', 'Nb images', 'Nb Docs'];
-$array_line = [];
+    $array_header = ['Reference', 'Trouve', 'Libelle', 'Nb images', 'Nb Docs'];
+    $array_line = [];
 
-$bdd = new PDO('mysql:host=localhost;dbname=prestashop;charset=utf8', 'root', 'root');
-$products = $bdd->query('select p.id_product, p.reference, pl.name from ps_category_product inner join ps_product p using(id_product) inner join ps_product_lang pl using(id_product) inner join ps_category_lang cl using(id_category) where cl.name = "WABCO";');
+    $array_header_files = ['Reference'];
+    $array_line_files = [];
 
-while ($product = $products->fetch())
-{
-    $id = $product["id_product"];
-    $ref = $product["reference"];
-    $name = $product["name"];
+    $array_header_correspondances = ['Reference'];
+    $array_line_correspondances = [];
 
-    echo "**************************************************************************************************************\n";
-    echo "*********************************************".$ref."*********************************************************\n";
-    echo "**************************************************************************************************************\n";
+    while (($data = fgetcsv($handle, 1000, ";")) !== false) {
 
-    $doc = new \DOMDocument();
-    @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'&category=18', false, null, -1, -1, true, true, 'ISO-8859-1'));
+        $reference = trim($data[0]);
+        echo $reference."\n";
 
-    $xpath = new \DOMXPath($doc);
+        $page = @file_get_contents('https://www.wabco-customercentre.com/catalog/fr_FR/'.$reference.'?cclcl=fr_FR');
+        preg_match('/extendedModel = (.+?);\n/', $page, $extendedModel);
+        preg_match('/CCRZ.detailData.jsonProductData = (.+?);\n/', $page, $productData);
 
-    $array_line[$ref][0] = $ref;
-    $array_line[$ref][1] = $name;
-    $array_line[$ref][2] = 0;
-    $array_line[$ref][3] = 0;
+        if ($extendedModel && $productData) {
 
-    //Images
-    echo "Images :\n";
-    if ($xpath->query('//table//p/img/@src')->length > 0) {
-        $i = 0;
-        foreach ($xpath->query('//table//p/img/@src') as $node) {
-            $i++;
-            $array_line[$ref][2] = $array_line[$ref][2] + 1;
-            if (!is_dir("wabco/images")) {
-                mkdir("wabco/images", 0777);
-            }
-            $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            grab_image('http://inform.wabco-auto.com/' . $node->nodeValue, "wabco/images/ref_" . $ref . '_' . $i . '.' . $extension);
-        }
-    } else {
-        echo "Pas d'images\n";
-    }
+            $extendedModel = json_decode($extendedModel[1]);
+            $productData = json_decode($productData[1]);
 
-    echo "\n";
+            $array_line[$reference][0] = $reference;
+            $array_line_files[$reference][0] = $reference;
+            $array_line_correspondances[$reference][0] = $reference;
+            $array_line[$reference][1] = 'Non';
+            $array_line[$reference][2] = '';
+            $array_line[$reference][3] = 0;
+            $array_line[$reference][4] = 0;
 
-    //Données techniques page 1
-    echo "Données techniques :\n";
-    if ($xpath->query('//body//table//table[2]//tr/td[2]')->length > 0) {
-        foreach ($xpath->query('//body//table//table[2]//tr/td[2]') as $node) {
-            if (preg_match('/(.*):(.*)/', $node->nodeValue, $matches)) {
-                if (!$key = array_search($matches[1], $array_header)) {
-                    array_push($array_header, $matches[1]);
-                    $key = count($array_header) - 1;
+            if (count($extendedModel) > 0) {
+
+                $array_line[$reference][1] = 'Oui';
+
+                //Libelle
+                $array_line[$reference][2] = utf8_decode($productData->product->prodBean->name);
+
+                //Images
+                if (!is_dir("images")) {
+                    mkdir("images", 0777);
                 }
-                $array_line[$ref][$key] = $matches[2];
-            }
-        }
+                $i = 0;
 
-        //Pages suivantes
-        foreach ($xpath->query('//p[contains(.,"Page de résultats")]/a[position()<last()]/@href') as $node) {
-            @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php'.$node->value, false, null, -1, -1, true, true, 'ISO-8859-1'));
-            $xpath = new \DOMXPath($doc);
-
-            foreach ($xpath->query('//body//table//table[2]//tr/td[2]') as $node) {
-                if (preg_match('/(.*):(.*)/', $node->nodeValue, $matches)) {
-                    if (!$key = array_search(trim($matches[1]), $array_header)) {
-                        array_push($array_header, trim($matches[1]));
-                        $array_line[$ref][count($array_header) - 1] = $matches[2];
-                    } else {
-                        $array_line[$ref][$key] = trim($matches[2]);
+                if (isset($productData->mediaWrappers->{'Product Image'})) {
+                    foreach ($productData->mediaWrappers->{'Product Image'} as $image) {
+                        if ($image->uri != 'https://www.wabco-customercentre.com/catalog/productImage/wabco_logo_vector_eps.png') {
+                            $i++;
+                            $array_line[$reference][3] = $array_line[$reference][3] + 1;
+                            $extension = substr($image->uri, strrpos($image->uri, '.') + 1);
+                            download_image($image->uri, "images/ref_" . $reference . '_' . $i . '.' . $extension);
+                        }
                     }
                 }
+
+                //Données techniques
+                if (isset($extendedModel->extProdData->techSpecWrappers)) {
+                    $index = 0;
+                    foreach ($extendedModel->extProdData->techSpecWrappers as $tech) {
+                        if ($tech->showInSection) {
+                            $index++;
+                            $libelle = trim(utf8_decode($tech->Label));
+                            $valeur = trim(utf8_decode($tech->Value));
+                            if (!$key = array_search($libelle, $array_header)) {
+                                array_push($array_header, $libelle);
+                                $key = count($array_header) - 1;
+                            }
+                            $array_line[$reference][$key] = $valeur;
+                        }
+                    }
+                    for ($i = 0; $i < count($array_line[$reference]); $i++)
+                    {
+                        if (!isset($array_line[$reference][$i])) {
+                            $array_line[$reference][$i] = '';
+                        }
+                    }
+                    ksort($array_line[$reference]);
+                }
+
+                //Correspondances
+                $i = 0;
+                foreach ($extendedModel->extProdData->crossRerefences as $correspondance) {
+                    $i++;
+                    $array_line_correspondances[$reference][] = trim(utf8_decode($correspondance->productName));
+                    $array_line_correspondances[$reference][] = trim(utf8_decode($correspondance->partNumber));
+                }
+
+                //Documents
+                if (!is_dir("doc")) {
+                    mkdir("doc", 0777);
+                }
+
+                if ($extendedModel->extProdData->hasDocs) {
+                    $i = 0;
+                    foreach ($extendedModel->extProdData->docs as $doc) {
+                        $i++;
+                        $array_line[$reference][4] = $array_line[$reference][4] + 1;
+                        $filename = trim(utf8_decode(basename($doc->dataForCurrentLocale->url)));
+                        $name = trim(utf8_decode($doc->dataForCurrentLocale->name));
+
+                        if (!file_exists("doc/".$filename)) {
+                            downloadFile($doc->dataForCurrentLocale->url, "doc/".$filename);
+                        }
+
+                        $array_line_files[$reference][$i] = $name;
+                        $i++;
+                        $array_line_files[$reference][$i] = $filename;
+                    }
+                }
+
             }
+
         }
 
-        for ($i = 0; $i < count($array_line[$ref]); $i++)
-        {
-            if (!isset($array_line[$ref][$i])) {
-                $array_line[$ref][$i] = '';
-            }
-        }
-        ksort($array_line[$ref]);
-
-    } else {
-        echo "Pas de données techniques\n";
     }
 
-    echo "\n";
-
-    //Plan
-    @$doc->loadHTML(file_get_html('http://inform.wabco-auto.com/intl/fr/inform.php?save=1&keywords='.$ref.'&category=20', false, null, -1, -1, true, true, 'ISO-8859-1'));
-
-    $xpath = new \DOMXPath($doc);
-
-    echo "Plan :\n";
-
-    if ($xpath->query('//table//table[2]//td[@class="clsWh"][2]/a[contains(.,"Page")]/@href')->length > 0) {
-        $i = 0;
-        foreach ($xpath->query('//table//table[2]//td[@class="clsWh"][2]/a/@href') as $node) {
-            $i++;
-            $array_line[$ref][3] = $array_line[$ref][3] + 1;
-            if (!is_dir("wabco/doc")) {
-                mkdir("wabco/doc", 0777);
-            }
-            $extension = substr($node->nodeValue, strrpos($node->nodeValue, '.') + 1);
-            downloadFile('http://inform.wabco-auto.com/' . $node->nodeValue, "wabco/doc/ref_" . $ref . '_' . $i . '.' . $extension);
-        }
-    } else {
-        echo "Pas de plan\n";
-    }
-
-}
+ }
 
 echo "**************************************************************************************************************\n";
 echo "*************************************** Ecriture fichier *****************************************************\n";
 echo "**************************************************************************************************************\n";
 
-fputcsv($fichier_csv, $array_header, ';');
+fputcsv($fp, $array_header, ';');
 foreach($array_line as $ligne) {
-    fputcsv($fichier_csv, $ligne, ';');
+    fputcsv($fp, $ligne, ';');
+}
+
+fputcsv($fpFiles, $array_header_files, ';');
+foreach($array_line_files as $ligne_files) {
+    fputcsv($fpFiles, $ligne_files, ';');
+}
+
+fputcsv($fpCorrespondances, $array_header_correspondances, ';');
+foreach($array_line_correspondances as $ligne_correspondances) {
+    fputcsv($fpCorrespondances, $ligne_correspondances, ';');
 }
 
 // fermeture du fichier csv
-fclose($fichier_csv);
+fclose($fp);
+fclose($fpFiles);
+fclose($fpCorrespondances);
 
-echo "**************************************************************************************************************\n";
-echo "******************************************** fonctions *******************************************************\n";
-echo "**************************************************************************************************************\n";
+function download_image($image_url, $image_file){
+    $fp = fopen ($image_file, 'w+');              // open file handle
 
-function grab_image($url, $saveto){
-    $ch = curl_init ($url);
-    curl_setopt($ch, CURLOPT_HEADER, 0);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
-    $raw=curl_exec($ch);
-    curl_close ($ch);
-    if(file_exists($saveto)){
-        unlink($saveto);
-    }
-    $fp = fopen($saveto,'x');
-    fwrite($fp, $raw);
-    fclose($fp);
+    $ch = curl_init($image_url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // enable if you want
+    curl_setopt($ch, CURLOPT_FILE, $fp);          // output to file
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 1000);      // some large value to allow curl to run for a long time
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0');
+    // curl_setopt($ch, CURLOPT_VERBOSE, true);   // Enable this line to see debug prints
+    curl_exec($ch);
+
+    curl_close($ch);                              // closing curl handle
+    fclose($fp);                                  // closing file handle
 }
 
 function downloadFile($url, $desti) {
     $file= file_get_contents($url);
     file_put_contents ($desti, $file);
 }
-
-
-//9254229040 soit l'id 12067

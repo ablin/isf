@@ -58,7 +58,11 @@ if (($handle = fopen("references.csv", "r")) !== false) {
                     $array_line[$reference][2] = utf8_decode(utf8_decode($node->nodeValue));
                     if ($xpath->query('//body//table[@class="dataView"]//tr[2]/td[6]/a[@class="disableLink"]')->length == 0) {
                         foreach ($xpath->query('//body//table[@class="dataView"]//tr[2]/td[6]/a/@href') as $node) {
-                            $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue.'&lang=fr-fr';
+                            if (strpos($node->nodeValue, "lang=fr-fr")) {
+                                $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue;
+                            } else {
+                                $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue.'&lang=fr-fr';
+                            }
                         }
                     }
                 }
@@ -75,7 +79,11 @@ if (($handle = fopen("references.csv", "r")) !== false) {
             if (!$link) {
                 if ($xpath->query('//body//table[@class="dataView"]//tr[2]/td[2]/a[@class="disableLink"]')->length == 0) {
                     foreach ($xpath->query('//body//table[@class="dataView"]//tr[2]/td[2]/a/@href') as $node) {
-                        $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue.'&lang=fr-fr';
+                        if (strpos($node->nodeValue, "lang=fr-fr")) {
+                            $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue;
+                        } else {
+                            $link = 'https://www.knorr-bremsesfn.biz/com/'.$node->nodeValue.'&lang=fr-fr';
+                        }
                     }
                 }
             }
@@ -150,7 +158,6 @@ if (($handle = fopen("references.csv", "r")) !== false) {
             }
 
             //Images
-            $i = 0;
             if (!is_dir("images")) {
                 mkdir("images", 0777);
             }
@@ -187,6 +194,7 @@ foreach($array_line_files as $ligne_files) {
 
 // fermeture du fichier csv
 fclose($fp);
+fclose($fpFiles);
 
 function download_image($image_url, $image_file){
     $fp = fopen ($image_file, 'w+');              // open file handle

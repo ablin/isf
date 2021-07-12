@@ -37,6 +37,12 @@
 		<div id="opc_account-overlay" class="opc-overlay" style="display: none;"></div>
 {/if}
 <div class="addresses clearfix">
+	{if !$opc}
+		<div id="ordermsg" class="form-group">
+			<label>{l s='If you would like to add a comment about your order, please write it in the field below.'}</label>
+			<textarea class="form-control" cols="60" rows="4" maxlength="900" name="message">{if isset($oldMessage)}{$oldMessage}{/if}</textarea>
+		</div>
+	{/if}
 	<div class="row">
 		<div class="col-xs-12 col-sm-6">
 			<div class="address_delivery select form-group selector1">
@@ -91,12 +97,6 @@
 			<span>{l s='Add a new address'}<i class="icon-chevron-right right"></i></span>
 		</a>
 	</p>
-	<!--{if !$opc}
-		<div id="ordermsg" class="form-group">
-			<label>{l s='If you would like to add a comment about your order, please write it in the field below.'}</label>
-			<textarea class="form-control" cols="60" rows="6" name="message">{if isset($oldMessage)}{$oldMessage}{/if}</textarea>
-		</div>
-	{/if}-->
 </div> <!-- end addresses -->
 {if !$opc}
 			<p class="cart_navigation clearfix">

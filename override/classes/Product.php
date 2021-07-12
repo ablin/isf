@@ -157,7 +157,7 @@ class Product extends ProductCore
     public function getProductCorrespondences()
     {
         $row = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS(sprintf(
-                'SELECT pc.name, pc.value FROM %sproduct_correspondence pc WHERE pc.id_product = %d',
+                'SELECT pc.name, pc.value FROM %sproduct_correspondence pc WHERE pc.id_product = %d ORDER BY pc.name ASC',
                 _DB_PREFIX_,
                 $this->id
             )
@@ -245,7 +245,7 @@ class Product extends ProductCore
 				LEFT JOIN '._DB_PREFIX_.'feature_value_lang fvl ON (fvl.id_feature_value = pf.id_feature_value AND fvl.id_lang = '.(int)$id_lang.')
 				LEFT JOIN '._DB_PREFIX_.'feature f ON (f.id_feature = pf.id_feature AND fl.id_lang = '.(int)$id_lang.')
 				'.Shop::addSqlAssociation('feature', 'f').'
-				WHERE pf.id_product = '.(int)$id_product.'
+				WHERE pf.id_product = '.(int)$id_product.' AND f.id_feature NOT IN (' . implode(",", _DV_FEATURE_NOT_DISPLAYED_PRODUCT) . ')
 				ORDER BY fl.name ASC'
             );
         }
@@ -255,5 +255,15 @@ class Product extends ProductCore
     public static function getTaxCalculationMethod($id_customer = null)
     {
         return 1;
+    }
+
+    public static function getAttachmentsStatic($id_lang, $id_product)
+    {
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
+        SELECT *
+        FROM '._DB_PREFIX_.'product_attachment pa
+        LEFT JOIN '._DB_PREFIX_.'attachment a ON a.id_attachment = pa.id_attachment
+        LEFT JOIN '._DB_PREFIX_.'attachment_lang al ON (a.id_attachment = al.id_attachment AND al.id_lang = '.(int)$id_lang.')
+        WHERE pa.id_product = '.(int)$id_product.' ORDER BY al.name ASC');
     }
 }

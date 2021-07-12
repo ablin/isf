@@ -31,10 +31,32 @@ class Customer extends CustomerCore
         $definition = self::$definition;
         $definition['fields']['firstname'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'required' => true, 'size' => 32);
         $definition['fields']['lastname'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'required' => true, 'size' => 32);
+        $definition['fields']['email'] = array('type' => self::TYPE_STRING, 'validate' => 'isGenericName', 'required' => true, 'size' => 32);
 
         self::$definition = $definition;
 
         parent::__construct($id);
+    }
+
+    public function getByLogin($login)
+    {
+        $result = Db::getInstance()->getRow('
+        SELECT *
+        FROM `'._DB_PREFIX_.'customer`
+        WHERE `email` = \''.pSQL($login).'\'
+        '.Shop::addSqlRestriction(Shop::SHARE_CUSTOMER).'
+        AND `deleted` = 0');
+
+        if (!$result) {
+            return false;
+        }
+        $this->id = $result['id_customer'];
+        foreach ($result as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->{$key} = $value;
+            }
+        }
+        return $this;
     }
 
     /**

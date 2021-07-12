@@ -435,7 +435,7 @@ DROP TABLE IF EXISTS `ps_attachment_lang`;
 CREATE TABLE IF NOT EXISTS `ps_attachment_lang` (
   `id_attachment` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_lang` int(10) UNSIGNED NOT NULL,
-  `name` varchar(32) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_attachment`,`id_lang`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

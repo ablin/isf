@@ -62,7 +62,7 @@
             </p>
         {/if}
         <!-- left infos-->
-        <div class="pb-left-column col-xs-12 col-sm-4 col-md-3">
+        <div class="pb-left-column col-xs-12 col-sm-4 col-md-3" style="min-width:500px;">
             <!-- product img-->
             <div id="image-block" class="clearfix">
                 {if $product->new}
@@ -491,6 +491,7 @@
                 </div>
             </section>
         {/if}
+        {if isset($tabs) && $tabs}
         <div id="more_info_block" class="clear">
     <ul id="more_info_tabs" class="idTabs idTabsShort clearfix">
         {if 'tab1'|array_key_exists:$tabs[0] AND (int) $tabs[0]->tab1 == 1 AND $features}<li><a id="more_info_tab_data_sheet" href="#idTab1">{l s='Data sheet'}</a></li>{/if}
@@ -573,7 +574,7 @@
                                     <td>{Tools::formatBytes($attachment.file_size, 2)}</td>
                                     <td>
                                         <a class="btn btn-default btn-block" href="{$link->getPageLink('attachment', true, NULL, "id_attachment={$attachment.id_attachment}")|escape:'html':'UTF-8'}">
-                                        <i class="icon-file-text"></i> {l s='Download file'}
+                                        <i class="icon-file-text"></i> {$attachment.file_name|escape:'html':'UTF-8'}
                                         </a>
                                     </td>
                                 </tr>
@@ -599,6 +600,7 @@
    {if isset($HOOK_PRODUCT_FOOTER) && $HOOK_PRODUCT_FOOTER}{$HOOK_PRODUCT_FOOTER}{/if}
     {/if}
 </div> <!-- itemscope product wrapper -->
+{/if}
 {strip}
 {if isset($smarty.get.ad) && $smarty.get.ad}
     {addJsDefL name=ad}{$base_dir|cat:$smarty.get.ad|escape:'html':'UTF-8'}{/addJsDefL}

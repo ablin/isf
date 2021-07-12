@@ -47,7 +47,7 @@ class Feature extends FeatureCore
             'SELECT fl.id_feature FROM %sfeature_lang fl WHERE fl.id_lang = %s AND fl.name = "%s"',
             _DB_PREFIX_,
             (int)Context::getContext()->language->id,
-            $name
+            addslashes($name)
         );
         return Db::getInstance()->getRow($sql);
     }

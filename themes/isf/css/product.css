@@ -196,7 +196,8 @@ span.view_scroll_spacer {
   width: 20px;
   line-height: 0;
   font-size: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  outline: none; }
   @media (min-width: 768px) and (max-width: 991px) {
     #view_scroll_left,
     #view_scroll_right {

@@ -302,6 +302,15 @@
             </div>
         {else}
             <form id="form" action="{$link->getPageLink('order', true, NULL, "{if $multi_shipping}multi-shipping={$multi_shipping}{/if}")|escape:'html':'UTF-8'}" method="post" name="payment">
+                <div class="box form-group">
+                    <label>
+                        {l s='Order number'}
+                        {if $order_number_required}
+                        *
+                        {/if}
+                    </label>
+                    <input type="text" class="validate form-control" name="order_number" id="order_number" data-validate="isGenericName" {if $order_number_required}required{/if} />
+                </div>
                 <p class="cart_navigation clearfix">
                     <button type="submit" name="processCarrier" class="button btn btn-default standard-checkout button-medium">
                         <span>
@@ -311,6 +320,7 @@
                     </button>
                 </p>
                 <input type="hidden" name="step" value="4" />
+                <input type="hidden" name="neutral_parcel" value="{$neutral_parcel}" />
             </form>
         {/if}
         {if $opc}

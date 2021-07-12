@@ -8686,3 +8686,7 @@ ul.idTabs li {
 #view_full_size .filigrane span {
   font-size: 130%;
 }
+
+.paiement_block #order_number {
+  width: 250px;
+}

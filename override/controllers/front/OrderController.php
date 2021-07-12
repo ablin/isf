@@ -63,7 +63,6 @@ class OrderController extends OrderControllerCore
         // Check for alternative payment api
         $is_advanced_payment_api = (bool)Configuration::get('PS_ADVANCED_PAYMENT_API');
 
-                    Context::getContext()->cookie->cart_delivery_option = "oui";
         // 4 steps to the order
         switch ((int)$this->step) {
 
@@ -111,12 +110,13 @@ class OrderController extends OrderControllerCore
                     $this->context->cart->save();
                 }
 
+                $this->context->smarty->assign('neutral_parcel', Tools::getValue('neutralParcel'));
+                $this->context->smarty->assign('order_number_required', $this->context->cookie->orderNumberRequired);
+
                 // Check the delivery option is set
                 if ($this->context->cart->isVirtualCart() === false) {
                     if (!Tools::getValue('delivery_option') && !$this->context->cart->delivery_option) {
                         Tools::redirect('index.php?controller=order&step=2');
-                    } else {
-                        $this->context->cart->carrier = Tools::getValue('delivery_option');
                     }
                 }
 
@@ -144,10 +144,6 @@ class OrderController extends OrderControllerCore
         if ($this->step == 4) {
             $params = '';
 
-            foreach ($this->context->cart->getProducts() as $product) {
-                $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
-            }
-
             $customer = new Customer();
 
             foreach ($customer->getAddresses((int)Configuration::get('PS_LANG_DEFAULT')) as $address_delivery) {
@@ -162,6 +158,16 @@ class OrderController extends OrderControllerCore
                     $params .= '<ADRFA>' . $address_invoice['adrcod'];
                     break;
                 }
+            }
+
+            $message = str_replace(array("\r\n","\n"), '#0A0D#', Message::getMessageByCartId((int)$this->context->cart->id));
+            $params .= '<COMMENTAIRES>'.$message['message'];
+
+            $params .= '<BLNEUTRE>'.Tools::getValue('neutral_parcel');
+            $params .= '<PIREF>'.Tools::getValue('order_number');
+
+            foreach ($this->context->cart->getProducts() as $product) {
+                $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
             }
 
             $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD>'.unserialize($this->context->cart->delivery_option)[0].'<SAMEDI> '.$params);
