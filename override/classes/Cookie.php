@@ -49,8 +49,6 @@ class Cookie extends CookieCore
         unset($this->_content['tiers']);
         unset($this->_content['login']);
         unset($this->_content['tabs']);
-        unset($this->_content['last_cart_params']);
-        unset($this->_content['cart_datas']);
         unset($this->_content['montant_total']);
         unset($this->_content['montant_ht']);
         unset($this->_content['montant_ttc']);

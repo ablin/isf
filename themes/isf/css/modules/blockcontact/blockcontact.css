@@ -39,6 +39,35 @@
   @media (max-width: 767px) {
     #contact-link.is_logged {
       display: none; } }
+#client-link {
+  float: right;
+  border-left: 1px solid #515151;
+  display: block;
+  color: #fff;
+  padding: 6px 10px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  line-height: 18px; }
+  #client-link label {
+    vertical-align: middle;
+    color: #fff;
+    line-height: 21px; }
+  #client-link .form-group {
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 0; }
+  #client-link .form-control {
+    padding: 1px 5px;
+    height: 25px; }
+  @media (max-width: 479px) {
+    #client-link {
+      text-align: center;
+        font-size: 11px;
+        padding-left: 5px;
+        padding-right: 5px; } }
+  @media (max-width: 767px) {
+    #client-link.is_logged {
+      display: none; } }
 
 @media (max-width: 767px) {
   #contact_block {

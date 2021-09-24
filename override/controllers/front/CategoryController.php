@@ -87,9 +87,12 @@ class CategoryController extends CategoryControllerCore
                         );
                     } else {
                         $products[$reference->ref] = array(
-                            'stock' => 0,
+                            'total_stock' => -1,
+                            'total_dispo' => -1,
+                            'total_jauge' => -1,
                             'tarif' => 0,
-                            'nb_tarif' => 0
+                            'nb_tarif' => 0,
+                            'alerte' => ""
                         );
                     }
                 }

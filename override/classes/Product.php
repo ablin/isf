@@ -207,13 +207,17 @@ class Product extends ProductCore
                             'total_dispo' => $reference->total_dispo,
                             'total_jauge' => $reference->total_jauge,
                             'tarif' => $reference->max_pun,
-                            'nb_tarif' => $reference->nbTarifs
+                            'nb_tarif' => $reference->nbTarifs,
+                            'alerte' => $reference->alerte
                         );
                     } else {
                         $products[$reference->ref] = array(
-                            'stock' => 0,
+                            'total_stock' => -1,
+                            'total_dispo' => -1,
+                            'total_jauge' => -1,
                             'tarif' => 0,
-                            'nb_tarif' => 0
+                            'nb_tarif' => 0,
+                            'alerte' => ""
                         );
                     }
                 }

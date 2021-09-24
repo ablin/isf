@@ -329,6 +329,12 @@
 					</a>
 				</div>
 			</div>
+			<div class="layer_cart_accessories col-xs-12">
+				<span class="title">
+					{l s='Products associated with your selection' mod='blockcart'}
+				</span>
+				<ul class="product_list grid row"></ul>
+			</div>
 		</div>
 		<div class="crossseling"></div>
 	</div> <!-- #layer_cart -->

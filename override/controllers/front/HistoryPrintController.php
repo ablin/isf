@@ -5,7 +5,7 @@ class HistoryPrintController extends FrontController
 
     public function initContent()
     {
-        $webServiceDiva = new WebServiceDiva('<ACTION>DL_PDF', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>'.Tools::getValue('picod').'<NUMERO>'.Tools::getValue('id'));
+        $webServiceDiva = new WebServiceDiva('<ACTION>DL_PDF', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->email.'<PICOD>'.Tools::getValue('picod').'<NUMERO>'.Tools::getValue('id'));
 
         try {
             $datas = $webServiceDiva->call();

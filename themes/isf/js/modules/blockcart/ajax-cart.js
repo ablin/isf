@@ -612,7 +612,6 @@ var ajaxCart = {
 					var content =  '<dt class="unvisible" data-id="cart_block_product_' + domIdProduct + '">';
 					var name = $.trim($('<span />').html(this.name).text());
 					name = (name.length > 12 ? name.substring(0, 10) + '...' : name);
-					//content += '<a class="cart-images" href="' + this.link + '" title="' + name + '"><img  src="' + this.image_cart + '" alt="' + this.name +'"></a>';
 					content += '<div class="cart-info"><div class="product-name">' + '<span class="quantity-formated"><span class="quantity">' + this.quantity + '</span>&nbsp;x&nbsp;</span><a href="' + this.link + '" title="' + this.name + '" class="cart_block_product_name">' + name + '</a></div>';
 					if (this.hasAttributes)
 						  content += '<div class="product-atributes"><a href="' + this.link + '" title="' + this.name + '">' + this.attributes + '</a></div>';
@@ -742,6 +741,83 @@ var ajaxCart = {
 			$('.layer_cart_img').html('<div class="filigrane"><span>' + product.filigraneLabel + '</span></div><img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
 		} else {
 			$('.layer_cart_img').html('<img class="layer_cart_img img-responsive" src="' + product.image + '" alt="' + product.name + '" title="' + product.name + '" />');
+		}
+
+		if (product.accessories.length > 0) {
+			$('.layer_cart_accessories').show();
+			var accessories = "";
+			for (accessory in product.accessories) {
+				accessories += '<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4">';
+				accessories += '<div class="product-container" itemscope itemtype="https://schema.org/Product"><div class="left-block"><div class="product-image-container">';
+				accessories += '<a class="product_img_link" href="' + product.accessories[accessory].link + '" title="' + product.accessories[accessory].name + '" itemprop="url">';
+				if (product.accessories[accessory].filigrane == 1) {
+					accessories += '<div class="filigrane"><span>' + product.accessories[accessory].filigraneLabel + '</span></div>';
+				}
+				accessories += '<img class="replace-2x img-responsive" src="' + product.accessories[accessory].image + '" alt="' + product.accessories[accessory].name + '" title="' + product.accessories[accessory].name + '" /></a></div></div>';
+				accessories += '<div class="right-block">';
+				accessories += '<h5 itemprop="name"><a class="product-name" href="' + product.accessories[accessory].link + '" title="' + product.accessories[accessory].name + '" itemprop="url" >' + product.accessories[accessory].name + '</a></h5>';
+				if (product.accessories[accessory].description) {
+					accessories += '<p class="product-desc" itemprop="description">' + product.accessories[accessory].description.substring(0, 360) + '</p>';
+				}
+				accessories += '<p class="product-reference" itemprop="reference"><label>' + Reference + '</label> ' + product.accessories[accessory].reference + '</p>';
+				accessories += '<p class="product-stock" itemprop="stock"><label>' + Stock + '</label>';
+				if (product.accessories[accessory].total_stock != -1) {
+					accessories += '<span class="availability">';
+					if (product.accessories[accessory].total_stock > 0) {
+						accessories += '<span id="availability_value" class="label label-success">' + product.accessories[accessory].total_stock + '</span>'
+					} else {
+						accessories += '<span id="availability_value" class="label label-danger">0</span>';
+					}
+					accessories += '</span>';
+				}
+				if (product.accessories[accessory].total_dispo != -1) {
+					accessories += '<span class="availability">';
+					if (product.accessories[accessory].total_dispo > 0) {
+						accessories += '<span id="availability_value" class="label-success">' + Available + '</span>'
+					} else {
+						accessories += '<span id="availability_value" class="label-danger">' + Unavailable + '</span>';
+					}
+					accessories += '</span>';
+				}
+				if (product.accessories[accessory].total_jauge != -1) {
+					accessories += '<span class="availability">';
+					accessories += '<span class="availability-gauge';
+					if (product.accessories[accessory].total_jauge == 1) {
+						accessories += ' orange';
+					} else if (product.accessories[accessory].total_jauge > 0) {
+						accessories += ' green';
+					}
+					accessories += '"></span>';
+					accessories += '<span class="availability-gauge';
+					if (product.accessories[accessory].total_jauge > 1) {
+						accessories += ' green';
+					}
+					accessories += '"></span>';
+					accessories += '<span class="availability-gauge';
+					if (product.accessories[accessory].total_jauge > 2) {
+						accessories += ' green';
+					}					
+					accessories += '"></span>';
+					accessories += '</span>';
+				}
+				accessories += '</p>';
+				accessories += '<div class="button-container" style="display:block;">';
+				if (parseInt(product.accessories[accessory].tarif) > 0 && product.accessories[accessory].nb_tarif > 0) {
+					accessories += '<p class="product-tarifs">' + product.accessories[accessory].tarif;
+					if (product.accessories[accessory].nb_tarif > 1) {
+						accessories += '<span class="product-tarifs-infos">' + Declining_price_according_to_qty + '</span>';
+					}
+					accessories += '</p>';
+				} else {
+					accessories += '<p class="product-tarifs"><span class="product-tarifs-infos">' + Price_on_demand + '</span></p>';
+				}
+				accessories += '<a class="button lnk_view btn btn-default" href="' + product.accessories[accessory].link + '" target="_blank" title="' + View + '"><span>' + More + '</span></a>';
+				accessories += '</div>';
+				accessories += '</div></div></li>';
+			}
+			$('.layer_cart_accessories ul.product_list').html(accessories);
+		} else {
+			$('.layer_cart_accessories').hide();
 		}
 
 		var n = parseInt($(window).scrollTop()) + 'px';

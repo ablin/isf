@@ -160,8 +160,10 @@ class OrderController extends OrderControllerCore
                 }
             }
 
-            $message = str_replace(array("\r\n","\n"), '#0A0D#', Message::getMessageByCartId((int)$this->context->cart->id));
-            $params .= '<COMMENTAIRES>'.$message['message'];
+            if (Message::getMessageByCartId((int)$this->context->cart->id)) {
+                $message = str_replace(array("\r\n","\n"), '#0A0D#', Message::getMessageByCartId((int)$this->context->cart->id));
+                $params .= '<COMMENTAIRES>'.$message['message'];
+            }
 
             $params .= '<BLNEUTRE>'.Tools::getValue('neutral_parcel');
             $params .= '<PIREF>'.Tools::getValue('order_number');
@@ -170,7 +172,7 @@ class OrderController extends OrderControllerCore
                 $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
             }
 
-            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.'<PICOD>2<BLMOD>'.unserialize($this->context->cart->delivery_option)[0].'<SAMEDI> '.$params);
+            $webServiceDiva = new WebServiceDiva('<ACTION>CREER_CDE', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->email.'<PICOD>2<BLMOD>'.unserialize($this->context->cart->delivery_option)[0].'<SAMEDI> '.$params);
 
             try {
                 $datas = $webServiceDiva->call();
@@ -270,7 +272,7 @@ class OrderController extends OrderControllerCore
             $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['cart_quantity'];
         }
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>LIVRAISON', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->login.$params);
+        $webServiceDiva = new WebServiceDiva('<ACTION>LIVRAISON', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<LOGIN>'.$this->context->cookie->email.$params);
 
         try {
             $datas = $webServiceDiva->call();

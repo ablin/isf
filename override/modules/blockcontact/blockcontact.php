@@ -1,4 +1,5 @@
-{*
+<?php
+/*
 * 2007-2016 PrestaShop
 *
 * NOTICE OF LICENSE
@@ -21,22 +22,31 @@
 *  @copyright  2007-2016 PrestaShop SA
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
-*}
-<div id="contact-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
-    <a href="{$link->getPageLink('contact', true)|escape:'html':'UTF-8'}" title="{l s='Contact us' mod='blockcontact'}">{l s='Contact us' mod='blockcontact'}</a>
-</div>
-<div id="client-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
-    <label for="client">{l s='Your client:' mod='blockcontact'}</label>
-    <div class="form-group">
-        <select name="client" id="client" class="form-control">
-            {foreach $clients as $client}
-                <option value="{$client->tiers}" {if $client->tiers == $tiers} selected="selected"{/if}>{$client->nomTiers}</option>
-            {/foreach}
-        </select>
-    </div>
-</div>
-{if $telnumber}
-	<span class="shop-phone{if isset($is_logged) && $is_logged} is_logged{/if}">
-		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontact'} <strong>{$telnumber}</strong>
-	</span>
-{/if}
+*/
+
+if (!defined('_CAN_LOAD_FILES_'))
+    exit;
+
+class BlockcontactOverride extends Blockcontact
+{
+    public function hookDisplayRightColumn($params)
+    {
+        global $smarty;
+        $tpl = 'blockcontact';
+        if (isset($params['blockcontact_tpl']) && $params['blockcontact_tpl'])
+            $tpl = $params['blockcontact_tpl'];
+        $smarty->assign(array(
+            'telnumber' => Configuration::get('BLOCKCONTACT_TELNUMBER'),
+            'email' => Configuration::get('BLOCKCONTACT_EMAIL'),
+            'clients' => unserialize($this->context->cookie->clients),
+            'tiers' => $this->context->cookie->tiers
+        ));
+        return $this->display(__FILE__, $tpl.'.tpl');
+    }
+
+    public function hookDisplayHeader($params)
+    {
+        $this->context->controller->addCSS(($this->_path).'blockcontact.css', 'all');
+        $this->context->controller->addJS(_THEME_JS_DIR_.'modules/blockcontact/blockcontact.js');
+    }
+}

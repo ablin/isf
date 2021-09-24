@@ -145,10 +145,9 @@ class Cart extends CartCore
             return array();
         }
 
-        $ecotax_rate = (float)Tax::getProductEcotaxRate($this->{Configuration::get('PS_TAX_ADDRESS_TYPE')});
-        $apply_eco_tax = Product::$_taxCalculationMethod == PS_TAX_INC && (int)Configuration::get('PS_TAX');
         $cart_shop_context = Context::getContext()->cloneContext();
 
+        $accessories = array();
         foreach ($result as &$row) {
             if (isset($row['ecotax_attr']) && $row['ecotax_attr'] > 0) {
                 $row['ecotax'] = (float)$row['ecotax_attr'];
@@ -158,102 +157,10 @@ class Cart extends CartCore
             // for compatibility with 1.2 themes
             $row['quantity'] = (int)$row['cart_quantity'];
 
-            if (isset($row['id_product_attribute']) && (int)$row['id_product_attribute'] && isset($row['weight_attribute'])) {
-                $row['weight'] = (float)$row['weight_attribute'];
-            }
-
-            if (Configuration::get('PS_TAX_ADDRESS_TYPE') == 'id_address_invoice') {
-                $address_id = (int)$this->id_address_invoice;
-            } else {
-                $address_id = (int)$row['id_address_delivery'];
-            }
-            if (!Address::addressExists($address_id)) {
-                $address_id = null;
-            }
-
             if ($cart_shop_context->shop->id != $row['id_shop']) {
                 $cart_shop_context->shop = new Shop((int)$row['id_shop']);
             }
 
-            $address = Address::initialize($address_id, true);
-            $id_tax_rules_group = Product::getIdTaxRulesGroupByIdProduct((int)$row['id_product'], $cart_shop_context);
-            $tax_calculator = TaxManagerFactory::getManager($address, $id_tax_rules_group)->getTaxCalculator();
-
-            $row['price_without_reduction'] = Product::getPriceStatic(
-                (int)$row['id_product'],
-                true,
-                isset($row['id_product_attribute']) ? (int)$row['id_product_attribute'] : null,
-                6,
-                null,
-                false,
-                false,
-                $row['cart_quantity'],
-                false,
-                (int)$this->id_customer ? (int)$this->id_customer : null,
-                (int)$this->id,
-                $address_id,
-                $specific_price_output,
-                true,
-                true,
-                $cart_shop_context
-            );
-
-            $row['price_with_reduction'] = Product::getPriceStatic(
-                (int)$row['id_product'],
-                true,
-                isset($row['id_product_attribute']) ? (int)$row['id_product_attribute'] : null,
-                6,
-                null,
-                false,
-                true,
-                $row['cart_quantity'],
-                false,
-                (int)$this->id_customer ? (int)$this->id_customer : null,
-                (int)$this->id,
-                $address_id,
-                $specific_price_output,
-                true,
-                true,
-                $cart_shop_context
-            );
-
-            $row['price'] = $row['price_with_reduction_without_tax'] = Product::getPriceStatic(
-                (int)$row['id_product'],
-                false,
-                isset($row['id_product_attribute']) ? (int)$row['id_product_attribute'] : null,
-                6,
-                null,
-                false,
-                true,
-                $row['cart_quantity'],
-                false,
-                (int)$this->id_customer ? (int)$this->id_customer : null,
-                (int)$this->id,
-                $address_id,
-                $specific_price_output,
-                true,
-                true,
-                $cart_shop_context
-            );
-
-            switch (Configuration::get('PS_ROUND_TYPE')) {
-                case Order::ROUND_TOTAL:
-                    $row['total'] = $row['price_with_reduction_without_tax'] * (int)$row['cart_quantity'];
-                    $row['total_wt'] = $row['price_with_reduction'] * (int)$row['cart_quantity'];
-                    break;
-                case Order::ROUND_LINE:
-                    $row['total'] = Tools::ps_round($row['price_with_reduction_without_tax'] * (int)$row['cart_quantity'], _PS_PRICE_COMPUTE_PRECISION_);
-                    $row['total_wt'] = Tools::ps_round($row['price_with_reduction'] * (int)$row['cart_quantity'], _PS_PRICE_COMPUTE_PRECISION_);
-                    break;
-
-                case Order::ROUND_ITEM:
-                default:
-                    $row['total'] = Tools::ps_round($row['price_with_reduction_without_tax'], _PS_PRICE_COMPUTE_PRECISION_) * (int)$row['cart_quantity'];
-                    $row['total_wt'] = Tools::ps_round($row['price_with_reduction'], _PS_PRICE_COMPUTE_PRECISION_) * (int)$row['cart_quantity'];
-                    break;
-            }
-
-            $row['price_wt'] = $row['price_with_reduction'];
             $row['description_short'] = Tools::nl2br($row['description_short']);
 
             // check if a image associated with the attribute exists
@@ -264,8 +171,6 @@ class Cart extends CartCore
                 }
             }
 
-            $row['reduction_applies'] = ($specific_price_output && (float)$specific_price_output['reduction']);
-            $row['quantity_discount_applies'] = ($specific_price_output && $row['cart_quantity'] >= (int)$specific_price_output['from_quantity']);
             $row['id_image'] = Product::defineProductImage($row, $this->id_lang);
             $row['allow_oosp'] = Product::isAvailableWhenOutOfStock($row['out_of_stock']);
             $row['features'] = Product::getFeaturesStatic((int)$row['id_product']);
@@ -276,7 +181,69 @@ class Cart extends CartCore
 
             $row = Product::getTaxesInformations($row, $cart_shop_context);
 
+            $product = new Product((int)$row['id_product']);
+            $row['accessories'] = $product->getAccessories((int)$this->id_lang);
+            if ($row['accessories'] && count($row['accessories']) > 0) {
+                foreach ($row['accessories'] as $accessory) {
+                    if (!in_array($accessory['reference'], $accessories)) {
+                        $accessories[] = $accessory['reference'];
+                    }
+                }
+            }
+
             $this->_products[] = $row;
+        }
+
+        if (count($accessories) > 0) {
+
+            $productIds = implode(";", $accessories);
+            $artParams = '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<REF>'.$productIds.'<FICHE>0';
+
+            $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', $artParams);
+
+            try {
+                $datas = $webServiceDiva->call();
+                if ($datas && $datas->references) {
+
+                    foreach ($datas->references as $reference) {
+
+                        if ($reference->trouve == 1) {
+                            foreach ($this->_products as $keyProduct => $product) {
+                                if ($product['accessories'] && count($product['accessories'] > 0)) {
+                                    foreach ($product['accessories'] as $keyAccessory => $accessory) {
+                                        if ($accessory['reference'] == (string) $reference->ref) {
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_stock'] = $reference->total_stock;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_dispo'] = $reference->total_dispo;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_jauge'] = $reference->total_jauge;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['tarif'] = $reference->max_pun;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['nb_tarif'] = $reference->nbTarifs;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['alerte'] = $reference->alerte;
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            foreach ($this->_products as $keyProduct => $product) {
+                                if ($product['accessories'] && count($product['accessories'] > 0)) {
+                                    foreach ($product['accessories'] as $keyAccessory => $accessory) {
+                                        if ($accessory['reference'] == (string) $reference->ref) {
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_stock'] = -1;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_dispo'] = -1;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['total_jauge'] = -1;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['tarif'] = 0;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['nb_tarif'] = 0;
+                                            $this->_products[$keyProduct]['accessories'][$keyAccessory]['alerte'] = "";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            } catch (SoapFault $fault) {
+                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+            }
         }
 
         $params = '';
@@ -289,24 +256,36 @@ class Cart extends CartCore
             $params .= '<REF>'.$product['reference'].'<SREF1>'.$product['sous_reference'].'<SREF2> <QTE>'.$product['quantity'];
         }
 
-        $cartParams = '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.$params;
+        $cartParams = '<DOS>1<TIERS>'.Context::getContext()->cookie->tiers.'<LOGIN>'.Context::getContext()->cookie->email.$params;
 
-        if (serialize($cartParams) != Context::getContext()->cookie->last_cart_params || !isset(Context::getContext()->cookie->cart_datas)) {
+        $webServiceDiva = new WebServiceDiva('<ACTION>PANIER', $cartParams);
 
-            $webServiceDiva = new WebServiceDiva('<ACTION>PANIER', $cartParams);
-
-            try {
-                $datas = $webServiceDiva->call();
-                if ($datas && isset($datas->montantTotal)) {
-                    Context::getContext()->cookie->last_cart_params = serialize($cartParams);
-                    Context::getContext()->cookie->cart_datas = serialize($datas);
+        try {
+            $datas = $webServiceDiva->call();
+            if ($datas && isset($datas->montantTotal)) {
+                foreach ($datas->references as $reference) {
+                    $this->_productList[$reference->ref.$reference->sref1] = array(
+                        'pub' => isset($reference->pub) ? $reference->pub : "",
+                        'remise' => isset($reference->remise) ? $reference->remise : "",
+                        'pun' => isset($reference->pun) ? $reference->pun : "",
+                        'mont' => isset($reference->mont) ? $reference->mont : "",
+                        'stock' => isset($reference->qteStock) ? $reference->qteStock : "",
+                        'ref_des' => isset($reference->ref_des) ? $reference->ref_des : "",
+                        'frais_supp' => isset($reference->frais_supp) ? $reference->frais_supp : "",
+                        'alerte' => isset($reference->alerte) ? $reference->alerte : "",
+                    );
                 }
 
-            } catch (SoapFault $fault) {
-                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+                Context::getContext()->cookie->montant_total = $datas->montantTotal;
+                $this->port_ht = $datas->portHT;
+                Context::getContext()->cookie->montant_ht = $datas->montantHT;
+                Context::getContext()->cookie->montant_ttc = $datas->montantTTC;
+                Context::getContext()->cookie->montant_tva = $datas->montantTVA;
+                Context::getContext()->cookie->poids_total = $datas->poidsTotal;
             }
-        } else {
-            $datas = unserialize(Context::getContext()->cookie->cart_datas);
+
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
 
         if ($datas && $datas->references) {

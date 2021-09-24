@@ -12,7 +12,7 @@ class WebServiceDiva
     {
         //$this->client = new SoapClient("http://interface59.ath.cx:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
         //$this->client = new SoapClient("http://192.168.0.107:8081/WebServiceDiva/WebServiceDiva.asmx?WSDL");
-        $this->client = new SoapClient("http://127.0.0.1:8090/ISF/WebServiceDiva.asmx?WSDL");
+        $this->client = new SoapClient("http://127.0.0.1:8090/ISF/WebServiceDiva.asmx?WSDL", array("trace" => 1, "exception" => 0));
         $this->action = $action;
         $this->param = $param;
 
@@ -33,7 +33,11 @@ class WebServiceDiva
 
         $this->logger->logDebug("Retour :".$response->retour);
 
-        return json_decode($response->retour);
+        if ($return = json_decode($response->retour)) {
+            return $return;
+        } else {
+            //traiter l'erreur
+        }
     }
 
 }

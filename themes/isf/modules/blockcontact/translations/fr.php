@@ -20,3 +20,4 @@ $_MODULE['<{blockcontact}isf>blockcontact_736c5a7e834b7021bfa97180fc453115'] = '
 $_MODULE['<{blockcontact}isf>nav_02d4482d332e1aef3437cd61c9bcc624'] = 'Contactez-nous';
 $_MODULE['<{blockcontact}isf>nav_320abee94a07e976991e4df0d4afb319'] = 'Appelez-nous au :';
 $_MODULE['<{blockcontact}isf>blockcontact_9cfc9b74983d504ec71db33967591249'] = 'Contactez-nous';
+$_MODULE['<{blockcontact}isf>nav_cd29fe7411b9ce2c0d623b5fae18bcd9'] = 'Votre garage :';

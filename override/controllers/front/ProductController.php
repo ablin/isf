@@ -86,9 +86,9 @@ class ProductController extends ProductControllerCore
 
         try {
             $datas = $webServiceDiva->call();
-            $stock = 0;
-            $dispo = 0;
-            $jauge = 0;
+            $stock = -1;
+            $dispo = -1;
+            $jauge = -1;
             $tarif = 0;
             $sousRefs = array();
             $nb_tarif = 0;
@@ -97,9 +97,9 @@ class ProductController extends ProductControllerCore
             if ($datas && $datas->references) {
                 foreach ($datas->references as $reference) {
                     if ($reference->trouve == 1) {
-                        $stock = $reference->total_stock ? $reference->total_stock : 0;
-                        $dispo = $reference->total_dispo ? $reference->total_dispo : 0;
-                        $jauge = $reference->total_jauge ? $reference->total_jauge : 0;
+                        $stock = $reference->total_stock;
+                        $dispo = $reference->total_dispo;
+                        $jauge = $reference->total_jauge;
                         $tarif = $reference->max_pun;
                         $sousRefs = $reference->sousRefs;
                         $nb_tarif = $reference->nbTarifs;

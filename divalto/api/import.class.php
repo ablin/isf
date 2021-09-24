@@ -33,6 +33,7 @@ class Import
                 $this->importProduct($data->file);
                 break;
         }
+        $this->deleteFile($data->file);
     }
 
     /**
@@ -500,6 +501,22 @@ class Import
 
             Search::indexation(false);
 
+        }
+    }
+
+    /**
+     * @param $file
+     */
+    private function deleteFile($file)
+    {
+        $params = '<FILE>'.$file;
+
+        $webServiceDiva = new WebServiceDiva('<ACTION>SUPPR_FIC', $params);
+
+        try {
+            $datas = $webServiceDiva->call();
+        } catch (SoapFault $fault) {
+            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
     }
 

@@ -133,11 +133,12 @@ class BlockLayeredOverride extends BlockLayered
                         );
                     } else {
                         $productsLayered[$reference->ref] = array(
-                            'total_stock' => 0,
-                            'total_dispo' => 0,
-                            'total_jauge' => 0,
+                            'total_stock' => -1,
+                            'total_dispo' => -1,
+                            'total_jauge' => -1,
                             'tarif' => 0,
-                            'nb_tarif' => 0
+                            'nb_tarif' => 0,
+                            'alerte' => ""
                         );
                     }
                 }
@@ -355,8 +356,8 @@ class BlockLayeredOverride extends BlockLayered
 
         /* Create the table which contains all the id_product in a cat or a tree */
 
-        Db::getInstance()->execute('DROP TEMPORARY TABLE IF EXISTS '._DB_PREFIX_.'cat_restriction', false);
-        Db::getInstance()->execute('CREATE TEMPORARY TABLE '._DB_PREFIX_.'cat_restriction ENGINE=MEMORY
+        Db::getInstance()->execute('DROP TABLE IF EXISTS '._DB_PREFIX_.'cat_restriction', false);
+        Db::getInstance()->execute('CREATE TABLE '._DB_PREFIX_.'cat_restriction ENGINE=MEMORY
 													SELECT DISTINCT cp.id_product, p.id_manufacturer, product_shop.condition, p.weight FROM '._DB_PREFIX_.'category c
 													STRAIGHT_JOIN '._DB_PREFIX_.'category_product cp ON (c.id_category = cp.id_category AND
 													'.(Configuration::get('PS_LAYERED_FULL_TREE') ? 'c.nleft >= '.(int)$parent->nleft.'
@@ -1180,11 +1181,7 @@ class BlockLayeredOverride extends BlockLayered
 		AND EXISTS (SELECT *
 		FROM `'._DB_PREFIX_.'product_attribute_combination` pac
 		LEFT JOIN `'._DB_PREFIX_.'product_attribute` pa ON (pa.`id_product_attribute` = pac.`id_product_attribute`)
-		WHERE pa.id_product = p.id_product AND ';
-
-        foreach ($filter_value as $filter_val)
-            $query_filters .= 'pac.`id_attribute` = '.(int)$filter_val.' OR ';
-        $query_filters = rtrim($query_filters, 'OR ').') ';
+		WHERE pa.id_product = p.id_product AND pac.`id_attribute` IN ('.implode(",", $filter_value).')) ';
 
         return array('where' => $query_filters);
     }
@@ -1193,10 +1190,7 @@ class BlockLayeredOverride extends BlockLayered
     {
         if (empty($filter_value))
             return array();
-        $query_filters = ' AND EXISTS (SELECT * FROM '._DB_PREFIX_.'feature_product fp WHERE fp.id_product = p.id_product AND ';
-        foreach ($filter_value as $filter_val)
-            $query_filters .= 'fp.`id_feature_value` = '.(int)$filter_val.' OR ';
-        $query_filters = rtrim($query_filters, 'OR ').') ';
+        $query_filters = ' AND EXISTS (SELECT * FROM '._DB_PREFIX_.'feature_product fp WHERE fp.id_product = p.id_product AND fp.`id_feature_value` IN ('.implode(",", $filter_value).')) ';
 
         return array('where' => $query_filters);
     }
@@ -1205,10 +1199,7 @@ class BlockLayeredOverride extends BlockLayered
     {
         if (empty($filter_value))
             return array();
-        $query_filters_where = ' AND EXISTS (SELECT * FROM '._DB_PREFIX_.'category_product cp WHERE id_product = p.id_product AND ';
-        foreach ($filter_value as $id_category)
-            $query_filters_where .= 'cp.`id_category` = '.(int)$id_category.' OR ';
-        $query_filters_where = rtrim($query_filters_where, 'OR ').') ';
+        $query_filters_where = ' AND EXISTS (SELECT * FROM '._DB_PREFIX_.'category_product cp WHERE id_product = p.id_product AND cp.`id_category` IN ('.implode(",", $filter_value).')) ';
 
         return array('where' => $query_filters_where);
     }

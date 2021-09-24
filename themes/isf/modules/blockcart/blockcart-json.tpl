@@ -40,11 +40,9 @@
 			"filigrane": 0,
 		{/if}
 		"image": {$link->getImageLink($product.link_rewrite, $product.id_image, 'home_default', $product.id_product)|json_encode},
-		"image_cart": {$link->getImageLink($product.link_rewrite, $product.id_image, 'cart_default')|json_encode},
 		"priceByLine": {if $priceDisplay == $smarty.const.PS_TAX_EXC}{displayWtPrice|json_encode p=$product.total}{else}{displayWtPrice|json_encode p=$product.total_wt}{/if},
 		"name": {$product.name|trim|html_entity_decode:2:'UTF-8'|json_encode},
 		"price": {if $priceDisplay == $smarty.const.PS_TAX_EXC}{displayWtPrice|json_encode p=$product.total}{else}{displayWtPrice|json_encode p=$product.total_wt}{/if},
-		"price_float": {$product.total|floatval|json_encode},
 		"idCombination": {if isset($product.attributes_small)}{$productAttributeId|intval}{else}0{/if},
 		"idAddressDelivery": {if isset($product.id_address_delivery)}{$product.id_address_delivery|intval}{else}0{/if},
 		"is_gift": {if isset($product.is_gift) && $product.is_gift}true{else}false{/if},
@@ -80,6 +78,31 @@
 		{rdelim}{if !$smarty.foreach.customizedDatas.last},{/if}
 		{/foreach}
 		{/if}
+		],
+		"accessories": [
+			{if $product.accessories}{foreach from=$product.accessories item=accessory name='accessories'}
+				{ldelim}
+				"id": {$accessory.id_product|intval},
+				"reference": {$accessory.reference|trim|html_entity_decode:2:'UTF-8'|json_encode},
+				"link": {$link->getProductLink($accessory.id_product, $accessory.link_rewrite, $accessory.category, null, null, $accessory.id_shop, $accessory.id_product_attribute)|json_encode},
+				"filigraneLabel": "{l s='Non contractual photo' mod='blockcart'}",
+				{if preg_match("/-default/", $accessory.id_image) && !preg_match("/-default/", {$link->getImageLink($accessory.link_rewrite, $accessory.id_image, 'home_default', $accessory.id_product)|escape:'html':'UTF-8'})}
+					"filigrane": 1,
+				{else}
+					"filigrane": 0,
+				{/if}
+				"image": {$link->getImageLink($accessory.link_rewrite, $accessory.id_image, 'home_default', $accessory.id_product)|json_encode},
+				"name": {$accessory.name|trim|html_entity_decode:2:'UTF-8'|json_encode},
+				"is_gift": {if isset($accessory.is_gift) && $accessory.is_gift}true{else}false{/if},
+				"total_stock": {$accessory.total_stock|trim|html_entity_decode:2:'UTF-8'|json_encode},
+				"total_dispo": {$accessory.total_dispo|trim|html_entity_decode:2:'UTF-8'|json_encode},
+				"total_jauge": {$accessory.total_jauge|trim|html_entity_decode:2:'UTF-8'|json_encode},
+				"tarif": {displayWtPrice|json_encode p=$accessory.tarif},
+				"nb_tarif": {$accessory.nb_tarif|intval},
+				"alert": {$accessory.alerte|trim|html_entity_decode:2:'UTF-8'|json_encode}
+				{rdelim}
+				{if !$smarty.foreach.accessories.last},{/if}
+			{/foreach}{/if}
 		]
 	{rdelim}{if !$smarty.foreach.products.last},{/if}
 {/foreach}{/if}

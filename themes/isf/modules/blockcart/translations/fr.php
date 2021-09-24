@@ -55,3 +55,4 @@ $_MODULE['<{blockcart}isf>blockcart_1f87346a16cf80c372065de3c54c86d9'] = 'TTC';
 $_MODULE['<{blockcart}isf>blockcart_db205f01b4fd580fb5daa9072d96849d'] = 'Total produits';
 $_MODULE['<{blockcart}isf>blockcart_300225ee958b6350abc51805dab83c24'] = 'Continuer mes achats';
 $_MODULE['<{blockcart}isf>blockcart_7e0bf6d67701868aac3116ade8fea957'] = 'Commander';
+$_MODULE['<{blockcart}isf>blockcart_c95acb54a4502b8eb2603ef0d80995a1'] = 'Produits associés à votre sélection';

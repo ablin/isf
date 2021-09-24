@@ -212,6 +212,14 @@
 	</ul>
 {addJsDefL name=min_item}{l s='Please select at least one product' js=1}{/addJsDefL}
 {addJsDefL name=max_item}{l s='You cannot add more than %d product(s) to the product comparison' sprintf=$comparator_max_item js=1}{/addJsDefL}
+{addJsDefL name=Reference}{l s='Reference:' js=1}{/addJsDefL}
+{addJsDefL name=Stock}{l s='Stock:' js=1}{/addJsDefL}
+{addJsDefL name=Available}{l s='Available' js=1}{/addJsDefL}
+{addJsDefL name=Unavailable}{l s='Unavailable' js=1}{/addJsDefL}
+{addJsDefL name=Declining_price_according_to_qty}{l s='Declining price according to qty:' js=1}{/addJsDefL}
+{addJsDefL name=Price_on_demand}{l s='Price on demand' js=1}{/addJsDefL}
+{addJsDefL name=View}{l s='View' js=1}{/addJsDefL}
+{addJsDefL name=More}{l s='More' js=1}{/addJsDefL}
 {addJsDef comparator_max_item=$comparator_max_item}
 {addJsDef comparedProductsIds=$compared_products}
 {/if}
