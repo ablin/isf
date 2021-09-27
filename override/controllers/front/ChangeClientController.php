@@ -89,8 +89,16 @@ class ChangeClientController extends FrontController
             }
             $this->context->cart = $cart;
         } else {
+            $cart = new Cart($id_cart);
+            $cart->id_customer = $customer->id;
+            $cart->id_shop = Configuration::get('PS_SHOP_DEFAULT');
+            $cart->id_currency = Configuration::get('PS_CURRENCY_DEFAULT');
+            $cart->id_lang = Configuration::get('PS_LANG_DEFAULT');
+            $this->context->cart = $cart;
             $id_carrier = (int)$this->context->cart->id_carrier;
             $this->context->cart->id_carrier = 0;
+            $this->context->cart->id_guest = (int)$this->context->cookie->id_guest;
+            $cart->id_shop_group = (int)$this->context->shop->id_shop_group;
             $this->context->cart->setDeliveryOption(null);
             $this->context->cart->id_address_delivery = (int)Address::getFirstCustomerAddressId((int)($customer->id));
             $this->context->cart->id_address_invoice = (int)Address::getFirstCustomerAddressId((int)($customer->id));
