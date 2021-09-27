@@ -25,16 +25,18 @@
 <div id="contact-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
     <a href="{$link->getPageLink('contact', true)|escape:'html':'UTF-8'}" title="{l s='Contact us' mod='blockcontact'}">{l s='Contact us' mod='blockcontact'}</a>
 </div>
-<div id="client-link" {if isset($is_logged) && $is_logged} class="is_logged"{/if}>
-    <label for="client">{l s='Your client:' mod='blockcontact'}</label>
-    <div class="form-group">
-        <select name="client" id="client" class="form-control">
-            {foreach $clients as $client}
-                <option value="{$client->tiers}" {if $client->tiers == $tiers} selected="selected"{/if}>{$client->nomTiers}</option>
-            {/foreach}
-        </select>
+{if isset($is_logged) && $is_logged}
+    <div id="client-link">
+        <label for="client">{l s='Your client:' mod='blockcontact'}</label>
+        <div class="form-group">
+            <select name="client" id="client" class="form-control">
+                {foreach $clients as $client}
+                    <option value="{$client->tiers}" {if $client->tiers == $tiers} selected="selected"{/if}>{$client->nomTiers}</option>
+                {/foreach}
+            </select>
+        </div>
     </div>
-</div>
+{/if}
 {if $telnumber}
 	<span class="shop-phone{if isset($is_logged) && $is_logged} is_logged{/if}">
 		<i class="icon-phone"></i>{l s='Call us now:' mod='blockcontact'} <strong>{$telnumber}</strong>

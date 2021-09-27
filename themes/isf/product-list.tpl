@@ -104,42 +104,44 @@
                         <label>{l s='Reference:'}</label>
                         {$product.reference|strip_tags:'UTF-8'}
                     </p>
-                    <p class="product-stock" itemprop="stock">
-                        <label>{l s='Stock:'}</label>
-						{if $product.reference|array_key_exists:$references && 'total_stock'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_stock'] != -1}
-							<span class="availability">
-                                {if $references[$product.reference]['total_stock'] > 0}
-                                    <span id="availability_value" class="label label-success">
-                                        {$references[$product.reference]['total_stock']}
-                                    </span>
-                                {else}
-                                    <span id="availability_value" class="label label-danger">
-                                        0
-                                    </span>
-                                {/if}
-                            </span>
-						{/if}
-						{if $product.reference|array_key_exists:$references && 'total_dispo'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_dispo'] != -1}
-                            <span class="availability">
-                                {if $references[$product.reference]['total_dispo'] > 0}
-                                    <span id="availability_value" class="label-success">
-                                        {l s='Available'}
-                                    </span>
-                                {else}
-                                    <span id="availability_value" class="label-danger">
-                                        {l s='Unavailable'}
-                                    </span>
-                                {/if}
-                            </span>
-                        {/if}
-						{if $product.reference|array_key_exists:$references && 'total_jauge'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_jauge'] != -1}
-							<span class="availability">
-								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] == 1} orange{elseif $references[$product.reference]['total_jauge'] > 0} green{/if}"></span>
-								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 1} green{/if}"></span>
-								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 2} green{/if}"></span>
-							</span>
-						{/if}
-                    </p>
+                    {if isset($is_logged) && $is_logged}
+                        <p class="product-stock" itemprop="stock">
+                            <label>{l s='Stock:'}</label>
+    						{if $product.reference|array_key_exists:$references && 'total_stock'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_stock'] != -1}
+    							<span class="availability">
+                                    {if $references[$product.reference]['total_stock'] > 0}
+                                        <span id="availability_value" class="label label-success">
+                                            {$references[$product.reference]['total_stock']}
+                                        </span>
+                                    {else}
+                                        <span id="availability_value" class="label label-danger">
+                                            0
+                                        </span>
+                                    {/if}
+                                </span>
+    						{/if}
+    						{if $product.reference|array_key_exists:$references && 'total_dispo'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_dispo'] != -1}
+                                <span class="availability">
+                                    {if $references[$product.reference]['total_dispo'] > 0}
+                                        <span id="availability_value" class="label-success">
+                                            {l s='Available'}
+                                        </span>
+                                    {else}
+                                        <span id="availability_value" class="label-danger">
+                                            {l s='Unavailable'}
+                                        </span>
+                                    {/if}
+                                </span>
+                            {/if}
+    						{if $product.reference|array_key_exists:$references && 'total_jauge'|array_key_exists:$references[$product.reference] && $references[$product.reference]['total_jauge'] != -1}
+    							<span class="availability">
+    								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] == 1} orange{elseif $references[$product.reference]['total_jauge'] > 0} green{/if}"></span>
+    								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 1} green{/if}"></span>
+    								<span class="availability-gauge{if $references[$product.reference]['total_jauge'] > 2} green{/if}"></span>
+    							</span>
+    						{/if}
+                        </p>
+                    {/if}
 					<div class="button-container">
 						{if !$PS_CATALOG_MODE}
 							{if $product.reference|array_key_exists:$references && 'tarif'|array_key_exists:$references[$product.reference] && $references[$product.reference]['tarif'] > 0 && $references[$product.reference]['nb_tarif'] > 0}
@@ -168,10 +170,6 @@
                                 </a>
                                 <span class="clearfix"></span>
                             </div>
-    						{capture}add=1&amp;id_product={$product.id_product|intval}{if isset($static_token)}&amp;token={$static_token}{/if}{/capture}
-							<a class="button ajax_add_to_cart_button btn btn-default" href="{$link->getPageLink('cart', true, NULL, $smarty.capture.default, false)|escape:'html':'UTF-8'}" rel="nofollow" title="{l s='Add to cart'}" data-id-product-attribute="{$product.id_product_attribute|intval}" data-id-product="{$product.id_product|intval}" data-minimal_quantity="{if isset($product.product_attribute_minimal_quantity) && $product.product_attribute_minimal_quantity >= 1}{$product.product_attribute_minimal_quantity|intval}{else}{$product.minimal_quantity|intval}{/if}">
-								<span>{l s='Add to cart'}</span>
-							</a>
 						{else}
 							<span class="button ajax_add_to_cart_button btn btn-default disabled">
 								<span>{l s='Add to cart'}</span>

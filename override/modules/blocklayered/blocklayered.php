@@ -114,38 +114,42 @@ class BlockLayeredOverride extends BlockLayered
         }
         $productIds = implode(";", $productIds);
 
-        $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds.'<FICHE>0');
+        if (isset($this->context->cookie->tiers) && $this->context->cookie->tiers) {
 
-        try {
-            $datas = $webServiceDiva->call();
+            $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$productIds.'<FICHE>0');
 
-            if ($datas && $datas->references) {
+            try {
+                $datas = $webServiceDiva->call();
 
-                foreach ($datas->references as $reference) {
+                if ($datas && $datas->references) {
 
-                    if ($reference->trouve == 1) {
-                        $productsLayered[$reference->ref] = array(
-                            'total_stock' => $reference->total_stock,
-                            'total_dispo' => $reference->total_dispo,
-                            'total_jauge' => $reference->total_jauge,
-                            'tarif' => $reference->max_pun,
-                            'nb_tarif' => $reference->nbTarifs
-                        );
-                    } else {
-                        $productsLayered[$reference->ref] = array(
-                            'total_stock' => -1,
-                            'total_dispo' => -1,
-                            'total_jauge' => -1,
-                            'tarif' => 0,
-                            'nb_tarif' => 0,
-                            'alerte' => ""
-                        );
+                    foreach ($datas->references as $reference) {
+
+                        if ($reference->trouve == 1) {
+                            $productsLayered[$reference->ref] = array(
+                                'total_stock' => $reference->total_stock,
+                                'total_dispo' => $reference->total_dispo,
+                                'total_jauge' => $reference->total_jauge,
+                                'tarif' => $reference->max_pun,
+                                'nb_tarif' => $reference->nbTarifs
+                            );
+                        } else {
+                            $productsLayered[$reference->ref] = array(
+                                'total_stock' => -1,
+                                'total_dispo' => -1,
+                                'total_jauge' => -1,
+                                'tarif' => 0,
+                                'nb_tarif' => 0,
+                                'alerte' => ""
+                            );
+                        }
                     }
                 }
+
+            } catch (SoapFault $fault) {
+                throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
             }
 
-        } catch (SoapFault $fault) {
-            throw new Exception('Error: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
         }
 
         $smarty->assign('references', $productsLayered);

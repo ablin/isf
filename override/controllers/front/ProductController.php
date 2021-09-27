@@ -82,6 +82,28 @@ class ProductController extends ProductControllerCore
      */
     protected function assignPriceAndTax()
     {
+        if (!isset($this->context->cookie->tiers) || !$this->context->cookie->tiers) {
+            $this->context->smarty->assign(array(
+                'stock' => -1,
+                'dispo' => -1,
+                'jauge' => -1,
+                'tarif' => 0,
+                'nb_tarif' => 0,
+                'tax_rate' => 0,
+                'quantity_discounts' => null,
+                'ecotax_tax_inc' => 0,
+                'ecotax_tax_exc' => 0,
+                'ecotaxTax_rate' => 0,
+                'productPriceWithoutEcoTax' => 0,
+                'group_reduction' => 0,
+                'no_tax' => false,
+                'ecotax' => 0,
+                'tax_enabled' => true,
+                'customer_group_without_tax' => null,
+            ));
+            return;
+        }
+
         $webServiceDiva = new WebServiceDiva('<ACTION>TARIF_ART', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<REF>'.$this->product->reference.'<FICHE>1');
 
         try {

@@ -46,6 +46,8 @@ class AuthController extends AuthControllerCore
                     $email = $datas->email ? $datas->email : '';
                     $tabs = isset($datas->clients[0]->tabs) ? $datas->clients[0]->tabs : array();
                     $this->context->cookie->__set('tiers', $datas->clients[0]->tiers);
+                    $this->context->cookie->__set('passwd', $passwd);
+                    $this->context->cookie->__set('contact', $datas->contact);
                     $this->context->cookie->__set('clients', serialize($datas->clients));
                     $this->context->cookie->__set('paiement', $datas->paiement);
                     $this->context->cookie->__set('tabs', serialize($tabs));
