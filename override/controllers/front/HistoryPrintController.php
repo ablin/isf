@@ -12,7 +12,7 @@ class HistoryPrintController extends FrontController
 
             if ($datas) {
                 header("Content-type: application/pdf");
-                header("Content-Disposition: attachment; filename=".$datas->nomPDF);
+                header("Content-Disposition: attachment; filename=".$datas->nom);
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);

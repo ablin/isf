@@ -12,7 +12,7 @@
   margin: 0 0 26px 0; }
   .content_scene_cat .content_scene_cat_bg {
     padding: 18px 10px 10px 42px;
-    background-color: #4ea1ff !important; }
+    background-color: #76cdd9 !important; }
     @media (max-width: 1199px) {
       .content_scene_cat .content_scene_cat_bg {
         padding: 10px 10px 10px 15px; } }
@@ -78,6 +78,6 @@
         border: 5px solid #333;
         padding: 5px; }
       #subcategories li:hover a, #subcategories a:hover {
-        color: #4ea1ff;}
+        color: #76cdd9;}
 
 /*# sourceMappingURL=category.css.map */

@@ -180,6 +180,7 @@ class Product extends ProductCore
     public function getProductAccessories()
     {
         $accessories = $this->getAccessories(Context::getContext()->language->id);
+        $products = array();
 
         if (!$accessories) {
             return;

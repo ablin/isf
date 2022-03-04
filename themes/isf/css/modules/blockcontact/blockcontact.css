@@ -35,7 +35,7 @@
         padding-left: 5px;
         padding-right: 5px; } }
     #contact-link a:hover, #contact-link a.active {
-      color: #4ea1ff; }
+      color: #76cdd9; }
   @media (max-width: 767px) {
     #contact-link.is_logged {
       display: none; } }

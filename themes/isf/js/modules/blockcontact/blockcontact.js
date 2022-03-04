@@ -15,7 +15,7 @@ $(document).ready(function()
                 + '&token='+static_token
                 + '&allow_refresh=1',
             success: function() {
-                location.reload();
+                document.location.href = baseUri;
             }
         });
     });

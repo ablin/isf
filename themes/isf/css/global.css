@@ -5894,7 +5894,7 @@ span.exclusive_large_disabled {
   border: solid 1px #06b2e6;
   font-weight: bold;
   color: #fff;
-  background: #4ea1ff;
+  background: #76cdd9;
   cursor: pointer;
   white-space: normal;
   text-align: left; }
@@ -6237,13 +6237,13 @@ table.table_block td {
 .product-name {
   font-size: 17px;
   line-height: 23px;
-  color: #4ea1ff;
+  color: #76cdd9;
   font-weight: bold;
   margin-bottom: 0; }
   .product-name a {
     font-size: 17px;
     line-height: 23px;
-    color: #4ea1ff; }
+    color: #76cdd9; }
     @media (max-width: 768px) {
       .product-name a {
         font-size: 14px; } }
@@ -6268,7 +6268,7 @@ table.table_block td {
   color: #f13340; }
 
 .additional_costs {
-  background: #4ea1ff; }
+  background: #76cdd9; }
 .additional_costs .product-name, .additional_costs .price {
   color: #fff; }
 
@@ -6487,7 +6487,7 @@ table.table_block td {
       border: none; }
   #home-page-tabs > li.active a,
   #home-page-tabs > li a:hover {
-    background: #4ea1ff;
+    background: #76cdd9;
     color: #fff;
     padding: 10px; }
     @media (min-width: 768px) {
@@ -6513,7 +6513,7 @@ table.table_block td {
   font: 18px/22px "Open Sans", sans-serif;
   color: #555454;
   background: #f6f6f6;
-  border-top: 5px solid #4ea1ff;
+  border-top: 5px solid #76cdd9;
   text-transform: uppercase;
   padding: 14px 5px 17px 20px;
   margin-top: 0;
@@ -6609,7 +6609,7 @@ table.table_block td {
 
 .page-heading {
   font: 18px/22px "Open Sans", sans-serif;
-  color: #4ea1ff;
+  color: #76cdd9;
   text-transform: uppercase;
   margin-bottom: 30px;
   border-bottom: 1px solid #d6d4d4;
@@ -7217,7 +7217,7 @@ div.star a:hover {
       -ms-transform: rotate(45deg);
       transform: rotate(45deg); }
     .breadcrumb a:hover {
-      color: #4ea1ff; }
+      color: #76cdd9; }
 
 .ie8 .breadcrumb {
   min-height: 1px; }
@@ -7233,7 +7233,7 @@ div.star a:hover {
       padding-left: 30px;
       background: url(../img/footer-bg.png) repeat-x #333; } }
   .footer-container .container {
-    padding-bottom: 100px; }
+    padding-bottom: 20px; }
   .footer-container #footer {
     color: #777777; }
     .footer-container #footer .row {
@@ -8603,7 +8603,7 @@ ul.idTabs li {
 
 .idTabs .selected,#header .sf-menu > li.sfHover > a,#header .sf-menu > li > a:hover,#header .sf-menu > li.sfHoverForce > a {
     color:#fff;
-    background: #4ea1ff;
+    background: #76cdd9;
     border-bottom-color: #0084bf;
     text-decoration:none;
 }

@@ -310,7 +310,7 @@ span.view_scroll_spacer {
     padding-bottom: 16px;
     font-size: 20px;
     font-weight: bold;
-    color: #4ea1ff; }
+    color: #76cdd9; }
   .pb-center-column p {
     margin: 0; }
 .pb-center-column p#price_on_demand {
@@ -651,11 +651,11 @@ span.view_scroll_spacer {
         color: #333; }
         .table-data-sheet tr td a {
           font-weight: 700;
-          color: #4ea1ff;
+          color: #76cdd9;
           text-decoration: underline;}
           .table-data-sheet tr td a:hover {
             font-weight: 700;
-            color: #4ea1ff;
+            color: #76cdd9;
             text-decoration: none;}
 
 /* table product-discounts */

@@ -84,7 +84,7 @@
     line-height: 18px; }
   .cart_block .cart_block_list .remove_link a:hover,
   .cart_block .cart_block_list .ajax_cart_block_remove_link:hover {
-    color: #4ea1ff; }
+    color: #76cdd9; }
 .cart_block .cart-images {
   float: left;
   margin-right: 20px; }
@@ -152,7 +152,7 @@
         padding: 7px 0;
         font-size: 1.1em;
         border: solid 1px #06b2e6;
-        background: #4ea1ff; }
+        background: #76cdd9; }
       .cart_block .cart-buttons a#button_order_cart:hover span {
         border: solid 1px #06b2e6;
         background: #0084bf;
@@ -180,7 +180,7 @@
   #header .cart_block a {
     color: #fff; }
     #header .cart_block a:hover {
-      color: #4ea1ff; }
+      color: #76cdd9; }
   #header .cart_block .cart_block_list .remove_link a,
   #header .cart_block .cart_block_list .ajax_cart_block_remove_link {
     color: #fff;
@@ -188,7 +188,7 @@
     text-decoration: none; }
     #header .cart_block .cart_block_list .remove_link a:hover,
     #header .cart_block .cart_block_list .ajax_cart_block_remove_link:hover {
-      color: #4ea1ff; }
+      color: #76cdd9; }
   #header .cart_block .price {
     color: #fff; }
   #header .cart_block dt {
@@ -201,7 +201,7 @@
     #header .cart_block .product-atributes a {
       color: #9c9b9b; }
       #header .cart_block .product-atributes a:hover {
-        color: #4ea1ff; }
+        color: #76cdd9; }
   #header .cart_block .cart-prices {
     border: none;
     background: url(../../../img/cart-shadow.png) repeat-x #3d3d3d; }
@@ -400,7 +400,7 @@
       font-size: 25px;
       line-height: 25px; }
     #layer_cart .cross:hover {
-      color: #4ea1ff; }
+      color: #76cdd9; }
   #layer_cart .continue {
     cursor: pointer; }
   #layer_cart p {
@@ -464,7 +464,7 @@
       text-indent: 0; }
     #layer_cart .crossseling #blockcart_list a.bx-prev:hover,
     #layer_cart .crossseling #blockcart_list a.bx-next:hover {
-      color: #4ea1ff; }
+      color: #76cdd9; }
     #layer_cart .crossseling #blockcart_list a.bx-prev.disabled,
     #layer_cart .crossseling #blockcart_list a.bx-next.disabled {
       display: none; }

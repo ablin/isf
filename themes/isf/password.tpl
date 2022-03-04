@@ -28,11 +28,27 @@
 <h1 class="page-subheading">{l s='Forgot your password?'}</h1>
 
 {include file="$tpl_dir./errors.tpl"}
-
 {if isset($confirmation) && $confirmation == 1}
 <p class="alert alert-success">{l s='Your password has been successfully reset and a confirmation has been sent to your email address:'} {if isset($customer_email)}{$customer_email|escape:'html':'UTF-8'|stripslashes}{/if}</p>
 {elseif isset($confirmation) && $confirmation == 2}
-<p class="alert alert-success">{l s='A confirmation email has been sent to your address:'} {if isset($customer_email)}{$customer_email|escape:'html':'UTF-8'|stripslashes}{/if}</p>
+<p class="alert alert-success">{l s='Your password has been successfully updated'}</p>
+{elseif (isset($password_token) && $password_token)}
+<p>{l s='Please enter your new password. '}</p>
+<form action="{$request_uri|escape:'html':'UTF-8'}" method="post" class="std" id="form_forgotpassword">
+	<fieldset>
+		<div class="form-group">
+			<label for="passwd">{l s='New password'}</label>
+			<input class="form-control" type="password" id="passwd" name="passwd" value="{if isset($smarty.post.passwd)}{$smarty.post.passwd|escape:'html':'UTF-8'|stripslashes}{/if}" />
+		</div>
+		<div class="form-group">
+			<label for="passwd">{l s='Confirm password'}</label>
+			<input class="form-control" type="password" id="confirm-passwd" name="confirm-passwd" />
+		</div>
+		<p class="submit">
+            <button type="submit" class="btn btn-default button button-medium"><span>{l s='Retrieve Password'}<i class="icon-chevron-right right"></i></span></button>
+		</p>
+	</fieldset>
+</form>
 {else}
 <p>{l s='Please enter the email address you used to register. We will then send you a new password. '}</p>
 <form action="{$request_uri|escape:'html':'UTF-8'}" method="post" class="std" id="form_forgotpassword">

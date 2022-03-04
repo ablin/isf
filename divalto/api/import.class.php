@@ -283,6 +283,8 @@ class Import
                         if ((string) $productFeature->name == "Marque") {
                             $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $productFeature->value . "-" . (string) $produit->reference . "-" . $produit->name));
                             break;
+                        } else {
+                            $product->link_rewrite = AdminImportController::createMultiLangField(Tools::link_rewrite((string) $produit->reference . "-" . $produit->name));
                         }
                     }
                 } else {

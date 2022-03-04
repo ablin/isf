@@ -27,7 +27,26 @@ class AddressController extends AddressControllerCore
         if ($id_address) {
             $this->hydrateAddress($id_address);
             if ($this->_address->id) {
+                if (Tools::isSubmit('delete')) {
+                    $webServiceDiva = new WebServiceDiva('<ACTION>SUPPR_ADR_CLI', '<DOS>1<TIERS>'.$this->context->cookie->tiers.'<ADRCOD>'.strtoupper($this->_address->adrcod));
 
+                    try {
+                        if ($datas = $webServiceDiva->call()) {
+                            if ($this->context->cart->id_address_invoice == $this->_address->id) {
+                                unset($this->context->cart->id_address_invoice);
+                            }
+                            if ($this->context->cart->id_address_delivery == $this->_address->id) {
+                                unset($this->context->cart->id_address_delivery);
+                                $this->context->cart->updateAddressId($this->_address->id, (int)Address::getFirstCustomerAddressId(Context::getContext()->customer->id));
+                            }
+                            Tools::redirect('index.php?controller=addresses');
+                        } else {
+                            $this->errors[] = Tools::displayError('This address cannot be deleted.');
+                        }
+                    } catch (SoapFault $fault) {
+                        $this->errors[] = Tools::displayError('An error occurred while updating your address: SOAP Fault: (faultcode: {'.$fault->faultcode.'}, faultstring: {'.$fault->faultstring.'})');
+                    }
+                }
             } elseif ($this->ajax) {
                 exit;
             } else {
